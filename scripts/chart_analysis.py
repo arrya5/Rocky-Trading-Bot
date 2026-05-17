@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-chart_analysis.py — Generate candlestick charts and analyze patterns with Claude vision
+chart_analysis.py — Generate candlestick charts and analyze patterns with Gemini vision
 
 Downloads 60 days of OHLCV data via yfinance, generates a candlestick PNG using
-mplfinance, then passes the image to Claude (claude-sonnet-4-6) with vision to
-identify chart patterns and assess alignment with a BUY thesis.
+mplfinance, then passes the image to Gemini 2.5 Flash with vision to identify
+chart patterns and assess alignment with a BUY thesis.
 
 Usage:
   python scripts/chart_analysis.py RELIANCE TCS INFY
@@ -16,15 +16,16 @@ Output (one JSON object per symbol, printed to stdout):
    "key_levels": {"support": 2480.0, "resistance": 2600.0},
    "interpretation": "3-day pullback to 20-day SMA with bullish engulfing candle..."}
 
-Requires: ANTHROPIC_API_KEY environment variable, mplfinance package
+Requires: GEMINI_API_KEY environment variable, mplfinance package
 """
 
 import base64, json, os, sys, tempfile, warnings
+import urllib.request, urllib.error
 from pathlib import Path
 
 warnings.filterwarnings("ignore")
 
-MODEL = "claude-sonnet-4-6"
+GEMINI_MODEL = "gemini-2.5-flash"
 DEFAULT_DAYS = 60
 
 
@@ -61,15 +62,13 @@ def _generate_chart(symbol: str, days: int, outfile: str) -> bool:
 
 
 def _analyze_chart(symbol: str, image_path: str) -> dict:
-    """Pass chart image to Claude vision and get pattern analysis."""
-    import anthropic
+    """Pass chart image to Gemini vision and get pattern analysis."""
+    import re
 
-    api_key = os.environ.get("ANTHROPIC_API_KEY", "")
+    api_key = os.environ.get("GEMINI_API_KEY", "")
     if not api_key:
-        print("ERROR: ANTHROPIC_API_KEY not set", file=sys.stderr)
+        print("ERROR: GEMINI_API_KEY not set", file=sys.stderr)
         sys.exit(1)
-
-    client = anthropic.Anthropic(api_key=api_key)
 
     with open(image_path, "rb") as f:
         image_data = base64.standard_b64encode(f.read()).decode("utf-8")
@@ -83,7 +82,7 @@ def _analyze_chart(symbol: str, image_path: str) -> dict:
         f"'Doji after rally', 'Cup and handle', 'Double top', 'Ascending triangle', etc.)\n"
         f"2. Overall signal: bullish / bearish / neutral\n"
         f"3. Confidence: high / medium / low\n"
-        f"4. Approximate support and resistance levels visible on the chart (in ₹)\n"
+        f"4. Approximate support and resistance levels visible on the chart (in rupees)\n"
         f"5. Whether this chart CONFIRMS, CONTRADICTS, or is NEUTRAL to a BUY thesis\n"
         f"6. One clear 2-sentence interpretation explaining the pattern and its implication\n\n"
         f"Return ONLY valid JSON, no markdown:\n"
@@ -92,27 +91,62 @@ def _analyze_chart(symbol: str, image_path: str) -> dict:
         f'"thesis_alignment":"confirms|contradicts|neutral","interpretation":"..."}}'
     )
 
-    response = client.messages.create(
-        model=MODEL,
-        max_tokens=500,
-        messages=[{
-            "role": "user",
-            "content": [
-                {
-                    "type": "image",
-                    "source": {
-                        "type": "base64",
-                        "media_type": "image/png",
-                        "data": image_data,
-                    },
-                },
-                {"type": "text", "text": prompt},
-            ],
+    payload = {
+        "contents": [{
+            "parts": [
+                {"inlineData": {"mimeType": "image/png", "data": image_data}},
+                {"text": prompt},
+            ]
         }],
+        "generationConfig": {
+            "maxOutputTokens": 500,
+            "temperature": 0.1,
+            "responseMimeType": "application/json",
+        },
+    }
+
+    url = (
+        f"https://generativelanguage.googleapis.com/v1beta/models/"
+        f"{GEMINI_MODEL}:generateContent?key={api_key}"
+    )
+    req = urllib.request.Request(
+        url,
+        data=json.dumps(payload).encode("utf-8"),
+        headers={"Content-Type": "application/json"},
     )
 
-    import re
-    output = response.content[0].text.strip()
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            data = json.load(resp)
+    except urllib.error.HTTPError as e:
+        body = e.read().decode()
+        return {
+            "symbol": symbol, "pattern": "api_error", "signal": "neutral",
+            "confidence": "low", "key_levels": {"support": None, "resistance": None},
+            "thesis_alignment": "neutral",
+            "interpretation": f"Gemini API error {e.code}: {body[:200]}",
+        }
+    except Exception as e:
+        return {
+            "symbol": symbol, "pattern": "api_error", "signal": "neutral",
+            "confidence": "low", "key_levels": {"support": None, "resistance": None},
+            "thesis_alignment": "neutral",
+            "interpretation": f"Request error: {str(e)[:200]}",
+        }
+
+    candidates = data.get("candidates", [])
+    if not candidates:
+        return {
+            "symbol": symbol, "pattern": "no_response", "signal": "neutral",
+            "confidence": "low", "key_levels": {"support": None, "resistance": None},
+            "thesis_alignment": "neutral", "interpretation": "No response from Gemini.",
+        }
+
+    parts = candidates[0].get("content", {}).get("parts", [])
+    output = "".join(
+        p.get("text", "") for p in parts if not p.get("thought", False)
+    ).strip()
+
     output = re.sub(r"^```(?:json)?\s*", "", output)
     output = re.sub(r"\s*```$", "", output)
 
@@ -120,13 +154,13 @@ def _analyze_chart(symbol: str, image_path: str) -> dict:
         return json.loads(output)
     except json.JSONDecodeError:
         return {
-            "symbol":          symbol,
-            "pattern":         "parse_error",
-            "signal":          "neutral",
-            "confidence":      "low",
-            "key_levels":      {"support": None, "resistance": None},
+            "symbol":           symbol,
+            "pattern":          "parse_error",
+            "signal":           "neutral",
+            "confidence":       "low",
+            "key_levels":       {"support": None, "resistance": None},
             "thesis_alignment": "neutral",
-            "interpretation":  f"Chart analysis completed but JSON parse failed. Raw: {output[:200]}",
+            "interpretation":   f"Chart analysis completed but JSON parse failed. Raw: {output[:200]}",
         }
 
 

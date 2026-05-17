@@ -19,6 +19,8 @@ done
 ```
 If any var is MISSING → `bash scripts/telegram.sh "ERROR: $v not set in pre-market routine"` then exit.
 
+Note: `ANTHROPIC_API_KEY` is NOT required. All AI calls use Gemini (GEMINI_API_KEY).
+
 ## IMPORTANT — PERSISTENCE
 This workspace is a fresh clone of your GitHub repo. File changes VANISH unless committed and pushed to main. You MUST commit and push at Step 8.
 
@@ -42,9 +44,9 @@ bash scripts/research.sh "Global market cues today $DATE: US futures, crude oil 
 bash scripts/research.sh "Indian stock market key events today $DATE: earnings results, RBI, SEBI, economic data"
 ```
 
-**VIX Gate**: If India VIX ≥ 20 → write "HIGH VIX — NO NEW POSITIONS TODAY" in the research log. Skip Steps 3–5. Go to Step 6.
+**VIX Gate**: If India VIX ≥ 25 → write "HIGH VIX — NO NEW POSITIONS TODAY" in the research log. Skip Steps 3–5. Go to Step 6.
 
-**FII Gate**: If FII net outflow > -₹2000 Cr → write "LARGE FII OUTFLOW — SKIP TRADING TODAY". Skip Steps 3–5. Go to Step 6.
+**FII Gate**: If FII net outflow > -₹3500 Cr → write "LARGE FII OUTFLOW — SKIP TRADING TODAY". Skip Steps 3–5. Go to Step 6.
 
 ## Step 2.5 — Market Data: Regime, PCR
 ```bash
@@ -54,72 +56,53 @@ python scripts/market_data.py pcr
 
 Note the regime (bull/bear/sideways) and PCR for the research log. If PCR < 0.5 (extreme euphoria) → add a caution note but do NOT skip trading on PCR alone. These are informational signals only.
 
-## Step 2.7 — Extended Thinking Synthesis
-Run AFTER Step 2 (macro research) and Step 2.5 (regime/PCR) so all macro data is written to RESEARCH-LOG.md first. This step uses Claude with extended thinking to reason across all signals together.
-
-```bash
-python scripts/synthesize.py --date $DATE
-```
-
-Read the JSON output carefully:
-- `verdict`: PROCEED / CAUTION-1-TRADE-MAX / CAUTION-AVOID-SECTORS / SKIP
-- `reasoning_summary`: 2-3 sentence synthesis — include this verbatim in the research log
-- `risk_flags`: specific contradictions or concerns flagged by extended reasoning
-- `max_trades_today`: respect this limit in Step 3 (market-open gate 7 override)
-- `sectors_to_avoid`: skip candidates in these sectors today (add to rejected list)
-
-If `verdict == SKIP` → write "EXTENDED THINKING: SKIP — [reasoning_summary]" in research log. Do NOT proceed to Steps 3–5. Go to Step 6.
-If `verdict == CAUTION-*` → proceed but respect `max_trades_today` and `sectors_to_avoid`.
-If `verdict == PROCEED` → continue normally.
-
 ## Step 3 — Sector Momentum
 ```bash
 bash scripts/research.sh "NSE sector performance today $DATE: leading and lagging sectors vs Nifty 50"
 bash scripts/research.sh "Nifty Bank and IT sector outlook today $DATE"
 ```
 
-## Step 4 — Stock Candidates
-Ask Gemini for today's top picks:
+## Step 4 — Full Universe Signal Scan
+Run the momentum scorer across the entire Nifty 50 + Midcap 150 universe. No Gemini guesses — real price data only.
 ```bash
-bash scripts/research.sh "Today is $DATE. Name exactly 5 NSE stock symbols from Nifty 50 or Nifty Midcap 150 with strongest momentum and catalysts right now. Return ONLY the NSE ticker symbols comma-separated. Example: RELIANCE,TCS,INFY,HDFCBANK,ICICIBANK"
+python models/signal_generator.py
 ```
 
-For each candidate, research its catalyst:
+This outputs all BUY signals (score ≥ 40) sorted by confidence. Take the **top 10 by score** as today's candidates. Log the full list in the research log.
+
+For each top candidate, research its catalyst and classify it:
 ```bash
-bash scripts/research.sh "SYMBOL NSE catalyst today $DATE: earnings, upgrade, technical breakout, news"
+bash scripts/research.sh "SYMBOL NSE catalyst today $DATE: earnings, upgrade, technical breakout, sector news"
 ```
+
+Classify each catalyst as HARD / MEDIUM / SOFT (see TRADING-STRATEGY.md Catalyst Classification table).
+Log the tier alongside the candidate. SOFT-only catalysts will be rejected at market-open Gate 3.
 
 ## Step 4.5 — Earnings Guard
-For each candidate identified in Step 4 (run before chart analysis to avoid wasting API calls on excluded stocks):
+Run on all candidates from Step 4 before spending API calls on chart analysis:
 ```bash
-python scripts/earnings_guard.py SYMBOL1 SYMBOL2 SYMBOL3 SYMBOL4 SYMBOL5
+python scripts/earnings_guard.py SYMBOL1 SYMBOL2 ... SYMBOL10
 ```
-Remove any candidate where `earnings_within_7d: true` from the list.
-Log removed candidates under Rejected: `SYMBOL — earnings in N days (binary event risk — skip)`
+Remove any candidate where `earnings_within_7d: true`.
+Log: `SYMBOL — earnings in N days (binary event risk — skip)`
 
 ## Step 4.7 — Chart Pattern Analysis (Vision)
-For each non-earnings candidate remaining after Step 4.5:
+Run on the remaining candidates after Step 4.5 (up to 10):
 ```bash
-python scripts/chart_analysis.py SYMBOL1 SYMBOL2 SYMBOL3
+python scripts/chart_analysis.py SYMBOL1 SYMBOL2 SYMBOL3 SYMBOL4 SYMBOL5
 ```
 
 Read the JSON output for each symbol:
-- `thesis_alignment: "contradicts"` + `signal: "bearish"` AND high confidence → remove candidate (strong visual contradiction)
-- `thesis_alignment: "contradicts"` + `signal: "bearish"` AND low/medium confidence → keep but note the warning
-- `thesis_alignment: "confirms"` → note as additional supporting evidence
+- `thesis_alignment: "contradicts"` + `signal: "bearish"` + `confidence: "high"` → remove candidate
+- `thesis_alignment: "contradicts"` + low/medium confidence → keep, note the warning
+- `thesis_alignment: "confirms"` → note as supporting evidence
 
-Log each symbol's chart result in the research log:
+Log each symbol's chart result:
 ```
-- [SYMBOL] Chart: [pattern] — [signal] — [thesis_alignment] — [interpretation (1 sentence)]
+- [SYMBOL] Chart: [pattern] — [signal] — [thesis_alignment] — [interpretation]
 ```
 
-Do NOT reject a candidate solely on chart pattern if GRU and fundamentals are strong — chart analysis is a confirmation/contradiction layer, not a hard gate. Use your judgment.
-
-## Step 5 — GRU Signal Check
-```bash
-python models/signal_generator.py SYMBOL1 SYMBOL2 SYMBOL3 SYMBOL4 SYMBOL5
-```
-Only keep symbols where GRU returns BUY with confidence ≥ 60%. (Run only on non-earnings candidates.)
+Chart analysis is a confirmation/contradiction layer, not a hard gate. Score ≥ 60 + chart confirms = strong candidate. Score ≥ 40 + chart neutral = still tradeable.
 
 ## Step 6 — Write Research Log
 Append a new entry to `memory/RESEARCH-LOG.md`:
@@ -134,16 +117,14 @@ Append a new entry to `memory/RESEARCH-LOG.md`:
 - Global cues: [summary]
 - Regime: [bull / bear / sideways] (slope: X.X%)
 - Nifty PCR: X.XX — [euphoric <0.7 / neutral / fearful >1.2]
-- **Extended Thinking Verdict**: [PROCEED / CAUTION-1-TRADE-MAX / SKIP] — [reasoning_summary from synthesize.py]
-- Risk flags: [list from synthesize.py, or "none"]
 
 **Sector Momentum**
 - Strong: [sectors]
 - Weak: [sectors]
 
-**Trade Candidates** (GRU BUY >= 60%)
-1. SYMBOL — [catalyst] — GRU: BUY XX%
-   Entry zone: ~₹XXXX | Target: ₹XXXX (+20%) | Stop: ₹XXXX (-7%)
+**Trade Candidates** (Score ≥ 40, sorted by score)
+1. SYMBOL — Score: XX/100 — Catalyst: [description] [HARD/MEDIUM/SOFT] — Chart: [confirms/neutral/contradicts]
+   Sector: [sector] | Size: ₹XX,000 | Entry zone: ~₹XXXX | Stop: ₹XXXX (-7%)
 
 **Rejected**
 - SYMBOL — [gate failed / no signal / no catalyst]
@@ -158,7 +139,7 @@ Append a new entry to `memory/RESEARCH-LOG.md`:
 
 ## Step 7 — Telegram Alert
 ```bash
-bash scripts/telegram.sh "Pre-market $DATE | VIX: X | N BUY signal(s) | Top: SYMBOL | FII: X Cr | Market-open at 9:20 AM IST"
+bash scripts/telegram.sh "Pre-market $DATE | VIX: X | Regime: [bull/bear/sideways] | N BUY signals (score≥40) | Top: SYMBOL (XX/100) | FII: X Cr | Market-open at 9:20 AM IST"
 ```
 If VIX/FII gate triggered:
 ```bash
@@ -172,3 +153,8 @@ git commit -m "pre-market: $DATE | VIX: X | N candidates"
 git push origin main
 ```
 On push failure: `git pull --rebase origin main` then push again. Never force-push.
+
+---
+
+sources:
+  allow_unrestricted_git_push: true

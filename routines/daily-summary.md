@@ -101,3 +101,8 @@ If today is Friday, also add a note to memory/RESEARCH-LOG.md:
 **Friday note $DATE**: Weekly review routine will run at 4:30 PM IST.
 ```
 Then include it in the git add before committing.
+
+---
+sources:
+  allow_unrestricted_git_push: true
+---

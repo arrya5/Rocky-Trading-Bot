@@ -9,23 +9,39 @@
 
 ## Capital & Position Sizing
 - **Total capital**: ₹5,00,000
-- **Max per position**: ₹1,00,000 (20% of capital) — NEVER exceed this
-- **Max positions**: 5 simultaneous open positions
-- **Min position**: ₹10,000 (avoid tiny positions with outsized brokerage impact)
-- **New positions/week**: Max 3
+- **Position size is tiered by momentum score** (from signal_generator.py `suggested_position_size`):
+  - Score 80–100 → ₹70,000 (high conviction)
+  - Score 60–79  → ₹50,000 (medium conviction)
+  - Score 40–59  → ₹30,000 (minimum threshold — smaller size)
+- **Max positions**: Unlimited during paper trading — deploy capital across as many signals as available
+- **New positions/week**: Unlimited during paper trading — take every valid signal
+- **Pre-filters** (applied by signal_generator.py before scoring — stock excluded entirely if it fails):
+  - ADV (avg daily traded value, 20-day) must be ≥ ₹50 Cr
+  - 20-day daily return volatility must be ≤ 3% per day
 
 ## Entry Rules (ALL must pass — no exceptions)
 1. Stock must be in Nifty 50 or Nifty Midcap 150
-2. GRU signal must be BUY with confidence ≥ 60%
-3. Catalyst documented in RESEARCH-LOG.md (earnings, sector tailwind, technical breakout)
+2. Momentum score ≥ 40 (from signal_generator.py — 2 or more of 5 factors aligned)
+3. Catalyst is HARD or MEDIUM tier (see catalyst classification below) — pure technical signals alone do not pass
 4. Upper circuit NOT hit in the last 3 days (avoid extended stocks)
-5. India VIX must be < 20 (high volatility = no new positions)
-6. Max 5 total positions after entry
-7. Max 3 new positions this week not exceeded
-8. Position cost ≤ available cash
-9. FII net buying must not be strongly negative (> -₹2000 Cr outflow)
-10. No earnings announcement or board meeting for results within 7 calendar days (binary event risk)
-11. Sector concentration ≤ 2 open positions in the same sector after entry
+5. India VIX must be < 25 (paper trading relaxed — learning across volatility regimes)
+6. Position cost ≤ available cash (max ₹50,000 per position)
+7. FII net buying must not be strongly negative (> -₹3500 Cr outflow — relaxed for paper learning)
+8. No earnings announcement or board meeting for results within 7 calendar days (binary event risk)
+9. Sector concentration ≤ 2 open positions in the same sector after entry
+
+**Paper trading mode**: No cap on total positions or weekly trades. Take every signal that clears all 9 gates — maximum data generation accelerates learning.
+
+## Catalyst Classification (Gate 3)
+Classify the catalyst from Gemini research. Only HARD or MEDIUM pass Gate 3.
+
+| Tier | Examples | Gate 3 |
+|------|----------|--------|
+| HARD | Earnings beat, analyst upgrade to BUY/Strong Buy, product launch, regulatory approval, QIP/buyback, M&A | PASS |
+| MEDIUM | Specific sector policy (budget allocation, PLI scheme), index inclusion, management guidance revision, block deal by institution | PASS |
+| SOFT | "Stock is trending", "sector doing well", general market sentiment, no specific event | FAIL — skip trade |
+
+Log catalyst tier in RESEARCH-LOG.md and TRADE-LOG.md for every trade.
 
 ## Exit Rules
 ### Hard stops (execute immediately, no exceptions)
@@ -39,7 +55,7 @@
 - Remaining 50%: tighten trailing stop to 7% below current price
 - ONE partial exit only per trade — do NOT take another 50% exit on the same position
 - After partial exit at +15%: At +20% on remaining → tighten stop to 5% below current price
-- At +30% on remaining: close full remaining position
+- **Never force-close a profitable remaining position** — let the trailing stop trigger naturally
 
 ### Trailing stop management
 - Default trailing stop: 10% below cost
@@ -47,24 +63,14 @@
 - At +20% gain: tighten trailing stop to 5% below current price
 - NEVER move stop downward (only tighten)
 - NEVER tighten stop within 3% of current LTP
+- **No forced exit at any profit level** — trailing stop is the only exit for profitable positions
 
 ### Sector rule
 - After 2 consecutive failed trades in same sector → exit sector for 10 trading days
-- Max 2 simultaneous open positions in any single sector (Gate 11)
-
-### Profit taking
-- Target: +20% to +30% (exit remaining position)
-- Do NOT hold indefinitely — lock in gains
-
-## Pre-Market Synthesis (Extended Thinking — Step 2.7)
-- `scripts/synthesize.py` calls Claude with extended thinking to reason across ALL macro signals together
-- Output: verdict (PROCEED / CAUTION-1-TRADE-MAX / CAUTION-AVOID-SECTORS / SKIP) + reasoning_summary + risk_flags
-- `max_trades_today` from synthesis overrides the weekly 3-trade limit for today only
-- `sectors_to_avoid` from synthesis adds to today's rejected list (not a permanent sector block)
-- Extended thinking catches cross-signal contradictions: borderline VIX + strong FII ≠ same as borderline VIX + weak FII
+- Max 2 simultaneous open positions in any single sector (Gate 9)
 
 ## Chart Pattern Analysis (Vision — Step 4.7)
-- `scripts/chart_analysis.py` generates a 60-day candlestick chart from yfinance → passes to Claude vision
+- `scripts/chart_analysis.py` generates a 60-day candlestick chart from yfinance → passes to Gemini vision
 - Output per symbol: pattern, signal (bullish/bearish/neutral), thesis_alignment (confirms/contradicts/neutral), key levels
 - `thesis_alignment: contradicts` + high confidence → remove candidate from shortlist
 - `thesis_alignment: contradicts` + low confidence → keep candidate, note warning in research log

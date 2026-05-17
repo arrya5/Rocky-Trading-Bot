@@ -113,3 +113,8 @@ git commit -m "midday: $DATE | stops hit: N | tightened: N | holding: N"
 git push origin main
 ```
 On push failure: `git pull --rebase origin main` then push again. Never force-push.
+
+---
+sources:
+  allow_unrestricted_git_push: true
+---

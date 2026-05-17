@@ -15,8 +15,7 @@ python scripts/earnings_guard.py SYMBOL [SYMBOL ...]        # Check if earnings 
 python scripts/market_data.py delivery SYMBOL [SYMBOL ...]  # NSE bhavcopy delivery % for symbols
 python scripts/market_data.py pcr                           # Nifty Put-Call Ratio from NSE F&O option chain
 python scripts/regime_detector.py                           # Market regime: bull/bear/sideways (Nifty 20-day SMA slope)
-python scripts/synthesize.py --date YYYY-MM-DD              # Extended thinking synthesis of all pre-market signals → verdict JSON
-python scripts/chart_analysis.py SYMBOL [SYMBOL ...]        # Claude vision candlestick pattern analysis → confirms/contradicts BUY thesis
+python scripts/chart_analysis.py SYMBOL [SYMBOL ...]        # Gemini vision candlestick pattern analysis → confirms/contradicts BUY thesis
 python scripts/record_trade.py entry SYMBOL SECTOR GRU_CONF VIX FII_FLOW REGIME PRICE QTY CATALYST_TYPE  # Log BUY
 python scripts/record_trade.py exit SYMBOL EXIT_PRICE REASON                                              # Log SELL
 python scripts/record_trade.py partial_exit SYMBOL EXIT_PRICE QTY_SOLD                                   # Log 50% partial exit at +15%
@@ -32,19 +31,23 @@ git add memory/ && git commit -m "msg"                      # Persist all memory
 - `memory/PROJECT-CONTEXT.md` — architecture and parameters
 - `memory/trade-outcomes.json` — structured trade outcomes for performance analysis (written by record_trade.py, read by performance_analyzer.py)
 
-## The 11-Point Buy-Side Gate
-Before placing ANY buy order, verify ALL 11 conditions. Skip trade if any fails.
+## The 9-Point Buy-Side Gate
+Before placing ANY buy order, verify ALL 9 conditions. Skip trade if any fails.
 1. Stock is in Nifty 50 or Nifty Midcap 150
-2. GRU signal = BUY with confidence ≥ 60%
-3. Catalyst documented in today's RESEARCH-LOG.md entry
+2. Momentum score ≥ 40 from signal_generator.py (2+ of 5 factors aligned) AND stock passed ADV + volatility pre-filters
+3. Catalyst is HARD or MEDIUM tier — SOFT catalyst ("stock trending", "sector doing well") = SKIP
+   - HARD: earnings beat, analyst upgrade, product launch, regulatory approval, M&A, QIP/buyback
+   - MEDIUM: sector policy, index inclusion, management guidance revision, institutional block deal
+   - SOFT: general sentiment, no specific event → FAIL gate
 4. Stock not at upper circuit (and not hit lower circuit in last 3 days)
-5. India VIX < 20
-6. Open positions after entry ≤ 5
-7. New positions this week ≤ 3
-8. Position cost ≤ available cash
-9. FII net flow not strongly negative (> -₹2000 Cr outflow)
-10. No earnings announcement or board meeting for results within 7 calendar days
-11. Sector concentration ≤ 2 open positions in the same sector after entry
+5. India VIX < 25
+6. Position cost ≤ available cash — use tiered sizing from signal_generator.py `suggested_position_size`:
+   - Score 80-100 → ₹70,000 | Score 60-79 → ₹50,000 | Score 40-59 → ₹30,000
+7. FII net flow not strongly negative (> -₹3500 Cr outflow)
+8. No earnings announcement or board meeting for results within 7 calendar days
+9. Sector concentration ≤ 2 open positions in the same sector after entry
+
+**Paper trading — no position cap, no weekly trade cap. Take every signal that passes all 9 gates.**
 
 ## Hard Stop Rules (no discretion allowed)
 - **-7% loss**: Close immediately via `python scripts/broker.py close SYMBOL`
@@ -57,7 +60,8 @@ Before placing ANY buy order, verify ALL 11 conditions. Skip trade if any fails.
 - Then tighten remaining 50% trailing stop to 7% below current price
 - ONE partial exit only per trade (check trade-outcomes.json: if partial_exits is non-empty, skip)
 - At +20% on remaining: tighten stop to 5% below LTP
-- At +30% on remaining: close full remaining position
+- **NEVER force-close a profitable remaining position** — let trailing stop trigger naturally
+- Multi-baggers (+50%, +80%, +100%) are possible only if you let the trailing stop run
 
 ## Trailing Stop Rules
 - Default trailing stop: 10% below entry
