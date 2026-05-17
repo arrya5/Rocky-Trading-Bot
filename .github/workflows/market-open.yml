@@ -1,0 +1,49 @@
+name: Market-Open Routine
+
+on:
+  schedule:
+    - cron: '50 3 * * 1-5'  # 9:20 AM IST (3:50 AM UTC), Mon-Fri
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: trading-bot
+  cancel-in-progress: false
+
+jobs:
+  market-open:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run market-open routine
+        env:
+          GEMINI_API_KEY:        ${{ secrets.GEMINI_API_KEY }}
+          TELEGRAM_BOT_TOKEN:    ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:      ${{ secrets.TELEGRAM_CHAT_ID }}
+          UPSTOX_ACCESS_TOKEN:   ${{ secrets.UPSTOX_ACCESS_TOKEN }}
+          UPSTOX_API_KEY:        ${{ secrets.UPSTOX_API_KEY }}
+          UPSTOX_API_SECRET:     ${{ secrets.UPSTOX_API_SECRET }}
+          UPSTOX_BASE_URL:       'https://api.upstox.com/v2'
+          PAPER_TRADING:         'true'
+          TF_ENABLE_ONEDNN_OPTS: '0'
+          TF_CPP_MIN_LOG_LEVEL:  '3'
+        run: python scripts/runners/market_open.py
+
+      - name: Commit and push
+        run: |
+          git config user.name  "trading-bot[auto]"
+          git config user.email "bot@trading-bot.local"
+          git add memory/
+          git diff --staged --quiet || git commit -m "market-open: $(date +%Y-%m-%d) [auto]"
+          git push
