@@ -1,0 +1,42 @@
+# Secrets — NEVER commit these
+.env
+.upstox_token
+*.pem
+*.key
+
+# Paper portfolio state (committed separately via routine)
+# memory/paper_portfolio.json  ← actually DO commit this (it's the portfolio state)
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+venv/
+.venv/
+env/
+*.egg-info/
+
+# TensorFlow / Model artifacts
+models/**/*.h5
+models/**/*.keras
+models/saved_model/
+models/checkpoints/
+models/cached/
+*.pkl
+*.joblib
+
+# Plots (generated on demand)
+plots/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs (kept in memory/ as markdown, not raw logs)
+*.log
+logs/
