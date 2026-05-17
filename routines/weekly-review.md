@@ -1,5 +1,5 @@
 # Weekly Review Routine
-*Schedule: 4:00 PM IST, every Friday*
+*Schedule: 4:30 PM IST, every Friday*
 *Runs after daily-summary. Market is closed.*
 
 ---
