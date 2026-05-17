@@ -18,7 +18,7 @@ fi
 
 API_KEY="${GEMINI_API_KEY:-}"
 if [[ -z "$API_KEY" ]]; then
-    echo "ERROR: Set GEMINI_API_KEY in .env" >&2
+    echo "ERROR: GEMINI_API_KEY environment variable is not set" >&2
     exit 1
 fi
 

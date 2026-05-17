@@ -61,7 +61,7 @@ def save_token(token: str):
 
 if __name__ == "__main__":
     if not API_KEY or not API_SECRET:
-        print("ERROR: Set UPSTOX_API_KEY and UPSTOX_API_SECRET in your .env file")
+        print("ERROR: UPSTOX_API_KEY and UPSTOX_API_SECRET environment variables are not set")
         sys.exit(1)
 
     # Check if today's token already exists
@@ -83,5 +83,5 @@ if __name__ == "__main__":
         token = exchange_code(code)
         save_token(token)
         print(f"\nAccess token obtained and saved.\n")
-        print(f"Add to your shell or .env:\n  UPSTOX_ACCESS_TOKEN={token}\n")
+        print(f"Set as environment variable on your cloud routine:\n  UPSTOX_ACCESS_TOKEN={token}\n")
         print(f"Token expires at midnight IST. Run auth.py again tomorrow.")

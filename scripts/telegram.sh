@@ -4,11 +4,11 @@
 # Setup (one-time, takes 2 minutes):
 #   1. Open Telegram → search @BotFather → send /newbot
 #   2. Give it a name (e.g. "India Trading Bot") and a username (e.g. "myindia_trade_bot")
-#   3. BotFather gives you a TOKEN — copy it to TELEGRAM_BOT_TOKEN in .env
+#   3. BotFather gives you a TOKEN — set it as TELEGRAM_BOT_TOKEN env var on the cloud routine
 #   4. Open your new bot in Telegram and send it any message (e.g. "hello")
 #   5. Visit in browser: https://api.telegram.org/bot<TOKEN>/getUpdates
 #   6. Find "chat":{"id": XXXXXXXXX} — that number is your TELEGRAM_CHAT_ID
-#   7. Set TELEGRAM_CHAT_ID in .env
+#   7. Set TELEGRAM_CHAT_ID as env var on the cloud routine
 #
 # Usage:
 #   ./scripts/telegram.sh "Your message here"
@@ -26,7 +26,7 @@ BOT_TOKEN="${TELEGRAM_BOT_TOKEN:-}"
 CHAT_ID="${TELEGRAM_CHAT_ID:-}"
 
 if [[ -z "$BOT_TOKEN" || -z "$CHAT_ID" ]]; then
-    echo "ERROR: Set TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID in .env" >&2
+    echo "ERROR: TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID environment variables are not set" >&2
     exit 1
 fi
 

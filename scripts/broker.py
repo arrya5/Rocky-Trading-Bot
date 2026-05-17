@@ -14,7 +14,7 @@ Usage:
   python broker.py close RELIANCE                  # market sell open position
   python broker.py close-all                       # market sell all positions
 
-Environment variables (set in .env or shell):
+Environment variables (injected by cloud routine — do not source .env):
   UPSTOX_ACCESS_TOKEN   — daily access token from auth.py
   UPSTOX_BASE_URL       — default: https://api.upstox.com/v2 (live)
                           paper:   https://sandbox-api.upstox.com/v2
