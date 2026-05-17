@@ -25,6 +25,24 @@ import os, sys, json, requests
 from datetime import date, datetime
 from pathlib import Path
 
+def _yf_ltp(symbols: list) -> dict:
+    """Fetch last traded prices via yfinance — used in paper mode (no Upstox token needed)."""
+    import warnings
+    warnings.filterwarnings("ignore")
+    import yfinance as yf
+    out = {}
+    for sym in symbols:
+        ticker = sym.upper() if sym.upper().endswith(".NS") else sym.upper() + ".NS"
+        try:
+            df = yf.download(ticker, period="5d", interval="1m", progress=False, auto_adjust=True)
+            if df.empty:
+                df = yf.download(ticker, period="5d", progress=False, auto_adjust=True)
+            price = float(df["Close"].iloc[-1]) if not df.empty else 0.0
+        except Exception:
+            price = 0.0
+        out[sym.upper().replace(".NS", "")] = price
+    return out
+
 # ── Config ────────────────────────────────────────────────────────────────────
 
 PAPER   = os.getenv("PAPER_TRADING", "true").lower() == "true"
@@ -138,19 +156,24 @@ def cmd_holdings():
 
 
 def cmd_quote(symbols: list[str]):
+    if PAPER:
+        prices = _yf_ltp(symbols)
+        out    = {}
+        port   = load_paper()
+        for sym, price in prices.items():
+            out[sym] = {"price": price, "timestamp": datetime.now().isoformat()}
+            if sym in port["positions"]:
+                port["positions"][sym]["ltp"] = price
+        save_paper(port)
+        print(json.dumps(out, indent=2))
+        return
+
     keys = ",".join(instrument_key(s) for s in symbols)
     data = api("GET", f"/market-quote/ltp?symbol={keys}")
     out  = {}
     for k, v in (data.items() if isinstance(data, dict) else {}.items()):
-        sym       = k.split("|")[-1]
-        out[sym]  = {"price": v.get("last_price"), "timestamp": datetime.now().isoformat()}
-
-        if PAPER:
-            port = load_paper()
-            if sym in port["positions"]:
-                port["positions"][sym]["ltp"] = v.get("last_price")
-                save_paper(port)
-
+        sym      = k.split("|")[-1]
+        out[sym] = {"price": v.get("last_price"), "timestamp": datetime.now().isoformat()}
     print(json.dumps(out, indent=2))
 
 
@@ -185,15 +208,14 @@ def cmd_order(raw: str):
     if PAPER:
         p     = load_paper()
         now   = datetime.now().isoformat()
-        # Get LTP for paper cost calculation
+        # Get LTP via yfinance (no Upstox token needed in paper mode)
         try:
-            keys = instrument_key(symbol)
-            data = api("GET", f"/market-quote/ltp?symbol={keys}")
-            ltp  = list(data.values())[0].get("last_price", price) if data else price
+            prices = _yf_ltp([symbol])
+            ltp    = prices.get(symbol, 0) or price or 0
         except Exception:
             ltp = price or 0
 
-        exec_price = ltp if otype == "MARKET" else price
+        exec_price = ltp if (otype == "MARKET" and ltp > 0) else (price or ltp)
 
         if side == "BUY":
             cost = exec_price * qty
