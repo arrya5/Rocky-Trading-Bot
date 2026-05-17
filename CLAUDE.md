@@ -15,6 +15,8 @@ python scripts/earnings_guard.py SYMBOL [SYMBOL ...]        # Check if earnings 
 python scripts/market_data.py delivery SYMBOL [SYMBOL ...]  # NSE bhavcopy delivery % for symbols
 python scripts/market_data.py pcr                           # Nifty Put-Call Ratio from NSE F&O option chain
 python scripts/regime_detector.py                           # Market regime: bull/bear/sideways (Nifty 20-day SMA slope)
+python scripts/synthesize.py --date YYYY-MM-DD              # Extended thinking synthesis of all pre-market signals → verdict JSON
+python scripts/chart_analysis.py SYMBOL [SYMBOL ...]        # Claude vision candlestick pattern analysis → confirms/contradicts BUY thesis
 python scripts/record_trade.py entry SYMBOL SECTOR GRU_CONF VIX FII_FLOW REGIME PRICE QTY CATALYST_TYPE  # Log BUY
 python scripts/record_trade.py exit SYMBOL EXIT_PRICE REASON                                              # Log SELL
 python scripts/record_trade.py partial_exit SYMBOL EXIT_PRICE QTY_SOLD                                   # Log 50% partial exit at +15%

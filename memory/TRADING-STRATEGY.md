@@ -56,6 +56,21 @@
 - Target: +20% to +30% (exit remaining position)
 - Do NOT hold indefinitely — lock in gains
 
+## Pre-Market Synthesis (Extended Thinking — Step 2.7)
+- `scripts/synthesize.py` calls Claude with extended thinking to reason across ALL macro signals together
+- Output: verdict (PROCEED / CAUTION-1-TRADE-MAX / CAUTION-AVOID-SECTORS / SKIP) + reasoning_summary + risk_flags
+- `max_trades_today` from synthesis overrides the weekly 3-trade limit for today only
+- `sectors_to_avoid` from synthesis adds to today's rejected list (not a permanent sector block)
+- Extended thinking catches cross-signal contradictions: borderline VIX + strong FII ≠ same as borderline VIX + weak FII
+
+## Chart Pattern Analysis (Vision — Step 4.7)
+- `scripts/chart_analysis.py` generates a 60-day candlestick chart from yfinance → passes to Claude vision
+- Output per symbol: pattern, signal (bullish/bearish/neutral), thesis_alignment (confirms/contradicts/neutral), key levels
+- `thesis_alignment: contradicts` + high confidence → remove candidate from shortlist
+- `thesis_alignment: contradicts` + low confidence → keep candidate, note warning in research log
+- Chart analysis is informational — NOT a hard gate. Strong GRU + fundamentals override weak chart signal
+- Adds pattern recognition (doji, engulfing, double top, etc.) the GRU model cannot see numerically
+
 ## Market Context Signals (informational — not hard gates unless noted)
 - **Regime** (pre-market): bull/bear/sideways based on Nifty 50 20-day SMA slope
   - Bull: slope > +1.5% | Bear: slope < -1.5% | Sideways: between

@@ -54,6 +54,24 @@ python scripts/market_data.py pcr
 
 Note the regime (bull/bear/sideways) and PCR for the research log. If PCR < 0.5 (extreme euphoria) → add a caution note but do NOT skip trading on PCR alone. These are informational signals only.
 
+## Step 2.7 — Extended Thinking Synthesis
+Run AFTER Step 2 (macro research) and Step 2.5 (regime/PCR) so all macro data is written to RESEARCH-LOG.md first. This step uses Claude with extended thinking to reason across all signals together.
+
+```bash
+python scripts/synthesize.py --date $DATE
+```
+
+Read the JSON output carefully:
+- `verdict`: PROCEED / CAUTION-1-TRADE-MAX / CAUTION-AVOID-SECTORS / SKIP
+- `reasoning_summary`: 2-3 sentence synthesis — include this verbatim in the research log
+- `risk_flags`: specific contradictions or concerns flagged by extended reasoning
+- `max_trades_today`: respect this limit in Step 3 (market-open gate 7 override)
+- `sectors_to_avoid`: skip candidates in these sectors today (add to rejected list)
+
+If `verdict == SKIP` → write "EXTENDED THINKING: SKIP — [reasoning_summary]" in research log. Do NOT proceed to Steps 3–5. Go to Step 6.
+If `verdict == CAUTION-*` → proceed but respect `max_trades_today` and `sectors_to_avoid`.
+If `verdict == PROCEED` → continue normally.
+
 ## Step 3 — Sector Momentum
 ```bash
 bash scripts/research.sh "NSE sector performance today $DATE: leading and lagging sectors vs Nifty 50"
@@ -72,12 +90,30 @@ bash scripts/research.sh "SYMBOL NSE catalyst today $DATE: earnings, upgrade, te
 ```
 
 ## Step 4.5 — Earnings Guard
-For each candidate identified in Step 4:
+For each candidate identified in Step 4 (run before chart analysis to avoid wasting API calls on excluded stocks):
 ```bash
 python scripts/earnings_guard.py SYMBOL1 SYMBOL2 SYMBOL3 SYMBOL4 SYMBOL5
 ```
 Remove any candidate where `earnings_within_7d: true` from the list.
 Log removed candidates under Rejected: `SYMBOL — earnings in N days (binary event risk — skip)`
+
+## Step 4.7 — Chart Pattern Analysis (Vision)
+For each non-earnings candidate remaining after Step 4.5:
+```bash
+python scripts/chart_analysis.py SYMBOL1 SYMBOL2 SYMBOL3
+```
+
+Read the JSON output for each symbol:
+- `thesis_alignment: "contradicts"` + `signal: "bearish"` AND high confidence → remove candidate (strong visual contradiction)
+- `thesis_alignment: "contradicts"` + `signal: "bearish"` AND low/medium confidence → keep but note the warning
+- `thesis_alignment: "confirms"` → note as additional supporting evidence
+
+Log each symbol's chart result in the research log:
+```
+- [SYMBOL] Chart: [pattern] — [signal] — [thesis_alignment] — [interpretation (1 sentence)]
+```
+
+Do NOT reject a candidate solely on chart pattern if GRU and fundamentals are strong — chart analysis is a confirmation/contradiction layer, not a hard gate. Use your judgment.
 
 ## Step 5 — GRU Signal Check
 ```bash
@@ -98,6 +134,8 @@ Append a new entry to `memory/RESEARCH-LOG.md`:
 - Global cues: [summary]
 - Regime: [bull / bear / sideways] (slope: X.X%)
 - Nifty PCR: X.XX — [euphoric <0.7 / neutral / fearful >1.2]
+- **Extended Thinking Verdict**: [PROCEED / CAUTION-1-TRADE-MAX / SKIP] — [reasoning_summary from synthesize.py]
+- Risk flags: [list from synthesize.py, or "none"]
 
 **Sector Momentum**
 - Strong: [sectors]
