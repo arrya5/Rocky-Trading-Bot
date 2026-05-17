@@ -127,6 +127,7 @@ def cmd_positions():
                 "ltp":           ltp,
                 "pnl":           round(pnl, 2),
                 "day_change_pct": pct,
+                "sector":        v.get("sector", "unknown"),
             })
         print(json.dumps(out, indent=2))
         return
@@ -217,6 +218,8 @@ def cmd_order(raw: str):
 
         exec_price = ltp if (otype == "MARKET" and ltp > 0) else (price or ltp)
 
+        sector = req.get("sector", "unknown")
+
         if side == "BUY":
             cost = exec_price * qty
             if cost > p["cash"]:
@@ -227,9 +230,9 @@ def cmd_order(raw: str):
                 existing  = p["positions"][symbol]
                 new_qty   = existing["qty"] + qty
                 new_avg   = (existing["avg_price"] * existing["qty"] + exec_price * qty) / new_qty
-                p["positions"][symbol] = {"qty": new_qty, "avg_price": round(new_avg, 2), "ltp": exec_price, "entered_at": existing["entered_at"]}
+                p["positions"][symbol] = {"qty": new_qty, "avg_price": round(new_avg, 2), "ltp": exec_price, "entered_at": existing["entered_at"], "sector": existing.get("sector", sector)}
             else:
-                p["positions"][symbol] = {"qty": qty, "avg_price": exec_price, "ltp": exec_price, "entered_at": date.today().isoformat()}
+                p["positions"][symbol] = {"qty": qty, "avg_price": exec_price, "ltp": exec_price, "entered_at": date.today().isoformat(), "sector": sector}
 
         elif side == "SELL":
             if symbol not in p["positions"] or p["positions"][symbol]["qty"] < qty:

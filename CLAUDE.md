@@ -11,8 +11,13 @@ python scripts/auth.py                                      # Generate/refresh U
 bash scripts/research.sh "query"                            # Market research via Gemini API
 bash scripts/telegram.sh "message"                          # Send Telegram alert
 python models/signal_generator.py SYMBOL [SYMBOL ...]       # GRU trade signal
-python scripts/record_trade.py entry SYMBOL SECTOR GRU_CONF VIX FII_FLOW REGIME PRICE QTY   # Log BUY to learning DB
-python scripts/record_trade.py exit SYMBOL EXIT_PRICE REASON                                 # Log SELL to learning DB
+python scripts/earnings_guard.py SYMBOL [SYMBOL ...]        # Check if earnings within 7 days (NSE corporate events)
+python scripts/market_data.py delivery SYMBOL [SYMBOL ...]  # NSE bhavcopy delivery % for symbols
+python scripts/market_data.py pcr                           # Nifty Put-Call Ratio from NSE F&O option chain
+python scripts/regime_detector.py                           # Market regime: bull/bear/sideways (Nifty 20-day SMA slope)
+python scripts/record_trade.py entry SYMBOL SECTOR GRU_CONF VIX FII_FLOW REGIME PRICE QTY CATALYST_TYPE  # Log BUY
+python scripts/record_trade.py exit SYMBOL EXIT_PRICE REASON                                              # Log SELL
+python scripts/record_trade.py partial_exit SYMBOL EXIT_PRICE QTY_SOLD                                   # Log 50% partial exit at +15%
 python scripts/performance_analyzer.py                      # Analyze trade outcomes, output rule-change recommendations
 git add memory/ && git commit -m "msg"                      # Persist all memory changes
 ```
@@ -25,8 +30,8 @@ git add memory/ && git commit -m "msg"                      # Persist all memory
 - `memory/PROJECT-CONTEXT.md` — architecture and parameters
 - `memory/trade-outcomes.json` — structured trade outcomes for performance analysis (written by record_trade.py, read by performance_analyzer.py)
 
-## The 9-Point Buy-Side Gate
-Before placing ANY buy order, verify ALL 9 conditions. Skip trade if any fails.
+## The 11-Point Buy-Side Gate
+Before placing ANY buy order, verify ALL 11 conditions. Skip trade if any fails.
 1. Stock is in Nifty 50 or Nifty Midcap 150
 2. GRU signal = BUY with confidence ≥ 60%
 3. Catalyst documented in today's RESEARCH-LOG.md entry
@@ -36,6 +41,8 @@ Before placing ANY buy order, verify ALL 9 conditions. Skip trade if any fails.
 7. New positions this week ≤ 3
 8. Position cost ≤ available cash
 9. FII net flow not strongly negative (> -₹2000 Cr outflow)
+10. No earnings announcement or board meeting for results within 7 calendar days
+11. Sector concentration ≤ 2 open positions in the same sector after entry
 
 ## Hard Stop Rules (no discretion allowed)
 - **-7% loss**: Close immediately via `python scripts/broker.py close SYMBOL`
@@ -43,9 +50,16 @@ Before placing ANY buy order, verify ALL 9 conditions. Skip trade if any fails.
 - **Fraud news**: Close immediately
 - **Thesis broken**: Close regardless of P&L
 
+## Partial Exit Rule (mandatory at +15%)
+- At +15% gain: SELL 50% of position at market — lock in profit
+- Then tighten remaining 50% trailing stop to 7% below current price
+- ONE partial exit only per trade (check trade-outcomes.json: if partial_exits is non-empty, skip)
+- At +20% on remaining: tighten stop to 5% below LTP
+- At +30% on remaining: close full remaining position
+
 ## Trailing Stop Rules
 - Default trailing stop: 10% below entry
-- At +15%: tighten to 7% below current price
+- At +15%: tighten to 7% below current price (after partial exit)
 - At +20%: tighten to 5% below current price
 - Never move stop down, never tighten within 3% of LTP
 
@@ -92,7 +106,7 @@ Portfolio state lives in `memory/paper_portfolio.json`.
 Switch to live: set `PAPER_TRADING=false` and use live Upstox credentials.
 
 ## What You Must NEVER Do
-- Place an order if any of the 9 buy-side gate conditions fail
+- Place an order if any of the 11 buy-side gate conditions fail
 - Place orders outside 9:20 AM – 3:20 PM IST window
 - Trade stocks outside Nifty 50 + Nifty Midcap 150
 - Trade options, futures, or intraday products

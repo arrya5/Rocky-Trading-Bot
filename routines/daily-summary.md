@@ -60,6 +60,8 @@ Totals:
 - `alpha = day_pnl_pct - nifty_pct`
 
 ## Step 4 — Append EOD Snapshot to TRADE-LOG.md
+Note: Use `python scripts/broker.py positions` for position data — it reflects the current qty after any partial exits. A position showing N shares means the other half was already sold at +15%.
+
 ```
 ### EOD Snapshot YYYY-MM-DD
 - **Portfolio value**: ₹X,XX,XXX.XX
@@ -72,7 +74,7 @@ Totals:
 - **Nifty 50 today**: ±X.XX%
 - **Alpha vs Nifty**: ±X.XX%
 - **Positions**:
-  - SYMBOL: N shares @ avg ₹XXXX | close ₹XXXX | P&L ±₹XXX (±X.X%)
+  - SYMBOL: N shares @ avg ₹XXXX | close ₹XXXX | P&L ±₹XXX (±X.X%) [partial if half already sold]
 ```
 
 ## Step 5 — Apply Trailing Stop Logic at Close

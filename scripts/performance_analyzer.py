@@ -121,6 +121,12 @@ def analyze():
         by_exit[t.get("exit_reason", "unknown")].append(t)
     result["by_exit_reason"] = {r: win_rate(g) for r, g in by_exit.items()}
 
+    # ── By catalyst type ───────────────────────────────────────────────────────
+    by_catalyst = defaultdict(list)
+    for t in trades:
+        by_catalyst[t.get("catalyst_type", "unknown")].append(t)
+    result["by_catalyst_type"] = {c: {**win_rate(g), **avg_pnl(g)} for c, g in by_catalyst.items()}
+
     # ── Days held: winners vs losers ───────────────────────────────────────────
     w_days = [t["days_held"] for t in trades if (t.get("pnl_abs") or 0) > 0 and t.get("days_held")]
     l_days = [t["days_held"] for t in trades if (t.get("pnl_abs") or 0) <= 0 and t.get("days_held")]
@@ -173,6 +179,24 @@ def analyze():
                     "recommended":        "-1000 Cr",
                     "evidence":           f"Win rate when FII flow -1000 to -2000 Cr: {wfwr}% ({len(weak_fii)} trades).",
                     "change_instruction": "In memory/TRADING-STRATEGY.md and CLAUDE.md, change '-2000 Cr' to '-1000 Cr' in Gate 9.",
+                })
+
+        # Catalyst type blocks
+        for catalyst, group in by_catalyst.items():
+            if catalyst == "unknown" or len(group) < 5:
+                continue
+            cwr = win_rate(group)["win_rate_pct"]
+            if cwr is not None and cwr < 30:
+                recs.append({
+                    "parameter":          f"catalyst_block_{catalyst}",
+                    "current":            "no block",
+                    "recommended":        f"block catalyst type: {catalyst}",
+                    "evidence":           f"Win rate for '{catalyst}' catalyst: {cwr}% ({len(group)} trades).",
+                    "change_instruction": (
+                        f"In market-open Gate 3 of memory/TRADING-STRATEGY.md, add: "
+                        f"'BLOCK catalyst type \"{catalyst}\": win rate {cwr}% on {len(group)} trades — "
+                        f"skip trades with this catalyst type until further review.'"
+                    ),
                 })
 
         # Sector blocks

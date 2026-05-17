@@ -24,6 +24,8 @@
 7. Max 3 new positions this week not exceeded
 8. Position cost ≤ available cash
 9. FII net buying must not be strongly negative (> -₹2000 Cr outflow)
+10. No earnings announcement or board meeting for results within 7 calendar days (binary event risk)
+11. Sector concentration ≤ 2 open positions in the same sector after entry
 
 ## Exit Rules
 ### Hard stops (execute immediately, no exceptions)
@@ -32,19 +34,42 @@
 - Company fraud/scam news → CLOSE immediately regardless of P&L
 - Thesis broken (key catalyst failed) → CLOSE regardless of P&L
 
+### Partial profit booking (mandatory at +15%)
+- At +15% gain: SELL exactly 50% of position at market — lock in realized gain
+- Remaining 50%: tighten trailing stop to 7% below current price
+- ONE partial exit only per trade — do NOT take another 50% exit on the same position
+- After partial exit at +15%: At +20% on remaining → tighten stop to 5% below current price
+- At +30% on remaining: close full remaining position
+
 ### Trailing stop management
 - Default trailing stop: 10% below cost
-- At +15% gain: tighten trailing stop to 7% below current price
+- At +15% gain: tighten trailing stop to 7% below current price (after partial exit)
 - At +20% gain: tighten trailing stop to 5% below current price
 - NEVER move stop downward (only tighten)
 - NEVER tighten stop within 3% of current LTP
 
 ### Sector rule
 - After 2 consecutive failed trades in same sector → exit sector for 10 trading days
+- Max 2 simultaneous open positions in any single sector (Gate 11)
 
 ### Profit taking
-- Target: +20% to +30% (exit fully or partially)
+- Target: +20% to +30% (exit remaining position)
 - Do NOT hold indefinitely — lock in gains
+
+## Market Context Signals (informational — not hard gates unless noted)
+- **Regime** (pre-market): bull/bear/sideways based on Nifty 50 20-day SMA slope
+  - Bull: slope > +1.5% | Bear: slope < -1.5% | Sideways: between
+  - Log regime in each day's RESEARCH-LOG.md entry
+- **Nifty PCR** (pre-market):
+  - PCR < 0.5: extreme euphoria — add caution note, proceed with extra care
+  - PCR < 0.7: euphoric market — log as caution
+  - PCR 0.7–1.2: neutral
+  - PCR > 1.2: fearful market (contrarian bullish signal)
+- **Delivery %** (when available):
+  - ≥ 60%: strong institutional interest in the stock
+  - 40–60%: moderate
+  - < 40%: weak institutional interest — note in research log, not a hard gate
+- **Catalyst type**: tracked per trade for learning. Performance analyzer will flag catalyst types with < 30% win rate across 5+ trades.
 
 ## Risk Controls
 ### Pre-order circuit check

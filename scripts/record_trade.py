@@ -4,17 +4,22 @@ record_trade.py — Log structured trade entries and exits to memory/trade-outco
 
 Usage:
   # When a BUY executes (market-open routine):
-  python scripts/record_trade.py entry SYMBOL SECTOR GRU_CONF VIX FII_FLOW REGIME ENTRY_PRICE QTY
+  python scripts/record_trade.py entry SYMBOL SECTOR GRU_CONF VIX FII_FLOW REGIME ENTRY_PRICE QTY CATALYST_TYPE
 
   # When a position is closed (midday or EOD routine):
   python scripts/record_trade.py exit SYMBOL EXIT_PRICE EXIT_REASON
 
-  EXIT_REASON options: hard_stop | trailing_stop | thesis_broken | target | manual
-  REGIME options:      bull | bear | sideways | unknown
+  # Sell half a position at +15% (midday partial exit):
+  python scripts/record_trade.py partial_exit SYMBOL EXIT_PRICE QTY_SOLD
+
+  EXIT_REASON options:   hard_stop | trailing_stop | thesis_broken | target | manual
+  REGIME options:        bull | bear | sideways | unknown
+  CATALYST_TYPE options: earnings | upgrade | breakout | sector_tailwind | technical | other
 
 Examples:
-  python scripts/record_trade.py entry RELIANCE "Energy" 0.72 16.2 -800 unknown 2500.50 40
+  python scripts/record_trade.py entry RELIANCE "Energy" 0.72 16.2 -800 bull 2500.50 40 breakout
   python scripts/record_trade.py exit RELIANCE 2325.00 hard_stop
+  python scripts/record_trade.py partial_exit RELIANCE 2750.00 20
 """
 
 import json, sys
@@ -42,19 +47,20 @@ def save(data: dict):
 def cmd_entry(args):
     if len(args) < 8:
         print(
-            "Usage: record_trade.py entry SYMBOL SECTOR GRU_CONF VIX FII_FLOW REGIME ENTRY_PRICE QTY",
+            "Usage: record_trade.py entry SYMBOL SECTOR GRU_CONF VIX FII_FLOW REGIME ENTRY_PRICE QTY [CATALYST_TYPE]",
             file=sys.stderr,
         )
         sys.exit(1)
 
-    symbol      = args[0].upper().replace(".NS", "")
-    sector      = args[1]
-    gru_conf    = float(args[2])
-    vix         = float(args[3])
-    fii_flow    = float(args[4])
-    regime      = args[5]
-    entry_price = float(args[6])
-    qty         = int(args[7])
+    symbol        = args[0].upper().replace(".NS", "")
+    sector        = args[1]
+    gru_conf      = float(args[2])
+    vix           = float(args[3])
+    fii_flow      = float(args[4])
+    regime        = args[5]
+    entry_price   = float(args[6])
+    qty           = int(args[7])
+    catalyst_type = args[8] if len(args) > 8 else "other"
 
     data = load()
 
@@ -70,6 +76,7 @@ def cmd_entry(args):
         "trade_id":          f"{symbol}-{date.today().isoformat()}",
         "symbol":            symbol,
         "sector":            sector,
+        "catalyst_type":     catalyst_type,
         "entry_date":        date.today().isoformat(),
         "entry_price":       round(entry_price, 2),
         "qty":               qty,
@@ -77,6 +84,7 @@ def cmd_entry(args):
         "vix_at_entry":      round(vix, 2),
         "fii_flow_at_entry": round(fii_flow, 0),
         "market_regime":     regime,
+        "partial_exits":     [],
         "exit_date":         None,
         "exit_price":        None,
         "pnl_abs":           None,
@@ -145,6 +153,66 @@ def cmd_exit(args):
     }))
 
 
+def cmd_partial_exit(args):
+    if len(args) < 3:
+        print(
+            "Usage: record_trade.py partial_exit SYMBOL EXIT_PRICE QTY_SOLD",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
+    symbol     = args[0].upper().replace(".NS", "")
+    exit_price = float(args[1])
+    qty_sold   = int(args[2])
+
+    data = load()
+
+    trade = next(
+        (t for t in data["trades"] if t["symbol"] == symbol and t["exit_date"] is None),
+        None,
+    )
+
+    if trade is None:
+        print(
+            f"WARNING: no open entry found for {symbol} — partial exit not recorded",
+            file=sys.stderr,
+        )
+        sys.exit(0)
+
+    if trade["qty"] < qty_sold:
+        print(
+            f"WARNING: qty_sold ({qty_sold}) exceeds open qty ({trade['qty']}) — capping",
+            file=sys.stderr,
+        )
+        qty_sold = trade["qty"]
+
+    pnl_abs = (exit_price - trade["entry_price"]) * qty_sold
+    pnl_pct = (exit_price - trade["entry_price"]) / trade["entry_price"] * 100
+
+    if "partial_exits" not in trade:
+        trade["partial_exits"] = []
+
+    trade["partial_exits"].append({
+        "date":    date.today().isoformat(),
+        "price":   round(exit_price, 2),
+        "qty":     qty_sold,
+        "pnl_abs": round(pnl_abs, 2),
+        "pnl_pct": round(pnl_pct, 2),
+    })
+    trade["qty"] -= qty_sold
+
+    save(data)
+    print(json.dumps({
+        "status":       "PARTIAL_EXIT_RECORDED",
+        "symbol":       symbol,
+        "qty_sold":     qty_sold,
+        "qty_remaining": trade["qty"],
+        "exit_price":   round(exit_price, 2),
+        "pnl_abs":      round(pnl_abs, 2),
+        "pnl_pct":      round(pnl_pct, 2),
+    }))
+
+
 if __name__ == "__main__":
     args = sys.argv[1:]
     if not args:
@@ -156,6 +224,8 @@ if __name__ == "__main__":
         cmd_entry(args[1:])
     elif cmd == "exit":
         cmd_exit(args[1:])
+    elif cmd == "partial_exit":
+        cmd_partial_exit(args[1:])
     else:
         print(f"Unknown command: {cmd}", file=sys.stderr)
         sys.exit(1)

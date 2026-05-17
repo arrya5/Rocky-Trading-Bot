@@ -46,6 +46,14 @@ bash scripts/research.sh "Indian stock market key events today $DATE: earnings r
 
 **FII Gate**: If FII net outflow > -₹2000 Cr → write "LARGE FII OUTFLOW — SKIP TRADING TODAY". Skip Steps 3–5. Go to Step 6.
 
+## Step 2.5 — Market Data: Regime, PCR
+```bash
+python scripts/regime_detector.py
+python scripts/market_data.py pcr
+```
+
+Note the regime (bull/bear/sideways) and PCR for the research log. If PCR < 0.5 (extreme euphoria) → add a caution note but do NOT skip trading on PCR alone. These are informational signals only.
+
 ## Step 3 — Sector Momentum
 ```bash
 bash scripts/research.sh "NSE sector performance today $DATE: leading and lagging sectors vs Nifty 50"
@@ -63,11 +71,19 @@ For each candidate, research its catalyst:
 bash scripts/research.sh "SYMBOL NSE catalyst today $DATE: earnings, upgrade, technical breakout, news"
 ```
 
+## Step 4.5 — Earnings Guard
+For each candidate identified in Step 4:
+```bash
+python scripts/earnings_guard.py SYMBOL1 SYMBOL2 SYMBOL3 SYMBOL4 SYMBOL5
+```
+Remove any candidate where `earnings_within_7d: true` from the list.
+Log removed candidates under Rejected: `SYMBOL — earnings in N days (binary event risk — skip)`
+
 ## Step 5 — GRU Signal Check
 ```bash
 python models/signal_generator.py SYMBOL1 SYMBOL2 SYMBOL3 SYMBOL4 SYMBOL5
 ```
-Only keep symbols where GRU returns BUY with confidence ≥ 60%.
+Only keep symbols where GRU returns BUY with confidence ≥ 60%. (Run only on non-earnings candidates.)
 
 ## Step 6 — Write Research Log
 Append a new entry to `memory/RESEARCH-LOG.md`:
@@ -80,6 +96,8 @@ Append a new entry to `memory/RESEARCH-LOG.md`:
 - India VIX: [level] — [calm / elevated / HIGH-SKIP]
 - FII net flow: [amount and direction]
 - Global cues: [summary]
+- Regime: [bull / bear / sideways] (slope: X.X%)
+- Nifty PCR: X.XX — [euphoric <0.7 / neutral / fearful >1.2]
 
 **Sector Momentum**
 - Strong: [sectors]

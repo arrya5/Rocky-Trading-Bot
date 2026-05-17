@@ -4,7 +4,7 @@
 
 ---
 
-You are an Indian equity trading executor. The pre-market routine has done the research. Your job is to validate each candidate against the 9-point gate and place orders. Be disciplined — if ANY gate fails, skip that trade.
+You are an Indian equity trading executor. The pre-market routine has done the research. Your job is to validate each candidate against the 11-point gate and place orders. Be disciplined — if ANY gate fails, skip that trade.
 
 You are running the market-open execution workflow. Resolve today's date via:
 `DATE=$(date +%Y-%m-%d)`
@@ -44,7 +44,7 @@ Read today's entry in memory/RESEARCH-LOG.md (section `### RESEARCH-$DATE`).
 - If "LARGE FII OUTFLOW" found → `bash scripts/telegram.sh "Market-open $DATE | 0 trades | FII outflow"` → exit
 - If no research entry for today found → `bash scripts/telegram.sh "Market-open $DATE | 0 trades | No pre-market research found"` → exit
 
-## Step 3 — For Each Candidate, Run the 9-Point Gate
+## Step 3 — For Each Candidate, Run the 11-Point Gate
 Extract the trade candidates from today's RESEARCH-LOG.md entry. For each symbol:
 
 **Gate 1 — Universe**: Is the symbol in Nifty 50 or Nifty Midcap 150? (check CLAUDE.md for the list) → else SKIP
@@ -75,11 +75,25 @@ python scripts/broker.py quote SYMBOL
 
 **Gate 9 — FII Flow**: Already checked in Step 2.
 
+**Gate 10 — Earnings Guard**: No earnings or board meeting for results within 7 days:
+```bash
+python scripts/earnings_guard.py SYMBOL
+```
+If `earnings_within_7d: true` → SKIP (binary event risk)
+Log: `- SYMBOL: SKIP — Gate 10: earnings in N days`
+
+**Gate 11 — Sector Concentration**: At most 2 open positions in the same sector:
+```bash
+python scripts/broker.py positions
+```
+Count open positions whose `sector` matches SYMBOL's sector. If count ≥ 2 → SKIP ALL further buys in that sector today.
+Log: `- SYMBOL: SKIP — Gate 11: already 2 open positions in [sector]`
+
 Log any failed gate to memory/TRADE-LOG.md: `- SYMBOL: SKIP — [gate N: reason]`
 
-## Step 4 — Place Orders (only for symbols passing all 9 gates)
+## Step 4 — Place Orders (only for symbols passing all 11 gates)
 ```bash
-python scripts/broker.py order '{"symbol":"SYMBOL","qty":N,"side":"buy","type":"market","product":"D"}'
+python scripts/broker.py order '{"symbol":"SYMBOL","qty":N,"side":"buy","type":"market","product":"D","sector":"SECTOR"}'
 ```
 
 After each order confirmation, calculate:
@@ -108,9 +122,17 @@ Record the structured entry for the learning system. Use the exact numbers you a
 - GRU_CONF: decimal confidence from signal_generator.py (e.g., 0.72 for 72%)
 - VIX: the VIX number from today's RESEARCH-LOG.md (e.g., 16.2)
 - FII_FLOW: the FII net flow number from today's RESEARCH-LOG.md (e.g., -800 for -₹800 Cr)
+- REGIME: from today's RESEARCH-LOG.md (bull / bear / sideways)
 - ENTRY_PRICE: exact execution price from the order response
+- CATALYST_TYPE: derived from the candidate's catalyst description in today's RESEARCH-LOG.md:
+  - Earnings beat / guidance → "earnings"
+  - Analyst upgrade / rating change → "upgrade"
+  - Technical breakout / chart pattern → "breakout"
+  - Sector news / policy tailwind → "sector_tailwind"
+  - Other technical signal → "technical"
+  - Anything else → "other"
 ```bash
-python scripts/record_trade.py entry SYMBOL "SECTOR" GRU_CONF VIX FII_FLOW unknown ENTRY_PRICE QTY
+python scripts/record_trade.py entry SYMBOL "SECTOR" GRU_CONF VIX FII_FLOW REGIME ENTRY_PRICE QTY CATALYST_TYPE
 ```
 
 ```bash

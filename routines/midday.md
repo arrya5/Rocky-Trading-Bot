@@ -52,10 +52,26 @@ python scripts/record_trade.py exit SYMBOL LTP hard_stop
 ```
 Append to TRADE-LOG.md: update the trade entry status to CLOSED, add exit price, realized P&L, and reason.
 
-### Rule B — Trailing Stop Tighten at +15%
-If `pnl_pct >= 15%`:
+### Rule B — Partial Exit + Trailing Stop Tighten at +15%
+First check if a partial exit was already taken for this symbol:
+```bash
+python -c "import json; data=json.load(open('memory/trade-outcomes.json')); t=next((t for t in data['trades'] if t['symbol']=='SYMBOL' and t['exit_date'] is None), None); print('ALREADY_PARTIAL' if t and t.get('partial_exits') else 'NO_PARTIAL')"
+```
+
+If `pnl_pct >= 15%` AND output is `NO_PARTIAL`:
+```bash
+# Calculate half quantity
+HALF_QTY=$(python -c "import json; data=json.load(open('memory/trade-outcomes.json')); t=next(t for t in data['trades'] if t['symbol']=='SYMBOL' and t['exit_date'] is None); print(t['qty']//2)")
+
+python scripts/broker.py order '{"symbol":"SYMBOL","qty":HALF_QTY,"side":"sell","type":"market","product":"D"}'
+bash scripts/telegram.sh "PARTIAL EXIT: SYMBOL | Sold HALF_QTY shares @ ₹LTP | Locked: ₹X,XXX (+X%) | Remaining HALF_QTY shares running"
+python scripts/record_trade.py partial_exit SYMBOL LTP HALF_QTY
+```
+Then tighten stop on remaining shares:
 - new_stop = ltp × 0.93  (7% below current price)
-- If new_stop > hard_stop: log "SYMBOL trailing stop tightened to ₹new_stop (7% below ₹ltp)"
+Log to TRADE-LOG.md: `**Partial exit YYYY-MM-DD 12:30**: sold HALF_QTY @ ₹LTP | Remaining HALF_QTY | Stop tightened to ₹new_stop`
+
+If `pnl_pct >= 15%` AND output is `ALREADY_PARTIAL`: do not exit again. Only check for stop tightening (new_stop = ltp × 0.93 if higher than current stop).
 
 ### Rule C — Trailing Stop Tighten at +20%
 If `pnl_pct >= 20%`:
