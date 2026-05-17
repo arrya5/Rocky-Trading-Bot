@@ -48,6 +48,7 @@ If `ltp <= hard_stop`:
 ```bash
 python scripts/broker.py close SYMBOL
 bash scripts/telegram.sh "STOP HIT: SYMBOL | Closed @ ₹LTP | P&L: -X% | Rule: -7% hard stop"
+python scripts/record_trade.py exit SYMBOL LTP hard_stop
 ```
 Append to TRADE-LOG.md: update the trade entry status to CLOSED, add exit price, realized P&L, and reason.
 
@@ -74,6 +75,7 @@ If breaking negative news found and thesis is broken:
 ```bash
 python scripts/broker.py close SYMBOL
 bash scripts/telegram.sh "THESIS BROKEN: SYMBOL | Closed @ ₹LTP | P&L: X% | Reason: [news summary]"
+python scripts/record_trade.py exit SYMBOL LTP thesis_broken
 ```
 Log to TRADE-LOG.md: status CLOSED, exit price, reason.
 
@@ -90,7 +92,7 @@ bash scripts/telegram.sh "Midday $DATE | Positions: N | Stops hit: N | Tightened
 
 ## Step 5 — COMMIT AND PUSH (if any changes made; skip if no-op)
 ```bash
-git add memory/TRADE-LOG.md
+git add memory/TRADE-LOG.md memory/trade-outcomes.json memory/paper_portfolio.json
 git commit -m "midday: $DATE | stops hit: N | tightened: N | holding: N"
 git push origin main
 ```

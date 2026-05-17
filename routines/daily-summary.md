@@ -88,7 +88,7 @@ Positions: N/5 | Cash: ₹X,XX,XXX"
 
 ## Step 7 — COMMIT AND PUSH (mandatory — tomorrow depends on this)
 ```bash
-git add memory/TRADE-LOG.md
+git add memory/TRADE-LOG.md memory/trade-outcomes.json memory/paper_portfolio.json
 git commit -m "EOD: $DATE | portfolio ₹XXXXX | day ±X.XX% | alpha ±X.XX% vs Nifty"
 git push origin main
 ```
@@ -96,6 +96,6 @@ On push failure: `git pull --rebase origin main` then push again. Never force-pu
 
 If today is Friday, also add a note to memory/RESEARCH-LOG.md:
 ```
-**Friday note $DATE**: Weekly review routine will run at 4:00 PM IST.
+**Friday note $DATE**: Weekly review routine will run at 4:30 PM IST.
 ```
 Then include it in the git add before committing.

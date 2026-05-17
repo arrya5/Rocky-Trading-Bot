@@ -1,0 +1,9 @@
+{
+  "trades": [],
+  "metadata": {
+    "last_updated": null,
+    "total_closed": 0,
+    "analyzer_min_trades": 20,
+    "description": "Structured trade outcomes for performance analysis and rule auto-adjustment. Each trade records entry context (GRU confidence, VIX, FII flow, regime) and exit result (P&L, exit reason, days held). The performance_analyzer.py reads this file and recommends parameter changes to TRADING-STRATEGY.md."
+  }
+}

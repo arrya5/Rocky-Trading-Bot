@@ -103,6 +103,16 @@ Append to `memory/TRADE-LOG.md`:
 - **Status**: OPEN
 ```
 
+Record the structured entry for the learning system. Use the exact numbers you already have:
+- SECTOR: the stock's sector (e.g., RELIANCE→"Energy", TCS→"IT", HDFCBANK→"Banking", INFY→"IT", SUNPHARMA→"Pharma", TATAMOTORS→"Auto", HINDUNILVR→"FMCG")
+- GRU_CONF: decimal confidence from signal_generator.py (e.g., 0.72 for 72%)
+- VIX: the VIX number from today's RESEARCH-LOG.md (e.g., 16.2)
+- FII_FLOW: the FII net flow number from today's RESEARCH-LOG.md (e.g., -800 for -₹800 Cr)
+- ENTRY_PRICE: exact execution price from the order response
+```bash
+python scripts/record_trade.py entry SYMBOL "SECTOR" GRU_CONF VIX FII_FLOW unknown ENTRY_PRICE QTY
+```
+
 ```bash
 bash scripts/telegram.sh "BUY SYMBOL | N shares @ ₹XXXX | Cost: ₹XX,XXX | Target: ₹XXXX (+20%) | Stop: ₹XXXX (-7%) | Paper"
 ```
@@ -114,7 +124,7 @@ bash scripts/telegram.sh "Market-open $DATE | 0 trades placed | [reason: all gat
 
 ## Step 6 — COMMIT AND PUSH (only if trades placed; skip if no trades)
 ```bash
-git add memory/TRADE-LOG.md
+git add memory/TRADE-LOG.md memory/trade-outcomes.json memory/paper_portfolio.json
 git commit -m "market-open: $DATE | N order(s) | SYMBOL1 SYMBOL2"
 git push origin main
 ```

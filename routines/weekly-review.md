@@ -40,6 +40,22 @@ bash scripts/research.sh "Best and worst performing Nifty 50 sectors this week e
 bash scripts/research.sh "FII DII net weekly buying selling Indian equities this week ending $DATE"
 ```
 
+## Step 2.5 — Run Performance Analyzer
+```bash
+python scripts/performance_analyzer.py
+```
+
+Read the full JSON output carefully. Note these fields:
+- `sufficient_data`: true means ≥20 closed trades — rule changes are permitted this week
+- `by_gru_confidence`: which confidence bands win vs lose
+- `by_vix`: do high-VIX trades underperform?
+- `by_sector`: any sectors with <25% win rate across 3+ trades?
+- `by_fii_flow`: does weak FII flow predict losses?
+- `recommendations`: each entry has a `change_instruction` — the exact text change to make to TRADING-STRATEGY.md
+
+If `sufficient_data: false` → note it in the weekly review ("N closed trades — observing, not changing rules yet") and skip Step 6 rule changes.
+If `sufficient_data: true` → carry the recommendations into Step 6.
+
 ## Step 3 — Compute Weekly Statistics
 From TRADE-LOG.md, extract all trades and EOD snapshots from this week (Mon–Fri):
 - Starting portfolio: Monday's opening value (from previous Friday's EOD snapshot, or ₹5,00,000 if first week)
@@ -72,14 +88,21 @@ Answer each honestly:
 7. Was the GRU signal reliable this week?
 8. Did Gemini research add real value or just noise?
 
-## Step 6 — Strategy Updates (if warranted)
-If evidence supports a rule change:
-1. Document the evidence clearly
-2. Propose the rule change
-3. Update `memory/TRADING-STRATEGY.md` directly
-4. Note the change in this weekly review
+## Step 6 — Strategy Updates (evidence-based only)
+Use the `recommendations` array from Step 2.5's analyzer output.
 
-Be conservative — don't change rules after one bad week. Look for patterns across 2+ weeks.
+For each recommendation where `sufficient_data: true`:
+1. Re-read the `evidence` field — does it make logical sense, or is it a statistical fluke?
+2. If it makes sense: apply the `change_instruction` to `memory/TRADING-STRATEGY.md`
+3. Document the change and evidence in this weekly review entry
+
+Rules for applying changes:
+- NEVER change rules when `sufficient_data: false` (fewer than 20 closed trades)
+- NEVER tighten two gates simultaneously — apply the highest-impact change only, observe for 2 more weeks
+- Sector blocks: add them, but review and lift after 4 consecutive wins in that sector
+- If qualitative analysis (Step 5) contradicts the statistical recommendation, write a note and defer the change one more week
+
+If no recommendations or `sufficient_data: false` → write "No rule changes this week — [N closed trades / evidence not yet strong enough]"
 
 ## Step 7 — Write Weekly Review Entry
 Append to `memory/WEEKLY-REVIEW.md`:
@@ -130,9 +153,10 @@ Best: SYMBOL (+X%) | Worst: SYMBOL (-X%)"
 
 ## Step 9 — COMMIT AND PUSH (mandatory)
 ```bash
-git add memory/WEEKLY-REVIEW.md memory/TRADING-STRATEGY.md
+git add memory/WEEKLY-REVIEW.md memory/TRADING-STRATEGY.md memory/trade-outcomes.json
 git commit -m "weekly-review: week of $DATE | grade [X] | P&L ±X.XX% | alpha ±X.XX% vs Nifty"
 git push origin main
 ```
-If TRADING-STRATEGY.md was not changed this week, add only WEEKLY-REVIEW.md.
+Always include trade-outcomes.json — it may have been updated by midday closes during the week.
+If TRADING-STRATEGY.md was not changed this week, it will stage cleanly with no diff — that is fine.
 On push failure: `git pull --rebase origin main` then push again. Never force-push.
