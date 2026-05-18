@@ -26,6 +26,21 @@
 
 ---
 
+### EOD Snapshot 2026-05-18
+- **Portfolio value**: ₹5,00,000.00
+- **Cash**: ₹5,00,000.00
+- **Open positions**: 0
+- **Market value**: ₹0.00
+- **Unrealized P&L**: ₹0.00
+- **Day P&L**: ₹0.00 (0.00%)
+- **All-time P&L**: ₹0.00 (0.00% from ₹5,00,000 base)
+- **Nifty 50 today**: +0.03% (closed at 23,649.95 vs prev 23,643.50)
+- **Alpha vs Nifty**: -0.03%
+- **Positions**: None — no trades placed yet
+- **Note**: Day 1 of live operation. No signals passed the 9-point buy-side gate today. Capital fully in cash.
+
+---
+
 ## Trade Entry Template
 ```
 ### TRADE-YYYYMMDD-NNN
