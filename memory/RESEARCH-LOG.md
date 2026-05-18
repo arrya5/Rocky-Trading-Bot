@@ -41,14 +41,16 @@
 - India VIX: 18.79 — elevated (15-25 range; investor nervousness, wider swings expected; BELOW 25 gate → PROCEED)
 - FII net flow (May 15, last available): +₹1,329 Cr (net buyers) — POSITIVE; gate passes (>-₹3500 Cr threshold)
 - DII net flow (May 15): -₹1,959 Cr (net sellers)
-- Global cues: Unavailable (Gemini returned no live data for future date)
+- Global cues: **NEGATIVE** — US-Iran tensions escalating | Brent crude >$110/barrel | INR at record low 96 vs USD | Wall St sharp sell-off Friday
 - Regime: **BULL** (Nifty 20-day SMA slope: +3.13%, ADX: 20.9 — moderate trend strength)
 - Nifty 50 close: ₹23,643.50 | SMA20: ₹24,046.73 | SMA50: ₹23,643 est. (price below SMA20 — pullback within bull trend)
 - Nifty PCR: Unavailable (NSE API 403 Forbidden)
 
-**Sector Momentum** (inferred from signal scan — Gemini sector research rate-limited)
-- Strong: Metals (TATASTEEL 100, JSWSTEEL 80, HINDALCO 80), Pharma (TORNTPHARM 100, DRREDDY 80, BIOCON 80), FMCG (TATACONSUM 100, MARICO 60), Infrastructure/Energy (ADANIENT 80, GRASIM 80, ONGC 80)
-- Weak/No signal: Banking (HDFCBANK, ICICIBANK, AXISBANK, SBIN — no BUY signal), IT (TCS, INFY, WIPRO, HCLTECH — no signal), Auto (only BAJAJ-AUTO at 60)
+**Sector Momentum**
+- Strong (from signal scan): Metals (TATASTEEL 100, JSWSTEEL 80, HINDALCO 80), Pharma (TORNTPHARM 100, DRREDDY 80, BIOCON 80), FMCG (TATACONSUM 100), Energy (ONGC 80, ADANIENT 80)
+- Weak (confirmed by Gemini): Banking — Nifty Bank closed -0.77% Friday, below key MAs, bearish bias today; Bank Nifty weekly expiry = elevated volatility today
+- Weak (confirmed by Gemini): IT — Nifty IT -5.71% last week, "Strong Sell" across all MAs, 0 buy signals / 12 sell signals — avoid all IT names
+- Macro headwinds: Crude at $110+ (negative for India overall, positive for ONGC/energy producers), INR at 96 record low (FII outflow pressure), US-Iran geopolitical risk-off
 
 **Full Signal Scan Results** (Score ≥ 40, sorted by score)
 Score 100:
@@ -138,6 +140,21 @@ Score 40: ITC, KOTAKBANK, NESTLEIND, POWERGRID, COALINDIA, SBILIFE, HDFCLIFE, LI
 - Zydus Wellness, Strides Pharma Science results
 - ~50+ companies reporting results
 
-**Recommendation**: PROCEED (VIX 18.79 < 25, FII positive) — but CATALYST GATE (Gate 3) requires manual verification at market open before any BUY. Do NOT place orders on pure momentum — confirm HARD/MEDIUM catalyst for each stock first.
+**⚠️ Macro Risk Alert (Updated)**
+- Brent crude >$110/barrel = inflationary pressure, negative for India overall
+- INR at 96 record low = potential FII acceleration of selling; May 15 FII data (+1329 Cr) is PRE-WEEKEND and may not reflect latest geopolitical deterioration
+- US-Iran tensions = global risk-off; Wall St sell-off Friday = negative gap-open likely
+- Nifty Bank expiry day + bearish bias = avoid banking sector today
+- VIX at 18.79 may rise intraday given geopolitical context — monitor closely
+- If VIX crosses 25 intraday: CLOSE any new position opened today, halt further buying
+
+**Candidate Revisions Given Macro Context**
+- ONGC: Crude at $110 = direct revenue benefit (HARD catalyst candidate — oil producer)
+- ADANIENT: Energy conglomerate, may benefit from energy cycle; but RSI 76.4 = overbought risk
+- Banking candidates (KOTAKBANK score 40): Avoid — sector bearish today
+- IT names: Avoid — sector in strong downtrend
+- Defensive picks preferred in this environment: TORNTPHARM, TATACONSUM (FMCG defensive)
+
+**Recommendation**: PROCEED WITH CAUTION (VIX 18.79 < 25, FII positive — gates pass) — but macro environment is RISK-OFF. Prioritize defensive/commodity candidates with confirmed HARD/MEDIUM catalyst. Verify catalyst (Gate 3) AND check if VIX has risen before any trade. Position sizing: use score-tiered sizes but consider entering fewer positions today given macro headwinds.
 
 ---
