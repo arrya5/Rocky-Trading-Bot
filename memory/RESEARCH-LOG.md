@@ -47,9 +47,12 @@
 - Nifty PCR: Unavailable (NSE API 403 Forbidden)
 
 **Sector Momentum**
-- Strong (from signal scan): Metals (TATASTEEL 100, JSWSTEEL 80, HINDALCO 80), Pharma (TORNTPHARM 100, DRREDDY 80, BIOCON 80), FMCG (TATACONSUM 100), Energy (ONGC 80, ADANIENT 80)
-- Weak (confirmed by Gemini): Banking — Nifty Bank closed -0.77% Friday, below key MAs, bearish bias today; Bank Nifty weekly expiry = elevated volatility today
+- Strong (CONFIRMED by both signal scan + Gemini): **Pharma** and **Metals** explicitly identified as outperforming sectors for week of May 18 — aligns with TATASTEEL(100), TORNTPHARM(100), HINDALCO(80), DRREDDY(80)
+- Strong (signal scan): FMCG (TATACONSUM 100), Energy/Infrastructure (ONGC 80, ADANIENT 80, GRASIM 80)
+- Weak (confirmed by Gemini): Banking — Nifty Bank closed -0.77% Friday, below key MAs, bearish bias today; Bank Nifty weekly expiry = elevated volatility; large private banks at "attractive valuations" per BofA but short-term bearish
 - Weak (confirmed by Gemini): IT — Nifty IT -5.71% last week, "Strong Sell" across all MAs, 0 buy signals / 12 sell signals — avoid all IT names
+- Weak (YTD context): Nifty Realty -24.4% YTD as of March 2026 — avoid
+- Context: Nifty 50 was -22.80% YTD as of March 24, 2026 — current bull regime (+3.13% slope) is a recovery from a deep correction
 - Macro headwinds: Crude at $110+ (negative for India overall, positive for ONGC/energy producers), INR at 96 record low (FII outflow pressure), US-Iran geopolitical risk-off
 
 **Full Signal Scan Results** (Score ≥ 40, sorted by score)
