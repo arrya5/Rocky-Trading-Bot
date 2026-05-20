@@ -1,0 +1,126 @@
+{
+  "cash": 500000.0,
+  "positions": {
+    "JSWSTEEL": {
+      "qty": 39,
+      "avg_price": 0,
+      "ltp": 0,
+      "entered_at": "2026-05-20",
+      "sector": "Metals"
+    },
+    "BHARTIARTL": {
+      "qty": 36,
+      "avg_price": 0,
+      "ltp": 0,
+      "entered_at": "2026-05-20",
+      "sector": "Telecom"
+    },
+    "TECHM": {
+      "qty": 20,
+      "avg_price": 0,
+      "ltp": 0,
+      "entered_at": "2026-05-20",
+      "sector": "IT"
+    },
+    "MANAPPURAM": {
+      "qty": 222,
+      "avg_price": 0,
+      "ltp": 0,
+      "entered_at": "2026-05-20",
+      "sector": "Finance"
+    },
+    "TATACONSUM": {
+      "qty": 41,
+      "avg_price": 0,
+      "ltp": 0,
+      "entered_at": "2026-05-20",
+      "sector": "FMCG"
+    },
+    "RADICO": {
+      "qty": 13,
+      "avg_price": 0,
+      "ltp": 0,
+      "entered_at": "2026-05-20",
+      "sector": "FMCG"
+    },
+    "BAJAJ-AUTO": {
+      "qty": 2,
+      "avg_price": 0,
+      "ltp": 0,
+      "entered_at": "2026-05-20",
+      "sector": "Auto"
+    }
+  },
+  "orders": [
+    {
+      "order_id": "PAPER-20260520035406",
+      "symbol": "JSWSTEEL",
+      "side": "BUY",
+      "qty": 39,
+      "price": 0,
+      "type": "MARKET",
+      "status": "COMPLETE",
+      "placed_at": "2026-05-20T03:54:05.541273"
+    },
+    {
+      "order_id": "PAPER-20260520035410",
+      "symbol": "BHARTIARTL",
+      "side": "BUY",
+      "qty": 36,
+      "price": 0,
+      "type": "MARKET",
+      "status": "COMPLETE",
+      "placed_at": "2026-05-20T03:54:09.362133"
+    },
+    {
+      "order_id": "PAPER-20260520035413",
+      "symbol": "TECHM",
+      "side": "BUY",
+      "qty": 20,
+      "price": 0,
+      "type": "MARKET",
+      "status": "COMPLETE",
+      "placed_at": "2026-05-20T03:54:12.634827"
+    },
+    {
+      "order_id": "PAPER-20260520035418",
+      "symbol": "MANAPPURAM",
+      "side": "BUY",
+      "qty": 222,
+      "price": 0,
+      "type": "MARKET",
+      "status": "COMPLETE",
+      "placed_at": "2026-05-20T03:54:17.332022"
+    },
+    {
+      "order_id": "PAPER-20260520035421",
+      "symbol": "TATACONSUM",
+      "side": "BUY",
+      "qty": 41,
+      "price": 0,
+      "type": "MARKET",
+      "status": "COMPLETE",
+      "placed_at": "2026-05-20T03:54:21.129550"
+    },
+    {
+      "order_id": "PAPER-20260520035426",
+      "symbol": "RADICO",
+      "side": "BUY",
+      "qty": 13,
+      "price": 0,
+      "type": "MARKET",
+      "status": "COMPLETE",
+      "placed_at": "2026-05-20T03:54:25.952838"
+    },
+    {
+      "order_id": "PAPER-20260520035430",
+      "symbol": "BAJAJ-AUTO",
+      "side": "BUY",
+      "qty": 2,
+      "price": 0,
+      "type": "MARKET",
+      "status": "COMPLETE",
+      "placed_at": "2026-05-20T03:54:29.342354"
+    }
+  ]
+}
