@@ -37,7 +37,13 @@ def _yf_ltp(symbols: list) -> dict:
             df = yf.download(ticker, period="5d", interval="1m", progress=False, auto_adjust=True)
             if df.empty:
                 df = yf.download(ticker, period="5d", progress=False, auto_adjust=True)
-            price = float(df["Close"].iloc[-1]) if not df.empty else 0.0
+            if not df.empty:
+                close_col = df["Close"]
+                last = close_col.iloc[-1]
+                # yfinance returns MultiIndex cols for single tickers — squeeze to scalar
+                price = float(last.iloc[0]) if hasattr(last, "iloc") else float(last)
+            else:
+                price = 0.0
         except Exception:
             price = 0.0
         out[sym.upper().replace(".NS", "")] = price

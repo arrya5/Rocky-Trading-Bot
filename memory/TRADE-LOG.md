@@ -17,6 +17,7 @@
 - **Stop loss**: ₹1,177.85 (-7%)
 - **Target**: ₹1,519.80 (+20%)
 - **Status**: OPEN
+- **Midday 2026-05-20 13:30**: LTP ₹1,275.80 | P&L: +0.73% | Stop: ₹1,177.85 | Status: HOLDING | News: Price down -0.73% intraday, no major negative news, Q4 earnings thesis intact
 
 ### TRADE-20260520-002
 - **Date**: 2026-05-20
@@ -30,6 +31,7 @@
 - **Stop loss**: ₹1,768.95 (-7%)
 - **Target**: ₹2,282.52 (+20%)
 - **Status**: OPEN
+- **Midday 2026-05-20 13:30**: LTP ₹1,905.50 | P&L: +0.18% | Stop: ₹1,768.95 | Status: HOLDING | News: Research API unavailable; no unusual price action, record revenue thesis intact
 
 ### TRADE-20260520-003
 - **Date**: 2026-05-20
@@ -43,6 +45,7 @@
 - **Stop loss**: ₹1,360.03 (-7%)
 - **Target**: ₹1,754.88 (+20%)
 - **Status**: OPEN
+- **Midday 2026-05-20 13:30**: LTP ₹1,444.20 | P&L: -1.24% | Stop: ₹1,360.03 | Status: HOLDING | News: IT stocks rallying 3rd consecutive session on weak rupee; Morgan Stanley Underweight from Jun-2025 (pre-entry, known risk); Q4 PAT +21% thesis intact
 
 ### TRADE-20260520-004
 - **Date**: 2026-05-20
@@ -56,6 +59,7 @@
 - **Stop loss**: ₹292.86 (-7%)
 - **Target**: ₹377.88 (+20%)
 - **Status**: OPEN
+- **Midday 2026-05-20 13:30**: LTP ₹318.50 | P&L: +1.14% | Stop: ₹292.86 | Status: HOLDING | News: Research API unavailable; stock up +1.14%, profit turnaround and Jefferies upgrade thesis intact
 
 ### TRADE-20260520-005
 - **Date**: 2026-05-20
@@ -69,6 +73,7 @@
 - **Stop loss**: ₹1,112.93 (-7%)
 - **Target**: ₹1,436.04 (+20%)
 - **Status**: OPEN
+- **Midday 2026-05-20 13:30**: LTP ₹1,211.20 | P&L: +1.21% | Stop: ₹1,112.93 | Status: HOLDING | News: Research API unavailable; stock up +1.21%, Q4 profit +20% YoY thesis intact
 
 ### TRADE-20260520-006
 - **Date**: 2026-05-20
@@ -82,6 +87,7 @@
 - **Stop loss**: ₹3,361.95 (-7%)
 - **Target**: ₹4,338.00 (+20%)
 - **Status**: OPEN
+- **Midday 2026-05-20 13:30**: LTP ₹3,568.50 | P&L: -1.29% | Stop: ₹3,361.95 | Status: HOLDING | News: Research API unavailable; FMCG/IMFL softness intraday but well above -7% stop, record FY26 revenue thesis intact
 
 ### TRADE-20260520-007
 - **Date**: 2026-05-20
@@ -95,6 +101,7 @@
 - **Stop loss**: ₹9,438.11 (-7%)
 - **Target**: ₹12,178.20 (+20%)
 - **Status**: OPEN
+- **Midday 2026-05-20 13:30**: LTP ₹10,419.50 | P&L: +2.67% | Stop: ₹9,438.11 | Status: HOLDING | News: Research API unavailable; best performer today, Q4 profit +34% and buyback thesis intact
 
 ---
 

@@ -1,52 +1,52 @@
 {
-  "cash": 500000.0,
+  "cash": 166618.4,
   "positions": {
     "JSWSTEEL": {
       "qty": 39,
-      "avg_price": 0,
-      "ltp": 0,
+      "avg_price": 1266.5,
+      "ltp": 1275.800048828125,
       "entered_at": "2026-05-20",
       "sector": "Metals"
     },
     "BHARTIARTL": {
       "qty": 36,
-      "avg_price": 0,
-      "ltp": 0,
+      "avg_price": 1902.1,
+      "ltp": 1905.5,
       "entered_at": "2026-05-20",
       "sector": "Telecom"
     },
     "TECHM": {
       "qty": 20,
-      "avg_price": 0,
-      "ltp": 0,
+      "avg_price": 1462.4,
+      "ltp": 1444.199951171875,
       "entered_at": "2026-05-20",
       "sector": "IT"
     },
     "MANAPPURAM": {
       "qty": 222,
-      "avg_price": 0,
-      "ltp": 0,
+      "avg_price": 314.9,
+      "ltp": 318.5,
       "entered_at": "2026-05-20",
       "sector": "Finance"
     },
     "TATACONSUM": {
       "qty": 41,
-      "avg_price": 0,
-      "ltp": 0,
+      "avg_price": 1196.7,
+      "ltp": 1211.199951171875,
       "entered_at": "2026-05-20",
       "sector": "FMCG"
     },
     "RADICO": {
       "qty": 13,
-      "avg_price": 0,
-      "ltp": 0,
+      "avg_price": 3615.0,
+      "ltp": 3568.5,
       "entered_at": "2026-05-20",
       "sector": "FMCG"
     },
     "BAJAJ-AUTO": {
       "qty": 2,
-      "avg_price": 0,
-      "ltp": 0,
+      "avg_price": 10148.5,
+      "ltp": 10419.5,
       "entered_at": "2026-05-20",
       "sector": "Auto"
     }
@@ -57,7 +57,7 @@
       "symbol": "JSWSTEEL",
       "side": "BUY",
       "qty": 39,
-      "price": 0,
+      "price": 1266.5,
       "type": "MARKET",
       "status": "COMPLETE",
       "placed_at": "2026-05-20T03:54:05.541273"
@@ -67,7 +67,7 @@
       "symbol": "BHARTIARTL",
       "side": "BUY",
       "qty": 36,
-      "price": 0,
+      "price": 1902.1,
       "type": "MARKET",
       "status": "COMPLETE",
       "placed_at": "2026-05-20T03:54:09.362133"
@@ -77,7 +77,7 @@
       "symbol": "TECHM",
       "side": "BUY",
       "qty": 20,
-      "price": 0,
+      "price": 1462.4,
       "type": "MARKET",
       "status": "COMPLETE",
       "placed_at": "2026-05-20T03:54:12.634827"
@@ -87,40 +87,40 @@
       "symbol": "MANAPPURAM",
       "side": "BUY",
       "qty": 222,
-      "price": 0,
+      "price": 314.9,
       "type": "MARKET",
       "status": "COMPLETE",
-      "placed_at": "2026-05-20T03:54:17.332022"
+      "placed_at": "2026-05-20T03:54:17.332002"
     },
     {
       "order_id": "PAPER-20260520035421",
       "symbol": "TATACONSUM",
       "side": "BUY",
       "qty": 41,
-      "price": 0,
+      "price": 1196.7,
       "type": "MARKET",
       "status": "COMPLETE",
-      "placed_at": "2026-05-20T03:54:21.129550"
+      "placed_at": "2026-05-20T03:54:21.129500"
     },
     {
       "order_id": "PAPER-20260520035426",
       "symbol": "RADICO",
       "side": "BUY",
       "qty": 13,
-      "price": 0,
+      "price": 3615.0,
       "type": "MARKET",
       "status": "COMPLETE",
-      "placed_at": "2026-05-20T03:54:25.952838"
+      "placed_at": "2026-05-20T03:54:25.952600"
     },
     {
       "order_id": "PAPER-20260520035430",
       "symbol": "BAJAJ-AUTO",
       "side": "BUY",
       "qty": 2,
-      "price": 0,
+      "price": 10148.5,
       "type": "MARKET",
       "status": "COMPLETE",
-      "placed_at": "2026-05-20T03:54:29.342354"
+      "placed_at": "2026-05-20T03:54:29.342300"
     }
   ]
 }
