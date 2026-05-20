@@ -164,6 +164,35 @@
 
 ---
 
+---
+
+### EOD Snapshot 2026-05-20
+- **Portfolio value**: ₹5,01,771.30
+- **Cash**: ₹1,66,618.40
+- **Open positions**: 7
+- **Market value**: ₹3,35,152.90
+- **Unrealized P&L**: +₹1,771.30
+- **Day P&L**: +₹1,771.30 (+0.35%)
+- **All-time P&L**: +₹1,771.30 (+0.35% from ₹5,00,000 base)
+- **Nifty 50 today**: +0.30% (closed 23,689.15 vs 23,618.00)
+- **Alpha vs Nifty**: +0.05%
+- **Positions**:
+  - JSWSTEEL: 39 shares @ avg ₹1,266.50 | close ₹1,278.00 | P&L +₹448.50 (+0.91%)
+  - BHARTIARTL: 36 shares @ avg ₹1,902.10 | close ₹1,908.80 | P&L +₹241.20 (+0.35%)
+  - TECHM: 20 shares @ avg ₹1,462.40 | close ₹1,440.80 | P&L -₹432.00 (-1.48%)
+  - MANAPPURAM: 222 shares @ avg ₹314.90 | close ₹319.45 | P&L +₹1,010.10 (+1.44%)
+  - TATACONSUM: 41 shares @ avg ₹1,196.70 | close ₹1,208.20 | P&L +₹471.50 (+0.96%)
+  - RADICO: 13 shares @ avg ₹3,615.00 | close ₹3,568.00 | P&L -₹611.00 (-1.30%)
+  - BAJAJ-AUTO: 2 shares @ avg ₹10,148.50 | close ₹10,470.00 | P&L +₹643.00 (+3.17%)
+- **Trailing stop review**: All stops at initial -7% entry levels. No position has reached +15% threshold — no tightening required.
+- **Stops for tomorrow**:
+  - JSWSTEEL: ₹1,177.85 | BHARTIARTL: ₹1,768.95 | TECHM: ₹1,360.03
+  - MANAPPURAM: ₹292.86 | TATACONSUM: ₹1,112.93 | RADICO: ₹3,361.95 | BAJAJ-AUTO: ₹9,438.11
+
+**🎯 Biggest surprise today**: BAJAJ-AUTO (score 40/100, minimum-conviction entry, only 2 factors aligned) was the strongest performer on its first day at +3.17%, beating both 80-score picks MANAPPURAM (+1.44%) and BHARTIARTL (+0.35%). The ₹150 dividend + ₹5,633 Cr buyback catalyst clearly drove stronger immediate buying than the higher-scored ideas.
+
+---
+
 ## Trade Entry Template
 ```
 ### TRADE-YYYYMMDD-NNN
