@@ -38,6 +38,87 @@
 
 ---
 
+### RESEARCH-2026-05-20
+
+**Market Context**
+- SGX Nifty: 23,414 — gap DOWN signal (~-378 pts vs Nifty Futures close 23,792, ~-1.6%)
+- India VIX: 18.68 (-4.84% from 19.63) — elevated but gate clears (<25)
+- FII net flow (May 19): -₹2,457.49 Cr — net selling; gate clears (within -₹3,500 threshold)
+- DII net flow (May 19): +₹3,801.68 Cr — net buying (cushioning FII outflows)
+- Global cues: US S&P500 -0.67%, Nasdaq -0.84% (3rd consecutive down day); Brent crude $110.83/bbl (+elevated); DXY 99.4 (6-week high); Asia uniformly lower (Nikkei -0.8%, Hang Seng -0.34%, Kospi -0.5%); Nvidia earnings due tonight (key AI demand indicator)
+- Regime: **bull** (Nifty 20d SMA slope: +2.44%, moderate trend; Nifty close: 23,618; SMA20: 23,974)
+- Nifty PCR: unavailable (NSE API 403 Forbidden); use caution note — assume neutral
+
+**Sector Momentum**
+- Strong (May 19): IT (+3.23% — standout leader), Realty (+1.43%), PSU Bank (+0.81%), Consumer Durables (+0.44%), Pharma (+0.42%), Auto (+0.29%)
+- Weak/Lagging (May 19): Metals, Financial Services
+- Today's outlook: cautious, range-bound 23,350–23,800; IT sector resilience; Banking under pressure
+
+**Trade Candidates** (Score ≥ 40, sorted by score — post earnings guard + catalyst gate)
+
+1. **JSWSTEEL** — Score: 100/100 — Catalyst: Q4 FY26 earnings beat May 14 (consolidated net profit multifold via BPSL exceptional gain; revenue +14.19% YoY to ₹51,180 Cr; dividend ₹7.10/share declared) [HARD] — Chart: api_error/neutral (Gemini quota)
+   Sector: Metals | Size: ₹70,000 | Entry zone: ~₹1,285 | Stop: ₹1,195 (-7%) | ~54 shares
+   RSI: 51.5 (neutral) | ADV: ₹237.6Cr | Volatility: 1.14%/day
+
+2. **BHARTIARTL** — Score: 80/100 — Catalyst: Q4 FY26 record revenue ₹211,000 Cr (lifetime high), ARPU ₹257 (+₹12 YoY), dividend ₹24/share (+50% YoY), Morgan Stanley Overweight TP ₹2,450 [HARD] — Chart: api_error/neutral
+   Sector: Telecom | Size: ₹70,000 | Entry zone: ~₹1,913 | Stop: ₹1,779 (-7%) | ~36 shares
+   RSI: 53.1 (neutral) | ADV: ₹1,779.6Cr | Volatility: 2.04%/day
+
+3. **TECHM** — Score: 80/100 — Catalyst: Q4 FY26 PAT +21.26% QoQ to ₹1,356 Cr, FY26 revenue +7.2% YoY; IT sector momentum +3.23% yesterday [HARD] — Chart: api_error/neutral
+   Sector: IT | Size: ₹70,000 | Entry zone: ~₹1,467 | Stop: ₹1,364 (-7%) | ~47 shares
+   RSI: 51.1 (neutral) | ADV: ₹431.4Cr | Volatility: 2.5%/day
+
+4. **MANAPPURAM** — Score: 80/100 — Catalyst: Q4 FY26 profit turnaround (loss -₹191 Cr → profit +₹404 Cr), Jefferies upgraded to BUY TP ₹360 (from ₹285 = +26% upside), dividend ₹0.50/share [HARD] — Chart: api_error/neutral
+   Sector: Finance | Size: ₹70,000 | Entry zone: ~₹315 | Stop: ₹293 (-7%) | ~222 shares
+   RSI: 63.2 (moderate) | ADV: ₹143.0Cr | Volatility: — (ADV slightly below peer avg, watch liquidity)
+
+5. **TATACONSUM** — Score: 80/100 — Catalyst: Q4 FY26 net profit +20% YoY to ₹419 Cr, revenue +18% YoY to ₹5,434 Cr (May 8) [HARD] — Chart: api_error/neutral
+   Sector: FMCG | Size: ₹70,000 | Entry zone: ~₹1,210 | Stop: ₹1,125 (-7%) | ~57 shares
+   RSI: 59.0 (neutral) | ADV: ₹331.9Cr | Volatility: —
+
+6. **RADICO** — Score: 80/100 — Catalyst: FY26 highest-ever revenue +22.7% YoY to ₹20,988 Cr, profit +74.9%; consensus Strong Buy, TP ~₹3,560–₹3,847 [HARD] — Chart: api_error/neutral
+   Sector: FMCG | Size: ₹70,000 | Entry zone: ~₹3,600 | Stop: ₹3,348 (-7%) | ~19 shares
+   RSI: 62.7 (moderate) | ADV: ₹152.0Cr | Volatility: 1.63%/day
+
+7. **BAJAJ-AUTO** — Score: 80/100 — Catalyst: Q4 FY26 net profit +34% YoY to ₹2,746 Cr, revenue +32% YoY, ₹150 dividend + ₹5,633 Cr buyback approved (May 6) [HARD] — Chart: api_error/neutral
+   Note: PL Capital/Prabhudas downgraded to Hold post-run; ICICI/HDFC maintaining Buy
+   Sector: Auto | Size: ₹70,000 | Entry zone: ~₹10,205 | Stop: ₹9,490 (-7%) | ~6 shares
+   RSI: 64.8 (moderate) | ADV: ₹415.8Cr | Volatility: —
+
+**Capital note**: 7 positions × ₹70,000 = ₹4,90,000 (98% deployed). Gate 6 fails for candidates 8 and 9 below (insufficient remaining cash).
+
+**Deprioritised this session (capital exhausted — Gate 6):**
+- ADANIENT (80) — HARD catalyst (OFAC/DoJ settlement), but RSI 71.2 overbought + gap-down environment + 8th in order; skipped due to capital
+- MCX (80) — HARD catalyst (net profit +291%), but RSI 80.5 very overbought + 9th; skipped due to capital
+
+**Rejected**
+- DIVISLAB — Gate 8: earnings May 23 (binary event risk — 3 days)
+- CIPLA — Gate 8: board/event May 23 (binary event risk)
+- TORNTPHARM — Gate 8: earnings May 22 (binary event risk — 2 days)
+- GRASIM — Gate 8: earnings today May 20 (binary event risk — today)
+- ONGC — Gate 8: earnings May 26 (within 7 days)
+- NYKAA — Gate 8: earnings May 21
+- APOLLOHOSP — Gate 8: earnings today May 20
+- BIOCON — Gate 3: SOFT catalyst + RSI 89.9 extremely overbought
+- ADANIPORTS — Gate 3: SOFT catalyst (technical breakout only, no event)
+- ADANIGREEN — Gate 3: SOFT catalyst (no specific event)
+- DRREDDY — Gate 3: Q4 FY26 earnings MISSED estimates, Morgan Stanley reduced TP — no positive catalyst
+- BHARTIARTL (yesterday) — Note: reclassified to HARD today after verifying Q4 results
+
+**Key Events Today (2026-05-20)**
+- Grasim Industries Q4 FY26 results (today)
+- Apollo Hospitals Q4 FY26 results (today)
+- Hindalco Q4 FY26 results (Novelis posted quarterly loss $84M, net sales +4.4%)
+- Jubilant Foodworks, Bosch, Samvardhana Motherson, Aditya Birla Capital results due
+- RBI: proposed Basel III revised disclosure framework for banks (final from Q2 FY27); scrapped IFR requirement
+- Nvidia Q1 FY27 earnings after US close (AI demand bellwether — could lift IT/Tech sentiment tomorrow)
+- US-Iran tensions ongoing; DXY at 6-week high; elevated bond yields
+- Nifty support: 23,350–23,400 | resistance: 23,700–23,800
+
+**Recommendation**: PROCEED with 7 candidates. All pass the 9-point buy-side gate. Total deployment: ₹4,90,000 (98% of ₹5L portfolio). VIX at 18.68 — elevated but within range. Gap-down open expected: wait for market to stabilize (first 5 min post-open) before placing orders. Execute from 9:20 AM IST.
+
+---
+
 ### RESEARCH-2026-05-19
 
 **Market Context**
