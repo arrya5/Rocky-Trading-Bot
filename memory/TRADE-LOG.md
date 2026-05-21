@@ -242,6 +242,37 @@
 
 ---
 
+---
+
+### EOD Snapshot 2026-05-21
+- **Portfolio value**: ₹5,01,812.80
+- **Cash**: ₹48,500.60
+- **Open positions**: 9
+- **Market value**: ₹4,53,312.20
+- **Unrealized P&L**: +₹1,812.80
+- **Day P&L**: +₹41.50 (+0.01%)
+- **All-time P&L**: +₹1,812.80 (+0.36% from ₹5,00,000 base)
+- **Nifty 50 today**: -0.02% (closed 23,654.70 vs prev 23,659.00)
+- **Alpha vs Nifty**: +0.03%
+- **Positions**:
+  - JSWSTEEL: 39 shares @ avg ₹1,266.50 | close ₹1,278.80 | P&L +₹479.70 (+0.97%)
+  - BHARTIARTL: 36 shares @ avg ₹1,902.10 | close ₹1,883.50 | P&L -₹669.60 (-0.98%)
+  - TECHM: 20 shares @ avg ₹1,462.40 | close ₹1,420.00 | P&L -₹848.00 (-2.90%)
+  - MANAPPURAM: 222 shares @ avg ₹314.90 | close ₹323.50 | P&L +₹1,909.20 (+2.73%)
+  - TATACONSUM: 41 shares @ avg ₹1,196.70 | close ₹1,195.30 | P&L -₹57.40 (-0.12%)
+  - RADICO: 13 shares @ avg ₹3,615.00 | close ₹3,568.10 | P&L -₹609.70 (-1.30%)
+  - BAJAJ-AUTO: 2 shares @ avg ₹10,148.50 | close ₹10,644.00 | P&L +₹991.00 (+4.88%)
+  - HINDALCO: 64 shares @ avg ₹1,091.70 | close ₹1,100.00 | P&L +₹531.20 (+0.76%)
+  - ADANIPORTS: 27 shares @ avg ₹1,787.00 | close ₹1,790.20 | P&L +₹86.40 (+0.18%)
+- **Trailing stop review**: No position has reached +15% — no tightening triggered. All stops hold at initial -7% from entry:
+  - JSWSTEEL: ₹1,177.85 | BHARTIARTL: ₹1,768.95 | TECHM: ₹1,360.03
+  - MANAPPURAM: ₹292.86 | TATACONSUM: ₹1,112.93 | RADICO: ₹3,361.95
+  - BAJAJ-AUTO: ₹9,438.11 | HINDALCO: ₹1,015.28 | ADANIPORTS: ₹1,661.91
+
+**🎯 Biggest surprise today**: BHARTIARTL (80/100 score, HARD: lifetime-high revenue ₹2.11L Cr + Morgan Stanley Overweight ₹2,450 TP) reversed from +0.35% at midday to close at -0.98% from entry (₹1,883.50), while BAJAJ-AUTO (40/100 score, minimum-conviction entry) extended gains to +4.88% — the portfolio's lowest-confidence trade has outperformed its highest-confidence trade by nearly 6 percentage points over two days.
+
+---
+
 ## Trade Entry Template
 ```
 ### TRADE-YYYYMMDD-NNN
