@@ -119,6 +119,106 @@
 
 ---
 
+### RESEARCH-2026-05-21
+
+**Market Context**
+- SGX Nifty (GIFT Nifty): 23,800–23,858 → gap UP +166.5 pts (+0.70%) vs Nifty close 23,659 — strong bullish open expected
+- India VIX: 18.31–18.44 (closed May 20 at 18.68, -0.98%) — elevated (17–25 zone), gate CLEARS (<25)
+- FII net flow (May 20 provisional): -₹1,597.35 Cr — net sellers; gate CLEARS (within -₹3,500 threshold)
+- DII net flow (May 20 provisional): +₹1,968.35 Cr — net buyers, cushioning FII outflows
+- Global cues: GEMINI RATE LIMITED — inferred: GIFT Nifty gap-up strongly suggests Nvidia Q1 FY27 earnings (released after May 20 US close) beat estimates; IT sector likely to rally; crude elevated at ~$110/bbl; DXY ~99.4 (6-wk high); Asia likely positive on Nvidia beat
+- Regime: **bull** (Nifty 20d SMA slope: +2.07%, strong trend strength; Nifty close: 23,659; SMA20: 23,928)
+- Nifty PCR: unavailable (NSE API 403 Forbidden) — assume neutral
+
+**Sector Momentum** *(Gemini rate limited — inferred from signal scan changes)*
+- Strong (inferred): Metals (HINDALCO 40→100, JSWSTEEL 100→80 still strong), Pharma (SUNPHARMA/DIVISLAB/CIPLA all 80), Infrastructure (GRASIM/ADANIPORTS both 80)
+- Auto: BAJAJ-AUTO holds 80 (was 80 yesterday)
+- Weakening: IT (TECHM 80→40, signals softening despite Nvidia beat possibility)
+- Caution: Multiple RSI readings in 70–93 range (BIOCON 93.3, MARICO 78.9, APOLLOHOSP 76.1, MAXHEALTH 77.2) — overbought universe
+
+**Signal Scan Results** (35 BUY signals ≥ 40)
+- Score 100: HINDALCO
+- Score 80: BHARTIARTL★, SUNPHARMA, JSWSTEEL★, ADANIENT, ADANIPORTS, DIVISLAB, CIPLA, GRASIM, TATACONSUM★, BAJAJ-AUTO★, PAGEIND, RADICO★
+- Score 60: INFY, BAJAJFINSV, ONGC, APOLLOHOSP, COLPAL, MARICO, FEDERALBNK, MANAPPURAM★, TORNTPHARM, AUROPHARMA, BIOCON, ABCAPITAL, NYKAA, MCX
+- Score 40: KOTAKBANK, ASIANPAINT, TECHM★, DRREDDY, PIDILITIND, MAXHEALTH, FORTIS, MFSL, ADANIGREEN, CAMS
+*(★ = already held in portfolio)*
+
+**Earnings Guard** *(NSE API 403; Gemini fallback unreliable due to rate limits — manual override from prior research)*
+- NYKAA: earnings today May 21 → Gate 8 FAIL (binary event risk)
+- TORNTPHARM: earnings May 22 → Gate 8 FAIL (1 day, binary event risk)
+- DIVISLAB: earnings May 23 → Gate 8 FAIL (2 days)
+- CIPLA: board/results May 23 → Gate 8 FAIL (2 days)
+- ONGC: earnings May 26 → Gate 8 FAIL (5 days)
+- APOLLOHOSP: results announced May 20 — post-event, but RSI 76.1 overbought + score 60 → low priority
+
+**Chart Pattern Analysis** *(Gemini rate limited — monitors running, results pending)*
+- HINDALCO: pending
+- SUNPHARMA: pending
+- ADANIPORTS: pending
+- GRASIM: pending
+- PAGEIND: pending (also excluded: only 1 share at ₹70k size → partial exit rule impossible)
+
+**Trade Candidates** (Score ≥ 40, post-earnings-guard, post-catalyst-gate, sorted by score)
+
+1. **HINDALCO** — Score: 100/100 — Catalyst: Q4 FY26 results announced May 20 (Novelis -$84M loss but Indian ops likely strong; volume_surge triggered = institutional buying) [LIKELY HARD — pending Gemini confirmation] — Chart: pending
+   Sector: Metals | Size: ₹70,000 | Qty: 64 shares | Entry zone: ~₹1,085 | Stop: ₹1,009 (-7%) | Target: ₹1,302 (+20%)
+   RSI: 59.9 (neutral) | ADV: ₹500.7 Cr | Volatility: 1.84%/day
+   Gate 9: 2nd Metals position (JSWSTEEL already held) — allowed (max 2 per sector)
+
+2. **SUNPHARMA** — Score: 80/100 — Catalyst: pending Gemini research (near 52w high, RSI 64.1, momentum +1.63% 10d) [PENDING — HARD if Q4 FY26 results positive]  — Chart: pending
+   Sector: Pharma | Size: ₹70,000 | Qty: 37 shares | Entry zone: ~₹1,880 | Stop: ₹1,748 (-7%) | Target: ₹2,256 (+20%)
+   RSI: 64.1 (neutral) | ADV: ₹943.7 Cr | Volatility: 2.04%/day
+
+3. **ADANIPORTS** — Score: 80/100 — Catalyst: pending [sector: Infrastructure; part of Adani group — OFAC/DoJ legal resolution May 19 provides group-level tailwind MEDIUM/HARD] — Chart: pending
+   Sector: Infrastructure | Size: ₹70,000 | Qty: 39 shares | Entry zone: ~₹1,772 | Stop: ₹1,648 (-7%) | Target: ₹2,127 (+20%)
+   RSI: 64.3 (neutral) | ADV: ₹582.6 Cr | Volatility: 1.99%/day
+   Note: Capital available = ₹27,575 after HINDALCO + SUNPHARMA → Gate 6 FAILS for 3rd ₹70k position
+
+**Deprioritised / Capital Exhausted after top 2:**
+- ADANIPORTS (80) — 3rd pick, but Gate 6 fails (insufficient cash after HINDALCO + SUNPHARMA)
+- GRASIM (80) — RSI 73.2 overbought; catalyst pending (Q4 FY26 results May 20 — but Gemini rate limited); Gate 6 also fails
+- ADANIENT (80) — RSI 71.0 overbought; Gate 6 fails
+- INFY (60) — ₹50k size, but Gate 6 marginal + IT sector (TECHM already held = 2nd IT position allowed)
+
+**Existing Position Review**
+| Symbol | Avg | LTP | Stop | Buffer | P&L | Status |
+|--------|-----|-----|------|--------|-----|--------|
+| JSWSTEEL | ₹1,266.50 | ₹1,283.20 | ₹1,177.85 | 8.2% | +₹651 | SAFE |
+| BHARTIARTL | ₹1,902.10 | ₹1,904.90 | ₹1,768.95 | 7.1% | +₹101 | SAFE |
+| TECHM | ₹1,462.40 | ₹1,439.00 | ₹1,360.03 | 5.5% | -₹468 | SAFE — monitor |
+| MANAPPURAM | ₹314.90 | ₹319.15 | ₹292.86 | 8.2% | +₹944 | SAFE |
+| TATACONSUM | ₹1,196.70 | ₹1,208.70 | ₹1,112.93 | 7.9% | +₹492 | SAFE |
+| RADICO | ₹3,615.00 | ₹3,565.90 | ₹3,361.95 | 5.7% | -₹638 | SAFE — monitor |
+| BAJAJ-AUTO | ₹10,148.50 | ₹10,462.50 | ₹9,438.11 | 9.8% | +₹628 | SAFE |
+*Portfolio unrealized P&L: +₹1,710 (+0.34%)*
+
+**Rejected**
+- NYKAA — Gate 8: earnings today May 21 (binary event risk)
+- TORNTPHARM — Gate 8: earnings May 22 (binary event risk)
+- DIVISLAB — Gate 8: earnings May 23 (binary event risk)
+- CIPLA — Gate 8: earnings May 23 (binary event risk)
+- ONGC — Gate 8: earnings May 26 (5 days, binary event risk)
+- APOLLOHOSP — Score 60, RSI 76.1 overbought, low priority
+- BIOCON — RSI 93.3 extremely overbought → Gate 3 likely SOFT
+- PAGEIND — Score 80 but only 1 share at ₹70k → partial exit rule structurally impossible; excluded
+- ADANIPORTS/GRASIM/ADANIENT/INFY — Gate 6 fails after top 2 positions
+- MCX (60) — RSI 81.1 very overbought
+- All score-40 stocks — lower priority, insufficient capital
+
+**Key Events Today (2026-05-21)**
+- Nvidia Q1 FY27 earnings: released after May 20 US close → results available this morning; likely strong (AI demand); key IT sector sentiment driver
+- NYKAA Q4 FY26 results (today)
+- HINDALCO Q4 FY26 follow-through (announced May 20)
+- RBI board May 22: surplus transfer to government deliberations (~₹2.7-3L Cr FY27)
+- TORNTPHARM earnings May 22 (tomorrow — gate blocker)
+- DIVISLAB / CIPLA board meetings May 23
+- Gate 3 verification needed for HINDALCO + SUNPHARMA before 9:20 AM execution
+
+**Recommendation**: **PROCEED with 2 candidates** — HINDALCO (100/100, Gate 3 pending) and SUNPHARMA (80/100, Gate 3 pending). Both require catalyst confirmation before 9:20 AM execution. Total deployment if both enter: ₹1,39,043 (cash: ₹1,66,618 → remaining ₹27,575). All 7 existing positions SAFE — no stop actions needed.
+*Note: Gemini API rate limited (20 req/min free tier); global cues, sector momentum, and chart analysis results pending from background monitors.*
+
+---
+
 ### RESEARCH-2026-05-19
 
 **Market Context**
