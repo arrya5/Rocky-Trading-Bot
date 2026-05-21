@@ -116,6 +116,46 @@
 
 ---
 
+### TRADE-20260521-001
+- **Date**: 2026-05-21
+- **Symbol**: HINDALCO (NSE)
+- **Action**: BUY
+- **Qty**: 64 shares
+- **Price**: ₹1,091.70
+- **Total value**: ₹69,868.80
+- **Momentum score**: 80/100 | factors: above_20_50_sma, rsi_trending, near_52w_high, momentum_10d | sector: Metals
+- **Catalyst**: Q4 FY26 results announced May 20 — Indian standalone ops strong, institutional buying signal triggered | tier: HARD
+- **Stop loss**: ₹1,015.28 (-7%)
+- **Target**: ₹1,310.04 (+20%)
+- **Status**: OPEN
+
+### TRADE-20260521-002
+- **Date**: 2026-05-21
+- **Symbol**: ADANIPORTS (NSE)
+- **Action**: BUY
+- **Qty**: 27 shares
+- **Price**: ₹1,787.00
+- **Total value**: ₹48,249.00
+- **Momentum score**: 60/100 | factors: above_20_50_sma, near_52w_high, momentum_10d | sector: Infrastructure
+- **Catalyst**: Adani group OFAC/DoJ legal resolution May 19 — group-wide legal overhang removed, US capital market access restored | tier: MEDIUM
+- **Stop loss**: ₹1,661.91 (-7%)
+- **Target**: ₹2,144.40 (+20%)
+- **Status**: OPEN
+
+---
+
+### Gate Log — 2026-05-21
+- HINDALCO: All 9 gates PASS (Gate 3: HARD — Q4 FY26 earnings event; Gate 9: 2nd Metals position after JSWSTEEL, ≤ 2 allowed)
+- ADANIPORTS: All 9 gates PASS (Gate 3: MEDIUM — Adani group OFAC/DoJ legal resolution; Gate 2: score 60, ₹50k tier; Gate 9: 1st Infrastructure position)
+- SUNPHARMA: SKIP — Gate 3: soft catalyst only (technical momentum only, Q4 results unconfirmed via Gemini rate-limited)
+- NYKAA: SKIP — Gate 8: earnings today May 21
+- TORNTPHARM: SKIP — Gate 8: earnings May 22 (1 day)
+- DIVISLAB: SKIP — Gate 8: earnings May 23
+- CIPLA: SKIP — Gate 8: earnings May 23
+- ONGC: SKIP — Gate 8: earnings May 26
+
+---
+
 ## Closed Trades
 *None yet*
 

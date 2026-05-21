@@ -1,5 +1,5 @@
 {
-  "cash": 166618.4,
+  "cash": 48500.603124999994,
   "positions": {
     "JSWSTEEL": {
       "qty": 39,
@@ -49,6 +49,20 @@
       "ltp": 10470.0,
       "entered_at": "2026-05-20",
       "sector": "Auto"
+    },
+    "HINDALCO": {
+      "qty": 64,
+      "avg_price": 1091.699951171875,
+      "ltp": 1091.699951171875,
+      "entered_at": "2026-05-21",
+      "sector": "Metals"
+    },
+    "ADANIPORTS": {
+      "qty": 27,
+      "avg_price": 1787.0,
+      "ltp": 1787.0,
+      "entered_at": "2026-05-21",
+      "sector": "Infrastructure"
     }
   },
   "orders": [
@@ -121,6 +135,26 @@
       "type": "MARKET",
       "status": "COMPLETE",
       "placed_at": "2026-05-20T03:54:29.342300"
+    },
+    {
+      "order_id": "PAPER-20260521035534",
+      "symbol": "HINDALCO",
+      "side": "BUY",
+      "qty": 64,
+      "price": 1091.7,
+      "type": "MARKET",
+      "status": "COMPLETE",
+      "placed_at": "2026-05-21T03:55:33.866978"
+    },
+    {
+      "order_id": "PAPER-20260521035537",
+      "symbol": "ADANIPORTS",
+      "side": "BUY",
+      "qty": 27,
+      "price": 1787.0,
+      "type": "MARKET",
+      "status": "COMPLETE",
+      "placed_at": "2026-05-21T03:55:37.273573"
     }
   ]
 }
