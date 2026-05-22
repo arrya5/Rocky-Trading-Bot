@@ -153,6 +153,23 @@
 
 ---
 
+### Gate Log — 2026-05-22
+- **VIX Gate**: 17.82 — PASS (<25)
+- **FII Gate**: -₹1,891.21 Cr — PASS (within -₹3,500 threshold)
+- INFY — Gate 2 FAIL: FILTERED by signal_generator.py (pre-filter: ADV/volatility); skip
+- WIPRO — Gate 2 FAIL: FILTERED by signal_generator.py (pre-filter: ADV/volatility); skip
+- TRENT — Gate 2 PASS (score 40, BUY) | Gate 3 FAIL: catalyst unverified (Gemini quota exhausted); skip
+- PIDILITIND — Gate 3 FAIL: catalyst unverified (Gemini quota exhausted); skip
+- HDFCLIFE — Gate 3 FAIL: catalyst unverified (Gemini quota exhausted); skip
+- TORNTPHARM — Gate 8 FAIL: earnings today May 22 (per research log override); skip
+- DIVISLAB — Gate 8 FAIL: earnings May 23 (1 day); skip
+- ONGC — Gate 8 FAIL: earnings May 26 (4 days); skip
+- All score-60/80+ — Gate 6 FAIL: position cost > ₹48,500 available cash; skip
+- **Result: 0 trades placed. Cash ₹48,500 preserved.**
+- **Position Alerts**: TECHM ₹1,413 (stop ₹1,360.03, buffer 3.75% — CAUTION); RADICO ₹3,541 (stop ₹3,361.95, buffer 5.06% — monitor)
+
+---
+
 ### Gate Log — 2026-05-21
 - HINDALCO: All 9 gates PASS (Gate 3: HARD — Q4 FY26 earnings event; Gate 9: 2nd Metals position after JSWSTEEL, ≤ 2 allowed)
 - ADANIPORTS: All 9 gates PASS (Gate 3: MEDIUM — Adani group OFAC/DoJ legal resolution; Gate 2: score 60, ₹50k tier; Gate 9: 1st Infrastructure position)
