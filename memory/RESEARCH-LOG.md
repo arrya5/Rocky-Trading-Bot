@@ -3,6 +3,110 @@
 
 ---
 
+### RESEARCH-2026-05-22
+
+**Market Context**
+- SGX/GIFT Nifty: 23,666–23,669 → gap UP +11–14 pts (+0.05%) — flat/mildly positive open
+- India VIX: 17.82 (↓3.36% from 18.44 prev close) — elevated but gate CLEARS (<25)
+- FII net flow (May 21 provisional): -₹1,891.21 Cr — net sellers; gate CLEARS (within -₹3,500 threshold)
+- DII net flow (May 21 provisional): +₹2,492.42 Cr — net buyers, cushioning FII outflows
+- Global cues: DOW record high 50,285 (+0.55%); S&P +0.17%; Nasdaq +0.09% but surged post-Nvidia Q1 FY27 beat; Brent crude $104.52 (+1.9%) — elevated, margin headwind; DXY 99.25 (stable); Asia positive — Nikkei +1.36%, Kospi +0.52%, Hang Seng futures higher
+- Regime: **bull** (Nifty 20d SMA slope: +1.62%, moderate trend strength; Nifty close: 23,654.70; SMA20: 23,892.16)
+- Nifty PCR: unavailable (NSE API 403 Forbidden) — assume neutral
+
+**Sector Momentum**
+- Strong (inferred): IT — Nvidia Q1 FY27 earnings beat; Nasdaq +1.55% post-results → gap-up expected for IT stocks; Metals (HINDALCO 100, JSWSTEEL 80); Finance (MANAPPURAM 80)
+- Weak/Cautious: Telecom (BHARTIARTL score declined 80→40, RSI 49.8); FMCG consolidating
+- Crude $104.52 (+1.9%) — headwind for margins in manufacturing, FMCG, aviation
+- Bank Nifty: cautiously positive; closed May 21 at 53,439 (+0.44%); pivots at 53,700 (bull) / 53,200 (bear)
+
+**Signal Scan Results** (36 BUY signals ≥ 40)
+- Score 100: HINDALCO★
+- Score 80: RADICO★, PAGEIND, NYKAA, MANAPPURAM★, JSWSTEEL★, GRASIM, DIVISLAB, APOLLOHOSP
+- Score 60: TORNTPHARM, TATACONSUM★, SUNPHARMA, ONGC, MCX, FORTIS, CIPLA, BIOCON, BERGEPAINT, BAJAJ-AUTO★, AUROPHARMA, ADANIPORTS★, ADANIGREEN, ADANIENT
+- Score 40: WIPRO, TRENT, PIDILITIND, MFSL, MAXHEALTH, MARICO, INFY, IIFL, HDFCLIFE, DRREDDY, COLPAL, BHARTIARTL★, ASIANPAINT
+*(★ = already held in portfolio)*
+
+**Earnings Guard** *(NSE API 403 — Gemini fallback used; manual override applied from prior logs)*
+- TORNTPHARM: earnings TODAY May 22 → Gate 8 FAIL
+- DIVISLAB: earnings May 23 (1 day) → Gate 8 FAIL
+- ONGC: earnings May 26 (4 days) → Gate 8 FAIL
+- All other candidates: post-event or no near-term earnings
+
+**Chart Pattern Analysis** *(Skipped — Gemini API daily quota exhausted (20 req/day free tier))*
+
+**Trade Candidates** (Score ≥ 40, post-earnings-guard, post-gate analysis)
+
+**CAPITAL CONSTRAINT: Cash = ₹48,500 — only ₹30,000 (score-40 tier) positions feasible**
+
+Score 80+ (₹70,000): ALL Gate 6 FAIL (cost > ₹48,500)
+Score 60 (₹50,000): ALL Gate 6 FAIL (cost > ₹48,500)
+Score 40 (₹30,000): feasible; Gate 3 analysis below
+
+1. **INFY** — Score: 40/100 — Catalyst: Nvidia Q1 FY27 earnings beat → Nasdaq +1.55% → IT sector tailwind [SOFT — sector-wide sentiment, no INFY-specific event] — **Gate 3 FAIL**
+   Sector: IT (TECHM already held = 1 IT position) | Size: ₹30,000 | RSI: 49.9 (neutral) | ADV: ₹1,595Cr
+
+2. **WIPRO** — Score: 40/100 — Catalyst: Same IT sector tailwind from Nvidia beat [SOFT] — **Gate 3 FAIL**
+   Sector: IT | Size: ₹30,000 | RSI: 48.3 (neutral) | ADV: ₹359Cr
+
+3. **TRENT** — Score: 40/100 — Catalyst: Gemini rate limited — UNVERIFIED → Gate 3 PENDING → **SKIP (cannot verify)**
+   Sector: Consumer | Size: ₹30,000 | RSI: 51.7 (neutral) | ADV: ₹301Cr
+
+4. **PIDILITIND** — Score: 40/100 — Catalyst: Gemini rate limited — UNVERIFIED → **SKIP**
+   Sector: Chemicals | Size: ₹30,000 | RSI: 67.3 | ADV: ₹155Cr
+
+5. **HDFCLIFE** — Score: 40/100 — Catalyst: Gemini rate limited — UNVERIFIED → **SKIP**
+   Sector: Finance (MANAPPURAM held = 1) | Size: ₹30,000 | RSI: 63.4 | ADV: ₹367Cr
+
+**Rejected**
+- TORNTPHARM — Gate 8: earnings today May 22 (binary event risk)
+- DIVISLAB — Gate 8: earnings May 23 (1 day)
+- ONGC — Gate 8: earnings May 26 (4 days)
+- GRASIM — Gate 6: ₹70,000 > ₹48,500 cash; RSI 82.0 very overbought
+- APOLLOHOSP — Gate 6: ₹70,000 > ₹48,500 cash; RSI 81.2 very overbought
+- PAGEIND — Gate 6: ₹70,000 > ₹48,500; structural issue (₹38,380/share → 1 share only, partial exit impossible)
+- NYKAA — Gate 6: ₹70,000 > ₹48,500 cash (post-earnings May 21, but insufficient capital)
+- All score-60 stocks (SUNPHARMA, MCX, CIPLA etc.) — Gate 6: ₹50,000 > ₹48,500 cash
+- BIOCON — RSI 91.3 extremely overbought
+- AUROPHARMA — RSI 85.9 very overbought
+- MAXHEALTH — RSI 79.3 overbought
+- DRREDDY — Gate 3: SOFT (Q4 FY26 earnings MISS, Morgan Stanley TP cut — no positive catalyst)
+- MARICO — Gate 9: FMCG sector already at 2 positions (RADICO + TATACONSUM) — Gate 9 FAIL
+- COLPAL — Gate 9: FMCG sector at max 2 positions — Gate 9 FAIL
+- INFY — Gate 3: SOFT catalyst (sector re-rating from Nvidia, no INFY-specific HARD/MEDIUM event)
+- WIPRO — Gate 3: SOFT catalyst (same IT sector tailwind)
+- TRENT, PIDILITIND, HDFCLIFE, MFSL, IIFL, ASIANPAINT — Gemini rate limited; catalyst unverified → SKIP
+
+**Existing Position Review (trailing stop check)**
+| Symbol | Avg | LTP | Stop | Buffer | P&L | Status |
+|--------|-----|-----|------|--------|-----|--------|
+| JSWSTEEL | ₹1,266.50 | ₹1,278.80 | ₹1,177.85 | 7.9% | +₹479 | SAFE |
+| BHARTIARTL | ₹1,902.10 | ₹1,883.50 | ₹1,768.95 | 6.1% | -₹670 | SAFE — monitor |
+| TECHM | ₹1,462.40 | ₹1,420.00 | ₹1,360.03 | 4.2% | -₹848 | CAUTION — -2.9%, thin stop buffer |
+| MANAPPURAM | ₹314.90 | ₹323.50 | ₹292.86 | 9.5% | +₹1,909 | SAFE — strong |
+| TATACONSUM | ₹1,196.70 | ₹1,195.30 | ₹1,112.93 | 6.9% | -₹57 | SAFE |
+| RADICO | ₹3,615.00 | ₹3,568.10 | ₹3,361.95 | 5.8% | -₹610 | SAFE — monitor |
+| BAJAJ-AUTO | ₹10,148.50 | ₹10,644.00 | ₹9,438.11 | 11.3% | +₹991 | SAFE — best performer |
+| HINDALCO | ₹1,091.70 | ₹1,100.00 | ₹1,015.28 | 7.7% | +₹531 | SAFE |
+| ADANIPORTS | ₹1,787.00 | ₹1,790.20 | ₹1,661.91 | 7.2% | +₹86 | SAFE |
+*Watch: TECHM at 4.2% stop buffer — if drops to ₹1,360 close immediately. BHARTIARTL soft (-0.98% from entry), score declined 80→40.*
+
+**Key Events Today (2026-05-22)**
+- TORNTPHARM Q4 FY26 results today — binary event (not held, noted)
+- RBI Board deliberates surplus transfer to government (~₹2.7-3L Cr for FY27) — positive for banking sentiment
+- US Michigan Consumer Sentiment data (potential volatility trigger for US markets)
+- Nvidia Q1 FY27 earnings fully digested — IT sector gap-up expected at open
+- Brent crude $104.52 (+1.9%) — monitor for margin pressure on held FMCG (RADICO, TATACONSUM)
+- Market hours: 9:15 AM–3:30 PM. No orders outside 9:20–3:20 window.
+
+**Recommendation**: **NO NEW POSITIONS TODAY**
+- All eligible new positions (score 40, ₹30,000) fail Gate 3 (SOFT catalysts) or have unverified catalysts
+- Portfolio 90% deployed (9 open positions across 8 sectors)
+- Cash ₹48,500 preserved — ready to deploy if a stop triggers and creates capacity, or tomorrow on fresh Gemini quota
+- KEY WATCH: TECHM (-2.9% from entry, 4.2% stop buffer) — if hits ₹1,360.03 → close immediately
+
+---
+
 ## Research Entry Template
 ```
 ### RESEARCH-YYYY-MM-DD
