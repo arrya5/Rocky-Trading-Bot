@@ -299,6 +299,34 @@
 
 ---
 
+### EOD Snapshot 2026-05-22
+- **Portfolio value**: ₹5,02,052.80
+- **Cash**: ₹48,500.60
+- **Open positions**: 9
+- **Market value**: ₹4,53,552.20
+- **Unrealized P&L**: +₹2,052.80
+- **Day P&L**: +₹240.00 (+0.05%)
+- **All-time P&L**: +₹2,052.80 (+0.41% from ₹5,00,000 base)
+- **Nifty 50 today**: N/A (Gemini API 503 — data unavailable)
+- **Alpha vs Nifty**: N/A
+- **Positions**:
+  - JSWSTEEL: 39 shares @ avg ₹1,266.50 | close ₹1,287.50 | P&L +₹819.00 (+1.66%)
+  - BHARTIARTL: 36 shares @ avg ₹1,902.10 | close ₹1,872.70 | P&L -₹1,058.40 (-1.55%)
+  - TECHM: 20 shares @ avg ₹1,462.40 | close ₹1,424.20 | P&L -₹764.00 (-2.61%) ⚠️ stop buffer 4.51%
+  - MANAPPURAM: 222 shares @ avg ₹314.90 | close ₹324.90 | P&L +₹2,220.00 (+3.18%)
+  - TATACONSUM: 41 shares @ avg ₹1,196.70 | close ₹1,192.00 | P&L -₹192.70 (-0.39%)
+  - RADICO: 13 shares @ avg ₹3,615.00 | close ₹3,540.00 | P&L -₹975.00 (-2.07%) ⚠️ stop buffer 5.03%
+  - BAJAJ-AUTO: 2 shares @ avg ₹10,148.50 | close ₹10,550.00 | P&L +₹803.00 (+3.96%)
+  - HINDALCO: 64 shares @ avg ₹1,091.70 | close ₹1,110.00 | P&L +₹1,171.20 (+1.68%)
+  - ADANIPORTS: 27 shares @ avg ₹1,787.00 | close ₹1,788.10 | P&L +₹29.70 (+0.06%)
+- **Trailing stop review**: No position reached +15% threshold — no tightening triggered. All stops unchanged:
+  - JSWSTEEL: ₹1,177.85 | BHARTIARTL: ₹1,768.95 | TECHM: ₹1,360.03
+  - MANAPPURAM: ₹292.86 | TATACONSUM: ₹1,112.93 | RADICO: ₹3,361.95
+  - BAJAJ-AUTO: ₹9,438.11 | HINDALCO: ₹1,015.28 | ADANIPORTS: ₹1,661.91
+- **Watch for Monday open**: TECHM (close ₹1,424.20, stop ₹1,360.03, buffer 4.51%); RADICO (close ₹3,540.00, stop ₹3,361.95, buffer 5.03%)
+
+---
+
 ## Trade Entry Template
 ```
 ### TRADE-YYYYMMDD-NNN

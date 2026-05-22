@@ -397,3 +397,5 @@ Score 40 (₹30,000): feasible; Gate 3 analysis below
 **Recommendation**: PROCEED with 4 candidates. All pass the 9-point buy-side gate. Total deployment: 4 × ₹70,000 = ₹2,80,000 (56% of ₹5L portfolio). VIX elevated at 19.63 — monitor positions closely. Executing at market open 9:20 AM IST.
 
 ---
+
+**Friday note 2026-05-22**: Weekly review routine will run at 4:30 PM IST.
