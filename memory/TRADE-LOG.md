@@ -336,6 +336,37 @@
 
 ---
 
+---
+
+### EOD Snapshot 2026-05-25
+- **Portfolio value**: ₹5,02,651.11
+- **Cash**: ₹48,500.60
+- **Open positions**: 9
+- **Market value**: ₹4,54,150.50
+- **Unrealized P&L**: +₹2,651.11
+- **Day P&L**: +₹598.31 (+0.12%)
+- **All-time P&L**: +₹2,651.11 (+0.53% from ₹5,00,000 base)
+- **Nifty 50 today**: +1.31% (closed 24,032 vs prev 23,719.30)
+- **Alpha vs Nifty**: -1.19%
+- **Positions**:
+  - JSWSTEEL: 39 shares @ avg ₹1,266.50 | close ₹1,289.50 | P&L +₹897.00 (+1.82%)
+  - BHARTIARTL: 36 shares @ avg ₹1,902.10 | close ₹1,880.00 | P&L -₹795.60 (-1.16%)
+  - TECHM: 20 shares @ avg ₹1,462.40 | close ₹1,426.80 | P&L -₹712.00 (-2.43%) ⚠️ stop buffer 4.68%
+  - MANAPPURAM: 222 shares @ avg ₹314.90 | close ₹327.80 | P&L +₹2,863.80 (+4.10%)
+  - TATACONSUM: 41 shares @ avg ₹1,196.70 | close ₹1,193.80 | P&L -₹118.90 (-0.24%)
+  - RADICO: 13 shares @ avg ₹3,615.00 | close ₹3,563.10 | P&L -₹674.70 (-1.44%) ⚠️ stop buffer 5.65%
+  - BAJAJ-AUTO: 2 shares @ avg ₹10,148.50 | close ₹10,750.00 | P&L +₹1,203.00 (+5.93%)
+  - HINDALCO: 64 shares @ avg ₹1,091.70 | close ₹1,086.50 | P&L -₹332.80 (-0.48%)
+  - ADANIPORTS: 27 shares @ avg ₹1,787.00 | close ₹1,798.90 | P&L +₹321.30 (+0.67%)
+- **Trailing stop review**: No position reached +15% — no tightening triggered. All stops unchanged:
+  - JSWSTEEL: ₹1,177.85 (buffer 8.66%) | BHARTIARTL: ₹1,768.95 (buffer 5.91%) | TECHM: ₹1,360.03 (buffer 4.68%) ⚠️
+  - MANAPPURAM: ₹292.86 (buffer 10.66%) | TATACONSUM: ₹1,112.93 (buffer 6.77%) | RADICO: ₹3,361.95 (buffer 5.65%) ⚠️
+  - BAJAJ-AUTO: ₹9,438.11 (buffer 12.20%) | HINDALCO: ₹1,015.28 (buffer 6.56%) | ADANIPORTS: ₹1,661.91 (buffer 7.62%)
+- **Watch for tomorrow open**: TECHM (close ₹1,426.80, stop ₹1,360.03, buffer 4.68%); RADICO (close ₹3,563.10, stop ₹3,361.95, buffer 5.65%)
+- **Note**: QUIET day — no trades placed, portfolio +0.12% vs Nifty +1.31% (alpha -1.19%). 5 of 9 positions in negative territory on a strong Nifty day; BAJAJ-AUTO (+5.93%) and MANAPPURAM (+4.10%) cushioned the lag.
+
+---
+
 ## Trade Entry Template
 ```
 ### TRADE-YYYYMMDD-NNN
