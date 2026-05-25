@@ -3,6 +3,59 @@
 
 ---
 
+### RESEARCH-2026-05-25
+
+**Market Context**
+- SGX/GIFT Nifty: Unavailable (US Memorial Day — abbreviated Asian session); Nikkei +3%, Hang Seng +0.9% strongly bullish open expected
+- India VIX: 17.91 (May 22 close, ↑0.51%) — elevated (above 11–17 normal range), gate CLEARS (<25)
+- FII net flow (May 22 — most recent): **-₹4,440.47 Cr** — net sellers → **FII GATE TRIGGERS** (> -₹3,500 Cr)
+- DII net flow (May 22): +₹6,003.53 Cr — strong domestic buying; net combined +₹1,563 Cr
+- Global cues: Very bullish — US-Iran peace deal hopes sent crude -5% (Brent $98.83/bbl, WTI $92.14/bbl); DXY -0.21% to 99.03 (yen safe-haven unwind); S&P500 futures +0.74%, Nasdaq +1.23%; Nikkei +3%, Hang Seng +0.9%, Shanghai +0.61%; US markets closed today (Memorial Day)
+- Regime: **SIDEWAYS** (slope +1.29%, just below bull threshold of +1.5%; ADX 23.6 moderate; Nifty close 23,719.3; SMA20 23,869.47)
+- Nifty PCR: Unavailable (NSE API 404 error) — assume neutral
+
+**FII Gate: TRIGGERED — LARGE FII OUTFLOW — NO NEW POSITIONS TODAY**
+- May 22 FII net: -₹4,440.47 Cr (threshold: -₹3,500 Cr)
+- Note: Global cues are strongly bullish today (Iran peace deal, crude -5%, Asia +3%) — FII may reverse to buying today. Monitor for tomorrow's pre-market update.
+- Steps 3–5 (Sector Momentum, Signal Scan, Chart Analysis) — SKIPPED per FII gate rule.
+
+**Existing Portfolio — Stop Watch (9 open positions)**
+| Symbol | Avg | Last Close | Stop | Buffer | P&L | Alert |
+|--------|-----|-----------|------|--------|-----|-------|
+| JSWSTEEL | ₹1,266.50 | ₹1,287.50 | ₹1,177.85 | 8.5% | +₹819 | SAFE |
+| BHARTIARTL | ₹1,902.10 | ₹1,872.70 | ₹1,768.95 | 5.5% | -₹1,058 | SAFE |
+| TECHM | ₹1,462.40 | ₹1,424.20 | ₹1,360.03 | 4.5% | -₹764 | ⚠️ WATCH |
+| MANAPPURAM | ₹314.90 | ₹324.90 | ₹292.86 | 9.8% | +₹2,220 | SAFE |
+| TATACONSUM | ₹1,196.70 | ₹1,192.00 | ₹1,112.93 | 6.6% | -₹193 | SAFE |
+| RADICO | ₹3,615.00 | ₹3,540.00 | ₹3,361.95 | 5.0% | -₹975 | ⚠️ WATCH |
+| BAJAJ-AUTO | ₹10,148.50 | ₹10,550.00 | ₹9,438.11 | 10.5% | +₹803 | SAFE |
+| HINDALCO | ₹1,091.70 | ₹1,110.00 | ₹1,015.28 | 8.5% | +₹1,171 | SAFE |
+| ADANIPORTS | ₹1,787.00 | ₹1,788.10 | ₹1,661.91 | 7.1% | +₹30 | SAFE |
+- Cash: ₹48,500.60 | Unrealized P&L: +₹2,053 (+0.41%)
+- TECHM and RADICO have tightest stop buffers — monitor at open; global bullish cues should provide support
+
+**Sector tailwinds from today's global cues:**
+- Crude -5% (Iran peace deal): POSITIVE for BAJAJ-AUTO (auto margin), TATACONSUM (input costs), consumer sector broadly
+- Risk-on rally: POSITIVE for metals (JSWSTEEL, HINDALCO), infrastructure (ADANIPORTS)
+- Telecom/IT: NEUTRAL (global deal unrelated)
+- RADICO (spirits/FMCG): NEUTRAL to slightly positive
+
+**Key Events Today (2026-05-25)**
+- US markets closed (Memorial Day holiday)
+- US-Iran peace deal negotiations — key geopolitical catalyst; crude oil fell 5%+
+- Q4 FY26 results season continues (multiple mid-cap companies reporting)
+- Next major gate-relevant data: FII flow for today (released post-close, available tomorrow pre-market)
+
+**Trade Candidates**: NONE — FII gate triggered. No new positions.
+
+**Rejected**
+- All new signals — FII gate: May 22 outflow -₹4,440.47 Cr (> -₹3,500 Cr threshold)
+- Available cash (₹48,500) also insufficient for a ₹50,000+ position (Gate 6 constraint)
+
+**Recommendation**: **LARGE FII OUTFLOW — NO NEW POSITIONS TODAY**. Preserve capital. Hold all 9 existing positions — bullish global cues support recovery. Watch TECHM (buffer 4.5%) and RADICO (buffer 5.0%) closely at market open. Hard stop: execute closes if either breaches stop level.
+
+---
+
 ### RESEARCH-2026-05-22
 
 **Market Context**
