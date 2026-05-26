@@ -3,6 +3,99 @@
 
 ---
 
+### RESEARCH-2026-05-26
+
+**Market Context**
+- GIFT Nifty: 24,040–24,140 (vs Nifty close 24,031.70) — flat to marginal gap up (+0.04–0.45%)
+- India VIX: ~16.70 (fell -6.76% from 17.91 prev close) — CALM (well below 25 gate threshold)
+- FII net flow (May 26): +₹821.80 Cr — net BUYERS; gate CLEARS (above -₹3,500 threshold)
+- DII net flow (May 26): +₹3,856.90 Cr — strong domestic buying; market well supported
+- Global cues: US markets reopened today (closed May 25 Memorial Day); Dow futures +0.9%, S&P500 +0.9%, Nasdaq +1.2–1.3%; Brent crude ~₹97.54–98.40/bbl (mixed — US-Iran tensions; strikes in southern Iran after peace hopes); DXY ~99.0 (stable); Asia mixed (Korea Kospi +2.59% new high; Nikkei -0.46%; Hang Seng -0.67%; Shanghai -0.42%)
+- Regime: **sideways** (Nifty 20d SMA slope: +1.02%, ADX 20.6 moderate — below bull threshold of +1.5%)
+- Nifty PCR: unavailable (NSE API 403 Forbidden) — assume neutral; no caution flag triggered
+
+**Sector Momentum**
+- Strong (May 25): PSU Banks, Private Banks, Auto, Realty, Financials (+2.2%)
+- Weak (May 25): FMCG (sole laggard); Nifty IT (-0.20%) — recovery watch today as US markets reopen
+- Nifty Bank: Closed +2.29% at 55,293; key resistance 55,800–56,300; bullish bias maintained
+- Nifty IT: Recovery expected on US Nasdaq direction; key levels INFY >₹1,190, TCS >₹3,550
+
+**Critical Constraint — Gate 6 Capital Exhaustion**
+Portfolio cash available: ₹48,500.60
+- Score 80–100 → ₹70,000 required → Gate 6 **FAILS** (all 15 candidates eliminated)
+- Score 60–79 → ₹50,000 required → Gate 6 **FAILS** (all 17 candidates eliminated)
+- Score 40–59 → ₹30,000 required → Gate 6 PASSES (14 candidates viable at ₹30k)
+
+**Signal Scan Results** (49 BUY signals ≥ 40; full run 2026-05-26 03:06 IST)
+- Score 100: HINDALCO (held)
+- Score 80: WIPRO, JSWSTEEL (held), ADANIPORTS (held), DRREDDY, DIVISLAB, GRASIM, APOLLOHOSP, EICHERMOT, PAGEIND, MANAPPURAM (held), TORNTPHARM, ABCAPITAL, NYKAA, ADANIGREEN
+- Score 60: HDFCBANK, ICICIBANK, BHARTIARTL (held), LT, AXISBANK, ADANIENT, CIPLA, INDUSINDBK, BPCL, BAJAJ-AUTO (held), BERGEPAINT, MARICO, BANKBARODA, AMBUJACEM, BIOCON, TRENT, RADICO (held), MCX
+- Score 40: KOTAKBANK, ASIANPAINT, SUNPHARMA, BAJAJFINSV, TATACONSUM (held), HDFCLIFE, UPL, PIDILITIND, FEDERALBNK, IDFCFIRSTB, MAXHEALTH, FORTIS, AUROPHARMA, MFSL, JSWENERGY, IIFL
+- *Held positions in scan: HINDALCO (100), JSWSTEEL/ADANIPORTS/MANAPPURAM (80), BHARTIARTL/BAJAJ-AUTO/RADICO (60), TATACONSUM/TECHM (not in top today)*
+
+**Earnings Guard** (Step 4.5 — NSE API 403, Gemini fallback; cross-referenced against prior research)
+- ONGC: earnings TODAY May 26 (confirmed from prior research log May 19) → Gate 8 **FAIL** (binary event risk)
+- All other top candidates: Gemini fallback returned "false" (NSE 403; treat as approximate)
+- Manual note: TORNTPHARM (May 22), NYKAA (May 21), DIVISLAB (May 23), GRASIM (May 20), APOLLOHOSP (May 20) — all ALREADY REPORTED (post-event, Gate 8 clears for binary risk, but stale catalysts)
+
+**Chart Pattern Analysis** (Step 4.7)
+- UNAVAILABLE — Gemini API free-tier daily limit exhausted (20 req/day; used 11 calls for macro research + catalyst research)
+- No chart contradiction data available; treat all candidates as neutral on chart signal
+
+**Catalyst Research** (partial — rate limited after 11 total Gemini API calls today)
+- WIPRO (80): Q4 FY26 results released April 16 (already priced in 40 days ago); buyback ₹15,000 Cr announced same day (stale HARD); today's driver = US market reopen / IT sector recovery → **SOFT catalyst** → Gate 3 FAIL; also Gate 6 FAIL
+- DRREDDY (80): Q4 FY26 MISSED estimates, Morgan Stanley reduced TP (from prior research May 19) → no positive catalyst → Gate 3 FAIL; also Gate 6 FAIL
+- All other score-80 candidates: Gate 6 FAIL (₹70k > ₹48,500 cash) regardless of catalyst
+- Score-40 candidates: Gemini rate limit prevents catalyst verification → Gate 3 UNVERIFIABLE → SKIP (cannot confirm HARD/MEDIUM catalyst; defaulting to no-trade to avoid SOFT-only trades)
+
+**Trade Candidates** (Score ≥ 40, post-earnings-guard, post-catalyst-gate)
+- NONE — Gate 6 eliminates all score 60+ stocks; catalyst unverifiable for score-40 stocks
+
+**Rejected**
+- WIPRO (80) — Gate 3 SOFT (IT sector recovery = SOFT) + Gate 6 FAIL (₹70k needed)
+- DRREDDY (80) — Gate 3 FAIL (Q4 miss, no positive catalyst) + Gate 6 FAIL
+- GRASIM (80) — RSI 79.8 (elevated); Gate 6 FAIL (₹70k needed); earnings already May 20
+- APOLLOHOSP (80) — RSI 80.5 (overbought); Gate 6 FAIL
+- DIVISLAB (80) — Gate 6 FAIL; earnings May 23 (stale)
+- EICHERMOT (80) — Gate 6 FAIL; catalyst unresearched (Gemini rate limited)
+- TORNTPHARM (80) — Gate 6 FAIL; earnings May 22 (stale post-event)
+- ABCAPITAL (80) — Gate 6 FAIL; catalyst unresearched
+- NYKAA (80) — Gate 6 FAIL; earnings May 21 (stale)
+- ADANIGREEN (80) — Gate 6 FAIL; likely SOFT (no specific event confirmed)
+- PAGEIND (80) — Gate 6 FAIL + structurally impossible (1 share at ₹38,545 → no partial exit)
+- All score-60 candidates (17 stocks) — Gate 6 FAIL (₹50k needed)
+- ONGC — Gate 8 FAIL (earnings today May 26)
+- BIOCON (60) — RSI 89.4 extremely overbought + Gate 6 FAIL
+- Score-40 stocks (14 candidates) — Gate 3 UNVERIFIABLE (Gemini rate limited; defaulting to skip per "SOFT = skip" rule)
+
+**Existing Position Monitor**
+| Symbol | Avg | Prev Close | Stop | Buffer | P&L | Status |
+|--------|-----|------------|------|--------|-----|--------|
+| JSWSTEEL | ₹1,266.50 | ₹1,289.50 | ₹1,177.85 | 8.66% | +₹897 | SAFE |
+| BHARTIARTL | ₹1,902.10 | ₹1,880.00 | ₹1,768.95 | 5.91% | -₹796 | SAFE |
+| TECHM | ₹1,462.40 | ₹1,426.80 | ₹1,360.03 | 4.68% | -₹712 | ⚠️ MONITOR — thin buffer |
+| MANAPPURAM | ₹314.90 | ₹327.80 | ₹292.86 | 10.66% | +₹2,864 | SAFE |
+| TATACONSUM | ₹1,196.70 | ₹1,193.80 | ₹1,112.93 | 6.77% | -₹119 | SAFE |
+| RADICO | ₹3,615.00 | ₹3,563.10 | ₹3,361.95 | 5.65% | -₹675 | ⚠️ MONITOR — thin buffer |
+| BAJAJ-AUTO | ₹10,148.50 | ₹10,750.00 | ₹9,438.11 | 12.20% | +₹1,203 | SAFE (+5.93%) |
+| HINDALCO | ₹1,091.70 | ₹1,086.50 | ₹1,015.28 | 6.56% | -₹333 | SAFE |
+| ADANIPORTS | ₹1,787.00 | ₹1,798.90 | ₹1,661.91 | 7.62% | +₹321 | SAFE |
+
+**Key Events Today (2026-05-26)**
+- ONGC Q4 FY26 earnings results (today — market-hours)
+- US markets reopen after Memorial Day holiday — potential catalyst for Indian IT sector
+- ~280+ companies reporting Q4 FY26 results this week
+- US-Iran tensions: fresh US strikes after peace-talk hopes → crude oil elevated ~$97–$98/bbl
+
+**Recommendation**: **NO NEW POSITIONS TODAY**
+- Gate 6 eliminates all high-conviction signals (insufficient cash ₹48,500 vs ₹70k/₹50k required)
+- Score-40 catalysts unverifiable (Gemini API exhausted)
+- Regime sideways (+1.02%) — moderate momentum, not a strong bull signal
+- PRIORITY: Monitor TECHM (4.68% stop buffer) and RADICO (5.65% stop buffer) at market open
+- Capital preserved. Next deployment opportunity when cash freed up (stop hit → available cash) or market open presents fresh HARD catalyst for score-40 stock
+
+---
+
 ### RESEARCH-2026-05-25
 
 **Market Context**
