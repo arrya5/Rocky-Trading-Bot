@@ -407,3 +407,32 @@
 - **P&L at close**: ₹X,XXX.XX (+X.XX%)
 - **Exit reason**: Stop loss / Target / Strategy rule
 ```
+
+---
+
+### EOD Snapshot 2026-05-26
+- **Portfolio value**: ₹5,02,717.90
+- **Cash**: ₹48,500.60
+- **Open positions**: 9
+- **Market value**: ₹4,54,217.30
+- **Unrealized P&L**: +₹2,717.90
+- **Day P&L**: +₹66.79 (+0.01%)
+- **All-time P&L**: +₹2,717.90 (+0.54% from ₹5,00,000 base)
+- **Nifty 50 today**: -0.49% (closed 23,913.70 vs prev 24,032.00)
+- **Alpha vs Nifty**: +0.50%
+- **Positions**:
+  - JSWSTEEL: 39 shares @ avg ₹1,266.50 | close ₹1,289.50 | P&L +₹897.00 (+1.82%) | stop buf 8.66%
+  - BHARTIARTL: 36 shares @ avg ₹1,902.10 | close ₹1,880.00 | P&L -₹795.60 (-1.16%) | stop buf 5.91% ⚠️
+  - TECHM: 20 shares @ avg ₹1,462.40 | close ₹1,447.30 | P&L -₹302.00 (-1.03%) | stop buf 6.03%
+  - MANAPPURAM: 222 shares @ avg ₹314.90 | close ₹327.80 | P&L +₹2,863.80 (+4.10%) | stop buf 10.66%
+  - TATACONSUM: 41 shares @ avg ₹1,196.70 | close ₹1,193.80 | P&L -₹118.90 (-0.24%) | stop buf 6.77%
+  - RADICO: 13 shares @ avg ₹3,615.00 | close ₹3,536.70 | P&L -₹1,017.90 (-2.17%) | stop buf 4.94% ⚠️
+  - BAJAJ-AUTO: 2 shares @ avg ₹10,148.50 | close ₹10,750.00 | P&L +₹1,203.00 (+5.93%) | stop buf 12.20%
+  - HINDALCO: 64 shares @ avg ₹1,091.70 | close ₹1,086.50 | P&L -₹332.80 (-0.48%) | stop buf 6.55%
+  - ADANIPORTS: 27 shares @ avg ₹1,787.00 | close ₹1,798.90 | P&L +₹321.30 (+0.67%) | stop buf 7.62%
+- **Trailing stop review**: No position has reached +15% — no tightening triggered. All stops unchanged:
+  - JSWSTEEL: ₹1,177.85 (buf 8.66%) | BHARTIARTL: ₹1,768.95 (buf 5.91%) ⚠️ | TECHM: ₹1,360.03 (buf 6.03%)
+  - MANAPPURAM: ₹292.86 (buf 10.66%) | TATACONSUM: ₹1,112.93 (buf 6.77%) | RADICO: ₹3,361.95 (buf 4.94%) ⚠️
+  - BAJAJ-AUTO: ₹9,438.11 (buf 12.20%) | HINDALCO: ₹1,015.28 (buf 6.55%) | ADANIPORTS: ₹1,661.91 (buf 7.62%)
+- **Watch for tomorrow open**: RADICO (buf 4.94% — THIN); BHARTIARTL (buf 5.91% — monitor)
+- **Note**: QUIET day — 0 trades placed, portfolio +0.01% vs Nifty -0.49% (alpha +0.50%). Portfolio held its value on a down-Nifty day; BAJAJ-AUTO (+5.93%) and MANAPPURAM (+4.10%) offset RADICO drag (-2.17%). Cash pinned at ₹48,500 — below ₹50k threshold to add new positions.
