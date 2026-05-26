@@ -171,6 +171,20 @@
 
 ---
 
+### Gate Log — 2026-05-26
+- **VIX Gate**: 16.70 — PASS (<25)
+- **FII Gate**: +₹821.80 Cr — PASS (above -₹3,500 threshold)
+- Score 80–100 (15 stocks: WIPRO, JSWSTEEL held, ADANIPORTS held, DRREDDY, DIVISLAB, GRASIM, APOLLOHOSP, EICHERMOT, PAGEIND, MANAPPURAM held, TORNTPHARM, ABCAPITAL, NYKAA, ADANIGREEN, HINDALCO held) — Gate 6 FAIL: ₹70k needed > ₹48,500 cash
+- Score 60–79 (17 stocks: HDFCBANK, ICICIBANK, BHARTIARTL held, LT, AXISBANK, ADANIENT, CIPLA, INDUSINDBK, BPCL, BAJAJ-AUTO held, BERGEPAINT, MARICO, BANKBARODA, AMBUJACEM, BIOCON, TRENT, RADICO held, MCX) — Gate 6 FAIL: ₹50k needed > ₹48,500 cash
+- WIPRO (80) — Gate 3 FAIL: SOFT catalyst (IT sector recovery from US market reopening = sector sentiment only)
+- DRREDDY (80) — Gate 3 FAIL: Q4 FY26 miss, no positive catalyst
+- ONGC — Gate 8 FAIL: earnings today May 26
+- Score 40–59 (14 stocks: KOTAKBANK, ASIANPAINT, SUNPHARMA, BAJAJFINSV, TATACONSUM held, HDFCLIFE, UPL, PIDILITIND, FEDERALBNK, IDFCFIRSTB, MAXHEALTH, FORTIS, AUROPHARMA, MFSL, JSWENERGY, IIFL) — Gate 3 UNVERIFIABLE (Gemini API daily quota exhausted; defaulting to skip per soft-catalyst rule)
+- **Result: 0 trades placed. Cash ₹48,500.60 preserved.**
+- **Stop Alerts at open**: RADICO ₹3,536.70 (stop ₹3,361.95, buffer 4.94% — THIN ⚠️); TECHM ₹1,447.30 (stop ₹1,360.03, buffer 6.03% — recovering)
+
+---
+
 ### Gate Log — 2026-05-22
 - **VIX Gate**: 17.82 — PASS (<25)
 - **FII Gate**: -₹1,891.21 Cr — PASS (within -₹3,500 threshold)
