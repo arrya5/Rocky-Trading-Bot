@@ -180,6 +180,26 @@
 
 ---
 
+### Gate Log — 2026-05-27
+- **VIX Gate**: 16.13 — PASS (<25)
+- **FII Gate**: -₹2,407.90 Cr — PASS (within -₹3,500 threshold)
+- **Regime**: Sideways (Nifty 20d SMA slope +0.73%, ADX 18.2 — weak trend)
+- Score 100 (DIVISLAB, TORNTPHARM) — Gate 6 FAIL: ₹70k required > ₹48,500 available cash
+- Score 80 (WIPRO, JSWSTEEL held, ADANIPORTS held, DRREDDY, GRASIM, APOLLOHOSP, EICHERMOT, BAJAJ-AUTO held, PAGEIND, MANAPPURAM held, JSWENERGY, ADANIGREEN) — Gate 6 FAIL: ₹70k required > ₹48,500 cash
+- INFY (40) — Gate 2 FAIL: signal_generator.py returned `{}` (no valid momentum score); Gate 3 FAIL: SOFT catalyst (global tech rally = sector sentiment only, no company-specific event) — SKIP
+- ICICIBANK (40) — Gate 3 UNVERIFIED (Gemini API daily quota exhausted; defaulting to skip per soft-catalyst rule)
+- ASIANPAINT (40) — Gate 3 UNVERIFIED (Gemini quota exhausted) → SKIP
+- BAJAJFINSV (40) — Gate 3 UNVERIFIED (Gemini quota exhausted) → SKIP
+- ONGC (40) — Gate 3 FAIL: negative 10d momentum -2.38% contradicts BUY thesis; SKIP
+- BPCL (40) — Gate 3 UNVERIFIED (Gemini quota exhausted) → SKIP
+- UPL (40) — Gate 3 UNVERIFIED (Gemini quota exhausted) → SKIP
+- TRENT (40) — Gate 3 UNVERIFIED (Gemini quota exhausted) → SKIP
+- NYKAA (40) — Gate 3 UNVERIFIED (Gemini quota exhausted) → SKIP
+- **Result: 0 trades placed. Cash ₹48,500.60 preserved.**
+- **Position monitor at open**: BHARTIARTL ₹1,846.60 (stop ₹1,768.95, buffer 4.39% — THIN ⚠️); RADICO ₹3,641.50 (stop ₹3,361.95, buffer 8.32% — strong recovery from 4.94%); TECHM ₹1,465.00 (stop ₹1,360.03, buffer 7.72%)
+
+---
+
 ### Gate Log — 2026-05-26
 - **VIX Gate**: 16.70 — PASS (<25)
 - **FII Gate**: +₹821.80 Cr — PASS (above -₹3,500 threshold)
