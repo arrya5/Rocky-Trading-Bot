@@ -67,10 +67,24 @@ print("[2/9] Regime + PCR")
 regime_raw = run_script('scripts/regime_detector.py')
 regime = "unknown"
 slope = 0.0
+markov_line = ""
+p_bear_week = None
 try:
     regime_data = json.loads(regime_raw)
     regime = regime_data.get('regime', 'unknown')
     slope = regime_data.get('slope_pct', 0.0)
+    mk = regime_data.get('markov') or {}
+    if isinstance(mk, dict) and mk.get('p_bear_next_week') is not None:
+        p_bear_week = mk.get('p_bear_next_week')
+        persist = (mk.get('persistence') or {}).get(mk.get('current_regime'))
+        persist_str = f"{persist:.0f}%" if isinstance(persist, (int, float)) else "n/a"
+        sm = mk.get('stationary_mix') or {}
+        markov_line = (
+            f"{mk.get('current_regime', '?')} persistence {persist_str}, "
+            f"P(bear next week) {p_bear_week}%, "
+            f"long-run mix bull/side/bear "
+            f"{sm.get('bull', '?')}/{sm.get('sideways', '?')}/{sm.get('bear', '?')}%"
+        )
 except Exception:
     pass
 
@@ -97,7 +111,7 @@ try:
 except Exception:
     pass
 pcr_str = f"{pcr_val:.2f}" if pcr_val else "unknown"
-print(f"  regime={regime} slope={slope}% PCR={pcr_str}")
+print(f"  regime={regime} slope={slope}% PCR={pcr_str}" + (f" | markov: {markov_line}" if markov_line else ""))
 
 # ── Step 4: Full universe scan ───────────────────────────────────────────────
 print("[3/9] Universe scan via signal_generator.py")
@@ -119,8 +133,8 @@ top_candidates = all_buys[:10]
 print(f"  found {len(all_buys)} BUY signals, taking top {len(top_candidates)}")
 
 if not top_candidates:
-    msg = f"🌅 Pre-Market {today}\n\nMood: {regime} | VIX: {vix_str} | FII: {fii_str}\nNo BUY signals found in universe today.\n\nVerdict: WAIT — no candidates.\nNext check: tomorrow."
-    insert_research_log(today, f"\n### RESEARCH-{today}\n\n**Market Context**\n- VIX: {vix_str} | FII: {fii_str} | Regime: {regime} (slope {slope}%) | PCR: {pcr_str}\n\n**Trade Candidates**: NONE — no BUY signals\n\n**Recommendation**: WAIT — No qualifying signals\n\n---\n")
+    msg = f"🌅 Pre-Market {today}\n\nMood: {regime}" + (f" | P(bear/wk) {p_bear_week}%" if p_bear_week is not None else "") + f" | VIX: {vix_str} | FII: {fii_str}\nNo BUY signals found in universe today.\n\nVerdict: WAIT — no candidates.\nNext check: tomorrow."
+    insert_research_log(today, f"\n### RESEARCH-{today}\n\n**Market Context**\n- VIX: {vix_str} | FII: {fii_str} | Regime: {regime} (slope {slope}%) | PCR: {pcr_str}\n- Regime forecast (Markov): {markov_line or 'unavailable'}\n\n**Trade Candidates**: NONE — no BUY signals\n\n**Recommendation**: WAIT — No qualifying signals\n\n---\n")
     telegram_send(msg)
     sys.exit(0)
 
@@ -213,6 +227,7 @@ entry = f"""
 - FII net flow: {fii_str}
 - Global cues: {global_[:250]}
 - Regime: {regime} (slope: {slope}%)
+- Regime forecast (Markov): {markov_line or 'unavailable'}
 - Nifty PCR: {pcr_str} — {pcr_interp}
 
 **Sector Momentum**
@@ -255,7 +270,7 @@ skipped_summary = ", ".join(skipped_summary_parts) or "0"
 
 msg = (
     f"🌅 Pre-Market {today}\n\n"
-    f"Mood: {regime} (slope {slope:+.1f}%) | VIX: {vix_str}\n"
+    f"Mood: {regime} (slope {slope:+.1f}%)" + (f" | P(bear/wk) {p_bear_week}%" if p_bear_week is not None else "") + f" | VIX: {vix_str}\n"
     f"FII: {fii_str} | PCR: {pcr_str}\n\n"
     f"Top picks (score ≥40):\n{top_picks_md}"
     f"\nSkipped {len(earnings_rejected)}: {skipped_summary}\n"
