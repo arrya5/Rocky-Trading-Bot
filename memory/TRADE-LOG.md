@@ -22,6 +22,7 @@
 - **Midday 2026-05-22 13:30**: LTP ₹1,284.50 | P&L: +1.42% | Stop: ₹1,177.85 | Status: HOLDING | News: Research API returned no grounding results; Metals sector continuing gains, Q4 earnings thesis intact
 - **Midday 2026-05-25 13:30**: LTP ₹1,289.50 | P&L: +1.82% | Stop: ₹1,177.85 | Buffer: 9.48% | Status: HOLDING | News: Research API no grounding results; Q4 earnings beat thesis intact, Metals sector stable on Monday open
 - **Midday 2026-05-26 13:30**: LTP ₹1,289.50 | P&L: +1.82% | Stop: ₹1,177.85 | Buffer: 8.66% | Status: HOLDING | News: Research API no grounding results; Q4 earnings beat thesis intact
+- **Midday 2026-05-27 13:30**: LTP ₹1,289.50 | P&L: +1.82% | Stop: ₹1,177.85 | Buffer: 8.66% | Status: HOLDING | News: Research API no grounding results; Q4 earnings beat thesis intact, Metals sector stable
 
 ### TRADE-20260520-002
 - **Date**: 2026-05-20
@@ -40,6 +41,7 @@
 - **Midday 2026-05-22 13:30**: LTP ₹1,890.40 | P&L: -0.62% | Stop: ₹1,768.95 | Status: HOLDING | News: No negative news found (API returned no grounding results); 6.42% buffer to stop, record revenue + Morgan Stanley Overweight thesis intact
 - **Midday 2026-05-25 13:30**: LTP ₹1,880.00 | P&L: -1.16% | Stop: ₹1,768.95 | Buffer: 6.28% | Status: HOLDING | News: Research API no grounding results; record revenue + Morgan Stanley Overweight thesis intact, adequate buffer to stop
 - **Midday 2026-05-26 13:30**: LTP ₹1,880.00 | P&L: -1.16% | Stop: ₹1,768.95 | Buffer: 5.91% | Status: HOLDING | News: Research API no grounding results; record revenue + Morgan Stanley Overweight thesis intact
+- **Midday 2026-05-27 13:30**: LTP ₹1,846.60 | P&L: -2.92% | Stop: ₹1,768.95 | Buffer: 4.20% | Status: HOLDING — ⚠️ BUFFER THIN: slipped from 5.91% to 4.20% today; no breaking negative news; record revenue + Morgan Stanley Overweight TP ₹2,450 thesis intact but buffer trending down — monitor closely into EOD
 
 ### TRADE-20260520-003
 - **Date**: 2026-05-20
@@ -58,6 +60,7 @@
 - **Midday 2026-05-22 13:30**: LTP ₹1,413.00 | P&L: -3.38% | Stop: ₹1,360.03 | Status: HOLDING — ⚠️ CAUTION: only 3.75% buffer to stop | News: Research API 503 unavailable; IT sector under pressure, no thesis-breaking news confirmed; hard stop ₹1,360.03 — watch closely into EOD
 - **Midday 2026-05-25 13:30**: LTP ₹1,426.80 | P&L: -2.43% | Stop: ₹1,360.03 | Buffer: 4.91% | Status: HOLDING — ⚠️ CAUTION: 4.91% buffer to stop (improved from 3.75% Fri close) | News: Research API no grounding results; Q4 PAT +21% thesis intact, watching for IT sector recovery
 - **Midday 2026-05-26 13:30**: LTP ₹1,447.30 | P&L: -1.03% | Stop: ₹1,360.03 | Buffer: 6.03% | Status: HOLDING — buffer improved to 6.03% (from 4.91% Mon); Research API no grounding results; Q4 PAT +21% thesis intact
+- **Midday 2026-05-27 13:30**: LTP ₹1,465.00 | P&L: +0.18% | Stop: ₹1,360.03 | Buffer: 7.16% | Status: HOLDING | Note: Stale Q4 FY26 earnings miss (pre-entry, priced in since before May 20 entry) — not a new development; MarketsMojo Hold downgrade from Feb 2026 also stale; buffer improved to 7.16%; Q4 PAT +21% thesis intact
 
 ### TRADE-20260520-004
 - **Date**: 2026-05-20
@@ -76,6 +79,7 @@
 - **Midday 2026-05-22 13:30**: LTP ₹323.85 | P&L: +2.84% | Stop: ₹292.86 | Status: HOLDING | News: Research API returned no grounding results; NBFC sector steady, Q4 profit turnaround + Jefferies BUY TP ₹360 thesis intact
 - **Midday 2026-05-25 13:30**: LTP ₹327.80 | P&L: +4.10% | Stop: ₹292.86 | Buffer: 11.93% | Status: HOLDING | News: Research API no grounding results; strong today +4.1%, Q4 profit turnaround + Jefferies BUY TP ₹360 thesis intact
 - **Midday 2026-05-26 13:30**: LTP ₹327.80 | P&L: +4.10% | Stop: ₹292.86 | Buffer: 10.66% | Status: HOLDING | News: Research API no grounding results; Q4 profit turnaround + Jefferies BUY TP ₹360 thesis intact
+- **Midday 2026-05-27 13:30**: LTP ₹327.80 | P&L: +4.10% | Stop: ₹292.86 | Buffer: 10.66% | Status: HOLDING | News: Research API no grounding results; Q4 profit turnaround + Jefferies BUY TP ₹360 thesis intact, comfortable buffer
 
 ### TRADE-20260520-005
 - **Date**: 2026-05-20
@@ -94,6 +98,7 @@
 - **Midday 2026-05-22 13:30**: LTP ₹1,197.90 | P&L: +0.10% | Stop: ₹1,112.93 | Status: HOLDING | News: Research API returned no grounding results; flat day, Q4 profit +20% YoY thesis intact, 7.09% buffer to stop
 - **Midday 2026-05-25 13:30**: LTP ₹1,193.80 | P&L: -0.24% | Stop: ₹1,112.93 | Buffer: 7.27% | Status: HOLDING | News: Research API no grounding results; flat/slight softness, Q4 profit +20% YoY thesis intact, comfortable buffer to stop
 - **Midday 2026-05-26 13:30**: LTP ₹1,193.80 | P&L: -0.24% | Stop: ₹1,112.93 | Buffer: 6.77% | Status: HOLDING | Note: ex-dividend today ₹10/share (record date May 25) — price dip expected and thesis-neutral; Q4 profit +20% YoY intact
+- **Midday 2026-05-27 13:30**: LTP ₹1,193.80 | P&L: -0.24% | Stop: ₹1,112.93 | Buffer: 6.77% | Status: HOLDING | Note: Ex-div adjustment complete; Q4 earnings beat confirmed (+21% profit, +18% revenue); 5-day declining trend flagged but not thesis-breaking; no new negative news today
 
 ### TRADE-20260520-006
 - **Date**: 2026-05-20
@@ -112,6 +117,7 @@
 - **Midday 2026-05-22 13:30**: LTP ₹3,541.00 | P&L: -2.05% | Stop: ₹3,361.95 | Status: HOLDING — WATCH: 5.06% buffer to stop | News: Research API 503 unavailable; FMCG/IMFL slight softness continuing, FY26 record revenue thesis intact, no thesis-breaking news
 - **Midday 2026-05-25 13:30**: LTP ₹3,563.10 | P&L: -1.44% | Stop: ₹3,361.95 | Buffer: 5.98% | Status: HOLDING — WATCH: 5.98% buffer to stop (improved from 5.06% Fri) | News: Research API no grounding results; FY26 record revenue thesis intact, slight recovery from last week lows
 - **Midday 2026-05-26 13:30**: LTP ₹3,536.70 | P&L: -2.17% | Stop: ₹3,361.95 | Buffer: 4.94% | Status: HOLDING — ⚠️ WATCH: 4.94% buffer (slipped from 5.98% Mon); News: Gemini confirmed no new negative news today; surrogate-ad regulatory risk deferred by govt (positive); FY26 record revenue thesis intact
+- **Midday 2026-05-27 13:30**: LTP ₹3,641.50 | P&L: +0.73% | Stop: ₹3,361.95 | Buffer: 7.68% | Status: HOLDING | Note: Buffer RECOVERED to 7.68% from yesterday's thin 4.94% — significant rebound; Research API no grounding results; FY26 record revenue + Strong Buy consensus thesis intact
 
 ### TRADE-20260520-007
 - **Date**: 2026-05-20
@@ -130,6 +136,7 @@
 - **Midday 2026-05-22 13:30**: LTP ₹10,675.00 | P&L: +5.19% | Stop: ₹9,438.11 | Status: HOLDING | News: Research API 503 unavailable; portfolio's top performer extending gains, Q4 profit +34% + ₹5,633 Cr buyback thesis intact
 - **Midday 2026-05-25 13:30**: LTP ₹10,750.00 | P&L: +5.93% | Stop: ₹9,438.11 | Buffer: 13.90% | Status: HOLDING | News: Research API no grounding results; portfolio leader at +5.93%, Q4 profit +34% + ₹5,633 Cr buyback thesis intact
 - **Midday 2026-05-26 13:30**: LTP ₹10,750.00 | P&L: +5.93% | Stop: ₹9,438.11 | Buffer: 12.20% | Status: HOLDING | News: Research API no grounding results; portfolio leader, Q4 profit +34% + ₹5,633 Cr buyback thesis intact
+- **Midday 2026-05-27 13:30**: LTP ₹10,750.00 | P&L: +5.93% | Stop: ₹9,438.11 | Buffer: 12.20% | Status: HOLDING | Note: NEW 52-WEEK HIGH ₹10,811.85 today; dividend record date May 29 (₹150/share, ₹300 total); Q4 profit +34% + ₹5,633 Cr buyback thesis strongly confirmed — portfolio's best performer
 
 ---
 
@@ -160,6 +167,7 @@
 - **Midday 2026-05-22 13:30**: LTP ₹1,101.40 | P&L: +0.89% | Stop: ₹1,015.28 | Status: HOLDING | News: Research API returned no grounding results; Metals sector positive, Q4 FY26 strong standalone ops thesis intact
 - **Midday 2026-05-25 13:30**: LTP ₹1,086.50 | P&L: -0.48% | Stop: ₹1,015.28 | Buffer: 7.01% | Status: HOLDING | News: Research API no grounding results; slight pullback from last week's gains, Q4 FY26 strong standalone ops thesis intact
 - **Midday 2026-05-26 13:30**: LTP ₹1,086.50 | P&L: -0.48% | Stop: ₹1,015.28 | Buffer: 6.55% | Status: HOLDING | News: Research API no grounding results; Q4 FY26 strong standalone ops thesis intact
+- **Midday 2026-05-27 13:30**: LTP ₹1,086.50 | P&L: -0.48% | Stop: ₹1,015.28 | Buffer: 6.55% | Status: HOLDING | News: Research API no grounding results; Q4 FY26 strong standalone ops thesis intact, Metals sector stable
 
 ### TRADE-20260521-002
 - **Date**: 2026-05-21
@@ -177,6 +185,7 @@
 - **Midday 2026-05-22 13:30**: LTP ₹1,799.70 | P&L: +0.71% | Stop: ₹1,661.91 | Status: HOLDING | News: Research API 503 unavailable; Infrastructure sector stable, Adani OFAC/DoJ legal resolution thesis intact
 - **Midday 2026-05-25 13:30**: LTP ₹1,798.90 | P&L: +0.67% | Stop: ₹1,661.91 | Buffer: 8.24% | Status: HOLDING | News: Research API no grounding results; flat from Friday, OFAC/DoJ legal resolution thesis intact, comfortable buffer to stop
 - **Midday 2026-05-26 13:30**: LTP ₹1,798.90 | P&L: +0.67% | Stop: ₹1,661.91 | Buffer: 7.62% | Status: HOLDING | News: Research API no grounding results; OFAC/DoJ legal resolution thesis intact
+- **Midday 2026-05-27 13:30**: LTP ₹1,798.90 | P&L: +0.67% | Stop: ₹1,661.91 | Buffer: 7.62% | Status: HOLDING | News: Research API no grounding results; OFAC/DoJ legal resolution thesis intact, Infrastructure sector stable
 
 ---
 
