@@ -3,6 +3,93 @@
 
 ---
 
+### RESEARCH-2026-05-27
+
+**Market Context**
+- GIFT Nifty: 23,911.50 (vs Nifty close 23,913.70) — gap DOWN -2.2 pts (-0.01%), essentially flat; June futures at 23,890 (-64.5 pts / -0.27%) — cautious/mild negative open expected
+- India VIX: 16.13 (-3.40% from prior close) — CALM (gate CLEARS, well below 25 threshold)
+- FII net flow (May 27 provisional): -₹2,407.90 Cr — net sellers; gate CLEARS (within -₹3,500 threshold)
+- DII net flow (May 27 provisional): +₹1,361.40 Cr — net buyers, partially offsetting FII outflows
+- Global cues: US S&P 500 at all-time high 7,519 (+0.61%), Nasdaq ATH 26,656 (+1.19%); Asia MSCI at record high (+1.1%); Nikkei +1.49% to record; KOSPI +4.84% (SK Hynix +11% — chip demand surge); Brent crude $99.18 (-0.41%); WTI $93.12 (-0.82%); DXY 99.09 (-0.06% — weak dollar)
+- Regime: **sideways** (Nifty 20d SMA slope: +0.73%, ADX 18.2 — weak trend; Nifty close 23,913.70; SMA20 23,867.21)
+- Nifty PCR: unavailable (NSE API 403 Forbidden) — assume neutral
+
+**API Status**: Gemini API daily quota EXHAUSTED (20 req/day free tier consumed; earnings_guard.py Gemini fallback used ~19 calls). Sector momentum, catalyst research, and chart analysis unavailable today.
+
+**Sector Momentum** *(Gemini rate limited — inferred from signal scan + global cues)*
+- Strong (inferred): IT/Tech (WIPRO +7.47% 10d, INFY score 40; global tech rally with US/Asia at ATH, KOSPI +4.84%, AI/semiconductor demand); Metals (HINDALCO 100, JSWSTEEL 80 — both held); Pharma (DIVISLAB 100, TORNTPHARM 100, DRREDDY 80); Energy (JSWENERGY 80, ADANIGREEN 80 — +11% 10d)
+- Weak/Consolidating: FMCG/Consumer (TATACONSUM in mild loss territory); Telecom (BHARTIARTL underperforming — -2.90% from entry, thin stop buffer 4.2%)
+- Auto: BAJAJ-AUTO holds 80 (+4.38% from entry), EICHERMOT 80 (new)
+- Note: ITC ex-dividend ₹8/share today
+
+**Signal Scan Results** (51 BUY signals ≥ 40 — full universe scan)
+- Score 100: DIVISLAB, HINDALCO★, TORNTPHARM
+- Score 80: WIPRO, JSWSTEEL★, ADANIPORTS★, DRREDDY, GRASIM, APOLLOHOSP, EICHERMOT, BAJAJ-AUTO★, PAGEIND, MANAPPURAM★, JSWENERGY, ADANIGREEN, [+more]
+- Score 40: INFY, ICICIBANK, ASIANPAINT, BAJAJFINSV, ONGC, BPCL, UPL, TRENT, NYKAA
+*(★ = already held in portfolio)*
+
+**Earnings Guard** *(NSE API 403; Gemini fallback — results are indicative, not guaranteed)*
+- All 19 candidates checked: NO earnings within 7 days flagged (Gemini fallback confirmed for all)
+- Note: reliability lower without NSE direct data; manual verification recommended for high-conviction trades
+
+**Chart Pattern Analysis**: SKIPPED — Gemini API quota exhausted
+
+**Gate Analysis — New Position Candidates:**
+
+**Score 80-100 (₹70k size required):**
+- ALL FAIL Gate 6: cash ₹48,500 < ₹70,000 required. No score-80+ entries today.
+
+**Score 40-59 (₹30k size — viable with ₹48.5k cash):**
+- INFY (40) — IT | RSI 50.1 | 10d +2.40% | Catalyst: Global tech rally (Nasdaq ATH, Asia record high) — MEDIUM (sector tailwind from AI/semiconductor demand)
+  Gate 9: 2nd IT position (TECHM already held) — ALLOWED (max 2 per sector)
+- ICICIBANK (40) — Banking | RSI 49.9 | 10d +3.13% | Catalyst: unknown — cannot classify (Gemini unavailable); Gate 3 UNVERIFIED → SKIP
+- ASIANPAINT (40) — Consumer | RSI 65.9 (elevated) | 10d +5.65% | Catalyst: unknown — Gate 3 UNVERIFIED → SKIP
+- BAJAJFINSV (40) — Finance | RSI 43.3 | 10d +3.20% | Catalyst: unknown — Gate 3 UNVERIFIED → SKIP
+- ONGC (40) — Energy | RSI 56.5 | **10d -2.38% (negative momentum)** → SKIP (bearish momentum contradicts BUY thesis)
+- BPCL (40) — Energy | RSI 44.4 | 10d +5.82% | Catalyst: unknown — Gate 3 UNVERIFIED → SKIP
+- UPL (40) — Chemicals | RSI 48.2 | 10d +4.61% | Catalyst: unknown — Gate 3 UNVERIFIED → SKIP
+- TRENT (40) — Consumer | RSI 46.7 | 10d +4.67% | Catalyst: unknown — Gate 3 UNVERIFIED → SKIP
+- NYKAA (40) — Consumer | RSI 43.9 | 10d +2.19% | Catalyst: unknown — Gate 3 UNVERIFIED → SKIP
+
+**Viable for entry: INFY (MEDIUM catalyst from global tech rally) — pending decision (see below)**
+
+**Existing Position Monitor** (pre-market prices)
+| Symbol | Entry | LTP | Stop | Buffer | Abs P&L | Status |
+|--------|-------|-----|------|--------|---------|--------|
+| JSWSTEEL | ₹1,266.50 | ₹1,293.60 | ₹1,177.85 | 8.9% | +₹1,057 | SAFE |
+| BHARTIARTL | ₹1,902.10 | ₹1,846.90 | ₹1,768.95 | **4.2%** | -₹1,987 | ⚠️ THIN BUFFER — MONITOR |
+| TECHM | ₹1,462.40 | ₹1,458.70 | ₹1,360.03 | 6.8% | -₹74 | SAFE |
+| MANAPPURAM | ₹314.90 | ₹330.25 | ₹292.86 | 11.3% | +₹3,408 | SAFE |
+| TATACONSUM | ₹1,196.70 | ₹1,187.60 | ₹1,112.93 | 6.3% | -₹373 | SAFE |
+| RADICO | ₹3,615.00 | ₹3,578.40 | ₹3,361.95 | 6.0% | -₹476 | SAFE (improved from 4.94%) |
+| BAJAJ-AUTO | ₹10,148.50 | ₹10,593.00 | ₹9,438.11 | 10.9% | +₹889 | SAFE |
+| HINDALCO | ₹1,091.70 | ₹1,103.80 | ₹1,015.28 | 8.0% | +₹774 | SAFE |
+| ADANIPORTS | ₹1,787.00 | ₹1,811.20 | ₹1,661.91 | 8.2% | +₹653 | SAFE |
+
+**Portfolio unrealized P&L (pre-market)**: ~+₹5,871 (+1.17%)
+**Trailing stop review**: No position at +15% — no tightening triggered. All stops unchanged.
+
+**Key Events Today (2026-05-27)**
+- ITC: ex-dividend ₹8/share (today)
+- Bajaj Auto: dividend ex-date May 29 (not today)
+- No major NSE earnings results identified for today
+- Global: US/Asia markets at all-time highs; KOSPI chip rally (SK Hynix +11%); US-Iran peace talks ongoing (crude softening -0.41%)
+- Gemini API daily quota exhausted — catalyst research, chart analysis, sector momentum unavailable
+
+**Rejected**
+- All score 80-100 new candidates (DIVISLAB, TORNTPHARM, WIPRO, DRREDDY, GRASIM, APOLLOHOSP, EICHERMOT, JSWENERGY, ADANIGREEN, PAGEIND) — Gate 6: cash ₹48,500 < ₹70,000 required
+- ICICIBANK, ASIANPAINT, BAJAJFINSV, BPCL, UPL, TRENT, NYKAA (score 40) — Gate 3 UNVERIFIED (no catalyst research available)
+- ONGC (score 40) — negative 10d momentum -2.38% contradicts BUY
+
+**Recommendation**: **WAIT — NO NEW POSITIONS TODAY**
+- Cash constraint precludes all score 80+ trades (need ₹70k, have ₹48.5k)
+- Gemini quota exhausted → Gate 3 (catalyst) unverifiable for most candidates
+- INFY has a weak case (score 40 minimum conviction, MEDIUM catalyst from global cues only) — insufficient confidence given API-constrained research
+- Priority: Monitor BHARTIARTL closely (4.2% buffer — thin). Hard stop at ₹1,768.95 if breached.
+- RADICO also recovering (buffer now 6.0%, up from 4.94%)
+
+---
+
 ### RESEARCH-2026-05-26
 
 **Market Context**
