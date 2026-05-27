@@ -143,9 +143,9 @@ for cand in candidates:
         sig_info = sig_data.get(sym, {})
     except Exception:
         sig_info = {}
-    if sig_info.get('signal') != 'BUY' or sig_info.get('confidence', 0) < 40:
+    if sig_info.get('signal') != 'BUY' or sig_info.get('confidence', 0) < 80:
         skipped.append((sym, f'Gate 2: signal={sig_info.get("signal","?")} conf={sig_info.get("confidence", 0)}'))
-        log_lines.append(f"- {sym}: SKIP — Gate 2: not BUY ≥40")
+        log_lines.append(f"- {sym}: SKIP — Gate 2: not BUY >=80 (swing v3 threshold)")
         continue
 
     # Gate 8: Earnings guard
@@ -208,8 +208,10 @@ for cand in candidates:
     cash -= exec_price * qty
     open_positions.append({'symbol': sym, 'sector': sector, 'qty': qty, 'avg_price': exec_price})
 
-    stop = round(exec_price * 0.93, 2)
-    target = round(exec_price * 1.20, 2)
+    # Swing v3 exits: tighter stop (-5%), faster partial (+6%), trail trigger (+12%)
+    stop          = round(exec_price * 0.95, 2)   # -5% hard stop
+    partial_at    = round(exec_price * 1.06, 2)   # +6% partial exit
+    trail_trigger = round(exec_price * 1.12, 2)   # +12% trail activation
 
     # Record structured trade for learning system
     gru_conf_dec = sig_info.get('confidence', 0) / 100.0
@@ -235,8 +237,10 @@ for cand in candidates:
         f"- **Total value**: ₹{exec_price * qty:,.2f}\n"
         f"- **Momentum score**: {sig_info.get('confidence', 0):.0f}/100 | sector: {sector}\n"
         f"- **Catalyst**: {cand['catalyst'][:120]} | tier: {cand['tier']}\n"
-        f"- **Stop loss**: ₹{stop} (-7%)\n"
-        f"- **Target**: ₹{target} (+20%)\n"
+        f"- **Stop loss**: ₹{stop} (-5%)\n"
+        f"- **Partial exit at**: ₹{partial_at} (+6%, sells half)\n"
+        f"- **Trail trigger**: ₹{trail_trigger} (+12%, tightens stop)\n"
+        f"- **Max hold**: 15 trading days\n"
         f"- **Status**: OPEN\n"
     )
     log_lines.append(trade_block)
@@ -246,7 +250,7 @@ for cand in candidates:
         f"🟢 BUY {sym} — ₹{exec_price * qty:,.0f}\n"
         f"{qty} shares @ ₹{exec_price:.2f} | Score {sig_info.get('confidence', 0):.0f}/100 | {sector}\n"
         f"Why: {cand['catalyst'][:100]} [{cand['tier']}]\n"
-        f"Target ₹{target} (+20%) | Stop ₹{stop} (-7%)"
+        f"Stop ₹{stop} (-5%) | Partial ₹{partial_at} (+6%) | Trail ₹{trail_trigger} (+12%) | Max 15d hold"
     )
 
     orders_placed.append({'symbol': sym, 'qty': qty, 'price': exec_price, 'score': sig_info.get('confidence', 0)})

@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """Midday routine — 1:30 PM IST.
 
-Production-equivalent of CCR Midday Risk Scan.
-Only intra-day stop check. No new entries.
+SWING v3 logic. Only intra-day stop check. No new entries.
 
 Per position:
-  - Hard stop -7% → close at LTP
-  - +15% gain + no partial yet → sell half, tighten stop to -7% below LTP
-  - +20% gain → tighten trail to -5% below LTP
+  - Hard stop -5% → close at LTP
+  - +6% gain + no partial yet → sell half, tighten stop to -3% below LTP
+  - +12% gain → tighten trail to -3% below LTP
+  - Held >= 15 trading days → force close (swing max hold)
   - News check via Gemini; if thesis broken → close
 """
 import sys, os, json, re
@@ -54,33 +54,68 @@ def has_partial(sym: str) -> bool:
             return bool(t.get('partial_exits'))
     return False
 
+def days_held(sym: str) -> int:
+    """Trading days between entry and today. None if not found."""
+    from datetime import date as _date
+    for t in outcomes.get('trades', []):
+        if t.get('symbol') == sym and t.get('exit_date') is None:
+            try:
+                ed = _date.fromisoformat(t.get('entry_date'))
+                td = _date.today()
+                # Approximate trading days = calendar days * 5/7 (close enough)
+                return max(0, (td - ed).days)
+            except Exception:
+                return 0
+    return 0
+
+MAX_HOLD_DAYS = 15  # swing v3 hard limit
+
+max_hold_exits = []
+
 for pos in positions:
     sym = pos['symbol']
     ltp = float(pos.get('ltp', pos.get('avg_price', 0)))
     avg = float(pos['avg_price'])
     qty = int(pos['qty'])
     pnl_pct = (ltp - avg) / avg * 100
+    held = days_held(sym)
 
-    print(f"\n[{sym}] LTP=₹{ltp:.2f} avg=₹{avg:.2f} P&L={pnl_pct:+.2f}%")
+    print(f"\n[{sym}] LTP=Rs{ltp:.2f} avg=Rs{avg:.2f} P&L={pnl_pct:+.2f}% held={held}d")
 
-    hard_stop = avg * 0.93
+    # SWING v3 thresholds
+    hard_stop = avg * 0.95   # -5% (was -7%)
 
-    # Rule A — Hard stop
+    # Rule MAX-HOLD — force close at 15 trading days
+    if held >= MAX_HOLD_DAYS:
+        print(f"  MAX HOLD ({held}d >= {MAX_HOLD_DAYS}d) — closing")
+        broker('close', sym)
+        run_script('scripts/record_trade.py', 'exit', sym, f"{ltp:.2f}", 'max_hold', capture=False)
+        telegram_send(
+            f"⏰ MAX HOLD: {sym} | Closed @ Rs{ltp:.2f} | P&L: {pnl_pct:+.2f}% | "
+            f"Held {held}d (swing v3 max=15d)"
+        )
+        log_lines.append(
+            f"**Midday {today} 13:30**: {sym} MAX-HOLD @ Rs{ltp:.2f} ({pnl_pct:+.2f}%) — held {held}d, CLOSED"
+        )
+        max_hold_exits.append(sym)
+        continue
+
+    # Rule A — Hard stop (-5% in swing v3)
     if ltp <= hard_stop:
         print(f"  HARD STOP triggered")
         broker('close', sym)
         run_script('scripts/record_trade.py', 'exit', sym, f"{ltp:.2f}", 'hard_stop', capture=False)
         telegram_send(
-            f"⚠️ STOP HIT: {sym} | Closed @ ₹{ltp:.2f} | P&L: {pnl_pct:+.2f}% | -7% hard stop"
+            f"⚠️ STOP HIT: {sym} | Closed @ Rs{ltp:.2f} | P&L: {pnl_pct:+.2f}% | -5% hard stop"
         )
         log_lines.append(
-            f"**Midday {today} 13:30**: {sym} STOP HIT @ ₹{ltp:.2f} ({pnl_pct:+.2f}%) — CLOSED"
+            f"**Midday {today} 13:30**: {sym} STOP HIT @ Rs{ltp:.2f} ({pnl_pct:+.2f}%) — CLOSED"
         )
         stops_hit.append(sym)
         continue
 
-    # Rule B — Partial exit at +15%
-    if pnl_pct >= 15 and not has_partial(sym):
+    # Rule B — Partial exit at +6% (was +15%)
+    if pnl_pct >= 6 and not has_partial(sym):
         half = qty // 2
         if half >= 1:
             print(f"  PARTIAL EXIT: selling {half}")
@@ -90,24 +125,24 @@ for pos in positions:
             })
             broker('order', order_payload)
             run_script('scripts/record_trade.py', 'partial_exit', sym, f"{ltp:.2f}", str(half), capture=False)
-            new_stop = round(ltp * 0.93, 2)
+            new_stop = round(ltp * 0.97, 2)  # tightened to -3% below current
             telegram_send(
-                f"🟡 PARTIAL EXIT: {sym} | Sold {half} @ ₹{ltp:.2f} | "
-                f"Locked +{pnl_pct:.1f}% | Stop tightened to ₹{new_stop}"
+                f"🟡 PARTIAL EXIT: {sym} | Sold {half} @ Rs{ltp:.2f} | "
+                f"Locked +{pnl_pct:.1f}% | Stop tightened to Rs{new_stop} (-3%)"
             )
             log_lines.append(
-                f"**Midday {today} 13:30**: {sym} PARTIAL — sold {half} @ ₹{ltp:.2f}, "
-                f"remaining {qty - half} | stop ₹{new_stop}"
+                f"**Midday {today} 13:30**: {sym} PARTIAL — sold {half} @ Rs{ltp:.2f}, "
+                f"remaining {qty - half} | stop Rs{new_stop}"
             )
             partials.append(sym)
             continue
 
-    # Rule C — Trailing stop tighten at +20%
-    if pnl_pct >= 20:
-        new_stop = round(ltp * 0.95, 2)
-        print(f"  +20% gain — trail stop tightened to ₹{new_stop}")
+    # Rule C — Trail stop tighten at +12% (was +20%)
+    if pnl_pct >= 12:
+        new_stop = round(ltp * 0.97, 2)  # -3% trail (was -5%)
+        print(f"  +12% gain — trail stop tightened to Rs{new_stop}")
         log_lines.append(
-            f"**Midday {today} 13:30**: {sym} HOLD @ ₹{ltp:.2f} ({pnl_pct:+.2f}%) — trail stop ₹{new_stop}"
+            f"**Midday {today} 13:30**: {sym} HOLD @ Rs{ltp:.2f} ({pnl_pct:+.2f}%, {held}d) — trail Rs{new_stop}"
         )
         holding.append((sym, pnl_pct))
         continue
@@ -142,7 +177,7 @@ for pos in positions:
 
     # Otherwise — holding
     log_lines.append(
-        f"**Midday {today} 13:30**: {sym} HOLD @ ₹{ltp:.2f} ({pnl_pct:+.2f}%) — stop ₹{hard_stop:.2f}"
+        f"**Midday {today} 13:30**: {sym} HOLD @ Rs{ltp:.2f} ({pnl_pct:+.2f}%, {held}d) — stop Rs{hard_stop:.2f} (-5%)"
     )
     holding.append((sym, pnl_pct))
 
@@ -162,14 +197,16 @@ for sym, pnl in holding:
     positions_lines.append(f"• {sym}: {pnl:+.1f}% — {state}")
 
 actions_lines = []
-if stops_hit:  actions_lines.append(f"• Stops hit: {', '.join(stops_hit)}")
-if partials:   actions_lines.append(f"• Partial exits: {', '.join(partials)}")
-if news_exits: actions_lines.append(f"• Thesis broken: {', '.join(news_exits)}")
+if stops_hit:       actions_lines.append(f"• Stops hit (-5%): {', '.join(stops_hit)}")
+if partials:        actions_lines.append(f"• Partial exits (+6%): {', '.join(partials)}")
+if max_hold_exits:  actions_lines.append(f"• Max-hold exits (15d): {', '.join(max_hold_exits)}")
+if news_exits:      actions_lines.append(f"• Thesis broken: {', '.join(news_exits)}")
 
+total_actions = len(stops_hit) + len(partials) + len(max_hold_exits) + len(news_exits)
 reading = (
     "All positions holding — no action needed"
-    if not (stops_hit or partials or news_exits)
-    else f"Took {len(stops_hit) + len(partials) + len(news_exits)} risk actions, riding remaining {len(holding)}"
+    if total_actions == 0
+    else f"Took {total_actions} risk actions, riding remaining {len(holding)}"
 )
 
 msg = (
@@ -183,4 +220,4 @@ if actions_lines:
 msg += f"Reading: {reading}\nNext check: EOD 3:45 PM."
 
 telegram_send(msg)
-print(f"[midday] done. stops={len(stops_hit)} partials={len(partials)} news_exits={len(news_exits)} holding={len(holding)}")
+print(f"[midday] done. stops={len(stops_hit)} partials={len(partials)} max_hold={len(max_hold_exits)} news_exits={len(news_exits)} holding={len(holding)}")

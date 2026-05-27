@@ -73,6 +73,19 @@ try:
 except Exception:
     pass
 
+# SWING v3: bear regime gate — no trades when market is in confirmed downtrend
+if regime == 'bear':
+    msg = (
+        f"🚫 Pre-Market {today} — NO TRADES TODAY\n\n"
+        f"Reason: Bear regime (Nifty 20d slope {slope:+.1f}%)\n"
+        f"Swing strategy blocks bear-regime entries — momentum factors fail in downtrends.\n"
+        f"Next check: tomorrow 8:30 AM."
+    )
+    insert_research_log(today, f"\n### RESEARCH-{today}\n\n**BEAR REGIME — NO TRADES TODAY**\n- Nifty 20d slope: {slope:+.2f}%\n- VIX: {vix_str} | FII: {fii_str}\n\n**Recommendation**: BEAR REGIME — SKIP\n\n---\n")
+    telegram_send(msg)
+    print("[pre-market] BEAR REGIME gate triggered — exit")
+    sys.exit(0)
+
 pcr_raw = run_script('scripts/market_data.py', 'pcr')
 pcr_val = None
 pcr_interp = ""

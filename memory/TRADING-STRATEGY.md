@@ -1,134 +1,125 @@
-# Trading Strategy — Indian Market Edition
-*Last updated: 2026-05-17*
+# Trading Strategy — Swing v3
+*Last updated: 2026-05-27 (migrated from position trading)*
+
+## Strategy Type
+**Short-to-medium term swing trading.** Hold positions 3–15 trading days. Tighter stops than position trading. Tighter targets. Higher conviction threshold. Block bear regime entries entirely.
 
 ## Universe
 - **Allowed**: Nifty 50 large caps + Nifty Midcap 150 stocks only
-- **Exchange**: NSE primary (use .NS suffix for yfinance)
-- **Instruments**: Equity delivery only — NO options, futures, or intraday
-- **Excluded**: Penny stocks, stocks outside Nifty 200, PSU banks with government interference risk
+- **Exchange**: NSE primary (yfinance .NS suffix)
+- **Instruments**: Equity delivery only — NO options, futures, intraday
+- **Excluded**: Penny stocks, stocks outside Nifty 200
 
 ## Capital & Position Sizing
-- **Total capital**: ₹5,00,000
-- **Position size is tiered by momentum score** (from signal_generator.py `suggested_position_size`):
-  - Score 80–100 → ₹70,000 (high conviction)
-  - Score 60–79  → ₹50,000 (medium conviction)
-  - Score 40–59  → ₹30,000 (minimum threshold — smaller size)
-- **Max positions**: Unlimited during paper trading — deploy capital across as many signals as available
-- **New positions/week**: Unlimited during paper trading — take every valid signal
-- **Pre-filters** (applied by signal_generator.py before scoring — stock excluded entirely if it fails):
-  - ADV (avg daily traded value, 20-day) must be ≥ ₹50 Cr
-  - 20-day daily return volatility must be ≤ 3% per day
+- **Total capital**: ₹5,00,000 (paper trading)
+- **Position size**: Flat **₹50,000 per trade** (only score ≥ 80 trades, single tier)
+- **Max positions**: Unlimited (paper mode) — can hold up to ~10 concurrent
+- **Pre-filters** (excluded entirely if any fails):
+  - ADV (20-day avg daily value) ≥ ₹50 Cr
+  - 20-day volatility ≤ 3.5%
+  - **Above 200-day SMA** (no falling knives)
 
-## Entry Rules (ALL must pass — no exceptions)
-1. Stock must be in Nifty 50 or Nifty Midcap 150
-2. Momentum score ≥ 40 (from signal_generator.py — 2 or more of 5 factors aligned)
-3. Catalyst is HARD or MEDIUM tier (see catalyst classification below) — pure technical signals alone do not pass
-4. Upper circuit NOT hit in the last 3 days (avoid extended stocks)
-5. India VIX must be < 25 (paper trading relaxed — learning across volatility regimes)
-6. Position cost ≤ available cash (max ₹50,000 per position)
-7. FII net buying must not be strongly negative (> -₹3500 Cr outflow — relaxed for paper learning)
-8. No earnings announcement or board meeting for results within 7 calendar days (binary event risk)
-9. Sector concentration ≤ 2 open positions in the same sector after entry
+## Scoring Factors (5 × 20 = 100 max)
+1. **Donchian 20-day breakout**: close ≥ previous 20-day high
+2. **ADX(14) > 25**: strong trend confirmation
+3. **Sector relative strength**: NSE sector index outperforms Nifty by > 1pp over 10 days
+4. **Volume surge**: today's volume > 2.5× 20-day avg
+5. **Above 50-day EMA**: current price > EMA50 × 1.01 (medium-term uptrend, with 1% buffer)
 
-**Paper trading mode**: No cap on total positions or weekly trades. Take every signal that clears all 9 gates — maximum data generation accelerates learning.
+**BUY signal**: score ≥ 80 (4 of 5 factors aligned). Conservative threshold by design.
+
+## 9+1 Point Buy-Side Gate (ALL must pass)
+1. Stock in Nifty 50 or Midcap 150
+2. Swing score ≥ 80
+3. Catalyst is HARD or MEDIUM tier (LLM-classified)
+4. Stock not at upper circuit; no large gap (> 18%)
+5. India VIX < 25
+6. Position cost ≤ available cash (₹50k per trade)
+7. FII net flow > -₹3500 Cr
+8. No earnings/board meeting within 7 days
+9. Sector concentration ≤ 2 open positions in same sector
+10. **NEW — Market regime gate**: skip ALL entries when regime == "bear" (Nifty 20d SMA slope < -1.5%)
 
 ## Catalyst Classification (Gate 3)
-Classify the catalyst from Gemini research. Only HARD or MEDIUM pass Gate 3.
-
 | Tier | Examples | Gate 3 |
 |------|----------|--------|
-| HARD | Earnings beat, analyst upgrade to BUY/Strong Buy, product launch, regulatory approval, QIP/buyback, M&A | PASS |
-| MEDIUM | Specific sector policy (budget allocation, PLI scheme), index inclusion, management guidance revision, block deal by institution | PASS |
-| SOFT | "Stock is trending", "sector doing well", general market sentiment, no specific event | FAIL — skip trade |
+| HARD | Earnings beat, analyst upgrade, product launch, regulatory approval, QIP/buyback, M&A | PASS |
+| MEDIUM | Sector policy (PLI, budget), index inclusion, management guidance, block deal | PASS |
+| SOFT | "Stock trending", "sector doing well", vague news | FAIL — skip |
 
-Log catalyst tier in RESEARCH-LOG.md and TRADE-LOG.md for every trade.
+## Exit Rules (Swing v3)
 
-## Exit Rules
-### Hard stops (execute immediately, no exceptions)
-- Unrealized loss ≥ -7% → CLOSE full position at market
-- Lower circuit hit → attempt close at open next day; flag as illiquid
-- Company fraud/scam news → CLOSE immediately regardless of P&L
-- Thesis broken (key catalyst failed) → CLOSE regardless of P&L
+### Hard stops (no exceptions)
+- **-5% loss**: close at market (was -7% in position trading; tighter for swing)
+- Lower circuit hit: flag, attempt close next day
+- Fraud/scam news: close immediately
+- Thesis broken: close regardless of P&L
+- **Max hold 15 trading days**: force close regardless of P&L (NEW — swing-specific)
 
-### Partial profit booking (mandatory at +15%)
-- At +15% gain: SELL exactly 50% of position at market — lock in realized gain
-- Remaining 50%: tighten trailing stop to 7% below current price
-- ONE partial exit only per trade — do NOT take another 50% exit on the same position
-- After partial exit at +15%: At +20% on remaining → tighten stop to 5% below current price
-- **Never force-close a profitable remaining position** — let the trailing stop trigger naturally
+### Partial profit booking (mandatory at +6%)
+- At +6% gain: SELL exactly 50% of position at market — lock realized gain
+- Tighten remaining 50% trailing stop to **3% below current price**
+- ONE partial exit only per trade
 
 ### Trailing stop management
-- Default trailing stop: 10% below cost
-- At +15% gain: tighten trailing stop to 7% below current price (after partial exit)
-- At +20% gain: tighten trailing stop to 5% below current price
+- Default trail: -5% below cost (the hard stop)
+- After partial at +6%: trail tightens to -3% below current price
+- At +12% gain: trail tightens further to -3% below current price (no double-tighten)
 - NEVER move stop downward (only tighten)
-- NEVER tighten stop within 3% of current LTP
-- **No forced exit at any profit level** — trailing stop is the only exit for profitable positions
 
 ### Sector rule
-- After 2 consecutive failed trades in same sector → exit sector for 10 trading days
-- Max 2 simultaneous open positions in any single sector (Gate 9)
+- After 2 consecutive failed trades in same sector → exit sector for 5 trading days (faster cycle than position trading)
+- Max 2 simultaneous open positions per sector
 
-## Chart Pattern Analysis (Vision — Step 4.7)
-- `scripts/chart_analysis.py` generates a 60-day candlestick chart from yfinance → passes to Gemini vision
-- Output per symbol: pattern, signal (bullish/bearish/neutral), thesis_alignment (confirms/contradicts/neutral), key levels
-- `thesis_alignment: contradicts` + high confidence → remove candidate from shortlist
-- `thesis_alignment: contradicts` + low confidence → keep candidate, note warning in research log
-- Chart analysis is informational — NOT a hard gate. Strong GRU + fundamentals override weak chart signal
-- Adds pattern recognition (doji, engulfing, double top, etc.) the GRU model cannot see numerically
-
-## Market Context Signals (informational — not hard gates unless noted)
-- **Regime** (pre-market): bull/bear/sideways based on Nifty 50 20-day SMA slope
-  - Bull: slope > +1.5% | Bear: slope < -1.5% | Sideways: between
-  - Log regime in each day's RESEARCH-LOG.md entry
-- **Nifty PCR** (pre-market):
-  - PCR < 0.5: extreme euphoria — add caution note, proceed with extra care
-  - PCR < 0.7: euphoric market — log as caution
-  - PCR 0.7–1.2: neutral
-  - PCR > 1.2: fearful market (contrarian bullish signal)
-- **Delivery %** (when available):
-  - ≥ 60%: strong institutional interest in the stock
-  - 40–60%: moderate
-  - < 40%: weak institutional interest — note in research log, not a hard gate
-- **Catalyst type**: tracked per trade for learning. Performance analyzer will flag catalyst types with < 30% win rate across 5+ trades.
+## Market Context Signals
+- **Regime** (pre-market): bull / bear / sideways based on Nifty 50 20-day SMA slope
+  - Bull: slope > +1.5%
+  - Bear: slope < -1.5% → **BLOCK ALL ENTRIES**
+  - Sideways: between (allow entries)
+- **Nifty PCR** (pre-market): informational
+- **Delivery %**: informational when available
 
 ## Risk Controls
-### Pre-order circuit check
-Before every BUY order, verify:
-- Stock is not at upper circuit (would reject order anyway, but log it)
-- Stock has not been at lower circuit in last 3 sessions
-- Circuit limit: 5% / 10% / 20% depending on category
+- Pre-order circuit check: not at upper circuit, no lower circuit in last 3 sessions
+- All trades CNC (delivery) — no margin
+- Available cash check before each entry
 
-### Margin check
-- All trades are delivery (CNC product code) — no margin trading
-- Ensure available cash > position cost before placing
-
-### Costs to factor into P&L
-- **STT**: 0.1% on delivery sell-side
-- **Brokerage**: ₹20 flat per order (Upstox zero brokerage for delivery)
-- **Exchange fees**: ~0.00345% of trade value
-- **SEBI fee**: ₹10 per crore
-- **GST**: 18% on brokerage + exchange fees
-- **Stamp duty**: 0.015% on buy-side
+## Costs to factor (per round-trip)
+- STT: 0.1% on delivery sell-side
+- Brokerage: ₹20 flat per order
+- Exchange fees: ~0.00345%
+- GST: 18% on brokerage + exchange
+- Stamp duty: 0.015% buy-side
+- **Estimated round-trip cost**: ~0.15–0.20%
 
 ## Market Hours (IST)
-- Pre-open session: 9:00 AM – 9:15 AM (order collection, no execution)
 - Regular session: 9:15 AM – 3:30 PM
-- Post-close session: 3:40 PM – 4:00 PM
-- **Place orders only between 9:20 AM and 3:20 PM**
+- Place orders only between 9:20 AM and 3:20 PM
 
-## Settlement
-- T+1 settlement: Shares credited/debited next trading day
-- Delivery trades: Hold ≥ 1 day (no same-day reversal)
-- No PDT rule in India — day trading allowed but we trade delivery only
+## Benchmark & Grading
+- Compare weekly performance to Nifty 50
+- Target: Beat Nifty by +1% per week (swing target — more aggressive than position)
 
-## Benchmark
-- Compare weekly performance against Nifty 50 index
-- Target: Beat Nifty 50 by +2% per quarter
-
-## Strategy Grade Scale
-- A: Beat Nifty + positive absolute return
+## Strategy Grade Scale (weekly)
+- A: Beat Nifty AND positive absolute return
 - B: Beat Nifty OR positive return (not both)
 - C: Underperform Nifty but positive return
 - D: Negative return
-- F: > -10% total portfolio drawdown in a week
+- F: > -10% portfolio drawdown in a week
+
+## Auto-tuning (after 20 closed trades)
+- `scripts/performance_analyzer.py` activates at 20 closed trades
+- Recommendations get logged to `memory/WEEKLY-REVIEW.md` for human review
+- Recommendations are NOT auto-applied (human-in-loop safeguard)
+- Reviewer can manually edit `models/signal_generator.py` constants or this file
+
+## Exit criterion for the swing experiment
+If after 30 days of live paper trading the win rate is < 45% AND alpha vs Nifty is < -3%, consider:
+- Reverting to position trading rules
+- Treating the collected data as research signal
+- Re-evaluating which factors actually predict in real-forward data (NOT backtest)
+
+## Migration history
+- **2026-05-18**: Initial deployment with position trading rules (70k/50k/30k tiers, -7% stop, +15% partial, no max hold)
+- **2026-05-27**: Migrated to Gemini + GitHub Actions infrastructure (CCR routines paused)
+- **2026-05-27**: Swing v3 strategy adopted (this version)
