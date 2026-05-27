@@ -1,0 +1,37 @@
+name: Health Check
+
+on:
+  schedule:
+    - cron: "45 10 * * 1-5"  # 10:45 UTC = 16:15 IST — after EOD (15:45) should have run
+  workflow_dispatch:
+
+concurrency:
+  group: rocky-routine
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install pytz
+        run: pip install pytz
+
+      - name: Run health check
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+          PYTHONUTF8:          "1"
+        run: |
+          python scripts/health_check.py

@@ -19,8 +19,11 @@ from common import (
 sys.path.insert(0, str(REPO_ROOT / 'scripts'))
 from score import score as fitness_score, _load_goal, _closed_trades
 
+from common import write_heartbeat
+
 today = today_str()
 print(f"[weekly-review] starting {today}")
+write_heartbeat('weekly_review', 'started')
 
 
 # ── Hypothesis verification loop helpers ─────────────────────────────────────
@@ -185,11 +188,27 @@ if n_closed > 0:
         ),
         schema_hint='{"worked": "1-2 sentences", "didnt_work": "1-2 sentences", "observation": "1 sentence worth tracking"}'
     )
-    if isinstance(review, dict):
+    if isinstance(review, dict) and 'worked' in review:
         qualitative = (
             f"What worked: {review.get('worked', '-')}\n"
             f"What didn't: {review.get('didnt_work', '-')}\n"
             f"Observation: {review.get('observation', '-')}"
+        )
+    else:
+        # DETERMINISTIC FALLBACK — both Gemini and Hermes failed.
+        # Build a rule-based summary from analyzer numbers so the review
+        # never fully stalls on LLM outage.
+        print("  [fallback] both LLMs failed — deterministic qualitative summary", file=sys.stderr)
+        wr = overall_stats.get('win_rate_pct')
+        best_sec = max(by_sector.items(), key=lambda kv: kv[1].get('win_rate_pct') or 0, default=(None, {}))
+        worst_sec = min(by_sector.items(), key=lambda kv: kv[1].get('win_rate_pct') or 100, default=(None, {}))
+        best_regime = max(by_regime.items(), key=lambda kv: kv[1].get('win_rate_pct') or 0, default=(None, {}))
+        qualitative = (
+            f"[deterministic — LLM unavailable]\n"
+            f"Overall win rate: {wr}% across {n_closed} closed trades. "
+            f"Best sector: {best_sec[0]} ({best_sec[1].get('win_rate_pct','?')}% win). "
+            f"Worst sector: {worst_sec[0]} ({worst_sec[1].get('win_rate_pct','?')}% win). "
+            f"Strongest regime: {best_regime[0]}."
         )
 
 # ── Step 6: Apply rule changes (only if sufficient_data) ─────────────────────
@@ -297,5 +316,6 @@ else:
     msg += f"\nNo rule changes this week.\n"
 
 telegram_send(msg)
+write_heartbeat('weekly_review', 'ok', f"grade={grade} fitness={current_fitness['fitness']:+.3f}")
 print(f"[weekly-review] done. grade={grade} fitness={current_fitness['fitness']:+.3f} "
       f"changes={len(applied_changes)} verified={len(verified_this_week)} reverted={len(reverted_this_week)}")

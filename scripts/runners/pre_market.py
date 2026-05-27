@@ -22,11 +22,12 @@ sys.path.insert(0, str(Path(__file__).parent))
 from common import (
     gemini_research, gemini_reason, classify_catalyst, telegram_send,
     today_str, parse_vix, parse_fii, run_script, insert_research_log,
-    REPO_ROOT,
+    write_heartbeat, REPO_ROOT,
 )
 
 today = today_str()
 print(f"[pre-market] starting {today}")
+write_heartbeat('pre_market', 'started')
 
 # ── Step 1: Macro research ───────────────────────────────────────────────────
 print("[1/9] Macro research")
@@ -262,4 +263,5 @@ msg = (
 )
 telegram_send(msg)
 
+write_heartbeat('pre_market', 'ok', f"{len(final_candidates)} candidates, regime={regime}")
 print(f"[pre-market] done. {len(final_candidates)} candidates carried forward.")

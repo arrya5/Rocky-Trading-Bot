@@ -1,9 +1,19 @@
 """Shared utilities for all routine runners.
 
-Uses Gemini 2.5 Flash for both research (Google Search grounded) and reasoning
-(structured JSON output for orchestration tasks Claude used to handle).
+LLM strategy (tiered, free):
+  - RESEARCH (factual market data): Gemini ONLY, with Google Search grounding.
+    Hermes has no web access, so it is NOT used for research (would hallucinate
+    live VIX/FII numbers). On Gemini failure, returns a clear unavailable marker.
+  - REASONING (catalyst classification, reflections): Gemini PRIMARY → Hermes
+    FALLBACK. Both reason over provided text, no web needed. When Gemini's free
+    tier (1500 req/day) is exhausted or errors, Hermes (open-source, via
+    OpenRouter or local Ollama) takes over.
+
+Reliability:
+  - Retry-with-backoff on all LLM calls
+  - Heartbeat written by each routine (memory/heartbeat.json) for health checks
 """
-import os, json, sys, subprocess, re
+import os, json, sys, subprocess, re, time
 import urllib.request, urllib.error
 from datetime import datetime
 from pathlib import Path
@@ -14,7 +24,6 @@ try:
     def now_ist():
         return datetime.now(IST)
 except ImportError:
-    # Fallback if pytz missing
     from datetime import timezone, timedelta
     IST = timezone(timedelta(hours=5, minutes=30))
     def now_ist():
@@ -28,27 +37,34 @@ def today_str() -> str:
     return now_ist().strftime('%Y-%m-%d')
 
 
-# ── Gemini calls ──────────────────────────────────────────────────────────────
+# ── Raw Gemini call (with retry + quota detection) ────────────────────────────
 
-def _gemini_call(payload: dict, model: str = 'gemini-2.5-flash', timeout: int = 30) -> dict | None:
+def _gemini_call(payload: dict, model: str = 'gemini-2.5-flash',
+                 timeout: int = 30, retries: int = 3) -> dict | None:
     api_key = os.environ.get('GEMINI_API_KEY', '')
     if not api_key:
         return None
     url = f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}'
-    req = urllib.request.Request(
-        url, data=json.dumps(payload).encode('utf-8'),
-        headers={'Content-Type': 'application/json'}
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=timeout) as r:
-            return json.load(r)
-    except urllib.error.HTTPError as e:
-        body = e.read().decode()[:200] if hasattr(e, 'read') else ''
-        print(f'[Gemini API {e.code}] {body}', file=sys.stderr)
-        return None
-    except Exception as e:
-        print(f'[Gemini error] {str(e)[:120]}', file=sys.stderr)
-        return None
+    for attempt in range(retries):
+        req = urllib.request.Request(
+            url, data=json.dumps(payload).encode('utf-8'),
+            headers={'Content-Type': 'application/json'}
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                return json.load(r)
+        except urllib.error.HTTPError as e:
+            code = e.code
+            body = e.read().decode()[:200] if hasattr(e, 'read') else ''
+            if code == 429:
+                print(f'[Gemini quota/rate 429] attempt {attempt+1} — will fall back to Hermes', file=sys.stderr)
+                return None  # quota exhausted → signal fallback immediately
+            print(f'[Gemini API {code}] attempt {attempt+1}: {body}', file=sys.stderr)
+        except Exception as e:
+            print(f'[Gemini error attempt {attempt+1}] {str(e)[:120]}', file=sys.stderr)
+        if attempt < retries - 1:
+            time.sleep(2 ** attempt)
+    return None
 
 
 def _extract_text(resp: dict | None) -> str:
@@ -61,8 +77,77 @@ def _extract_text(resp: dict | None) -> str:
     return ''.join(p.get('text', '') for p in parts if not p.get('thought'))
 
 
+# ── Raw Hermes call (OpenAI-compatible: OpenRouter OR local Ollama) ───────────
+
+def _hermes_call(system: str, user: str, json_mode: bool = True,
+                 timeout: int = 60, retries: int = 2) -> str:
+    """
+    Hermes via any OpenAI-compatible endpoint.
+
+    Config via env vars (set in GitHub Secrets or local .env):
+      HERMES_API_URL   default: https://openrouter.ai/api/v1/chat/completions
+                       local Ollama: http://localhost:11434/v1/chat/completions
+      HERMES_API_KEY   OpenRouter/Nous key (not needed for local Ollama)
+      HERMES_MODEL     default: nousresearch/hermes-3-llama-3.1-405b
+                       local Ollama example: hermes3
+    """
+    # `or default` handles both unset AND empty-string env vars (GitHub passes
+    # empty strings for undefined vars/secrets)
+    base_url = os.environ.get('HERMES_API_URL') or 'https://openrouter.ai/api/v1/chat/completions'
+    api_key  = os.environ.get('HERMES_API_KEY') or os.environ.get('OPENROUTER_API_KEY') or ''
+    model    = os.environ.get('HERMES_MODEL') or 'nousresearch/hermes-3-llama-3.1-405b'
+
+    is_local = 'localhost' in base_url or '127.0.0.1' in base_url
+    if not api_key and not is_local:
+        return ''  # no key and not local → Hermes unavailable
+
+    payload = {
+        'model': model,
+        'messages': [
+            {'role': 'system', 'content': system},
+            {'role': 'user', 'content': user},
+        ],
+        'temperature': 0.2,
+        'max_tokens': 700,
+    }
+    if json_mode:
+        payload['response_format'] = {'type': 'json_object'}
+
+    headers = {'Content-Type': 'application/json'}
+    if api_key:
+        headers['Authorization'] = f'Bearer {api_key}'
+
+    for attempt in range(retries):
+        try:
+            req = urllib.request.Request(
+                base_url, data=json.dumps(payload).encode('utf-8'), headers=headers
+            )
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                data = json.load(r)
+            return data['choices'][0]['message']['content']
+        except Exception as e:
+            print(f'[Hermes error attempt {attempt+1}] {str(e)[:120]}', file=sys.stderr)
+            if attempt < retries - 1:
+                time.sleep(2 ** attempt)
+    return ''
+
+
+def _parse_json_or_text(text: str, json_mode: bool):
+    if not json_mode:
+        return text
+    text = re.sub(r'^```(?:json)?\s*', '', text).strip()
+    text = re.sub(r'\s*```$', '', text).strip()
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        return {'error': 'parse_failed', 'raw': text[:300]}
+
+
+# ── RESEARCH (Gemini only — needs web search) ─────────────────────────────────
+
 def gemini_research(query: str, max_tokens: int = 512) -> str:
-    """Gemini with Google Search grounding. Use for factual/market research."""
+    """Gemini with Google Search grounding. NO Hermes fallback — Hermes can't
+    search the web and would hallucinate live market numbers."""
     payload = {
         'contents': [{'role': 'user', 'parts': [{'text': query}]}],
         'tools': [{'google_search': {}}],
@@ -75,44 +160,46 @@ def gemini_research(query: str, max_tokens: int = 512) -> str:
         'generationConfig': {'temperature': 0.1, 'maxOutputTokens': max_tokens},
     }
     text = _extract_text(_gemini_call(payload))
-    return text or '[no response]'
+    return text or '[research unavailable — Gemini failed, no web fallback]'
 
+
+# ── REASONING (Gemini primary → Hermes fallback) ──────────────────────────────
 
 def gemini_reason(system: str, user: str, schema_hint: str = '',
                   max_tokens: int = 600, json_mode: bool = True) -> dict | str:
-    """Gemini for STRUCTURED reasoning (no web search).
-
-    If json_mode=True, expects JSON output (responseMimeType=application/json).
-    Returns parsed dict on success, or {'error': '...'} on failure.
-    """
+    """Structured reasoning. Tries Gemini first; on failure/quota, falls back to
+    Hermes (open-source). Both reason over provided context — no web needed."""
     full_user = user + ('\n\nReturn ONLY valid JSON: ' + schema_hint if schema_hint else '')
+
+    # ── Attempt 1: Gemini ────────────────────────────────────────────────────
     cfg = {'temperature': 0.2, 'maxOutputTokens': max_tokens}
     if json_mode:
         cfg['responseMimeType'] = 'application/json'
-
     payload = {
         'contents': [{'role': 'user', 'parts': [{'text': full_user}]}],
         'systemInstruction': {'parts': [{'text': system}]},
         'generationConfig': cfg,
     }
     text = _extract_text(_gemini_call(payload))
-    if not text:
-        return {'error': 'empty_response'} if json_mode else ''
+    if text:
+        parsed = _parse_json_or_text(text, json_mode)
+        if not (isinstance(parsed, dict) and parsed.get('error')):
+            return parsed
 
-    if not json_mode:
-        return text
+    # ── Attempt 2: Hermes fallback ───────────────────────────────────────────
+    print('[reason] Gemini unavailable → trying Hermes fallback', file=sys.stderr)
+    htext = _hermes_call(system, full_user, json_mode=json_mode)
+    if htext:
+        parsed = _parse_json_or_text(htext, json_mode)
+        if not (isinstance(parsed, dict) and parsed.get('error')):
+            print('[reason] Hermes fallback succeeded', file=sys.stderr)
+            return parsed
 
-    # Strip markdown fences if present
-    text = re.sub(r'^```(?:json)?\s*', '', text).strip()
-    text = re.sub(r'\s*```$', '', text).strip()
-    try:
-        return json.loads(text)
-    except json.JSONDecodeError:
-        return {'error': 'parse_failed', 'raw': text[:300]}
+    return {'error': 'all_llms_failed'} if json_mode else ''
 
 
 def classify_catalyst(symbol: str, catalyst_text: str) -> dict:
-    """Use Gemini to classify a catalyst as HARD / MEDIUM / SOFT."""
+    """Classify a catalyst as HARD / MEDIUM / SOFT. Uses Gemini→Hermes routing."""
     schema = '{"tier": "HARD|MEDIUM|SOFT", "type": "earnings|upgrade|breakout|sector_tailwind|technical|other", "summary": "one-line"}'
     system = (
         'You classify trade catalysts for an Indian equity momentum bot. Three tiers:\n'
@@ -166,7 +253,6 @@ def broker(cmd: str, *args):
 
 
 def run_script(path: str, *args, capture: bool = True) -> str:
-    """Run a project script and return its stdout."""
     result = subprocess.run(
         ['python', str(REPO_ROOT / path), *args],
         capture_output=capture, text=True, cwd=str(REPO_ROOT)
@@ -189,14 +275,11 @@ def append_to_memory(filename: str, content: str) -> None:
 
 
 def insert_research_log(today: str, entry: str) -> None:
-    """Insert a RESEARCH-LOG entry after the header template (or append)."""
     p = memory_path('RESEARCH-LOG.md')
     existing = p.read_text(encoding='utf-8') if p.exists() else '# Research Log\n\n'
-    # Find first '---' marker (end of template section) and insert after
     marker = '\n---\n'
     idx = existing.find(marker)
     if idx >= 0:
-        # Insert after the FIRST --- (which ends the header template)
         insert_pos = idx + len(marker)
         updated = existing[:insert_pos] + '\n' + entry + existing[insert_pos:]
     else:
@@ -204,10 +287,29 @@ def insert_research_log(today: str, entry: str) -> None:
     p.write_text(updated, encoding='utf-8')
 
 
+# ── Heartbeat / health monitoring ─────────────────────────────────────────────
+
+def write_heartbeat(routine: str, status: str = 'ok', detail: str = '') -> None:
+    """Record that a routine ran. Read by scripts/health_check.py."""
+    hb = memory_path('heartbeat.json')
+    data = {}
+    if hb.exists():
+        try:
+            data = json.loads(hb.read_text(encoding='utf-8'))
+        except Exception:
+            data = {}
+    data[routine] = {
+        'last_run_iso': now_ist().isoformat(timespec='seconds'),
+        'date':         today_str(),
+        'status':       status,
+        'detail':       detail[:200],
+    }
+    hb.write_text(json.dumps(data, indent=2), encoding='utf-8')
+
+
 # ── Number parsing helpers ──────────────────────────────────────────────────
 
 def parse_vix(text: str) -> float | None:
-    """Extract VIX value from Gemini research text."""
     patterns = [
         r'India\s*VIX[^\d]{0,30}?(\d+\.\d+)',
         r'VIX[^\d]{0,30}?(\d+\.\d+)',
@@ -218,7 +320,7 @@ def parse_vix(text: str) -> float | None:
         if m:
             try:
                 v = float(m.group(1))
-                if 5 < v < 100:  # sanity range
+                if 5 < v < 100:
                     return v
             except ValueError:
                 continue
@@ -226,8 +328,6 @@ def parse_vix(text: str) -> float | None:
 
 
 def parse_fii(text: str) -> float | None:
-    """Extract FII net flow in Cr from text. Negative = outflow."""
-    # Look for patterns like "FII net sold ₹2,500 Cr" or "FII bought ₹1,200 crore"
     patterns = [
         r'FII[^.]*?(?:sold|outflow|net sell|sellers)[^\d\-]*?([\d,]+\.?\d*)\s*(?:Cr|crore)',
         r'FII[^.]*?(?:bought|inflow|net buy|buyers)[^\d\-]*?([\d,]+\.?\d*)\s*(?:Cr|crore)',
@@ -239,9 +339,9 @@ def parse_fii(text: str) -> float | None:
         if m:
             try:
                 v = float(m.group(1).replace(',', '').replace(' ', ''))
-                if i == 0:  # "sold/outflow" → negative
+                if i == 0:
                     return -abs(v)
-                if i == 1:  # "bought/inflow" → positive
+                if i == 1:
                     return abs(v)
                 return v
             except ValueError:

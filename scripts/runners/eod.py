@@ -11,11 +11,12 @@ from datetime import datetime
 sys.path.insert(0, str(Path(__file__).parent))
 from common import (
     gemini_research, gemini_reason, telegram_send, broker, today_str, now_ist,
-    memory_path, REPO_ROOT, run_script,
+    memory_path, REPO_ROOT, run_script, write_heartbeat,
 )
 
 today = today_str()
 print(f"[eod] starting {today}")
+write_heartbeat('eod', 'started')
 
 # ── Step 1: Final EOD state ──────────────────────────────────────────────────
 account   = broker('account')
@@ -127,6 +128,17 @@ if is_active:
     )
     if isinstance(reflection, dict) and 'surprise' in reflection:
         surprise = reflection['surprise']
+    else:
+        # DETERMINISTIC FALLBACK — both LLMs failed. Build surprise from numbers.
+        if closed_today:
+            biggest = max(closed_today, key=lambda t: abs(t.get('pnl_pct', 0)))
+            surprise = (f"[auto] {biggest['symbol']} {biggest['pnl_pct']:+.1f}% "
+                        f"({biggest.get('exit_reason','?')}) was today's largest move.")
+        elif best_pos and worst_pos:
+            surprise = (f"[auto] Open book ranged {worst_pos['pnl_pct']:+.1f}% "
+                        f"({worst_pos['symbol']}) to {best_pos['pnl_pct']:+.1f}% ({best_pos['symbol']}).")
+        else:
+            surprise = f"[auto] Day moved {day_pnl_pct:+.2f}% vs Nifty {nifty_pct:+.2f}%."
     print(f"  surprise: {surprise}")
 
 # ── Step 6: Append EOD snapshot to TRADE-LOG ─────────────────────────────────
@@ -197,4 +209,5 @@ else:
     )
 
 telegram_send(msg)
+write_heartbeat('eod', 'ok', f"day {day_pnl_pct:+.2f}%, portfolio Rs {total_val:,.0f}")
 print(f"[eod] done. day_pnl_pct={day_pnl_pct:+.2f}% active={is_active}")

@@ -22,12 +22,13 @@ from datetime import datetime, date
 sys.path.insert(0, str(Path(__file__).parent))
 from common import (
     gemini_research, telegram_send, broker, today_str, now_ist,
-    run_script, memory_path, REPO_ROOT,
+    run_script, memory_path, write_heartbeat, REPO_ROOT,
 )
 
 
 today = today_str()
 print(f"[market-open] starting {today}")
+write_heartbeat('market_open', 'started')
 
 # ── Step 1: Read research log ────────────────────────────────────────────────
 log_path = memory_path('RESEARCH-LOG.md')
@@ -281,4 +282,5 @@ else:
         f"Cash unchanged: ₹{cash:,.0f}. Next opportunity: tomorrow."
     )
 
+write_heartbeat('market_open', 'ok', f"{len(orders_placed)} orders placed")
 print(f"[market-open] done. {len(orders_placed)} orders placed.")

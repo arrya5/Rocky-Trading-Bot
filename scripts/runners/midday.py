@@ -16,11 +16,12 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from common import (
     gemini_research, gemini_reason, telegram_send, broker, today_str,
-    run_script, memory_path, REPO_ROOT,
+    run_script, memory_path, write_heartbeat, REPO_ROOT,
 )
 
 today = today_str()
 print(f"[midday] starting {today}")
+write_heartbeat('midday', 'started')
 
 # ── Step 1: Account + positions ──────────────────────────────────────────────
 account   = broker('account')
@@ -220,4 +221,5 @@ if actions_lines:
 msg += f"Reading: {reading}\nNext check: EOD 3:45 PM."
 
 telegram_send(msg)
+write_heartbeat('midday', 'ok', f"stops={len(stops_hit)} partials={len(partials)} maxhold={len(max_hold_exits)} holding={len(holding)}")
 print(f"[midday] done. stops={len(stops_hit)} partials={len(partials)} max_hold={len(max_hold_exits)} news_exits={len(news_exits)} holding={len(holding)}")
