@@ -1,0 +1,31 @@
+# goal.yaml — Rocky's scoring contract
+# Single machine-readable definition of success / failure / quality.
+# Read by scripts/score.py and scripts/runners/weekly_review.py.
+
+asset_universe:    "Nifty50 + Midcap150"
+strategy:          "swing_v3"
+
+# Success — what we're optimizing toward
+target_return_30d: 0.05      # +5% absolute return per 30 days
+beat_nifty_by:     0.01      # +1pp/week alpha target vs Nifty 50
+
+# Failure — when the strategy is broken
+max_drawdown:      0.10      # bail / red-flag above 10% portfolio drawdown
+failure_below:    -0.04      # fitness score floor — steeply negative below this realized return
+
+# Quality bar
+min_sharpe:        1.0       # risk-adjusted return must clear this (1.0 = solid)
+
+# Reflection cadence (matches performance_analyzer.py MIN_TRADES)
+reflection_every:  20        # closed trades before a rule change is permitted
+one_variable_only: true      # scientific-method guardrail — change ONE thing per cycle
+
+# Verification loop
+verify_after_trades: 20      # measure a change's effect after this many new closed trades
+auto_revert_if_worse: true   # if a change made fitness worse, revert it automatically
+
+# Swing experiment exit criterion (from TRADING-STRATEGY.md)
+experiment_review:
+  after_days: 30
+  revert_if_win_rate_below: 0.45
+  revert_if_alpha_below:    -0.03
