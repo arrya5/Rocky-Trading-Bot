@@ -3,6 +3,56 @@
 
 ---
 
+
+### RESEARCH-2026-05-27
+
+**Market Context**
+- SGX Nifty: As of May 27, 2026, GIFT Nifty (formerly SGX N
+- India VIX: 15.57 — calm
+- FII net flow: -2408 Cr
+- Global cues: US stock futures edged higher on May 27, 2026, with S&P 500 and Nasdaq futures up, continuing a tech-driven rally. Crude oil prices fell, with WTI crude around $91.84-$93.05 per barrel and Brent crude at $97.95-$99.06 per barrel, influenced by ongoin
+- Regime: sideways (slope: 0.57%)
+- Nifty PCR: unknown — 
+
+**Sector Momentum**
+On May 27, 2026, the Indian equity market saw a mixed performance, with the Nifty 50 experiencing a subdued opening and large caps generally trading flat or with marginal movements.
+
+Leading sectors included Power, which surged 1.80% to 2.23%, Metals, rallying 2.57% and hitting a new 52-week high, a
+
+**Trade Candidates** (Score ≥ 40, sorted by score)
+1. **TORNTPHARM** — Score: 100/100 — Catalyst: Vague mention of several unspecified catalysts for Torrent Pharmaceuticals. [SOFT] — Chart: neutral/neutral
+   Sector: Pharma | Size: ₹70,000 | Entry: ~₹4527.5 | Stop: ₹4210.57 (-7%)
+2. **WIPRO** — Score: 80/100 — Catalyst: classification failed [SOFT] — Chart: neutral/neutral
+   Sector: IT | Size: ₹70,000 | Entry: ~₹201.1 | Stop: ₹187.02 (-7%)
+3. **NTPC** — Score: 80/100 — Catalyst: classification failed [SOFT] — Chart: neutral/neutral
+   Sector: Energy | Size: ₹70,000 | Entry: ~₹396.8 | Stop: ₹369.02 (-7%)
+4. **JSWSTEEL** — Score: 80/100 — Catalyst: classification failed [SOFT] — Chart: neutral/neutral
+   Sector: Metals | Size: ₹70,000 | Entry: ~₹1307.5 | Stop: ₹1215.98 (-7%)
+5. **ADANIPORTS** — Score: 80/100 — Catalyst: classification failed [SOFT] — Chart: neutral/neutral
+   Sector: Infrastructure | Size: ₹70,000 | Entry: ~₹1833.7 | Stop: ₹1705.34 (-7%)
+6. **DRREDDY** — Score: 80/100 — Catalyst: classification failed [SOFT] — Chart: -
+   Sector: Pharma | Size: ₹70,000 | Entry: ~₹1321.9 | Stop: ₹1229.37 (-7%)
+7. **GRASIM** — Score: 80/100 — Catalyst: classification failed [SOFT] — Chart: -
+   Sector: Infrastructure | Size: ₹70,000 | Entry: ~₹3172.0 | Stop: ₹2949.96 (-7%)
+8. **APOLLOHOSP** — Score: 80/100 — Catalyst: classification failed [SOFT] — Chart: -
+   Sector: Other | Size: ₹70,000 | Entry: ~₹8285.0 | Stop: ₹7705.05 (-7%)
+9. **EICHERMOT** — Score: 80/100 — Catalyst: classification failed [SOFT] — Chart: -
+   Sector: Auto | Size: ₹70,000 | Entry: ~₹7393.0 | Stop: ₹6875.49 (-7%)
+10. **BAJAJ-AUTO** — Score: 80/100 — Catalyst: classification failed [SOFT] — Chart: -
+   Sector: Auto | Size: ₹70,000 | Entry: ~₹10801.5 | Stop: ₹10045.40 (-7%)
+
+
+**Rejected**
+- (none)
+
+
+**Key Events Today**
+On May 27, 2026, several Indian companies released their Q4 FY26 earnings, including ONGC with a 3% rise in net profit to ₹6,649.97 crore, IRCTC with a 9% fall in net profit to ₹326 crore, and Senco Gold reporting a 2.5 times jump in profit after tax to ₹157 crore. Other companies like Gillette Indi
+
+**Recommendation**: PROCEED with 10 candidates
+
+---
+
 ### RESEARCH-2026-05-27
 
 **Market Context**
