@@ -465,3 +465,23 @@
   - BAJAJ-AUTO: ₹9,438.11 (buf 12.20%) | HINDALCO: ₹1,015.28 (buf 6.55%) | ADANIPORTS: ₹1,661.91 (buf 7.62%)
 - **Watch for tomorrow open**: RADICO (buf 4.94% — THIN); BHARTIARTL (buf 5.91% — monitor)
 - **Note**: QUIET day — 0 trades placed, portfolio +0.01% vs Nifty -0.49% (alpha +0.50%). Portfolio held its value on a down-Nifty day; BAJAJ-AUTO (+5.93%) and MANAPPURAM (+4.10%) offset RADICO drag (-2.17%). Cash pinned at ₹48,500 — below ₹50k threshold to add new positions.
+
+### EOD Snapshot 2026-05-27
+- **Portfolio value**: ₹503,231.90
+- **Cash**: ₹48,500.60
+- **Open positions**: 9
+- **Market value**: ₹454,731.30
+- **Day P&L**: ₹514.00 (+0.10%)
+- **All-time P&L**: ₹3,231.90 (+0.65% from ₹5,00,000 base)
+- **Nifty 50 today**: +0.03%
+- **Alpha vs Nifty**: +0.07%
+- **Positions**:
+  - JSWSTEEL: 39 sh @ avg ₹1266.50 | close ₹1310.60 | P&L +3.48%
+  - BHARTIARTL: 36 sh @ avg ₹1902.10 | close ₹1847.90 | P&L -2.85%
+  - TECHM: 20 sh @ avg ₹1462.40 | close ₹1456.20 | P&L -0.42%
+  - MANAPPURAM: 222 sh @ avg ₹314.90 | close ₹328.75 | P&L +4.40%
+  - TATACONSUM: 41 sh @ avg ₹1196.70 | close ₹1204.00 | P&L +0.61%
+  - RADICO: 13 sh @ avg ₹3615.00 | close ₹3439.90 | P&L -4.84%
+  - BAJAJ-AUTO: 2 sh @ avg ₹10148.50 | close ₹10808.50 | P&L +6.50%
+  - HINDALCO: 64 sh @ avg ₹1091.70 | close ₹1147.50 | P&L +5.11%
+  - ADANIPORTS: 27 sh @ avg ₹1787.00 | close ₹1824.50 | P&L +2.10%
