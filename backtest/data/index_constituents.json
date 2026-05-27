@@ -1,0 +1,11 @@
+{
+  "description": "Quarterly snapshots of Nifty 50 + Nifty Midcap 150 constituents. POC uses today's universe as default. Phase B should populate historical quarters from NSE archives to fix survivorship bias.",
+  "default_quarter": "2026-Q2",
+  "quarters": {
+    "2026-Q2": {
+      "note": "Starter: mirrors backtest/data/universe.json. Replace with actual NSE quarterly list when available.",
+      "use_default_universe": true
+    }
+  },
+  "phase_b_todo": "Populate 2023-Q1 through 2026-Q1 from NSE index reconstitution archives (or scrape from nsearchives.nseindia.com/content/indices/...)."
+}

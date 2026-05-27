@@ -140,12 +140,35 @@ python scripts/record_trade.py entry SYMBOL "SECTOR" GRU_CONF VIX FII_FLOW REGIM
 ```
 
 ```bash
-bash scripts/telegram.sh "BUY SYMBOL | N shares @ ₹XXXX | Cost: ₹XX,XXX | Target: ₹XXXX (+20%) | Stop: ₹XXXX (-7%) | Paper"
+bash scripts/telegram.sh "🟢 BUY SYMBOL — ₹XX,XXX
+N shares @ ₹X,XXX | Score XX/100 | [Sector]
+Why: [catalyst 1-line, tier]
+Target ₹X,XXX (+20%) | Stop ₹X,XXX (-7%)"
+```
+
+After ALL trades placed, send ONE curated summary message:
+```bash
+bash scripts/telegram.sh "📋 Market Open Summary
+
+Took N trade(s), deployed ₹X,XX,XXX
+Highest conviction: SYMBOL (XX/100)
+
+Skipped:
+• SYMBOL — Gate X: [reason]
+• SYMBOL — Gate X: [reason]
+
+Cash left: ₹X,XX,XXX | Watching N positions for stops."
 ```
 
 If no trades placed (all gates failed):
 ```bash
-bash scripts/telegram.sh "Market-open $DATE | 0 trades placed | [reason: all gates filtered]"
+bash scripts/telegram.sh "📋 Market Open $DATE — 0 trades placed
+
+All N candidates filtered:
+• SYMBOL — Gate X: [reason]
+• SYMBOL — Gate X: [reason]
+
+Cash unchanged: ₹X,XX,XXX. Next opportunity: tomorrow."
 ```
 
 ## Step 6 — COMMIT AND PUSH (only if trades placed; skip if no trades)

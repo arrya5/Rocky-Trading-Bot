@@ -1,0 +1,530 @@
+{
+  "phase_b_cfg": {
+    "name": "Phase B \u00e2\u20ac\u201d Walk-Forward Optimization",
+    "description": "3 training windows of 6 months each, one parameter tuned per window, then locked-rules holdout test.",
+    "base_rules": {
+      "min_score": 40,
+      "adv_min_cr": 50,
+      "vol_max_pct": 3.0,
+      "stop_pct": -0.07,
+      "partial_exit_pct": 0.15,
+      "partial_exit_stop_pct": -0.07,
+      "trailing_pct_at_20": -0.05,
+      "circuit_gap_pct": 0.18,
+      "vix_max": 25,
+      "fii_min_cr": -3500,
+      "sector_max_open": 2,
+      "size_tier_high": 70000,
+      "size_tier_mid": 50000,
+      "size_tier_low": 30000
+    },
+    "starting_capital": 500000,
+    "costs": {
+      "stt_sell_pct": 0.001,
+      "brokerage_per_order": 20
+    },
+    "training_windows": [
+      {
+        "id": "W1",
+        "start_date": "2023-05-01",
+        "end_date": "2023-10-31",
+        "tune_param": "score_threshold",
+        "candidates": [
+          {
+            "name": "score_40_baseline",
+            "overrides": {
+              "min_score": 40
+            }
+          },
+          {
+            "name": "score_50",
+            "overrides": {
+              "min_score": 50
+            }
+          },
+          {
+            "name": "score_60",
+            "overrides": {
+              "min_score": 60
+            }
+          }
+        ]
+      },
+      {
+        "id": "W2",
+        "start_date": "2023-11-01",
+        "end_date": "2024-04-30",
+        "tune_param": "stop_tightness",
+        "candidates": [
+          {
+            "name": "stop_-5pct",
+            "overrides": {
+              "stop_pct": -0.05
+            }
+          },
+          {
+            "name": "stop_-7pct_baseline",
+            "overrides": {
+              "stop_pct": -0.07
+            }
+          },
+          {
+            "name": "stop_-10pct",
+            "overrides": {
+              "stop_pct": -0.1
+            }
+          }
+        ]
+      },
+      {
+        "id": "W3",
+        "start_date": "2024-05-01",
+        "end_date": "2024-10-31",
+        "tune_param": "position_sizing",
+        "candidates": [
+          {
+            "name": "baseline_70_50_30",
+            "overrides": {
+              "size_tier_high": 70000,
+              "size_tier_mid": 50000,
+              "size_tier_low": 30000
+            }
+          },
+          {
+            "name": "conservative_100_70_40",
+            "overrides": {
+              "size_tier_high": 100000,
+              "size_tier_mid": 70000,
+              "size_tier_low": 40000
+            }
+          },
+          {
+            "name": "granular_50_30_20",
+            "overrides": {
+              "size_tier_high": 50000,
+              "size_tier_mid": 30000,
+              "size_tier_low": 20000
+            }
+          },
+          {
+            "name": "aggressive_tiered_90_40_15",
+            "overrides": {
+              "size_tier_high": 90000,
+              "size_tier_mid": 40000,
+              "size_tier_low": 15000
+            }
+          },
+          {
+            "name": "flat_50_50_50",
+            "overrides": {
+              "size_tier_high": 50000,
+              "size_tier_mid": 50000,
+              "size_tier_low": 50000
+            }
+          }
+        ]
+      }
+    ],
+    "holdout": {
+      "start_date": "2024-11-01",
+      "end_date": "2025-04-30",
+      "description": "LOCKED \u00e2\u20ac\u201d no tuning. Final test of training-period winners."
+    },
+    "statistical_gates": {
+      "min_trades_in_window": 15,
+      "min_effect_pp_return": 2.0,
+      "bootstrap_iterations": 200,
+      "bootstrap_win_threshold": 0.65,
+      "max_drawdown_floor_pct": -20.0
+    },
+    "overfit_check": {
+      "holdout_min_pct_of_training_avg": 0.7,
+      "description": "If holdout return < 70% of training-period average, revert all tuning."
+    },
+    "gates_skipped": [
+      "3 (catalyst tier - LLM lookahead bias, structural)",
+      "8 (earnings guard - historical data unavailable)"
+    ]
+  },
+  "base_rules": {
+    "min_score": 40,
+    "adv_min_cr": 50,
+    "vol_max_pct": 3.0,
+    "stop_pct": -0.07,
+    "partial_exit_pct": 0.15,
+    "partial_exit_stop_pct": -0.07,
+    "trailing_pct_at_20": -0.05,
+    "circuit_gap_pct": 0.18,
+    "vix_max": 25,
+    "fii_min_cr": -3500,
+    "sector_max_open": 2,
+    "size_tier_high": 70000,
+    "size_tier_mid": 50000,
+    "size_tier_low": 30000
+  },
+  "tuned_rules": {
+    "min_score": 40,
+    "adv_min_cr": 50,
+    "vol_max_pct": 3.0,
+    "stop_pct": -0.07,
+    "partial_exit_pct": 0.15,
+    "partial_exit_stop_pct": -0.07,
+    "trailing_pct_at_20": -0.05,
+    "circuit_gap_pct": 0.18,
+    "vix_max": 25,
+    "fii_min_cr": -3500,
+    "sector_max_open": 2,
+    "size_tier_high": 100000,
+    "size_tier_mid": 70000,
+    "size_tier_low": 40000
+  },
+  "final_rules": {
+    "min_score": 40,
+    "adv_min_cr": 50,
+    "vol_max_pct": 3.0,
+    "stop_pct": -0.07,
+    "partial_exit_pct": 0.15,
+    "partial_exit_stop_pct": -0.07,
+    "trailing_pct_at_20": -0.05,
+    "circuit_gap_pct": 0.18,
+    "vix_max": 25,
+    "fii_min_cr": -3500,
+    "sector_max_open": 2,
+    "size_tier_high": 70000,
+    "size_tier_mid": 50000,
+    "size_tier_low": 30000
+  },
+  "final_decision": "REVERT_TO_BASELINE",
+  "final_msg": "holdout return (-6.57%) < 70% of training avg (+9.62%)",
+  "avg_training_return_pct": 9.62,
+  "training_returns": [
+    -2.532,
+    30.982,
+    0.396
+  ],
+  "holdout_metrics": {
+    "n_trades": 21,
+    "win_rate_pct": 28.57,
+    "total_return_pct": -6.565,
+    "max_drawdown_pct": -16.61,
+    "total_pnl": -33316.46,
+    "total_invested": 1896640.61,
+    "return_on_deployed_pct": -1.76,
+    "nifty_return_pct": 0.12,
+    "alpha": -6.69
+  },
+  "holdout_ratio": -0.683,
+  "overfit_detected": true,
+  "training_decisions": [
+    {
+      "window_id": "W1",
+      "window_dates": "2023-05-01 -> 2023-10-31",
+      "tune_param": "score_threshold",
+      "candidates": [
+        {
+          "name": "score_40_baseline",
+          "overrides": {
+            "min_score": 40
+          },
+          "metrics": {
+            "n_trades": 14,
+            "win_rate_pct": 28.57,
+            "total_return_pct": -2.532,
+            "max_drawdown_pct": -6.94,
+            "total_pnl": -13273.39,
+            "total_invested": 968531.5,
+            "return_on_deployed_pct": -1.37,
+            "nifty_return_pct": 5.14,
+            "alpha": -7.67
+          },
+          "objective": null
+        },
+        {
+          "name": "score_50",
+          "overrides": {
+            "min_score": 50
+          },
+          "metrics": {
+            "n_trades": 14,
+            "win_rate_pct": 28.57,
+            "total_return_pct": -2.532,
+            "max_drawdown_pct": -6.94,
+            "total_pnl": -13273.39,
+            "total_invested": 968531.5,
+            "return_on_deployed_pct": -1.37,
+            "nifty_return_pct": 5.14,
+            "alpha": -7.67
+          },
+          "objective": null
+        },
+        {
+          "name": "score_60",
+          "overrides": {
+            "min_score": 60
+          },
+          "metrics": {
+            "n_trades": 14,
+            "win_rate_pct": 28.57,
+            "total_return_pct": -2.532,
+            "max_drawdown_pct": -6.94,
+            "total_pnl": -13273.39,
+            "total_invested": 968531.5,
+            "return_on_deployed_pct": -1.37,
+            "nifty_return_pct": 5.14,
+            "alpha": -7.67
+          },
+          "objective": null
+        }
+      ],
+      "baseline_name": "score_40_baseline",
+      "best_name": "score_40_baseline",
+      "effect_pp": 0.0,
+      "bootstrap": {
+        "candidate_wins_pct": 0.43,
+        "n_iter": 200
+      },
+      "decision": "KEEP_BASELINE",
+      "reasoning": [
+        "baseline ranked #1 by objective (-2.53%)"
+      ],
+      "winner_name": "score_40_baseline",
+      "winner_overrides": {
+        "min_score": 40
+      },
+      "winner_metrics": {
+        "n_trades": 14,
+        "win_rate_pct": 28.57,
+        "total_return_pct": -2.532,
+        "max_drawdown_pct": -6.94,
+        "total_pnl": -13273.39,
+        "total_invested": 968531.5,
+        "return_on_deployed_pct": -1.37,
+        "nifty_return_pct": 5.14,
+        "alpha": -7.67
+      }
+    },
+    {
+      "window_id": "W2",
+      "window_dates": "2023-11-01 -> 2024-04-30",
+      "tune_param": "stop_tightness",
+      "candidates": [
+        {
+          "name": "stop_-5pct",
+          "overrides": {
+            "stop_pct": -0.05
+          },
+          "metrics": {
+            "n_trades": 35,
+            "win_rate_pct": 60.0,
+            "total_return_pct": 28.667,
+            "max_drawdown_pct": -5.68,
+            "total_pnl": 142501.67,
+            "total_invested": 2373085.9,
+            "return_on_deployed_pct": 6.0,
+            "nifty_return_pct": 19.04,
+            "alpha": 9.63
+          },
+          "objective": 28.667
+        },
+        {
+          "name": "stop_-7pct_baseline",
+          "overrides": {
+            "stop_pct": -0.07
+          },
+          "metrics": {
+            "n_trades": 27,
+            "win_rate_pct": 74.07,
+            "total_return_pct": 30.982,
+            "max_drawdown_pct": -3.9,
+            "total_pnl": 154057.55,
+            "total_invested": 1823722.02,
+            "return_on_deployed_pct": 8.45,
+            "nifty_return_pct": 19.04,
+            "alpha": 11.94
+          },
+          "objective": 30.982
+        },
+        {
+          "name": "stop_-10pct",
+          "overrides": {
+            "stop_pct": -0.1
+          },
+          "metrics": {
+            "n_trades": 26,
+            "win_rate_pct": 76.92,
+            "total_return_pct": 30.837,
+            "max_drawdown_pct": -5.3,
+            "total_pnl": 153391.37,
+            "total_invested": 1755370.14,
+            "return_on_deployed_pct": 8.74,
+            "nifty_return_pct": 19.04,
+            "alpha": 11.8
+          },
+          "objective": 30.837
+        }
+      ],
+      "baseline_name": "stop_-7pct_baseline",
+      "best_name": "stop_-7pct_baseline",
+      "effect_pp": 0.0,
+      "bootstrap": {
+        "candidate_wins_pct": 0.435,
+        "n_iter": 200
+      },
+      "decision": "KEEP_BASELINE",
+      "reasoning": [
+        "baseline ranked #1 by objective (+30.98%)"
+      ],
+      "winner_name": "stop_-7pct_baseline",
+      "winner_overrides": {
+        "stop_pct": -0.07
+      },
+      "winner_metrics": {
+        "n_trades": 27,
+        "win_rate_pct": 74.07,
+        "total_return_pct": 30.982,
+        "max_drawdown_pct": -3.9,
+        "total_pnl": 154057.55,
+        "total_invested": 1823722.02,
+        "return_on_deployed_pct": 8.45,
+        "nifty_return_pct": 19.04,
+        "alpha": 11.94
+      }
+    },
+    {
+      "window_id": "W3",
+      "window_dates": "2024-05-01 -> 2024-10-31",
+      "tune_param": "position_sizing",
+      "candidates": [
+        {
+          "name": "baseline_70_50_30",
+          "overrides": {
+            "size_tier_high": 70000,
+            "size_tier_mid": 50000,
+            "size_tier_low": 30000
+          },
+          "metrics": {
+            "n_trades": 32,
+            "win_rate_pct": 28.12,
+            "total_return_pct": -7.313,
+            "max_drawdown_pct": -12.84,
+            "total_pnl": -37176.97,
+            "total_invested": 2103066.73,
+            "return_on_deployed_pct": -1.77,
+            "nifty_return_pct": 6.88,
+            "alpha": -14.19
+          },
+          "objective": -7.313
+        },
+        {
+          "name": "conservative_100_70_40",
+          "overrides": {
+            "size_tier_high": 100000,
+            "size_tier_mid": 70000,
+            "size_tier_low": 40000
+          },
+          "metrics": {
+            "n_trades": 26,
+            "win_rate_pct": 38.46,
+            "total_return_pct": 0.396,
+            "max_drawdown_pct": -10.75,
+            "total_pnl": 1356.78,
+            "total_invested": 2385635.62,
+            "return_on_deployed_pct": 0.06,
+            "nifty_return_pct": 6.88,
+            "alpha": -6.48
+          },
+          "objective": 0.396
+        },
+        {
+          "name": "granular_50_30_20",
+          "overrides": {
+            "size_tier_high": 50000,
+            "size_tier_mid": 30000,
+            "size_tier_low": 20000
+          },
+          "metrics": {
+            "n_trades": 50,
+            "win_rate_pct": 30.0,
+            "total_return_pct": -6.035,
+            "max_drawdown_pct": -13.0,
+            "total_pnl": -30881.9,
+            "total_invested": 2266997.59,
+            "return_on_deployed_pct": -1.36,
+            "nifty_return_pct": 6.88,
+            "alpha": -12.91
+          },
+          "objective": -6.035
+        },
+        {
+          "name": "aggressive_tiered_90_40_15",
+          "overrides": {
+            "size_tier_high": 90000,
+            "size_tier_mid": 40000,
+            "size_tier_low": 15000
+          },
+          "metrics": {
+            "n_trades": 31,
+            "win_rate_pct": 35.48,
+            "total_return_pct": -7.58,
+            "max_drawdown_pct": -14.53,
+            "total_pnl": -38481.94,
+            "total_invested": 2531602.69,
+            "return_on_deployed_pct": -1.52,
+            "nifty_return_pct": 6.88,
+            "alpha": -14.46
+          },
+          "objective": -7.58
+        },
+        {
+          "name": "flat_50_50_50",
+          "overrides": {
+            "size_tier_high": 50000,
+            "size_tier_mid": 50000,
+            "size_tier_low": 50000
+          },
+          "metrics": {
+            "n_trades": 48,
+            "win_rate_pct": 27.08,
+            "total_return_pct": -6.787,
+            "max_drawdown_pct": -13.0,
+            "total_pnl": -34598.91,
+            "total_invested": 2306932.74,
+            "return_on_deployed_pct": -1.5,
+            "nifty_return_pct": 6.88,
+            "alpha": -13.66
+          },
+          "objective": -6.787
+        }
+      ],
+      "baseline_name": "baseline_70_50_30",
+      "best_name": "conservative_100_70_40",
+      "effect_pp": 7.71,
+      "bootstrap": {
+        "candidate_wins_pct": 0.76,
+        "n_iter": 200
+      },
+      "decision": "ADOPT_WINNER",
+      "reasoning": [
+        "best candidate 'conservative_100_70_40' beats baseline by +7.71pp",
+        "bootstrap robust: 76% wins on resamples"
+      ],
+      "winner_name": "conservative_100_70_40",
+      "winner_overrides": {
+        "size_tier_high": 100000,
+        "size_tier_mid": 70000,
+        "size_tier_low": 40000
+      },
+      "winner_metrics": {
+        "n_trades": 26,
+        "win_rate_pct": 38.46,
+        "total_return_pct": 0.396,
+        "max_drawdown_pct": -10.75,
+        "total_pnl": 1356.78,
+        "total_invested": 2385635.62,
+        "return_on_deployed_pct": 0.06,
+        "nifty_return_pct": 6.88,
+        "alpha": -6.48
+      }
+    }
+  ]
+}

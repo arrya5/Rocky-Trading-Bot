@@ -1,0 +1,891 @@
+[
+  {
+    "date": "2025-05-02",
+    "cash": 500000,
+    "n_positions": 0,
+    "total_value": 500000,
+    "nifty_close": 24346.69921875
+  },
+  {
+    "date": "2025-05-05",
+    "cash": 113394.09,
+    "n_positions": 7,
+    "total_value": 500399.46,
+    "nifty_close": 24461.150390625
+  },
+  {
+    "date": "2025-05-06",
+    "cash": 43968.33,
+    "n_positions": 8,
+    "total_value": 496619.34,
+    "nifty_close": 24379.599609375
+  },
+  {
+    "date": "2025-05-07",
+    "cash": 43968.33,
+    "n_positions": 8,
+    "total_value": 500954.75,
+    "nifty_close": 24414.400390625
+  },
+  {
+    "date": "2025-05-08",
+    "cash": 43968.33,
+    "n_positions": 8,
+    "total_value": 494685.55,
+    "nifty_close": 24273.80078125
+  },
+  {
+    "date": "2025-05-09",
+    "cash": 43968.33,
+    "n_positions": 8,
+    "total_value": 490593.01,
+    "nifty_close": 24008.0
+  },
+  {
+    "date": "2025-05-12",
+    "cash": 43968.33,
+    "n_positions": 8,
+    "total_value": 503736.95,
+    "nifty_close": 24924.69921875
+  },
+  {
+    "date": "2025-05-13",
+    "cash": 43968.33,
+    "n_positions": 8,
+    "total_value": 499019.43,
+    "nifty_close": 24578.349609375
+  },
+  {
+    "date": "2025-05-14",
+    "cash": 43968.33,
+    "n_positions": 8,
+    "total_value": 502393.07,
+    "nifty_close": 24666.900390625
+  },
+  {
+    "date": "2025-05-15",
+    "cash": 43968.33,
+    "n_positions": 8,
+    "total_value": 506334.88,
+    "nifty_close": 25062.099609375
+  },
+  {
+    "date": "2025-05-16",
+    "cash": 43968.33,
+    "n_positions": 8,
+    "total_value": 505989.72,
+    "nifty_close": 25019.80078125
+  },
+  {
+    "date": "2025-05-19",
+    "cash": 43968.33,
+    "n_positions": 8,
+    "total_value": 505333.96,
+    "nifty_close": 24945.44921875
+  },
+  {
+    "date": "2025-05-20",
+    "cash": 43968.33,
+    "n_positions": 8,
+    "total_value": 497728.16,
+    "nifty_close": 24683.900390625
+  },
+  {
+    "date": "2025-05-21",
+    "cash": 43968.33,
+    "n_positions": 8,
+    "total_value": 501071.05,
+    "nifty_close": 24813.44921875
+  },
+  {
+    "date": "2025-05-22",
+    "cash": 43968.33,
+    "n_positions": 8,
+    "total_value": 497690.64,
+    "nifty_close": 24609.69921875
+  },
+  {
+    "date": "2025-05-23",
+    "cash": 43968.33,
+    "n_positions": 8,
+    "total_value": 499782.66,
+    "nifty_close": 24853.150390625
+  },
+  {
+    "date": "2025-05-26",
+    "cash": 43968.33,
+    "n_positions": 8,
+    "total_value": 501619.84,
+    "nifty_close": 25001.150390625
+  },
+  {
+    "date": "2025-05-27",
+    "cash": 43968.33,
+    "n_positions": 8,
+    "total_value": 502440.49,
+    "nifty_close": 24826.19921875
+  },
+  {
+    "date": "2025-05-28",
+    "cash": 43968.33,
+    "n_positions": 8,
+    "total_value": 503118.85,
+    "nifty_close": 24752.44921875
+  },
+  {
+    "date": "2025-05-29",
+    "cash": 43968.33,
+    "n_positions": 8,
+    "total_value": 504533.35,
+    "nifty_close": 24833.599609375
+  },
+  {
+    "date": "2025-05-30",
+    "cash": 43968.33,
+    "n_positions": 8,
+    "total_value": 505798.62,
+    "nifty_close": 24750.69921875
+  },
+  {
+    "date": "2025-06-02",
+    "cash": 43968.33,
+    "n_positions": 8,
+    "total_value": 504251.65,
+    "nifty_close": 24716.599609375
+  },
+  {
+    "date": "2025-06-03",
+    "cash": 43968.33,
+    "n_positions": 8,
+    "total_value": 500715.22,
+    "nifty_close": 24542.5
+  },
+  {
+    "date": "2025-06-04",
+    "cash": 43968.33,
+    "n_positions": 8,
+    "total_value": 500897.31,
+    "nifty_close": 24620.19921875
+  },
+  {
+    "date": "2025-06-05",
+    "cash": 43968.33,
+    "n_positions": 8,
+    "total_value": 501159.6,
+    "nifty_close": 24750.900390625
+  },
+  {
+    "date": "2025-06-06",
+    "cash": 43968.33,
+    "n_positions": 8,
+    "total_value": 511878.7,
+    "nifty_close": 25003.05078125
+  },
+  {
+    "date": "2025-06-09",
+    "cash": 5587.03,
+    "n_positions": 10,
+    "total_value": 524976.17,
+    "nifty_close": 25103.19921875
+  },
+  {
+    "date": "2025-06-10",
+    "cash": 5587.03,
+    "n_positions": 10,
+    "total_value": 522264.27,
+    "nifty_close": 25104.25
+  },
+  {
+    "date": "2025-06-11",
+    "cash": 5587.03,
+    "n_positions": 10,
+    "total_value": 521064.71,
+    "nifty_close": 25141.400390625
+  },
+  {
+    "date": "2025-06-12",
+    "cash": 5587.03,
+    "n_positions": 10,
+    "total_value": 518429.62,
+    "nifty_close": 24888.19921875
+  },
+  {
+    "date": "2025-06-13",
+    "cash": 42794.34,
+    "n_positions": 9,
+    "total_value": 517349.6,
+    "nifty_close": 24718.599609375
+  },
+  {
+    "date": "2025-06-16",
+    "cash": 42794.34,
+    "n_positions": 9,
+    "total_value": 520206.59,
+    "nifty_close": 24946.5
+  },
+  {
+    "date": "2025-06-17",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 516734.7,
+    "nifty_close": 24853.400390625
+  },
+  {
+    "date": "2025-06-18",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 518969.33,
+    "nifty_close": 24812.05078125
+  },
+  {
+    "date": "2025-06-19",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 518648.57,
+    "nifty_close": 24793.25
+  },
+  {
+    "date": "2025-06-20",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 522594.88,
+    "nifty_close": 25112.400390625
+  },
+  {
+    "date": "2025-06-23",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 521632.89,
+    "nifty_close": 24971.900390625
+  },
+  {
+    "date": "2025-06-24",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 524500.11,
+    "nifty_close": 25044.349609375
+  },
+  {
+    "date": "2025-06-25",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 530287.87,
+    "nifty_close": 25244.75
+  },
+  {
+    "date": "2025-06-26",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 537623.74,
+    "nifty_close": 25549.0
+  },
+  {
+    "date": "2025-06-27",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 536027.51,
+    "nifty_close": 25637.80078125
+  },
+  {
+    "date": "2025-06-30",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 532402.39,
+    "nifty_close": 25517.05078125
+  },
+  {
+    "date": "2025-07-01",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 532589.78,
+    "nifty_close": 25541.80078125
+  },
+  {
+    "date": "2025-07-02",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 530269.54,
+    "nifty_close": 25453.400390625
+  },
+  {
+    "date": "2025-07-03",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 530864.7,
+    "nifty_close": 25405.30078125
+  },
+  {
+    "date": "2025-07-04",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 534779.46,
+    "nifty_close": 25461.0
+  },
+  {
+    "date": "2025-07-07",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 534181.77,
+    "nifty_close": 25461.30078125
+  },
+  {
+    "date": "2025-07-08",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 535410.38,
+    "nifty_close": 25522.5
+  },
+  {
+    "date": "2025-07-09",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 536199.39,
+    "nifty_close": 25476.099609375
+  },
+  {
+    "date": "2025-07-10",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 534816.28,
+    "nifty_close": 25355.25
+  },
+  {
+    "date": "2025-07-11",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 530680.99,
+    "nifty_close": 25149.849609375
+  },
+  {
+    "date": "2025-07-14",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 529962.94,
+    "nifty_close": 25082.30078125
+  },
+  {
+    "date": "2025-07-15",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 532768.74,
+    "nifty_close": 25195.80078125
+  },
+  {
+    "date": "2025-07-16",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 531913.9,
+    "nifty_close": 25212.05078125
+  },
+  {
+    "date": "2025-07-17",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 530347.28,
+    "nifty_close": 25111.44921875
+  },
+  {
+    "date": "2025-07-18",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 527427.82,
+    "nifty_close": 24968.400390625
+  },
+  {
+    "date": "2025-07-21",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 527698.42,
+    "nifty_close": 25090.69921875
+  },
+  {
+    "date": "2025-07-22",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 527586.68,
+    "nifty_close": 25060.900390625
+  },
+  {
+    "date": "2025-07-23",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 531106.48,
+    "nifty_close": 25219.900390625
+  },
+  {
+    "date": "2025-07-24",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 526918.83,
+    "nifty_close": 25062.099609375
+  },
+  {
+    "date": "2025-07-25",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 519606.12,
+    "nifty_close": 24837.0
+  },
+  {
+    "date": "2025-07-28",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 516524.29,
+    "nifty_close": 24680.900390625
+  },
+  {
+    "date": "2025-07-29",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 519970.02,
+    "nifty_close": 24821.099609375
+  },
+  {
+    "date": "2025-07-30",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 522359.87,
+    "nifty_close": 24855.05078125
+  },
+  {
+    "date": "2025-07-31",
+    "cash": 16186.09,
+    "n_positions": 9,
+    "total_value": 521373.38,
+    "nifty_close": 24768.349609375
+  },
+  {
+    "date": "2025-08-01",
+    "cash": 14707.34,
+    "n_positions": 9,
+    "total_value": 519783.68,
+    "nifty_close": 24565.349609375
+  },
+  {
+    "date": "2025-08-04",
+    "cash": 14707.34,
+    "n_positions": 9,
+    "total_value": 522674.7,
+    "nifty_close": 24722.75
+  },
+  {
+    "date": "2025-08-05",
+    "cash": 14707.34,
+    "n_positions": 9,
+    "total_value": 524425.0,
+    "nifty_close": 24649.55078125
+  },
+  {
+    "date": "2025-08-06",
+    "cash": 14707.34,
+    "n_positions": 9,
+    "total_value": 522062.21,
+    "nifty_close": 24574.19921875
+  },
+  {
+    "date": "2025-08-07",
+    "cash": 14707.34,
+    "n_positions": 9,
+    "total_value": 521868.56,
+    "nifty_close": 24596.150390625
+  },
+  {
+    "date": "2025-08-08",
+    "cash": 58953.53,
+    "n_positions": 8,
+    "total_value": 514517.34,
+    "nifty_close": 24363.30078125
+  },
+  {
+    "date": "2025-08-11",
+    "cash": 12003.53,
+    "n_positions": 9,
+    "total_value": 519304.82,
+    "nifty_close": 24585.05078125
+  },
+  {
+    "date": "2025-08-12",
+    "cash": 12003.53,
+    "n_positions": 9,
+    "total_value": 518588.54,
+    "nifty_close": 24487.400390625
+  },
+  {
+    "date": "2025-08-13",
+    "cash": 12003.53,
+    "n_positions": 9,
+    "total_value": 518714.63,
+    "nifty_close": 24619.349609375
+  },
+  {
+    "date": "2025-08-14",
+    "cash": 12003.53,
+    "n_positions": 9,
+    "total_value": 520703.58,
+    "nifty_close": 24631.30078125
+  },
+  {
+    "date": "2025-08-18",
+    "cash": 12003.53,
+    "n_positions": 9,
+    "total_value": 531036.03,
+    "nifty_close": 24876.94921875
+  },
+  {
+    "date": "2025-08-19",
+    "cash": 40374.52,
+    "n_positions": 9,
+    "total_value": 532182.07,
+    "nifty_close": 24980.650390625
+  },
+  {
+    "date": "2025-08-20",
+    "cash": 40374.52,
+    "n_positions": 9,
+    "total_value": 534742.76,
+    "nifty_close": 25050.55078125
+  },
+  {
+    "date": "2025-08-21",
+    "cash": 40374.52,
+    "n_positions": 9,
+    "total_value": 536909.37,
+    "nifty_close": 25083.75
+  },
+  {
+    "date": "2025-08-22",
+    "cash": 40374.52,
+    "n_positions": 9,
+    "total_value": 532950.62,
+    "nifty_close": 24870.099609375
+  },
+  {
+    "date": "2025-08-25",
+    "cash": 40374.52,
+    "n_positions": 9,
+    "total_value": 533357.41,
+    "nifty_close": 24967.75
+  },
+  {
+    "date": "2025-08-26",
+    "cash": 40374.52,
+    "n_positions": 9,
+    "total_value": 528563.67,
+    "nifty_close": 24712.05078125
+  },
+  {
+    "date": "2025-08-28",
+    "cash": 40374.52,
+    "n_positions": 9,
+    "total_value": 524956.81,
+    "nifty_close": 24500.900390625
+  },
+  {
+    "date": "2025-08-29",
+    "cash": 40374.52,
+    "n_positions": 9,
+    "total_value": 525985.56,
+    "nifty_close": 24426.849609375
+  },
+  {
+    "date": "2025-09-01",
+    "cash": 40374.52,
+    "n_positions": 9,
+    "total_value": 528282.11,
+    "nifty_close": 24625.05078125
+  },
+  {
+    "date": "2025-09-02",
+    "cash": 40374.52,
+    "n_positions": 9,
+    "total_value": 529160.01,
+    "nifty_close": 24579.599609375
+  },
+  {
+    "date": "2025-09-03",
+    "cash": 40374.52,
+    "n_positions": 9,
+    "total_value": 530145.87,
+    "nifty_close": 24715.05078125
+  },
+  {
+    "date": "2025-09-04",
+    "cash": 40374.52,
+    "n_positions": 9,
+    "total_value": 530938.82,
+    "nifty_close": 24734.30078125
+  },
+  {
+    "date": "2025-09-05",
+    "cash": 40374.52,
+    "n_positions": 9,
+    "total_value": 529908.62,
+    "nifty_close": 24741.0
+  },
+  {
+    "date": "2025-09-08",
+    "cash": 40374.52,
+    "n_positions": 9,
+    "total_value": 529943.91,
+    "nifty_close": 24773.150390625
+  },
+  {
+    "date": "2025-09-09",
+    "cash": 40374.52,
+    "n_positions": 9,
+    "total_value": 530281.11,
+    "nifty_close": 24868.599609375
+  },
+  {
+    "date": "2025-09-10",
+    "cash": 40374.52,
+    "n_positions": 9,
+    "total_value": 532500.27,
+    "nifty_close": 24973.099609375
+  },
+  {
+    "date": "2025-09-11",
+    "cash": 40374.52,
+    "n_positions": 9,
+    "total_value": 535378.41,
+    "nifty_close": 25005.5
+  },
+  {
+    "date": "2025-09-12",
+    "cash": 40374.52,
+    "n_positions": 9,
+    "total_value": 538280.86,
+    "nifty_close": 25114.0
+  },
+  {
+    "date": "2025-09-15",
+    "cash": 506.35,
+    "n_positions": 10,
+    "total_value": 539910.65,
+    "nifty_close": 25069.19921875
+  },
+  {
+    "date": "2025-09-16",
+    "cash": 506.35,
+    "n_positions": 10,
+    "total_value": 545013.15,
+    "nifty_close": 25239.099609375
+  },
+  {
+    "date": "2025-09-17",
+    "cash": 506.35,
+    "n_positions": 10,
+    "total_value": 546448.15,
+    "nifty_close": 25330.25
+  },
+  {
+    "date": "2025-09-18",
+    "cash": 506.35,
+    "n_positions": 10,
+    "total_value": 548013.3,
+    "nifty_close": 25423.599609375
+  },
+  {
+    "date": "2025-09-19",
+    "cash": 40060.61,
+    "n_positions": 10,
+    "total_value": 547652.06,
+    "nifty_close": 25327.05078125
+  },
+  {
+    "date": "2025-09-22",
+    "cash": 40060.61,
+    "n_positions": 10,
+    "total_value": 545280.66,
+    "nifty_close": 25202.349609375
+  },
+  {
+    "date": "2025-09-23",
+    "cash": 40060.61,
+    "n_positions": 10,
+    "total_value": 543286.71,
+    "nifty_close": 25169.5
+  },
+  {
+    "date": "2025-09-24",
+    "cash": 40060.61,
+    "n_positions": 10,
+    "total_value": 542560.55,
+    "nifty_close": 25056.900390625
+  },
+  {
+    "date": "2025-09-25",
+    "cash": 40060.61,
+    "n_positions": 10,
+    "total_value": 539385.21,
+    "nifty_close": 24890.849609375
+  },
+  {
+    "date": "2025-09-26",
+    "cash": 40060.61,
+    "n_positions": 10,
+    "total_value": 534308.95,
+    "nifty_close": 24654.69921875
+  },
+  {
+    "date": "2025-09-29",
+    "cash": 40060.61,
+    "n_positions": 10,
+    "total_value": 533561.31,
+    "nifty_close": 24634.900390625
+  },
+  {
+    "date": "2025-09-30",
+    "cash": 40060.61,
+    "n_positions": 10,
+    "total_value": 532911.21,
+    "nifty_close": 24611.099609375
+  },
+  {
+    "date": "2025-10-01",
+    "cash": 40060.61,
+    "n_positions": 10,
+    "total_value": 535516.65,
+    "nifty_close": 24836.30078125
+  },
+  {
+    "date": "2025-10-03",
+    "cash": 40060.61,
+    "n_positions": 10,
+    "total_value": 538110.86,
+    "nifty_close": 24894.25
+  },
+  {
+    "date": "2025-10-06",
+    "cash": 40060.61,
+    "n_positions": 10,
+    "total_value": 541038.75,
+    "nifty_close": 25077.650390625
+  },
+  {
+    "date": "2025-10-07",
+    "cash": 40060.61,
+    "n_positions": 10,
+    "total_value": 543817.66,
+    "nifty_close": 25108.30078125
+  },
+  {
+    "date": "2025-10-08",
+    "cash": 40060.61,
+    "n_positions": 10,
+    "total_value": 540783.81,
+    "nifty_close": 25046.150390625
+  },
+  {
+    "date": "2025-10-09",
+    "cash": 40060.61,
+    "n_positions": 10,
+    "total_value": 543188.16,
+    "nifty_close": 25181.80078125
+  },
+  {
+    "date": "2025-10-10",
+    "cash": 40060.61,
+    "n_positions": 10,
+    "total_value": 544308.5,
+    "nifty_close": 25285.349609375
+  },
+  {
+    "date": "2025-10-13",
+    "cash": 40060.61,
+    "n_positions": 10,
+    "total_value": 544329.26,
+    "nifty_close": 25227.349609375
+  },
+  {
+    "date": "2025-10-14",
+    "cash": 40060.61,
+    "n_positions": 10,
+    "total_value": 541048.11,
+    "nifty_close": 25145.5
+  },
+  {
+    "date": "2025-10-15",
+    "cash": 40060.61,
+    "n_positions": 10,
+    "total_value": 546213.71,
+    "nifty_close": 25323.55078125
+  },
+  {
+    "date": "2025-10-16",
+    "cash": 40060.61,
+    "n_positions": 10,
+    "total_value": 553015.91,
+    "nifty_close": 25585.30078125
+  },
+  {
+    "date": "2025-10-17",
+    "cash": 40060.61,
+    "n_positions": 10,
+    "total_value": 558692.06,
+    "nifty_close": 25709.849609375
+  },
+  {
+    "date": "2025-10-20",
+    "cash": 40060.61,
+    "n_positions": 10,
+    "total_value": 562949.06,
+    "nifty_close": 25843.150390625
+  },
+  {
+    "date": "2025-10-21",
+    "cash": 40060.61,
+    "n_positions": 10,
+    "total_value": 564171.05,
+    "nifty_close": 25868.599609375
+  },
+  {
+    "date": "2025-10-23",
+    "cash": 40060.61,
+    "n_positions": 10,
+    "total_value": 563234.81,
+    "nifty_close": 25891.400390625
+  },
+  {
+    "date": "2025-10-24",
+    "cash": 12454.38,
+    "n_positions": 10,
+    "total_value": 561206.83,
+    "nifty_close": 25795.150390625
+  },
+  {
+    "date": "2025-10-27",
+    "cash": 12454.38,
+    "n_positions": 10,
+    "total_value": 566883.58,
+    "nifty_close": 25966.05078125
+  },
+  {
+    "date": "2025-10-28",
+    "cash": 12454.38,
+    "n_positions": 10,
+    "total_value": 566635.33,
+    "nifty_close": 25936.19921875
+  },
+  {
+    "date": "2025-10-29",
+    "cash": 12454.38,
+    "n_positions": 10,
+    "total_value": 567386.48,
+    "nifty_close": 26053.900390625
+  },
+  {
+    "date": "2025-10-30",
+    "cash": 41731.55,
+    "n_positions": 9,
+    "total_value": 564587.55,
+    "nifty_close": 25877.849609375
+  },
+  {
+    "date": "2025-10-31",
+    "cash": 41731.55,
+    "n_positions": 9,
+    "total_value": 561570.3,
+    "nifty_close": 25722.099609375
+  }
+]

@@ -1,0 +1,5037 @@
+[
+  {
+    "date": "2025-05-05",
+    "symbol": "ICICIBANK",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-05-05",
+    "symbol": "SBIN",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-05-05",
+    "symbol": "KOTAKBANK",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-05-06",
+    "symbol": "BAJAJFINSV",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-05-06",
+    "symbol": "ICICIBANK",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-05-06",
+    "symbol": "SBIN",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-05-06",
+    "symbol": "ADANIENT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-06",
+    "symbol": "ADANIPORTS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-06",
+    "symbol": "DIVISLAB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-07",
+    "symbol": "HDFCLIFE",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-05-07",
+    "symbol": "MAXHEALTH",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-07",
+    "symbol": "ICICIBANK",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-05-07",
+    "symbol": "HINDUNILVR",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-07",
+    "symbol": "BAJAJFINSV",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-05-07",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-07",
+    "symbol": "ADANIPORTS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-07",
+    "symbol": "DIVISLAB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-08",
+    "symbol": "HDFCLIFE",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-05-08",
+    "symbol": "UPL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-08",
+    "symbol": "MAXHEALTH",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-08",
+    "symbol": "ICICIBANK",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-05-08",
+    "symbol": "LT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-08",
+    "symbol": "SUNPHARMA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-08",
+    "symbol": "BAJAJFINSV",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-05-08",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-09",
+    "symbol": "HDFCLIFE",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-05-09",
+    "symbol": "MRF",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-09",
+    "symbol": "APLAPOLLO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-09",
+    "symbol": "ADANIPORTS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-09",
+    "symbol": "DIVISLAB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-09",
+    "symbol": "INDUSINDBK",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-05-09",
+    "symbol": "BPCL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-12",
+    "symbol": "ADANIPORTS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-12",
+    "symbol": "MRF",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-12",
+    "symbol": "MFSL",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-05-12",
+    "symbol": "APLAPOLLO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-12",
+    "symbol": "TITAN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-12",
+    "symbol": "BPCL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-12",
+    "symbol": "SBILIFE",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-05-12",
+    "symbol": "UPL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-12",
+    "symbol": "MUTHOOTFIN",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-05-13",
+    "symbol": "UPL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-13",
+    "symbol": "RADICO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-13",
+    "symbol": "ICICIBANK",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-05-13",
+    "symbol": "HDFCLIFE",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-05-13",
+    "symbol": "PAGEIND",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-13",
+    "symbol": "MAXHEALTH",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-13",
+    "symbol": "MRF",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-13",
+    "symbol": "MCDOWELL-N",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-13",
+    "symbol": "APLAPOLLO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-14",
+    "symbol": "RADICO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-14",
+    "symbol": "HDFCLIFE",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-05-14",
+    "symbol": "PIDILITIND",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-14",
+    "symbol": "CHOLAFIN",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-05-14",
+    "symbol": "MAXHEALTH",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-14",
+    "symbol": "ESCORTS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-14",
+    "symbol": "MRF",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-14",
+    "symbol": "APLAPOLLO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-14",
+    "symbol": "ICICIBANK",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-05-15",
+    "symbol": "SHREECEM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-15",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-15",
+    "symbol": "DRREDDY",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-15",
+    "symbol": "DIVISLAB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-15",
+    "symbol": "HDFCLIFE",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-05-15",
+    "symbol": "PIDILITIND",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-15",
+    "symbol": "CHOLAFIN",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-05-15",
+    "symbol": "MAXHEALTH",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-15",
+    "symbol": "ESCORTS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-16",
+    "symbol": "SHREECEM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-16",
+    "symbol": "RAMCOCEM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-16",
+    "symbol": "ICICIBANK",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-05-16",
+    "symbol": "TITAN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-16",
+    "symbol": "GRASIM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-16",
+    "symbol": "HINDALCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-16",
+    "symbol": "PIDILITIND",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-16",
+    "symbol": "PAGEIND",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-16",
+    "symbol": "CHOLAFIN",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-05-19",
+    "symbol": "SHREECEM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-19",
+    "symbol": "ICICIBANK",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-05-19",
+    "symbol": "ADANIENT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-19",
+    "symbol": "DIVISLAB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-19",
+    "symbol": "GRASIM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-19",
+    "symbol": "PIDILITIND",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-19",
+    "symbol": "PAGEIND",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-19",
+    "symbol": "CHOLAFIN",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-05-20",
+    "symbol": "SHREECEM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-20",
+    "symbol": "ICICIBANK",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-05-20",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-20",
+    "symbol": "DIVISLAB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-20",
+    "symbol": "PIDILITIND",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-20",
+    "symbol": "PAGEIND",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-20",
+    "symbol": "NHPC",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-20",
+    "symbol": "IRCTC",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-20",
+    "symbol": "ESCORTS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-21",
+    "symbol": "DIVISLAB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-21",
+    "symbol": "PAGEIND",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-21",
+    "symbol": "BAJAJ-AUTO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-21",
+    "symbol": "HDFCLIFE",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-05-21",
+    "symbol": "NHPC",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-21",
+    "symbol": "IRCTC",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-21",
+    "symbol": "CONCOR",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-21",
+    "symbol": "APOLLOTYRE",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-21",
+    "symbol": "SHREECEM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-21",
+    "symbol": "ABCAPITAL",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-05-22",
+    "symbol": "PAGEIND",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-22",
+    "symbol": "DIVISLAB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-22",
+    "symbol": "HDFCLIFE",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-05-22",
+    "symbol": "NHPC",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-22",
+    "symbol": "PFC",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-05-22",
+    "symbol": "IRCTC",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-22",
+    "symbol": "CONCOR",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-22",
+    "symbol": "SHREECEM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-22",
+    "symbol": "MFSL",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-05-22",
+    "symbol": "NYKAA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-23",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-23",
+    "symbol": "COALINDIA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-23",
+    "symbol": "DIVISLAB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-23",
+    "symbol": "HDFCLIFE",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-05-23",
+    "symbol": "NHPC",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-23",
+    "symbol": "IRCTC",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-23",
+    "symbol": "CONCOR",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-23",
+    "symbol": "ALKEM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-23",
+    "symbol": "MCDOWELL-N",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-26",
+    "symbol": "DIVISLAB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-26",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-26",
+    "symbol": "ICICIBANK",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-05-26",
+    "symbol": "BAJAJFINSV",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-05-26",
+    "symbol": "COALINDIA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-26",
+    "symbol": "HINDALCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-26",
+    "symbol": "APOLLOHOSP",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-26",
+    "symbol": "PAGEIND",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-26",
+    "symbol": "CHOLAFIN",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-05-27",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-27",
+    "symbol": "HINDALCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-27",
+    "symbol": "APOLLOHOSP",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-27",
+    "symbol": "MAXHEALTH",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-27",
+    "symbol": "RAMCOCEM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-27",
+    "symbol": "ALKEM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-27",
+    "symbol": "MFSL",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-05-27",
+    "symbol": "ICICIBANK",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-05-28",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-28",
+    "symbol": "ICICIBANK",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-05-28",
+    "symbol": "ITC",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-28",
+    "symbol": "APOLLOHOSP",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-28",
+    "symbol": "PAGEIND",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-28",
+    "symbol": "CHOLAFIN",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-05-28",
+    "symbol": "MRF",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-28",
+    "symbol": "ALKEM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-28",
+    "symbol": "MFSL",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-05-29",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-29",
+    "symbol": "ICICIBANK",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-05-29",
+    "symbol": "HDFCLIFE",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-05-29",
+    "symbol": "MRF",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-29",
+    "symbol": "MFSL",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-05-29",
+    "symbol": "HCLTECH",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-29",
+    "symbol": "BAJAJFINSV",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-05-29",
+    "symbol": "NESTLEIND",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-30",
+    "symbol": "HDFCLIFE",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-05-30",
+    "symbol": "MRF",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-30",
+    "symbol": "MFSL",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-05-30",
+    "symbol": "NESTLEIND",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-30",
+    "symbol": "DIVISLAB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-05-30",
+    "symbol": "INDUSINDBK",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-05-30",
+    "symbol": "FEDERALBNK",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-06-02",
+    "symbol": "BAJAJ-AUTO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-02",
+    "symbol": "HDFCLIFE",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-06-02",
+    "symbol": "NUVAMA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-02",
+    "symbol": "LT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-02",
+    "symbol": "DIVISLAB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-02",
+    "symbol": "INDUSINDBK",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-06-02",
+    "symbol": "PIDILITIND",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-03",
+    "symbol": "BRITANNIA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-03",
+    "symbol": "HDFCLIFE",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-06-03",
+    "symbol": "FEDERALBNK",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-06-03",
+    "symbol": "ZOMATO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-03",
+    "symbol": "NUVAMA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-03",
+    "symbol": "INFY",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-03",
+    "symbol": "ICICIBANK",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-06-04",
+    "symbol": "HDFCLIFE",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-06-04",
+    "symbol": "RADICO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-04",
+    "symbol": "DIVISLAB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-04",
+    "symbol": "BRITANNIA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-04",
+    "symbol": "FEDERALBNK",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-06-04",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-04",
+    "symbol": "ZOMATO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-04",
+    "symbol": "NUVAMA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-04",
+    "symbol": "SBIN",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-06-05",
+    "symbol": "RADICO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-05",
+    "symbol": "SBIN",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-06-05",
+    "symbol": "MUTHOOTFIN",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-06-05",
+    "symbol": "FEDERALBNK",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-06-05",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-05",
+    "symbol": "MCDOWELL-N",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-05",
+    "symbol": "ZOMATO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-05",
+    "symbol": "NUVAMA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-06",
+    "symbol": "FEDERALBNK",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-06-06",
+    "symbol": "RADICO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-06",
+    "symbol": "SBIN",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-06-06",
+    "symbol": "BRITANNIA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-06",
+    "symbol": "MUTHOOTFIN",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-06-06",
+    "symbol": "RAMCOCEM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-06",
+    "symbol": "MCDOWELL-N",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-06",
+    "symbol": "ZOMATO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-09",
+    "symbol": "FEDERALBNK",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-06-09",
+    "symbol": "IDFCFIRSTB",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-06-09",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-09",
+    "symbol": "MCX",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-10",
+    "symbol": "KOTAKBANK",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-06-10",
+    "symbol": "BAJAJFINSV",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-06-10",
+    "symbol": "FEDERALBNK",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-06-10",
+    "symbol": "CHOLAFIN",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-06-10",
+    "symbol": "MAXHEALTH",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-10",
+    "symbol": "MCDOWELL-N",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-06-10",
+    "symbol": "MCX",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-11",
+    "symbol": "GRASIM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-11",
+    "symbol": "AXISBANK",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-06-11",
+    "symbol": "DRREDDY",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-11",
+    "symbol": "MAXHEALTH",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-11",
+    "symbol": "BIOCON",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-11",
+    "symbol": "MCDOWELL-N",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-06-11",
+    "symbol": "MCX",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-12",
+    "symbol": "GRASIM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-12",
+    "symbol": "AXISBANK",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-06-12",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-12",
+    "symbol": "ADANIENT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-12",
+    "symbol": "DRREDDY",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-12",
+    "symbol": "DIVISLAB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-12",
+    "symbol": "VOLTAS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-12",
+    "symbol": "FEDERALBNK",
+    "reason": "gate9_sector_Banking_full"
+  },
+  {
+    "date": "2025-06-13",
+    "symbol": "HCLTECH",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-13",
+    "symbol": "TECHM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-13",
+    "symbol": "ONGC",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-13",
+    "symbol": "DIVISLAB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-13",
+    "symbol": "GRASIM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-13",
+    "symbol": "VOLTAS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-13",
+    "symbol": "BANDHANBNK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-13",
+    "symbol": "FEDERALBNK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-13",
+    "symbol": "IDFCFIRSTB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-16",
+    "symbol": "HCLTECH",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-16",
+    "symbol": "TECHM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-16",
+    "symbol": "ONGC",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-16",
+    "symbol": "VOLTAS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-16",
+    "symbol": "BANDHANBNK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-16",
+    "symbol": "FEDERALBNK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-16",
+    "symbol": "MAXHEALTH",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-16",
+    "symbol": "ABCAPITAL",
+    "reason": "gate9_sector_Finance_full"
+  },
+  {
+    "date": "2025-06-17",
+    "symbol": "ADANIENT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-17",
+    "symbol": "APOLLOHOSP",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-17",
+    "symbol": "VOLTAS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-17",
+    "symbol": "MANAPPURAM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-17",
+    "symbol": "MAXHEALTH",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-17",
+    "symbol": "ABCAPITAL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-17",
+    "symbol": "APLAPOLLO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-17",
+    "symbol": "MCX",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-18",
+    "symbol": "TECHM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-18",
+    "symbol": "HEROMOTOCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-18",
+    "symbol": "VOLTAS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-18",
+    "symbol": "MAXHEALTH",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-18",
+    "symbol": "ABCAPITAL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-18",
+    "symbol": "MCX",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-18",
+    "symbol": "TCS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-19",
+    "symbol": "ONGC",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-19",
+    "symbol": "MAXHEALTH",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-19",
+    "symbol": "BIOCON",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-19",
+    "symbol": "ABCAPITAL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-19",
+    "symbol": "MCX",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-19",
+    "symbol": "KOTAKBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-19",
+    "symbol": "AXISBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-19",
+    "symbol": "ASIANPAINT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-20",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-20",
+    "symbol": "BIOCON",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-20",
+    "symbol": "ABCAPITAL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-20",
+    "symbol": "KOTAKBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-20",
+    "symbol": "AXISBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-20",
+    "symbol": "TECHM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-20",
+    "symbol": "ONGC",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-23",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-23",
+    "symbol": "INDUSINDBK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-23",
+    "symbol": "APOLLOHOSP",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-23",
+    "symbol": "EICHERMOT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-23",
+    "symbol": "HDFCLIFE",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-23",
+    "symbol": "VOLTAS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-23",
+    "symbol": "MAXHEALTH",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-23",
+    "symbol": "BIOCON",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-23",
+    "symbol": "TRENT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-23",
+    "symbol": "ABCAPITAL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-24",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-24",
+    "symbol": "EICHERMOT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-24",
+    "symbol": "HDFCLIFE",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-24",
+    "symbol": "VOLTAS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-24",
+    "symbol": "BIOCON",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-24",
+    "symbol": "ABCAPITAL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-24",
+    "symbol": "POONAWALLA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-24",
+    "symbol": "KOTAKBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-25",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-25",
+    "symbol": "EICHERMOT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-25",
+    "symbol": "HDFCLIFE",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-25",
+    "symbol": "MAXHEALTH",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-25",
+    "symbol": "BIOCON",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-25",
+    "symbol": "ABCAPITAL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-25",
+    "symbol": "POONAWALLA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-26",
+    "symbol": "TITAN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-26",
+    "symbol": "HDFCLIFE",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-26",
+    "symbol": "ULTRACEMCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-26",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-26",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-26",
+    "symbol": "TATACONSUM",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-06-26",
+    "symbol": "PAGEIND",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-26",
+    "symbol": "FEDERALBNK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-27",
+    "symbol": "TITAN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-27",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-27",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-27",
+    "symbol": "MAXHEALTH",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-27",
+    "symbol": "SHREECEM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-27",
+    "symbol": "LT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-27",
+    "symbol": "ULTRACEMCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-27",
+    "symbol": "BAJAJFINSV",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-30",
+    "symbol": "ICICIBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-30",
+    "symbol": "TITAN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-30",
+    "symbol": "SBILIFE",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-30",
+    "symbol": "MAXHEALTH",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-30",
+    "symbol": "SHREECEM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-30",
+    "symbol": "NUVAMA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-30",
+    "symbol": "POONAWALLA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-30",
+    "symbol": "KOTAKBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-06-30",
+    "symbol": "LT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-01",
+    "symbol": "ICICIBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-01",
+    "symbol": "KOTAKBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-01",
+    "symbol": "TITAN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-01",
+    "symbol": "SBILIFE",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-01",
+    "symbol": "UPL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-01",
+    "symbol": "FEDERALBNK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-01",
+    "symbol": "MAXHEALTH",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-01",
+    "symbol": "SHREECEM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-01",
+    "symbol": "NUVAMA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-02",
+    "symbol": "KOTAKBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-02",
+    "symbol": "TITAN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-02",
+    "symbol": "SBILIFE",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-02",
+    "symbol": "PAGEIND",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-02",
+    "symbol": "MAXHEALTH",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-02",
+    "symbol": "SBIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-02",
+    "symbol": "BAJAJFINSV",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-02",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-03",
+    "symbol": "KOTAKBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-03",
+    "symbol": "DIVISLAB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-03",
+    "symbol": "PAGEIND",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-03",
+    "symbol": "MAXHEALTH",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-03",
+    "symbol": "TORNTPHARM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-03",
+    "symbol": "ICICIBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-03",
+    "symbol": "SBIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-03",
+    "symbol": "ULTRACEMCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-04",
+    "symbol": "HDFCLIFE",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-04",
+    "symbol": "MAXHEALTH",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-04",
+    "symbol": "ICICIBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-04",
+    "symbol": "TATASTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-04",
+    "symbol": "DIVISLAB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-04",
+    "symbol": "APOLLOHOSP",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-04",
+    "symbol": "UPL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-04",
+    "symbol": "HAVELLS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-04",
+    "symbol": "PAGEIND",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-04",
+    "symbol": "FEDERALBNK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-07",
+    "symbol": "TORNTPHARM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-07",
+    "symbol": "ICICIBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-07",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-07",
+    "symbol": "DIVISLAB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-07",
+    "symbol": "APOLLOHOSP",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-07",
+    "symbol": "UPL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-07",
+    "symbol": "MUTHOOTFIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-07",
+    "symbol": "IDFCFIRSTB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-07",
+    "symbol": "BANKBARODA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-07",
+    "symbol": "MAXHEALTH",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-08",
+    "symbol": "ICICIBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-08",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-08",
+    "symbol": "APOLLOHOSP",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-08",
+    "symbol": "HDFCLIFE",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-08",
+    "symbol": "MUTHOOTFIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-08",
+    "symbol": "IDFCFIRSTB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-08",
+    "symbol": "MAXHEALTH",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-08",
+    "symbol": "RAMCOCEM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-08",
+    "symbol": "TORNTPHARM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-09",
+    "symbol": "ICICIBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-09",
+    "symbol": "HDFCLIFE",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-09",
+    "symbol": "MUTHOOTFIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-09",
+    "symbol": "FEDERALBNK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-09",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-09",
+    "symbol": "NYKAA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-09",
+    "symbol": "IIFL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-10",
+    "symbol": "KOTAKBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-10",
+    "symbol": "MUTHOOTFIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-10",
+    "symbol": "IIFL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-10",
+    "symbol": "ULTRACEMCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-11",
+    "symbol": "APOLLOHOSP",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-11",
+    "symbol": "UPL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-11",
+    "symbol": "MUTHOOTFIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-11",
+    "symbol": "IIFL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-11",
+    "symbol": "SBIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-11",
+    "symbol": "KOTAKBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-11",
+    "symbol": "ULTRACEMCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-11",
+    "symbol": "BAJAJFINSV",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-14",
+    "symbol": "DIVISLAB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-14",
+    "symbol": "UPL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-14",
+    "symbol": "MUTHOOTFIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-14",
+    "symbol": "NYKAA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-14",
+    "symbol": "IIFL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-14",
+    "symbol": "HINDUNILVR",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-07-14",
+    "symbol": "KOTAKBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-15",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-15",
+    "symbol": "IDFCFIRSTB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-15",
+    "symbol": "MRF",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-15",
+    "symbol": "RAMCOCEM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-15",
+    "symbol": "HINDUNILVR",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-07-15",
+    "symbol": "KOTAKBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-15",
+    "symbol": "ULTRACEMCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-15",
+    "symbol": "TATASTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-16",
+    "symbol": "UPL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-16",
+    "symbol": "PAGEIND",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-16",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-16",
+    "symbol": "MRF",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-16",
+    "symbol": "RAMCOCEM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-16",
+    "symbol": "NYKAA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-16",
+    "symbol": "HINDUNILVR",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-07-16",
+    "symbol": "ITC",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-07-17",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-17",
+    "symbol": "HEROMOTOCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-17",
+    "symbol": "BANKBARODA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-17",
+    "symbol": "LICHSGFIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-17",
+    "symbol": "PFC",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-17",
+    "symbol": "RAMCOCEM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-17",
+    "symbol": "NYKAA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-17",
+    "symbol": "HINDUNILVR",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-07-18",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-18",
+    "symbol": "HEROMOTOCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-18",
+    "symbol": "BPCL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-18",
+    "symbol": "BANKBARODA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-18",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-18",
+    "symbol": "RAMCOCEM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-18",
+    "symbol": "NYKAA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-18",
+    "symbol": "HINDUNILVR",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-07-18",
+    "symbol": "ITC",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-07-21",
+    "symbol": "SBIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-21",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-21",
+    "symbol": "HEROMOTOCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-21",
+    "symbol": "LICHSGFIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-21",
+    "symbol": "MRF",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-21",
+    "symbol": "TORNTPHARM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-21",
+    "symbol": "BIOCON",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-21",
+    "symbol": "ADANIGREEN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-22",
+    "symbol": "ICICIBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-22",
+    "symbol": "SBIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-22",
+    "symbol": "BAJAJFINSV",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-22",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-22",
+    "symbol": "HEROMOTOCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-22",
+    "symbol": "UPL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-22",
+    "symbol": "LICHSGFIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-22",
+    "symbol": "MRF",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-22",
+    "symbol": "SHREECEM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-23",
+    "symbol": "BAJAJFINSV",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-23",
+    "symbol": "UPL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-23",
+    "symbol": "HAVELLS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-23",
+    "symbol": "LICHSGFIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-23",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-23",
+    "symbol": "MRF",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-23",
+    "symbol": "SHREECEM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-23",
+    "symbol": "BIOCON",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-23",
+    "symbol": "ZOMATO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-24",
+    "symbol": "SBIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-24",
+    "symbol": "ICICIBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-24",
+    "symbol": "UPL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-24",
+    "symbol": "HAVELLS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-24",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-24",
+    "symbol": "SHREECEM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-24",
+    "symbol": "ZOMATO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-24",
+    "symbol": "BAJAJFINSV",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-25",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-25",
+    "symbol": "TATASTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-25",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-25",
+    "symbol": "UPL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-25",
+    "symbol": "BANKBARODA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-25",
+    "symbol": "RECLTD",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-25",
+    "symbol": "SHREECEM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-25",
+    "symbol": "BIOCON",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-25",
+    "symbol": "ZOMATO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-28",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-28",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-28",
+    "symbol": "CIPLA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-28",
+    "symbol": "UPL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-28",
+    "symbol": "BANKBARODA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-28",
+    "symbol": "ZOMATO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-28",
+    "symbol": "ICICIBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-28",
+    "symbol": "SUNPHARMA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-28",
+    "symbol": "DRREDDY",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-29",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-29",
+    "symbol": "DRREDDY",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-29",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-29",
+    "symbol": "BIOCON",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-29",
+    "symbol": "ZOMATO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-29",
+    "symbol": "ICICIBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-29",
+    "symbol": "SUNPHARMA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-29",
+    "symbol": "CIPLA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-29",
+    "symbol": "HEROMOTOCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-30",
+    "symbol": "MAXHEALTH",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-30",
+    "symbol": "TATASTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-30",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-30",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-30",
+    "symbol": "TORNTPHARM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-30",
+    "symbol": "ZOMATO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-30",
+    "symbol": "ICICIBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-30",
+    "symbol": "DRREDDY",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-30",
+    "symbol": "CIPLA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-31",
+    "symbol": "PAGEIND",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-31",
+    "symbol": "LT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-31",
+    "symbol": "DRREDDY",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-31",
+    "symbol": "APOLLOHOSP",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-31",
+    "symbol": "MAXHEALTH",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-31",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-31",
+    "symbol": "TORNTPHARM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-31",
+    "symbol": "ICICIBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-07-31",
+    "symbol": "TATASTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-01",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-01",
+    "symbol": "SBILIFE",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-01",
+    "symbol": "LT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-01",
+    "symbol": "TORNTPHARM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-01",
+    "symbol": "KAYNES",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-01",
+    "symbol": "ICICIBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-04",
+    "symbol": "HINDUNILVR",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-08-04",
+    "symbol": "ASIANPAINT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-04",
+    "symbol": "EICHERMOT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-04",
+    "symbol": "DABUR",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-08-04",
+    "symbol": "AMBUJACEM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-04",
+    "symbol": "TORNTPHARM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-04",
+    "symbol": "KAYNES",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-04",
+    "symbol": "SUZLON",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-05",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-05",
+    "symbol": "EICHERMOT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-05",
+    "symbol": "TORNTPHARM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-05",
+    "symbol": "ABCAPITAL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-05",
+    "symbol": "HINDUNILVR",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-08-05",
+    "symbol": "LT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-05",
+    "symbol": "ASIANPAINT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-05",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-06",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-06",
+    "symbol": "EICHERMOT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-06",
+    "symbol": "ABCAPITAL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-06",
+    "symbol": "HINDUNILVR",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-08-06",
+    "symbol": "LT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-06",
+    "symbol": "ASIANPAINT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-06",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-07",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-07",
+    "symbol": "EICHERMOT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-07",
+    "symbol": "ABCAPITAL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-07",
+    "symbol": "HINDUNILVR",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-08-07",
+    "symbol": "HEROMOTOCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-07",
+    "symbol": "SBILIFE",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-07",
+    "symbol": "UPL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-07",
+    "symbol": "PIDILITIND",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-07",
+    "symbol": "MAXHEALTH",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-08",
+    "symbol": "EICHERMOT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-08",
+    "symbol": "ABCAPITAL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-08",
+    "symbol": "UPL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-08",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-08",
+    "symbol": "TORNTPHARM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-08",
+    "symbol": "KAYNES",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-08",
+    "symbol": "HINDUNILVR",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-08-11",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-11",
+    "symbol": "HEROMOTOCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-11",
+    "symbol": "EICHERMOT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-11",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-11",
+    "symbol": "HINDUNILVR",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-08-11",
+    "symbol": "ASIANPAINT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-11",
+    "symbol": "SBILIFE",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-12",
+    "symbol": "SBIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-12",
+    "symbol": "ULTRACEMCO",
+    "reason": "gate9_sector_Infrastructure_full"
+  },
+  {
+    "date": "2025-08-12",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-12",
+    "symbol": "BANKBARODA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-12",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-12",
+    "symbol": "PFC",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-12",
+    "symbol": "ZOMATO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-12",
+    "symbol": "HINDUNILVR",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-08-13",
+    "symbol": "TITAN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-13",
+    "symbol": "ULTRACEMCO",
+    "reason": "gate9_sector_Infrastructure_full"
+  },
+  {
+    "date": "2025-08-13",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-13",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-13",
+    "symbol": "ALKEM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-13",
+    "symbol": "MFSL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-13",
+    "symbol": "ZOMATO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-13",
+    "symbol": "SBIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-14",
+    "symbol": "APOLLOHOSP",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-14",
+    "symbol": "SBIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-14",
+    "symbol": "ULTRACEMCO",
+    "reason": "gate9_sector_Infrastructure_full"
+  },
+  {
+    "date": "2025-08-14",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-14",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-14",
+    "symbol": "HINDALCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-14",
+    "symbol": "HDFCLIFE",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-14",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-18",
+    "symbol": "APOLLOHOSP",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-18",
+    "symbol": "MUTHOOTFIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-18",
+    "symbol": "MANAPPURAM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-18",
+    "symbol": "TITAN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-18",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-18",
+    "symbol": "HINDALCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-18",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-18",
+    "symbol": "PFC",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-19",
+    "symbol": "MUTHOOTFIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-19",
+    "symbol": "MANAPPURAM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-19",
+    "symbol": "NYKAA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-19",
+    "symbol": "ULTRACEMCO",
+    "reason": "gate9_sector_Infrastructure_full"
+  },
+  {
+    "date": "2025-08-19",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-19",
+    "symbol": "HINDALCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-19",
+    "symbol": "APOLLOHOSP",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-19",
+    "symbol": "EICHERMOT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-20",
+    "symbol": "APOLLOHOSP",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-20",
+    "symbol": "MUTHOOTFIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-20",
+    "symbol": "MANAPPURAM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-20",
+    "symbol": "ULTRACEMCO",
+    "reason": "gate9_sector_Infrastructure_full"
+  },
+  {
+    "date": "2025-08-20",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-20",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-20",
+    "symbol": "HINDALCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-20",
+    "symbol": "EICHERMOT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-21",
+    "symbol": "TATASTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-21",
+    "symbol": "MUTHOOTFIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-21",
+    "symbol": "NYKAA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-21",
+    "symbol": "ULTRACEMCO",
+    "reason": "gate9_sector_Infrastructure_full"
+  },
+  {
+    "date": "2025-08-21",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-21",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-21",
+    "symbol": "HINDALCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-21",
+    "symbol": "APOLLOHOSP",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-22",
+    "symbol": "TATASTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-22",
+    "symbol": "MUTHOOTFIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-22",
+    "symbol": "MRF",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-22",
+    "symbol": "ULTRACEMCO",
+    "reason": "gate9_sector_Infrastructure_full"
+  },
+  {
+    "date": "2025-08-22",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-22",
+    "symbol": "CIPLA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-22",
+    "symbol": "EICHERMOT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-22",
+    "symbol": "SBILIFE",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-25",
+    "symbol": "ULTRACEMCO",
+    "reason": "gate9_sector_Infrastructure_full"
+  },
+  {
+    "date": "2025-08-25",
+    "symbol": "MRF",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-25",
+    "symbol": "HINDUNILVR",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-08-25",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-25",
+    "symbol": "EICHERMOT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-25",
+    "symbol": "MUTHOOTFIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-25",
+    "symbol": "VOLTAS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-26",
+    "symbol": "MRF",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-26",
+    "symbol": "WIPRO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-26",
+    "symbol": "ULTRACEMCO",
+    "reason": "gate9_sector_Infrastructure_full"
+  },
+  {
+    "date": "2025-08-26",
+    "symbol": "TATASTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-26",
+    "symbol": "UPL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-26",
+    "symbol": "MUTHOOTFIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-26",
+    "symbol": "PAGEIND",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-26",
+    "symbol": "MANAPPURAM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-28",
+    "symbol": "ZOMATO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-28",
+    "symbol": "ULTRACEMCO",
+    "reason": "gate9_sector_Infrastructure_full"
+  },
+  {
+    "date": "2025-08-28",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-28",
+    "symbol": "EICHERMOT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-28",
+    "symbol": "UPL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-28",
+    "symbol": "MUTHOOTFIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-28",
+    "symbol": "MANAPPURAM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-29",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-29",
+    "symbol": "EICHERMOT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-29",
+    "symbol": "HDFCLIFE",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-29",
+    "symbol": "UPL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-29",
+    "symbol": "ZOMATO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-29",
+    "symbol": "NYKAA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-08-29",
+    "symbol": "HINDUNILVR",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-08-29",
+    "symbol": "TITAN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-01",
+    "symbol": "ULTRACEMCO",
+    "reason": "gate9_sector_Infrastructure_full"
+  },
+  {
+    "date": "2025-09-01",
+    "symbol": "EICHERMOT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-01",
+    "symbol": "UPL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-01",
+    "symbol": "COLPAL",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-09-01",
+    "symbol": "ZOMATO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-01",
+    "symbol": "NYKAA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-01",
+    "symbol": "ASIANPAINT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-02",
+    "symbol": "ASIANPAINT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-02",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-02",
+    "symbol": "EICHERMOT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-02",
+    "symbol": "HDFCLIFE",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-02",
+    "symbol": "ABCAPITAL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-02",
+    "symbol": "NYKAA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-02",
+    "symbol": "HINDUNILVR",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-09-02",
+    "symbol": "ULTRACEMCO",
+    "reason": "gate9_sector_Infrastructure_full"
+  },
+  {
+    "date": "2025-09-03",
+    "symbol": "ZOMATO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-03",
+    "symbol": "EICHERMOT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-03",
+    "symbol": "TATACONSUM",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-09-03",
+    "symbol": "HDFCLIFE",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-03",
+    "symbol": "UPL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-03",
+    "symbol": "MRF",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-03",
+    "symbol": "HINDUNILVR",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-09-04",
+    "symbol": "TATASTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-04",
+    "symbol": "MRF",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-04",
+    "symbol": "UPL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-04",
+    "symbol": "TITAN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-04",
+    "symbol": "ULTRACEMCO",
+    "reason": "gate9_sector_Infrastructure_full"
+  },
+  {
+    "date": "2025-09-04",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-04",
+    "symbol": "COALINDIA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-04",
+    "symbol": "HINDALCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-05",
+    "symbol": "TATASTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-05",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-05",
+    "symbol": "ITC",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-09-05",
+    "symbol": "IDFCFIRSTB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-05",
+    "symbol": "TITAN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-05",
+    "symbol": "ULTRACEMCO",
+    "reason": "gate9_sector_Infrastructure_full"
+  },
+  {
+    "date": "2025-09-05",
+    "symbol": "BAJAJFINSV",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-05",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-08",
+    "symbol": "TATASTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-08",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-08",
+    "symbol": "MUTHOOTFIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-08",
+    "symbol": "MRF",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-08",
+    "symbol": "ZOMATO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-08",
+    "symbol": "TITAN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-08",
+    "symbol": "ULTRACEMCO",
+    "reason": "gate9_sector_Infrastructure_full"
+  },
+  {
+    "date": "2025-09-08",
+    "symbol": "BAJAJFINSV",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-09",
+    "symbol": "BAJAJFINSV",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-09",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-09",
+    "symbol": "TATASTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-09",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-09",
+    "symbol": "COALINDIA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-09",
+    "symbol": "HINDALCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-09",
+    "symbol": "BRITANNIA",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-09-09",
+    "symbol": "MUTHOOTFIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-09",
+    "symbol": "COLPAL",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-09-09",
+    "symbol": "DABUR",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-09-10",
+    "symbol": "BAJAJFINSV",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-10",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-10",
+    "symbol": "TATASTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-10",
+    "symbol": "COLPAL",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-09-10",
+    "symbol": "IDFCFIRSTB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-10",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-10",
+    "symbol": "ESCORTS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-10",
+    "symbol": "MRF",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-10",
+    "symbol": "ABCAPITAL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-11",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-11",
+    "symbol": "TATASTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-11",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-11",
+    "symbol": "APOLLOHOSP",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-11",
+    "symbol": "EICHERMOT",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-11",
+    "symbol": "IDFCFIRSTB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-11",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-11",
+    "symbol": "ESCORTS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-11",
+    "symbol": "ABCAPITAL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-11",
+    "symbol": "SBIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-12",
+    "symbol": "BAJAJFINSV",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-12",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-12",
+    "symbol": "TATASTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-12",
+    "symbol": "M&M",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-12",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-12",
+    "symbol": "ZOMATO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-12",
+    "symbol": "ADANIGREEN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-12",
+    "symbol": "SBIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-12",
+    "symbol": "ITC",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-09-15",
+    "symbol": "SBIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-15",
+    "symbol": "DRREDDY",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-15",
+    "symbol": "NHPC",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-15",
+    "symbol": "AUROPHARMA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-15",
+    "symbol": "ABCAPITAL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-15",
+    "symbol": "ADANIGREEN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-15",
+    "symbol": "INFY",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-15",
+    "symbol": "AXISBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-16",
+    "symbol": "SBIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-16",
+    "symbol": "MRF",
+    "reason": "gate9_sector_Auto_full"
+  },
+  {
+    "date": "2025-09-16",
+    "symbol": "AUROPHARMA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-16",
+    "symbol": "ALKEM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-16",
+    "symbol": "ABCAPITAL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-16",
+    "symbol": "NYKAA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-16",
+    "symbol": "ADANIGREEN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-16",
+    "symbol": "ITC",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-09-17",
+    "symbol": "ADANIPORTS",
+    "reason": "gate9_sector_Infrastructure_full"
+  },
+  {
+    "date": "2025-09-17",
+    "symbol": "APOLLOHOSP",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-17",
+    "symbol": "BANKBARODA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-17",
+    "symbol": "ALKEM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-17",
+    "symbol": "ABCAPITAL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-17",
+    "symbol": "ZOMATO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-18",
+    "symbol": "SBIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-18",
+    "symbol": "APOLLOHOSP",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-18",
+    "symbol": "PNB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-18",
+    "symbol": "BANKBARODA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-18",
+    "symbol": "ALKEM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-18",
+    "symbol": "NYKAA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-18",
+    "symbol": "TCS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-19",
+    "symbol": "SBIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-19",
+    "symbol": "HDFCLIFE",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-19",
+    "symbol": "PNB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-19",
+    "symbol": "BANKBARODA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-19",
+    "symbol": "ABCAPITAL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-19",
+    "symbol": "TCS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-19",
+    "symbol": "INFY",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-22",
+    "symbol": "SBIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-22",
+    "symbol": "ADANIPORTS",
+    "reason": "gate9_sector_Infrastructure_full"
+  },
+  {
+    "date": "2025-09-22",
+    "symbol": "DRREDDY",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-22",
+    "symbol": "SBILIFE",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-22",
+    "symbol": "HDFCLIFE",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-22",
+    "symbol": "PNB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-22",
+    "symbol": "BANKBARODA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-22",
+    "symbol": "CHOLAFIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-23",
+    "symbol": "TORNTPHARM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-23",
+    "symbol": "SBIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-23",
+    "symbol": "ADANIPORTS",
+    "reason": "gate9_sector_Infrastructure_full"
+  },
+  {
+    "date": "2025-09-23",
+    "symbol": "SBILIFE",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-23",
+    "symbol": "HDFCLIFE",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-23",
+    "symbol": "PNB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-24",
+    "symbol": "SBIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-24",
+    "symbol": "POWERGRID",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-24",
+    "symbol": "ADANIPORTS",
+    "reason": "gate9_sector_Infrastructure_full"
+  },
+  {
+    "date": "2025-09-24",
+    "symbol": "TATACONSUM",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-09-24",
+    "symbol": "PNB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-24",
+    "symbol": "BANKBARODA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-24",
+    "symbol": "CHOLAFIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-24",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-25",
+    "symbol": "SBIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-25",
+    "symbol": "ADANIPORTS",
+    "reason": "gate9_sector_Infrastructure_full"
+  },
+  {
+    "date": "2025-09-25",
+    "symbol": "PNB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-25",
+    "symbol": "BANKBARODA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-25",
+    "symbol": "CHOLAFIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-25",
+    "symbol": "MRF",
+    "reason": "gate9_sector_Auto_full"
+  },
+  {
+    "date": "2025-09-25",
+    "symbol": "TORNTPHARM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-25",
+    "symbol": "ABCAPITAL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-26",
+    "symbol": "SBIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-26",
+    "symbol": "ADANIPORTS",
+    "reason": "gate9_sector_Infrastructure_full"
+  },
+  {
+    "date": "2025-09-26",
+    "symbol": "PNB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-26",
+    "symbol": "BANKBARODA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-26",
+    "symbol": "CHOLAFIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-26",
+    "symbol": "MRF",
+    "reason": "gate9_sector_Auto_full"
+  },
+  {
+    "date": "2025-09-26",
+    "symbol": "ZOMATO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-26",
+    "symbol": "KAYNES",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-29",
+    "symbol": "SBIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-29",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-29",
+    "symbol": "EICHERMOT",
+    "reason": "gate9_sector_Auto_full"
+  },
+  {
+    "date": "2025-09-29",
+    "symbol": "MUTHOOTFIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-29",
+    "symbol": "BANKBARODA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-29",
+    "symbol": "CHOLAFIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-29",
+    "symbol": "KAYNES",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-29",
+    "symbol": "AXISBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-30",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-30",
+    "symbol": "SBIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-30",
+    "symbol": "EICHERMOT",
+    "reason": "gate9_sector_Auto_full"
+  },
+  {
+    "date": "2025-09-30",
+    "symbol": "MUTHOOTFIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-30",
+    "symbol": "BANKBARODA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-30",
+    "symbol": "CHOLAFIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-30",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-30",
+    "symbol": "ABCAPITAL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-09-30",
+    "symbol": "AXISBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-01",
+    "symbol": "SBIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-01",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-01",
+    "symbol": "HEROMOTOCO",
+    "reason": "gate9_sector_Auto_full"
+  },
+  {
+    "date": "2025-10-01",
+    "symbol": "EICHERMOT",
+    "reason": "gate9_sector_Auto_full"
+  },
+  {
+    "date": "2025-10-01",
+    "symbol": "PNB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-01",
+    "symbol": "BANKBARODA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-01",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-01",
+    "symbol": "TORNTPHARM",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-01",
+    "symbol": "ABCAPITAL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-03",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-03",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-03",
+    "symbol": "ADANIPORTS",
+    "reason": "gate9_sector_Infrastructure_full"
+  },
+  {
+    "date": "2025-10-03",
+    "symbol": "HEROMOTOCO",
+    "reason": "gate9_sector_Auto_full"
+  },
+  {
+    "date": "2025-10-03",
+    "symbol": "BPCL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-03",
+    "symbol": "PNB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-03",
+    "symbol": "PFC",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-03",
+    "symbol": "ABCAPITAL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-03",
+    "symbol": "MFSL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-03",
+    "symbol": "APLAPOLLO",
+    "reason": "gate9_sector_Infrastructure_full"
+  },
+  {
+    "date": "2025-10-06",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-06",
+    "symbol": "ABCAPITAL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-06",
+    "symbol": "SBIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-06",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-06",
+    "symbol": "TATASTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-06",
+    "symbol": "HEROMOTOCO",
+    "reason": "gate9_sector_Auto_full"
+  },
+  {
+    "date": "2025-10-06",
+    "symbol": "BPCL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-06",
+    "symbol": "PNB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-06",
+    "symbol": "MRF",
+    "reason": "gate9_sector_Auto_full"
+  },
+  {
+    "date": "2025-10-07",
+    "symbol": "ABCAPITAL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-07",
+    "symbol": "NYKAA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-07",
+    "symbol": "SBIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-07",
+    "symbol": "AXISBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-07",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-07",
+    "symbol": "HEROMOTOCO",
+    "reason": "gate9_sector_Auto_full"
+  },
+  {
+    "date": "2025-10-07",
+    "symbol": "BPCL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-07",
+    "symbol": "TATACONSUM",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-10-07",
+    "symbol": "PNB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-07",
+    "symbol": "CHOLAFIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-08",
+    "symbol": "SBIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-08",
+    "symbol": "AXISBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-08",
+    "symbol": "HINDALCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-08",
+    "symbol": "FEDERALBNK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-08",
+    "symbol": "PNB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-08",
+    "symbol": "CHOLAFIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-08",
+    "symbol": "FORTIS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-08",
+    "symbol": "ABCAPITAL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-09",
+    "symbol": "TITAN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-09",
+    "symbol": "HINDALCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-09",
+    "symbol": "NYKAA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-09",
+    "symbol": "AXISBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-09",
+    "symbol": "TATASTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-09",
+    "symbol": "DIVISLAB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-09",
+    "symbol": "HEROMOTOCO",
+    "reason": "gate9_sector_Auto_full"
+  },
+  {
+    "date": "2025-10-09",
+    "symbol": "FEDERALBNK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-10",
+    "symbol": "TATASTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-10",
+    "symbol": "NYKAA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-10",
+    "symbol": "TITAN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-10",
+    "symbol": "DIVISLAB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-10",
+    "symbol": "HEROMOTOCO",
+    "reason": "gate9_sector_Auto_full"
+  },
+  {
+    "date": "2025-10-10",
+    "symbol": "HINDALCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-10",
+    "symbol": "FEDERALBNK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-10",
+    "symbol": "IDFCFIRSTB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-13",
+    "symbol": "IDFCFIRSTB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-13",
+    "symbol": "SBIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-13",
+    "symbol": "AXISBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-13",
+    "symbol": "TITAN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-13",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-13",
+    "symbol": "TATASTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-13",
+    "symbol": "DIVISLAB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-14",
+    "symbol": "TATASTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-14",
+    "symbol": "SBIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-14",
+    "symbol": "AXISBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-14",
+    "symbol": "TITAN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-14",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-14",
+    "symbol": "HEROMOTOCO",
+    "reason": "gate9_sector_Auto_full"
+  },
+  {
+    "date": "2025-10-14",
+    "symbol": "HINDALCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-14",
+    "symbol": "BPCL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-15",
+    "symbol": "AXISBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-15",
+    "symbol": "TITAN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-15",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-15",
+    "symbol": "CIPLA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-15",
+    "symbol": "HEROMOTOCO",
+    "reason": "gate9_sector_Auto_full"
+  },
+  {
+    "date": "2025-10-15",
+    "symbol": "APOLLOHOSP",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-15",
+    "symbol": "VOLTAS",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-16",
+    "symbol": "SBIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-16",
+    "symbol": "TITAN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-16",
+    "symbol": "BAJAJFINSV",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-16",
+    "symbol": "NESTLEIND",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-10-16",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-16",
+    "symbol": "TATASTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-16",
+    "symbol": "ADANIPORTS",
+    "reason": "gate9_sector_Infrastructure_full"
+  },
+  {
+    "date": "2025-10-16",
+    "symbol": "CIPLA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-17",
+    "symbol": "ZOMATO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-17",
+    "symbol": "SBIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-17",
+    "symbol": "AXISBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-17",
+    "symbol": "BAJAJFINSV",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-17",
+    "symbol": "NESTLEIND",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-10-17",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-17",
+    "symbol": "TATASTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-20",
+    "symbol": "AXISBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-20",
+    "symbol": "NESTLEIND",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-10-20",
+    "symbol": "ADANIPORTS",
+    "reason": "gate9_sector_Infrastructure_full"
+  },
+  {
+    "date": "2025-10-20",
+    "symbol": "BRITANNIA",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-10-20",
+    "symbol": "TATACONSUM",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-10-20",
+    "symbol": "SBILIFE",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-20",
+    "symbol": "FEDERALBNK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-20",
+    "symbol": "CHOLAFIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-21",
+    "symbol": "BAJAJFINSV",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-21",
+    "symbol": "NESTLEIND",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-10-21",
+    "symbol": "TATASTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-21",
+    "symbol": "ADANIPORTS",
+    "reason": "gate9_sector_Infrastructure_full"
+  },
+  {
+    "date": "2025-10-21",
+    "symbol": "EICHERMOT",
+    "reason": "gate9_sector_Auto_full"
+  },
+  {
+    "date": "2025-10-21",
+    "symbol": "TATACONSUM",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-10-21",
+    "symbol": "FEDERALBNK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-21",
+    "symbol": "IDFCFIRSTB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-21",
+    "symbol": "CHOLAFIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-23",
+    "symbol": "HINDUNILVR",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-10-23",
+    "symbol": "BAJAJFINSV",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-23",
+    "symbol": "NESTLEIND",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-10-23",
+    "symbol": "ADANIPORTS",
+    "reason": "gate9_sector_Infrastructure_full"
+  },
+  {
+    "date": "2025-10-23",
+    "symbol": "HINDALCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-23",
+    "symbol": "BRITANNIA",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-10-23",
+    "symbol": "TATACONSUM",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-10-23",
+    "symbol": "FEDERALBNK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-24",
+    "symbol": "ADANIPORTS",
+    "reason": "gate9_sector_Infrastructure_full"
+  },
+  {
+    "date": "2025-10-24",
+    "symbol": "HINDUNILVR",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-10-24",
+    "symbol": "NESTLEIND",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-10-24",
+    "symbol": "TATASTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-24",
+    "symbol": "CIPLA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-24",
+    "symbol": "HEROMOTOCO",
+    "reason": "gate9_sector_Auto_full"
+  },
+  {
+    "date": "2025-10-24",
+    "symbol": "HINDALCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-27",
+    "symbol": "CIPLA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-27",
+    "symbol": "INFY",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-27",
+    "symbol": "AXISBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-27",
+    "symbol": "ADANIPORTS",
+    "reason": "gate9_sector_Infrastructure_full"
+  },
+  {
+    "date": "2025-10-27",
+    "symbol": "HINDALCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-27",
+    "symbol": "BRITANNIA",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-10-27",
+    "symbol": "FEDERALBNK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-28",
+    "symbol": "CIPLA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-28",
+    "symbol": "AXISBANK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-28",
+    "symbol": "ONGC",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-28",
+    "symbol": "TATASTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-28",
+    "symbol": "HEROMOTOCO",
+    "reason": "gate9_sector_Auto_full"
+  },
+  {
+    "date": "2025-10-28",
+    "symbol": "HINDALCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-28",
+    "symbol": "APOLLOHOSP",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-28",
+    "symbol": "FEDERALBNK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-29",
+    "symbol": "INFY",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-29",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-29",
+    "symbol": "HINDALCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-29",
+    "symbol": "APOLLOHOSP",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-29",
+    "symbol": "EICHERMOT",
+    "reason": "gate9_sector_Auto_full"
+  },
+  {
+    "date": "2025-10-29",
+    "symbol": "UPL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-29",
+    "symbol": "FEDERALBNK",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-29",
+    "symbol": "IDFCFIRSTB",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-30",
+    "symbol": "BAJFINANCE",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-30",
+    "symbol": "CIPLA",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-30",
+    "symbol": "BPCL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-30",
+    "symbol": "RADICO",
+    "reason": "gate9_sector_FMCG_full"
+  },
+  {
+    "date": "2025-10-30",
+    "symbol": "INFY",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-30",
+    "symbol": "SBIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-30",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-31",
+    "symbol": "JSWSTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-31",
+    "symbol": "BPCL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-31",
+    "symbol": "SBIN",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-31",
+    "symbol": "TATASTEEL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-31",
+    "symbol": "HINDALCO",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-31",
+    "symbol": "SBILIFE",
+    "reason": "gate6_insufficient_cash_or_qty"
+  },
+  {
+    "date": "2025-10-31",
+    "symbol": "UPL",
+    "reason": "gate6_insufficient_cash_or_qty"
+  }
+]

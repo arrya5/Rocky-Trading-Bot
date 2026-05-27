@@ -80,12 +80,60 @@ Note: Use `python scripts/broker.py positions` for position data — it reflects
 ## Step 5 — Apply Trailing Stop Logic at Close
 Review all open positions at closing price. Apply same trailing stop rules from midday routine (Rule B and C). Log any tightenings to TRADE-LOG.md for reference at next market open.
 
-## Step 6 — Send Telegram EOD Report (always, even on no-trade days)
+## Step 5.5 — Daily Reflection (Active Days Only)
+Decide if today is a **quiet** or **active** day:
+- **ACTIVE**: ≥1 trade entered OR closed today, OR `|day_pnl_pct| ≥ 1.0`
+- **QUIET**: no entries/closes AND `|day_pnl_pct| < 1.0`
+
+If QUIET → skip this step. Use the quiet Telegram format in Step 6.
+
+If ACTIVE → identify **one** biggest surprise. Read today's TRADE-LOG entries plus today's RESEARCH-LOG entry. Look for the single most unexpected moment:
+- a stop fired earlier than the score suggested
+- a high-score trade underperformed Nifty
+- a sector moved against the thesis
+- a chart pattern played out faster (or slower) than predicted
+- a catalyst tier behaved differently than expected (HARD trade fizzled, MEDIUM ran hard)
+
+Write 1-2 sentences capturing that observation. Be specific — include the symbol, the actual % move, the expected vs realized outcome.
+
+**Do NOT propose rule changes here.** That is Friday weekly-review's job (gated at 20 closed trades by `performance_analyzer.py`). Just record the observation; weekly-review will read these subsections at the end of the week.
+
+Append to today's EOD Snapshot in TRADE-LOG.md:
+```
+**🎯 Biggest surprise today**: [1-2 sentence observation]
+```
+
+## Step 6 — Send Curated Telegram EOD Report (always, even on no-trade days)
+
+**QUIET day format:**
 ```bash
-bash scripts/telegram.sh "EOD $DATE
-Portfolio: ₹X,XX,XXX | Day: ±X.XX%
-Nifty: ±X.XX% | Alpha: ±X.XX%
-Positions: N/5 | Cash: ₹X,XX,XXX"
+bash scripts/telegram.sh "🌙 EOD $DATE
+
+Day P&L: ±₹X (±X.XX%) | Nifty: ±X.XX% | Alpha: ±X.XX%
+Portfolio: ₹X,XX,XXX
+
+Open (N): SYMBOL ±X%, SYMBOL ±X%
+Cash: ₹X,XX,XXX
+
+Tomorrow: pre-market 8:30 AM."
+```
+
+**ACTIVE day format** (include the surprise from Step 5.5):
+```bash
+bash scripts/telegram.sh "🌙 EOD $DATE
+
+📊 P&L: ±₹X,XXX (±X.XX%) | Nifty: ±X.XX% | Alpha: ±X.XX%
+Portfolio: ₹X,XX,XXX (all-time ±X.XX%)
+
+Today: entered N, exited N
+Best: SYMBOL +X.X% | Worst: SYMBOL -X.X%
+
+Open (N): SYMBOL +X%, SYMBOL -X%
+Cash: ₹X,XX,XXX
+
+🎯 Biggest surprise: [the 1-2 sentence observation from Step 5.5]
+
+Tomorrow: pre-market 8:30 AM."
 ```
 
 ## Step 7 — COMMIT AND PUSH (mandatory — tomorrow depends on this)

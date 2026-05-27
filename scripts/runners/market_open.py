@@ -1,244 +1,280 @@
+#!/usr/bin/env python3
 """Market-open routine — 9:20 AM IST.
-Reads today's research log, applies 9-point gate, places paper orders.
+
+Production-equivalent of CCR Market Open Execution.
+Reads today's RESEARCH-LOG entry, applies 9-point gate, places paper orders.
+
+9-point gate:
+  1. Universe (Nifty 50 + Midcap 150)
+  2. Momentum score >= 40 (re-check)
+  3. Catalyst tier HARD or MEDIUM (from research log)
+  4. Circuit gap < 18%
+  5. VIX < 25 (from research log)
+  6. Position sizing (tiered 70/50/30k from suggested_position_size)
+  7. FII flow > -₹3500 Cr (from research log)
+  8. Earnings guard (no earnings within 7 days)
+  9. Sector concentration <= 2 open
 """
-import sys, os, re, json, subprocess
+import sys, os, json, re, subprocess
 from pathlib import Path
 from datetime import datetime, date
-import yfinance as yf
-import pytz
 
 sys.path.insert(0, str(Path(__file__).parent))
-from common import gemini_research, telegram_send, broker, today_str, now_ist
+from common import (
+    gemini_research, telegram_send, broker, today_str, now_ist,
+    run_script, memory_path, REPO_ROOT,
+)
 
-today     = today_str()
-now       = now_ist()
-week_start = now - __import__('datetime').timedelta(days=now.weekday())
 
-# ── Nifty 50 + top Midcap 150 universe ───────────────────────────────────────
-UNIVERSE = {
-    'RELIANCE','TCS','HDFCBANK','INFY','ICICIBANK','HINDUNILVR','ITC',
-    'SBIN','BAJFINANCE','BHARTIARTL','KOTAKBANK','LT','AXISBANK',
-    'ASIANPAINT','MARUTI','TITAN','WIPRO','SUNPHARMA','ULTRACEMCO',
-    'NESTLEIND','POWERGRID','NTPC','HCLTECH','TECHM','ONGC','COALINDIA',
-    'DRREDDY','BPCL','DIVISLAB','GRASIM','BAJAJFINSV','TATAMOTORS',
-    'TATASTEEL','JSWSTEEL','HDFCLIFE','SBILIFE','APOLLOHOSP','CIPLA',
-    'EICHERMOT','HEROMOTOCO','SHREECEM','BRITANNIA','INDUSINDBK','UPL',
-    'TATACONSUM','LTIM','IRCTC','MARICO','GODREJCP','AMBUJACEM',
-    'BANDHANBNK','AUBANK','FEDERALBNK','PERSISTENT','COFORGE','MPHASIS',
-    'ALKEM','AUROPHARMA','ASHOKLEY','BALKRISIND','ESCORTS','VOLTAS',
-    'JUBLFOOD','DMART','TRENT','VBL','INDHOTEL',
-}
+today = today_str()
+print(f"[market-open] starting {today}")
 
-print(f"Market-open starting: {today}")
+# ── Step 1: Read research log ────────────────────────────────────────────────
+log_path = memory_path('RESEARCH-LOG.md')
+if not log_path.exists():
+    telegram_send(f"📋 Market Open {today} | 0 trades | No RESEARCH-LOG.md found")
+    sys.exit(0)
 
-# ── Step 1: Read today's research log ────────────────────────────────────────
-log_path = Path('memory/RESEARCH-LOG.md')
 log_text = log_path.read_text(encoding='utf-8')
-
-# Find today's entry
 today_entry_match = re.search(
     rf'### RESEARCH-{today}(.*?)(?=### RESEARCH-|\Z)',
     log_text, re.DOTALL
 )
 if not today_entry_match:
-    msg = f"Market-open {today}: No pre-market research found — skipping all trades."
-    print(msg)
-    telegram_send(f"Market-open {today} | 0 trades | Reason: No pre-market research log")
+    telegram_send(f"📋 Market Open {today} | 0 trades | No pre-market research found for today")
     sys.exit(0)
 
 today_entry = today_entry_match.group(1)
 
-# ── Gate 5: VIX check ────────────────────────────────────────────────────────
-if 'HIGH VIX' in today_entry or 'HIGH: no new positions' in today_entry:
-    telegram_send(f"Market-open {today} | 0 trades | Reason: HIGH VIX")
+# Check macro gates from research log
+if 'HIGH VIX' in today_entry:
+    telegram_send(f"📋 Market Open {today} | 0 trades | HIGH VIX gate triggered in pre-market")
+    sys.exit(0)
+if 'LARGE FII OUTFLOW' in today_entry:
+    telegram_send(f"📋 Market Open {today} | 0 trades | FII outflow gate triggered in pre-market")
     sys.exit(0)
 
-vix_level = None
-m = re.search(r'VIX[^\d]*?(\d+\.?\d*)', today_entry)
+# Parse VIX and FII from research log for record_trade
+vix_val = None
+m = re.search(r'India VIX:\s*([\d.]+)', today_entry)
+if m: vix_val = float(m.group(1))
+fii_val = None
+m = re.search(r'FII net flow:\s*([\-\+]?[\d,]+)\s*Cr', today_entry)
 if m:
     try:
-        vix_level = float(m.group(1))
-    except ValueError:
-        pass
+        fii_val = float(m.group(1).replace(',', '').replace('+', ''))
+    except ValueError: pass
+regime_val = "unknown"
+m = re.search(r'Regime:\s*(\w+)', today_entry)
+if m: regime_val = m.group(1).lower()
 
-if vix_level and vix_level >= 20:
-    telegram_send(f"Market-open {today} | 0 trades | Reason: VIX {vix_level:.1f} >= 20")
-    sys.exit(0)
-
-# ── Gate 9: FII flow check ────────────────────────────────────────────────────
-fii_level = None
-m = re.search(r'FII[^₹\d\-]*?([\-\+]?\s*[\d,]+\.?\d*)\s*[Cc]r', today_entry)
-if m:
-    try:
-        fii_level = float(m.group(1).replace(',', '').replace(' ', ''))
-    except ValueError:
-        pass
-if fii_level is not None and fii_level < -2000:
-    telegram_send(f"Market-open {today} | 0 trades | Reason: FII outflow {fii_level:.0f} Cr")
-    sys.exit(0)
-
-# ── Extract candidates from research log ─────────────────────────────────────
-candidate_section = re.search(
-    r'\*\*Trade Candidates\*\*.*?\n(.*?)(?=\*\*Key Events|\Z)',
+# ── Step 2: Extract candidates ───────────────────────────────────────────────
+candidates = []
+cand_section = re.search(
+    r'\*\*Trade Candidates\*\*[^\n]*\n(.*?)(?=\*\*Rejected|\*\*Key Events|\Z)',
     today_entry, re.DOTALL
 )
-raw_candidates = []
-if candidate_section:
-    for line in candidate_section.group(1).splitlines():
-        m = re.search(r'\d+\.\s+([A-Z][A-Z0-9&\-]{1,14})', line)
-        if m:
-            raw_candidates.append(m.group(1))
+if cand_section:
+    for block in re.finditer(
+        r'\d+\.\s+\*\*([A-Z][A-Z0-9&\-]{1,14})\*\*\s*[—\-]\s*Score:\s*(\d+)/100\s*[—\-]\s*Catalyst:\s*(.+?)\s*\[(HARD|MEDIUM|SOFT)\]\s*[—\-]\s*Chart:\s*([^\n]+)',
+        cand_section.group(1)
+    ):
+        candidates.append({
+            'symbol': block.group(1),
+            'score': int(block.group(2)),
+            'catalyst': block.group(3).strip(),
+            'tier': block.group(4),
+            'chart': block.group(5).strip(),
+        })
 
-if not raw_candidates:
-    telegram_send(f"Market-open {today} | 0 trades | Reason: No BUY candidates in research log")
+if not candidates:
+    telegram_send(f"📋 Market Open {today} | 0 trades | No candidates parsed from research log")
     sys.exit(0)
 
-print(f"Candidates from research: {raw_candidates}")
+print(f"  parsed {len(candidates)} candidates")
 
-# ── Step 2: Account state ─────────────────────────────────────────────────────
-account   = broker('account')
+# ── Step 3: Account state ────────────────────────────────────────────────────
+account = broker('account')
 positions = broker('positions')
 if not isinstance(account, dict):
-    telegram_send(f"Market-open {today} | ERROR: broker account unavailable")
+    telegram_send(f"📋 Market Open {today} | ERROR: broker account unavailable")
     sys.exit(1)
 
-cash         = float(account.get('cash', 0))
-n_positions  = len(positions) if isinstance(positions, list) else 0
+cash = float(account.get('cash', 0))
+open_positions = positions if isinstance(positions, list) else []
+print(f"  cash=₹{cash:,.0f}, {len(open_positions)} open positions")
 
-# Count trades placed this week
-trade_log    = Path('memory/TRADE-LOG.md').read_text(encoding='utf-8')
-week_str     = week_start.strftime('%Y-%m-%d')
-week_buys    = len(re.findall(rf'Date.*?{week_str[:7]}.*?\n.*?Action.*?BUY', trade_log, re.DOTALL))
+# Universe set (must match models/signal_generator.py UNIVERSE)
+try:
+    sys.path.insert(0, str(REPO_ROOT))
+    from models.signal_generator import UNIVERSE as UNIVERSE_LIST, SECTOR_MAP
+    UNIVERSE = set(UNIVERSE_LIST)
+except Exception as e:
+    print(f"  warn: couldn't import UNIVERSE: {e}", file=sys.stderr)
+    UNIVERSE = set()
+    SECTOR_MAP = {}
 
-print(f"Cash: {cash} | Positions: {n_positions}/5 | Week buys: {week_buys}/3")
 
-# ── Step 3: 9-point gate for each candidate ───────────────────────────────────
-orders_placed = 0
-trade_log_additions = []
+# ── Step 4: 9-point gate for each candidate ──────────────────────────────────
+orders_placed = []
+skipped = []
+log_lines = []
 
-for symbol in raw_candidates:
-    print(f"\nChecking gate for {symbol}...")
-    gate_log = []
+for cand in candidates:
+    sym = cand['symbol']
+    print(f"\n[{sym}] checking gates")
 
-    # Gate 1: Universe check
-    if symbol not in UNIVERSE:
-        gate_log.append(f"FAIL Gate 1: {symbol} not in Nifty 50 + Midcap 150")
-        print(gate_log[-1])
-        trade_log_additions.append(f"- {symbol}: SKIP — {gate_log[-1]}")
+    # Gate 1: Universe
+    if UNIVERSE and sym not in UNIVERSE:
+        skipped.append((sym, 'Gate 1: not in universe'))
+        log_lines.append(f"- {sym}: SKIP — Gate 1: not in Nifty 50/Midcap 150")
         continue
 
-    # Gate 2: GRU signal
-    result = subprocess.run(
-        ['python', 'models/signal_generator.py', symbol],
-        capture_output=True, text=True
-    )
-    conf = None
-    for line in result.stdout.splitlines():
-        if 'BUY' in line.upper():
-            cm = re.search(r'(\d+\.?\d*)%', line)
-            if cm:
-                conf = float(cm.group(1))
-    if conf is None or conf < 60:
-        gate_log.append(f"FAIL Gate 2: GRU signal not BUY >= 60% (got {conf}%)")
-        print(gate_log[-1])
-        trade_log_additions.append(f"- {symbol}: SKIP — {gate_log[-1]}")
+    # Gate 3: Catalyst tier
+    if cand['tier'] == 'SOFT':
+        skipped.append((sym, 'Gate 3: SOFT catalyst'))
+        log_lines.append(f"- {sym}: SKIP — Gate 3: soft catalyst only")
         continue
 
-    # Gate 6: Position count
-    if n_positions >= 5:
-        gate_log.append("FAIL Gate 6: Already at 5 positions")
-        trade_log_additions.append(f"- {symbol}: SKIP — {gate_log[-1]}")
-        break
-
-    # Gate 7: Weekly trade count
-    if week_buys >= 3:
-        gate_log.append("FAIL Gate 7: 3 trades already placed this week")
-        trade_log_additions.append(f"- {symbol}: SKIP — {gate_log[-1]}")
-        break
-
-    # Gate 4: Circuit check via yfinance
+    # Gate 2: Re-verify momentum score >= 40
+    sig_raw = run_script('models/signal_generator.py', sym)
     try:
-        tick = yf.Ticker(f'{symbol}.NS')
-        hist = tick.history(period='2d')
-        if len(hist) >= 2:
-            prev_close = float(hist['Close'].iloc[-2])
-            ltp        = float(hist['Close'].iloc[-1])
-            gap_pct    = abs(ltp - prev_close) / prev_close * 100
-            if gap_pct > 18:
-                gate_log.append(f"FAIL Gate 4: Near circuit ({gap_pct:.1f}% gap)")
-                trade_log_additions.append(f"- {symbol}: SKIP — {gate_log[-1]}")
-                continue
-        else:
-            ltp = None
-    except Exception as e:
-        print(f"yfinance error for {symbol}: {e}")
-        ltp = None
-
-    # Gate 8: Position sizing
-    if ltp is None:
-        quote = broker('quote', symbol)
-        ltp   = float(quote.get('ltp', 0)) if isinstance(quote, dict) else 0
-    if ltp <= 0:
-        trade_log_additions.append(f"- {symbol}: SKIP — could not get price")
+        sig_data = json.loads(sig_raw)
+        sig_info = sig_data.get(sym, {})
+    except Exception:
+        sig_info = {}
+    if sig_info.get('signal') != 'BUY' or sig_info.get('confidence', 0) < 40:
+        skipped.append((sym, f'Gate 2: signal={sig_info.get("signal","?")} conf={sig_info.get("confidence", 0)}'))
+        log_lines.append(f"- {sym}: SKIP — Gate 2: not BUY ≥40")
         continue
 
-    qty  = int(100_000 / ltp)
+    # Gate 8: Earnings guard
+    eg_raw = run_script('scripts/earnings_guard.py', sym)
+    try:
+        eg_data = json.loads(eg_raw.strip().split('\n')[-1])
+    except Exception:
+        eg_data = {}
+    if eg_data.get('earnings_within_7d'):
+        skipped.append((sym, f'Gate 8: earnings in {eg_data.get("event_date", "?")}'))
+        log_lines.append(f"- {sym}: SKIP — Gate 8: earnings within 7 days")
+        continue
+
+    # Gate 4: Circuit gap check
+    quote = broker('quote', sym)
+    if not isinstance(quote, dict) or sym not in quote:
+        skipped.append((sym, 'Gate 4: no quote'))
+        log_lines.append(f"- {sym}: SKIP — Gate 4: no quote available")
+        continue
+    ltp = float(quote[sym].get('price', 0))
+    prev_close = sig_info.get('current_price', ltp)
+    gap_pct = abs(ltp - prev_close) / prev_close * 100 if prev_close > 0 else 0
+    if gap_pct > 18:
+        skipped.append((sym, f'Gate 4: gap {gap_pct:.1f}%'))
+        log_lines.append(f"- {sym}: SKIP — Gate 4: gap {gap_pct:.1f}% > 18%")
+        continue
+
+    # Gate 9: Sector concentration
+    sector = sig_info.get('sector', SECTOR_MAP.get(sym, 'Other'))
+    sec_count = sum(1 for p in open_positions if p.get('sector') == sector)
+    if sec_count >= 2:
+        skipped.append((sym, f'Gate 9: 2 already in {sector}'))
+        log_lines.append(f"- {sym}: SKIP — Gate 9: already 2 open in {sector}")
+        continue
+
+    # Gate 6: Position sizing (tiered)
+    size = sig_info.get('suggested_position_size', 30_000)
+    qty = int(size // ltp)
     cost = qty * ltp
     if qty < 1:
-        trade_log_additions.append(f"- {symbol}: SKIP — price too high for min qty")
+        skipped.append((sym, f'Gate 6: qty < 1 at ₹{ltp:.0f}'))
+        log_lines.append(f"- {sym}: SKIP — Gate 6: position too small (price ₹{ltp:.0f})")
         continue
     if cost > cash:
-        gate_log.append(f"FAIL Gate 8: Insufficient cash (need {cost:.0f}, have {cash:.0f})")
-        trade_log_additions.append(f"- {symbol}: SKIP — {gate_log[-1]}")
+        skipped.append((sym, f'Gate 6: cost ₹{cost:.0f} > cash ₹{cash:.0f}'))
+        log_lines.append(f"- {sym}: SKIP — Gate 6: insufficient cash")
         continue
 
-    # Gate 3: Catalyst present (already in research log since we read from it)
-    # Gate 5: VIX (already checked above)
-    # Gate 9: FII (already checked above)
-    # All gates passed — place order
-    print(f"All gates passed for {symbol}. Placing BUY {qty} @ ~{ltp:.2f}")
-    order = json.dumps({'symbol': symbol, 'qty': qty, 'side': 'buy',
-                        'type': 'market', 'product': 'D'})
-    broker('order', order)
+    # ── ALL GATES PASSED — place order ───────────────────────────────────────
+    print(f"  ✓ all gates passed. BUY {qty} @ ~₹{ltp:.2f}")
+    order_payload = json.dumps({
+        'symbol': sym, 'qty': qty, 'side': 'buy', 'type': 'market',
+        'product': 'D', 'sector': sector,
+    })
+    order_resp = broker('order', order_payload)
+    exec_price = ltp
+    if isinstance(order_resp, dict) and order_resp.get('exec_price'):
+        exec_price = float(order_resp['exec_price'])
 
-    stop   = round(ltp * 0.93, 2)
-    target = round(ltp * 1.20, 2)
-    cost_r = round(cost, 2)
+    cash -= exec_price * qty
+    open_positions.append({'symbol': sym, 'sector': sector, 'qty': qty, 'avg_price': exec_price})
 
-    telegram_send(
-        f"BUY {symbol} | {qty} shares @ ~{ltp:.2f} | "
-        f"Cost: {cost_r:,.0f} | Target: {target} (+20%) | Stop: {stop} (-7%) | Paper"
+    stop = round(exec_price * 0.93, 2)
+    target = round(exec_price * 1.20, 2)
+
+    # Record structured trade for learning system
+    gru_conf_dec = sig_info.get('confidence', 0) / 100.0
+    run_script(
+        'scripts/record_trade.py', 'entry',
+        sym, sector, f"{gru_conf_dec:.4f}",
+        f"{vix_val:.2f}" if vix_val else "0",
+        f"{fii_val:.0f}" if fii_val is not None else "0",
+        regime_val,
+        f"{exec_price:.2f}", str(qty),
+        cand.get('catalyst_type', 'other'),
+        capture=False,
     )
 
-    trade_log_additions.append(
-        f"\n### TRADE-{today}-{orders_placed+1:03d}\n"
+    # Append to TRADE-LOG.md
+    trade_block = (
+        f"\n### TRADE-{today.replace('-','')}-{len(orders_placed)+1:03d}\n"
         f"- **Date**: {today}\n"
-        f"- **Symbol**: {symbol} (NSE)\n"
+        f"- **Symbol**: {sym} (NSE)\n"
         f"- **Action**: BUY\n"
         f"- **Qty**: {qty} shares\n"
-        f"- **Price**: {ltp:.2f}\n"
-        f"- **Total value**: {cost_r:,.2f}\n"
-        f"- **GRU signal**: BUY | confidence: {conf:.0f}%\n"
-        f"- **Stop loss**: {stop} (-7%)\n"
-        f"- **Target**: {target} (+20%)\n"
+        f"- **Price**: ₹{exec_price:.2f}\n"
+        f"- **Total value**: ₹{exec_price * qty:,.2f}\n"
+        f"- **Momentum score**: {sig_info.get('confidence', 0):.0f}/100 | sector: {sector}\n"
+        f"- **Catalyst**: {cand['catalyst'][:120]} | tier: {cand['tier']}\n"
+        f"- **Stop loss**: ₹{stop} (-7%)\n"
+        f"- **Target**: ₹{target} (+20%)\n"
         f"- **Status**: OPEN\n"
     )
+    log_lines.append(trade_block)
 
-    orders_placed += 1
-    n_positions   += 1
-    week_buys     += 1
-    cash          -= cost
+    # Per-trade Telegram
+    telegram_send(
+        f"🟢 BUY {sym} — ₹{exec_price * qty:,.0f}\n"
+        f"{qty} shares @ ₹{exec_price:.2f} | Score {sig_info.get('confidence', 0):.0f}/100 | {sector}\n"
+        f"Why: {cand['catalyst'][:100]} [{cand['tier']}]\n"
+        f"Target ₹{target} (+20%) | Stop ₹{stop} (-7%)"
+    )
 
-# ── Step 4: Update TRADE-LOG.md ──────────────────────────────────────────────
-if trade_log_additions:
-    trade_log_path = Path('memory/TRADE-LOG.md')
-    updated = trade_log_path.read_text(encoding='utf-8') + '\n' + '\n'.join(trade_log_additions)
-    trade_log_path.write_text(updated, encoding='utf-8')
+    orders_placed.append({'symbol': sym, 'qty': qty, 'price': exec_price, 'score': sig_info.get('confidence', 0)})
 
-# ── Step 5: Telegram summary ──────────────────────────────────────────────────
-if orders_placed == 0:
-    telegram_send(f"Market-open {today} | 0 trades placed | Gates filtered all candidates")
+# ── Step 5: Update TRADE-LOG.md ──────────────────────────────────────────────
+if log_lines:
+    p = memory_path('TRADE-LOG.md')
+    existing = p.read_text(encoding='utf-8') if p.exists() else '# Trade Log\n\n'
+    p.write_text(existing + '\n' + '\n'.join(log_lines) + '\n', encoding='utf-8')
+
+# ── Step 6: Summary Telegram ─────────────────────────────────────────────────
+if orders_placed:
+    top = max(orders_placed, key=lambda o: o['score'])
+    skipped_str = "\n".join(f"• {s[0]} — {s[1]}" for s in skipped[:3]) or "• (none)"
+    deployed = sum(o['price'] * o['qty'] for o in orders_placed)
+    telegram_send(
+        f"📋 Market Open Summary\n\n"
+        f"Took {len(orders_placed)} trade(s), deployed ₹{deployed:,.0f}\n"
+        f"Highest conviction: {top['symbol']} ({top['score']:.0f}/100)\n\n"
+        f"Skipped:\n{skipped_str}\n\n"
+        f"Cash left: ₹{cash:,.0f} | Watching {len(open_positions)} positions for stops."
+    )
 else:
-    telegram_send(f"Market-open {today} | {orders_placed} order(s) placed | Cash remaining: {cash:,.0f}")
+    skipped_str = "\n".join(f"• {s[0]} — {s[1]}" for s in skipped[:5]) or "• (no candidates)"
+    telegram_send(
+        f"📋 Market Open {today} — 0 trades placed\n\n"
+        f"All {len(candidates)} candidates filtered:\n{skipped_str}\n\n"
+        f"Cash unchanged: ₹{cash:,.0f}. Next opportunity: tomorrow."
+    )
 
-print(f"Market-open done. Orders placed: {orders_placed}")
+print(f"[market-open] done. {len(orders_placed)} orders placed.")

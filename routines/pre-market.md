@@ -137,13 +137,30 @@ Append a new entry to `memory/RESEARCH-LOG.md`:
 ---
 ```
 
-## Step 7 — Telegram Alert
+## Step 7 — Curated Telegram Alert
+Build dynamically — fill brackets with real numbers/symbols. Truncate skipped list to ≤3 examples (group similar reasons).
 ```bash
-bash scripts/telegram.sh "Pre-market $DATE | VIX: X | Regime: [bull/bear/sideways] | N BUY signals (score≥40) | Top: SYMBOL (XX/100) | FII: X Cr | Market-open at 9:20 AM IST"
+bash scripts/telegram.sh "🌅 Pre-Market $DATE
+
+Mood: [bull/bear/sideways] (Nifty 20d: ±X.X%) | VIX: X.X ([calm/elevated/HIGH])
+FII: ±₹X Cr ([buying/selling]) | PCR: X.XX ([euphoric/neutral/fearful])
+
+Top picks (score ≥40):
+• SYMBOL (XX/100) — [catalyst 1-line] [HARD/MED]
+• SYMBOL (XX/100) — [catalyst 1-line] [HARD/MED]
+• SYMBOL (XX/100) — [catalyst 1-line] [HARD/MED]
+
+Skipped N: [grouped reasons — e.g. '2 earnings <7d, 1 chart contradicts']
+
+Verdict: PROCEED with N candidates. Executing 9:20 AM."
 ```
 If VIX/FII gate triggered:
 ```bash
-bash scripts/telegram.sh "Pre-market $DATE | Gate triggered — NO TRADES TODAY | Reason: [VIX X / FII X Cr]"
+bash scripts/telegram.sh "🚫 Pre-Market $DATE — NO TRADES TODAY
+
+Reason: [VIX X.X ≥ 25 / FII outflow ₹X Cr beyond -3500]
+Mood: [regime]. Capital preserved.
+Next check: tomorrow 8:30 AM."
 ```
 
 ## Step 8 — COMMIT AND PUSH (mandatory)

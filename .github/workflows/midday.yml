@@ -1,0 +1,60 @@
+name: Midday Risk Scan
+
+on:
+  schedule:
+    - cron: "0 8 * * 1-5"   # 08:00 UTC = 13:30 IST, Mon–Fri
+  workflow_dispatch:
+
+concurrency:
+  group: rocky-routine
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  midday:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-runner.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-runner.txt
+
+      - name: Run midday routine
+        env:
+          GEMINI_API_KEY:     ${{ secrets.GEMINI_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+          UPSTOX_ACCESS_TOKEN: ${{ secrets.UPSTOX_ACCESS_TOKEN }}
+          PAPER_TRADING:       "true"
+          PYTHONUTF8:          "1"
+        run: |
+          python scripts/runners/midday.py
+
+      - name: Commit and push memory updates
+        run: |
+          git config user.name "rocky-bot"
+          git config user.email "rocky-bot@users.noreply.github.com"
+          git add memory/ || true
+          if ! git diff --staged --quiet; then
+            DATE=$(date -u +"%Y-%m-%d")
+            git commit -m "midday: $DATE | risk scan"
+            git pull --rebase origin master || true
+            git push origin HEAD:master
+          else
+            echo "No memory changes to commit."
+          fi

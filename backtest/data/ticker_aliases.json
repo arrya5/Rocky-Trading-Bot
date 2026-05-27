@@ -1,0 +1,18 @@
+{
+  "description": "Symbol -> yfinance ticker resolution. Use when NSE symbol doesn't match yfinance, or when corporate actions changed the ticker.",
+  "aliases": {
+    "ZOMATO":      "ETERNAL.NS",
+    "MCDOWELL-N":  "UNITDSPR.NS",
+    "M&M":         "M%26M.NS"
+  },
+  "exclude": [
+    "TATAMOTORS",
+    "LTIM",
+    "CANFIN"
+  ],
+  "exclude_reasons": {
+    "TATAMOTORS": "Demerged 2024 into TATAMOTORS-PV / TATAMOTORS-CV; base ticker no longer trades",
+    "LTIM":       "Possibly delisted on yfinance; manual check needed",
+    "CANFIN":     "yfinance unable to resolve; may need exact symbol with suffix"
+  }
+}

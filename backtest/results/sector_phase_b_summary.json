@@ -1,0 +1,239 @@
+{
+  "base_rules": {
+    "top_n": 3,
+    "rebalance_freq_days": 21,
+    "lookback_days": 21
+  },
+  "tuned_rules": {
+    "top_n": 2,
+    "rebalance_freq_days": 42,
+    "lookback_days": 21
+  },
+  "final_rules": {
+    "top_n": 3,
+    "rebalance_freq_days": 21,
+    "lookback_days": 21
+  },
+  "final_decision": "REVERT_TO_BASELINE",
+  "final_msg": "holdout return (-9.69%) < 70% of training avg (+31.08%)",
+  "decisions": [
+    {
+      "window_id": "W1",
+      "dates": "2023-05-01 -> 2023-10-31",
+      "tune_param": "top_n",
+      "candidates": [
+        {
+          "name": "top_n=2",
+          "overrides": {
+            "top_n": 2
+          },
+          "return_pct": 32.83788600000001,
+          "max_dd_pct": -6.58781282932471,
+          "n_trades": 6,
+          "win_rate": 83.33333333333334,
+          "nifty_pct": 5.135371239196018,
+          "alpha_pct": 27.702514760803993,
+          "final": 664189.43
+        },
+        {
+          "name": "top_n=3 (baseline)",
+          "overrides": {
+            "top_n": 3
+          },
+          "return_pct": 24.03316599999999,
+          "max_dd_pct": -6.892359826675548,
+          "n_trades": 10,
+          "win_rate": 80.0,
+          "nifty_pct": 0.0,
+          "alpha_pct": 24.03316599999999,
+          "final": 620165.83
+        },
+        {
+          "name": "top_n=4",
+          "overrides": {
+            "top_n": 4
+          },
+          "return_pct": 18.033969999999997,
+          "max_dd_pct": -7.412456036818253,
+          "n_trades": 15,
+          "win_rate": 80.0,
+          "nifty_pct": 0.0,
+          "alpha_pct": 18.033969999999997,
+          "final": 590169.85
+        }
+      ],
+      "baseline": "top_n=3 (baseline)",
+      "best": "top_n=2",
+      "effect_pp": 8.804720000000021,
+      "decision": "ADOPT_WINNER",
+      "reasoning": [
+        "best candidate 'top_n=2' beats baseline by +8.80pp"
+      ],
+      "winner_name": "top_n=2",
+      "winner_overrides": {
+        "top_n": 2
+      },
+      "winner_metrics": {
+        "name": "top_n=2",
+        "return_pct": 32.83788600000001,
+        "max_dd_pct": -6.58781282932471,
+        "n_trades": 6,
+        "win_rate": 83.33333333333334,
+        "nifty_pct": 5.135371239196018,
+        "alpha_pct": 27.702514760803993,
+        "final": 664189.43
+      }
+    },
+    {
+      "window_id": "W2",
+      "dates": "2023-11-01 -> 2024-04-30",
+      "tune_param": "rebalance_freq_days",
+      "candidates": [
+        {
+          "name": "freq=21 (baseline)",
+          "overrides": {
+            "rebalance_freq_days": 21
+          },
+          "return_pct": 45.63738799999999,
+          "max_dd_pct": -15.710938540698017,
+          "n_trades": 8,
+          "win_rate": 87.5,
+          "nifty_pct": 0.0,
+          "alpha_pct": 45.63738799999999,
+          "final": 728186.94
+        },
+        {
+          "name": "freq=42 (~2 months)",
+          "overrides": {
+            "rebalance_freq_days": 42
+          },
+          "return_pct": 49.20851599999999,
+          "max_dd_pct": -22.815279408637256,
+          "n_trades": 4,
+          "win_rate": 100.0,
+          "nifty_pct": 0.0,
+          "alpha_pct": 49.20851599999999,
+          "final": 746042.58
+        },
+        {
+          "name": "freq=63 (~3 months)",
+          "overrides": {
+            "rebalance_freq_days": 63
+          },
+          "return_pct": 20.006793999999996,
+          "max_dd_pct": -16.156361844832382,
+          "n_trades": 4,
+          "win_rate": 75.0,
+          "nifty_pct": 0.0,
+          "alpha_pct": 20.006793999999996,
+          "final": 600033.97
+        }
+      ],
+      "baseline": "freq=21 (baseline)",
+      "best": "freq=42 (~2 months)",
+      "effect_pp": 3.5711280000000016,
+      "decision": "ADOPT_WINNER",
+      "reasoning": [
+        "best candidate 'freq=42 (~2 months)' beats baseline by +3.57pp"
+      ],
+      "winner_name": "freq=42 (~2 months)",
+      "winner_overrides": {
+        "rebalance_freq_days": 42
+      },
+      "winner_metrics": {
+        "name": "freq=42 (~2 months)",
+        "return_pct": 49.20851599999999,
+        "max_dd_pct": -22.815279408637256,
+        "n_trades": 4,
+        "win_rate": 100.0,
+        "nifty_pct": 0.0,
+        "alpha_pct": 49.20851599999999,
+        "final": 746042.58
+      }
+    },
+    {
+      "window_id": "W3",
+      "dates": "2024-05-01 -> 2024-10-31",
+      "tune_param": "lookback_days",
+      "candidates": [
+        {
+          "name": "lookback=21 (baseline)",
+          "overrides": {
+            "lookback_days": 21
+          },
+          "return_pct": 11.185108000000007,
+          "max_dd_pct": -9.663916672661985,
+          "n_trades": 4,
+          "win_rate": 75.0,
+          "nifty_pct": 0.0,
+          "alpha_pct": 11.185108000000007,
+          "final": 555925.54
+        },
+        {
+          "name": "lookback=42",
+          "overrides": {
+            "lookback_days": 42
+          },
+          "return_pct": 9.517278000000003,
+          "max_dd_pct": -7.282888712862645,
+          "n_trades": 5,
+          "win_rate": 60.0,
+          "nifty_pct": 0.0,
+          "alpha_pct": 9.517278000000003,
+          "final": 547586.39
+        },
+        {
+          "name": "lookback=63",
+          "overrides": {
+            "lookback_days": 63
+          },
+          "return_pct": -4.915566000000003,
+          "max_dd_pct": -7.9003325880829856,
+          "n_trades": 4,
+          "win_rate": 25.0,
+          "nifty_pct": 0.0,
+          "alpha_pct": -4.915566000000003,
+          "final": 475422.17
+        }
+      ],
+      "baseline": "lookback=21 (baseline)",
+      "best": "lookback=21 (baseline)",
+      "effect_pp": 0.0,
+      "decision": "KEEP_BASELINE",
+      "reasoning": [
+        "baseline ranked #1 by return"
+      ],
+      "winner_name": "lookback=21 (baseline)",
+      "winner_overrides": {
+        "lookback_days": 21
+      },
+      "winner_metrics": {
+        "name": "lookback=21 (baseline)",
+        "return_pct": 11.185108000000007,
+        "max_dd_pct": -9.663916672661985,
+        "n_trades": 4,
+        "win_rate": 75.0,
+        "nifty_pct": 0.0,
+        "alpha_pct": 11.185108000000007,
+        "final": 555925.54
+      }
+    }
+  ],
+  "training_returns": [
+    32.83788600000001,
+    49.20851599999999,
+    11.185108000000007
+  ],
+  "avg_training_return": 31.077170000000006,
+  "holdout": {
+    "return_pct": -9.685931999999994,
+    "max_dd_pct": -18.056150776608472,
+    "n_trades": 4,
+    "win_rate": 25.0,
+    "nifty_pct": 0.0,
+    "alpha_pct": -9.685931999999994,
+    "final": 451570.34
+  },
+  "holdout_ratio": -0.31167355328686597,
+  "overfit_detected": true
+}

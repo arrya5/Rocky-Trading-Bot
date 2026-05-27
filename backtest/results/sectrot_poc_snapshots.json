@@ -1,0 +1,1399 @@
+[
+  {
+    "date": "2025-05-02",
+    "cash": 24940.0,
+    "n_holdings": 3,
+    "total_value": 500035.23,
+    "holdings": [
+      "FMCG",
+      "Infra",
+      "Auto"
+    ]
+  },
+  {
+    "date": "2025-05-05",
+    "cash": 24940.0,
+    "n_holdings": 3,
+    "total_value": 506722.63,
+    "holdings": [
+      "FMCG",
+      "Infra",
+      "Auto"
+    ]
+  },
+  {
+    "date": "2025-05-06",
+    "cash": 24940.0,
+    "n_holdings": 3,
+    "total_value": 505472.52,
+    "holdings": [
+      "FMCG",
+      "Infra",
+      "Auto"
+    ]
+  },
+  {
+    "date": "2025-05-07",
+    "cash": 24940.0,
+    "n_holdings": 3,
+    "total_value": 507392.55,
+    "holdings": [
+      "FMCG",
+      "Infra",
+      "Auto"
+    ]
+  },
+  {
+    "date": "2025-05-08",
+    "cash": 24940.0,
+    "n_holdings": 3,
+    "total_value": 501066.66,
+    "holdings": [
+      "FMCG",
+      "Infra",
+      "Auto"
+    ]
+  },
+  {
+    "date": "2025-05-09",
+    "cash": 24940.0,
+    "n_holdings": 3,
+    "total_value": 498333.99,
+    "holdings": [
+      "FMCG",
+      "Infra",
+      "Auto"
+    ]
+  },
+  {
+    "date": "2025-05-12",
+    "cash": 24940.0,
+    "n_holdings": 3,
+    "total_value": 513669.7,
+    "holdings": [
+      "FMCG",
+      "Infra",
+      "Auto"
+    ]
+  },
+  {
+    "date": "2025-05-13",
+    "cash": 24940.0,
+    "n_holdings": 3,
+    "total_value": 508015.54,
+    "holdings": [
+      "FMCG",
+      "Infra",
+      "Auto"
+    ]
+  },
+  {
+    "date": "2025-05-14",
+    "cash": 24940.0,
+    "n_holdings": 3,
+    "total_value": 510321.69,
+    "holdings": [
+      "FMCG",
+      "Infra",
+      "Auto"
+    ]
+  },
+  {
+    "date": "2025-05-15",
+    "cash": 24940.0,
+    "n_holdings": 3,
+    "total_value": 516974.98,
+    "holdings": [
+      "FMCG",
+      "Infra",
+      "Auto"
+    ]
+  },
+  {
+    "date": "2025-05-16",
+    "cash": 24940.0,
+    "n_holdings": 3,
+    "total_value": 518810.73,
+    "holdings": [
+      "FMCG",
+      "Infra",
+      "Auto"
+    ]
+  },
+  {
+    "date": "2025-05-19",
+    "cash": 24940.0,
+    "n_holdings": 3,
+    "total_value": 518974.75,
+    "holdings": [
+      "FMCG",
+      "Infra",
+      "Auto"
+    ]
+  },
+  {
+    "date": "2025-05-20",
+    "cash": 24940.0,
+    "n_holdings": 3,
+    "total_value": 511517.78,
+    "holdings": [
+      "FMCG",
+      "Infra",
+      "Auto"
+    ]
+  },
+  {
+    "date": "2025-05-21",
+    "cash": 24940.0,
+    "n_holdings": 3,
+    "total_value": 514108.26,
+    "holdings": [
+      "FMCG",
+      "Infra",
+      "Auto"
+    ]
+  },
+  {
+    "date": "2025-05-22",
+    "cash": 24940.0,
+    "n_holdings": 3,
+    "total_value": 508996.79,
+    "holdings": [
+      "FMCG",
+      "Infra",
+      "Auto"
+    ]
+  },
+  {
+    "date": "2025-05-23",
+    "cash": 24940.0,
+    "n_holdings": 3,
+    "total_value": 513291.0,
+    "holdings": [
+      "FMCG",
+      "Infra",
+      "Auto"
+    ]
+  },
+  {
+    "date": "2025-05-26",
+    "cash": 24940.0,
+    "n_holdings": 3,
+    "total_value": 517274.78,
+    "holdings": [
+      "FMCG",
+      "Infra",
+      "Auto"
+    ]
+  },
+  {
+    "date": "2025-05-27",
+    "cash": 24940.0,
+    "n_holdings": 3,
+    "total_value": 513656.48,
+    "holdings": [
+      "FMCG",
+      "Infra",
+      "Auto"
+    ]
+  },
+  {
+    "date": "2025-05-28",
+    "cash": 24940.0,
+    "n_holdings": 3,
+    "total_value": 509766.72,
+    "holdings": [
+      "FMCG",
+      "Infra",
+      "Auto"
+    ]
+  },
+  {
+    "date": "2025-05-29",
+    "cash": 24940.0,
+    "n_holdings": 3,
+    "total_value": 510980.19,
+    "holdings": [
+      "FMCG",
+      "Infra",
+      "Auto"
+    ]
+  },
+  {
+    "date": "2025-05-30",
+    "cash": 24940.0,
+    "n_holdings": 3,
+    "total_value": 507849.15,
+    "holdings": [
+      "FMCG",
+      "Infra",
+      "Auto"
+    ]
+  },
+  {
+    "date": "2025-06-02",
+    "cash": 24940.0,
+    "n_holdings": 3,
+    "total_value": 509319.88,
+    "holdings": [
+      "FMCG",
+      "Infra",
+      "Auto"
+    ]
+  },
+  {
+    "date": "2025-06-03",
+    "cash": 25437.03,
+    "n_holdings": 3,
+    "total_value": 510056.4,
+    "holdings": [
+      "Media",
+      "Realty",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-06-04",
+    "cash": 25437.03,
+    "n_holdings": 3,
+    "total_value": 510189.66,
+    "holdings": [
+      "Media",
+      "Realty",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-06-05",
+    "cash": 25437.03,
+    "n_holdings": 3,
+    "total_value": 513601.62,
+    "holdings": [
+      "Media",
+      "Realty",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-06-06",
+    "cash": 25437.03,
+    "n_holdings": 3,
+    "total_value": 522525.37,
+    "holdings": [
+      "Media",
+      "Realty",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-06-09",
+    "cash": 25437.03,
+    "n_holdings": 3,
+    "total_value": 524209.36,
+    "holdings": [
+      "Media",
+      "Realty",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-06-10",
+    "cash": 25437.03,
+    "n_holdings": 3,
+    "total_value": 524575.13,
+    "holdings": [
+      "Media",
+      "Realty",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-06-11",
+    "cash": 25437.03,
+    "n_holdings": 3,
+    "total_value": 524378.98,
+    "holdings": [
+      "Media",
+      "Realty",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-06-12",
+    "cash": 25437.03,
+    "n_holdings": 3,
+    "total_value": 517659.37,
+    "holdings": [
+      "Media",
+      "Realty",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-06-13",
+    "cash": 25437.03,
+    "n_holdings": 3,
+    "total_value": 516450.88,
+    "holdings": [
+      "Media",
+      "Realty",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-06-16",
+    "cash": 25437.03,
+    "n_holdings": 3,
+    "total_value": 521313.8,
+    "holdings": [
+      "Media",
+      "Realty",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-06-17",
+    "cash": 25437.03,
+    "n_holdings": 3,
+    "total_value": 516688.54,
+    "holdings": [
+      "Media",
+      "Realty",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-06-18",
+    "cash": 25437.03,
+    "n_holdings": 3,
+    "total_value": 512680.98,
+    "holdings": [
+      "Media",
+      "Realty",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-06-19",
+    "cash": 25437.03,
+    "n_holdings": 3,
+    "total_value": 504892.95,
+    "holdings": [
+      "Media",
+      "Realty",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-06-20",
+    "cash": 25437.03,
+    "n_holdings": 3,
+    "total_value": 510621.23,
+    "holdings": [
+      "Media",
+      "Realty",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-06-23",
+    "cash": 25437.03,
+    "n_holdings": 3,
+    "total_value": 518396.71,
+    "holdings": [
+      "Media",
+      "Realty",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-06-24",
+    "cash": 25437.03,
+    "n_holdings": 3,
+    "total_value": 518461.59,
+    "holdings": [
+      "Media",
+      "Realty",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-06-25",
+    "cash": 25437.03,
+    "n_holdings": 3,
+    "total_value": 523245.49,
+    "holdings": [
+      "Media",
+      "Realty",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-06-26",
+    "cash": 25437.03,
+    "n_holdings": 3,
+    "total_value": 523567.11,
+    "holdings": [
+      "Media",
+      "Realty",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-06-27",
+    "cash": 25437.03,
+    "n_holdings": 3,
+    "total_value": 521960.94,
+    "holdings": [
+      "Media",
+      "Realty",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-06-30",
+    "cash": 25437.03,
+    "n_holdings": 3,
+    "total_value": 520590.92,
+    "holdings": [
+      "Media",
+      "Realty",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-07-01",
+    "cash": 25437.03,
+    "n_holdings": 3,
+    "total_value": 518572.9,
+    "holdings": [
+      "Media",
+      "Realty",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-07-02",
+    "cash": 25437.03,
+    "n_holdings": 3,
+    "total_value": 518030.31,
+    "holdings": [
+      "Media",
+      "Realty",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-07-03",
+    "cash": 17336.85,
+    "n_holdings": 3,
+    "total_value": 515874.41,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Infra"
+    ]
+  },
+  {
+    "date": "2025-07-04",
+    "cash": 17336.85,
+    "n_holdings": 3,
+    "total_value": 517034.36,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Infra"
+    ]
+  },
+  {
+    "date": "2025-07-07",
+    "cash": 17336.85,
+    "n_holdings": 3,
+    "total_value": 515107.01,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Infra"
+    ]
+  },
+  {
+    "date": "2025-07-08",
+    "cash": 17336.85,
+    "n_holdings": 3,
+    "total_value": 515974.0,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Infra"
+    ]
+  },
+  {
+    "date": "2025-07-09",
+    "cash": 17336.85,
+    "n_holdings": 3,
+    "total_value": 511272.06,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Infra"
+    ]
+  },
+  {
+    "date": "2025-07-10",
+    "cash": 17336.85,
+    "n_holdings": 3,
+    "total_value": 509635.22,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Infra"
+    ]
+  },
+  {
+    "date": "2025-07-11",
+    "cash": 17336.85,
+    "n_holdings": 3,
+    "total_value": 504216.3,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Infra"
+    ]
+  },
+  {
+    "date": "2025-07-14",
+    "cash": 17336.85,
+    "n_holdings": 3,
+    "total_value": 502788.7,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Infra"
+    ]
+  },
+  {
+    "date": "2025-07-15",
+    "cash": 17336.85,
+    "n_holdings": 3,
+    "total_value": 504132.18,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Infra"
+    ]
+  },
+  {
+    "date": "2025-07-16",
+    "cash": 17336.85,
+    "n_holdings": 3,
+    "total_value": 504433.06,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Infra"
+    ]
+  },
+  {
+    "date": "2025-07-17",
+    "cash": 17336.85,
+    "n_holdings": 3,
+    "total_value": 502744.6,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Infra"
+    ]
+  },
+  {
+    "date": "2025-07-18",
+    "cash": 17336.85,
+    "n_holdings": 3,
+    "total_value": 502516.85,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Infra"
+    ]
+  },
+  {
+    "date": "2025-07-21",
+    "cash": 17336.85,
+    "n_holdings": 3,
+    "total_value": 503425.72,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Infra"
+    ]
+  },
+  {
+    "date": "2025-07-22",
+    "cash": 17336.85,
+    "n_holdings": 3,
+    "total_value": 501328.23,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Infra"
+    ]
+  },
+  {
+    "date": "2025-07-23",
+    "cash": 17336.85,
+    "n_holdings": 3,
+    "total_value": 503720.24,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Infra"
+    ]
+  },
+  {
+    "date": "2025-07-24",
+    "cash": 17336.85,
+    "n_holdings": 3,
+    "total_value": 499460.82,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Infra"
+    ]
+  },
+  {
+    "date": "2025-07-25",
+    "cash": 17336.85,
+    "n_holdings": 3,
+    "total_value": 492880.1,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Infra"
+    ]
+  },
+  {
+    "date": "2025-07-28",
+    "cash": 17336.85,
+    "n_holdings": 3,
+    "total_value": 488650.68,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Infra"
+    ]
+  },
+  {
+    "date": "2025-07-29",
+    "cash": 17336.85,
+    "n_holdings": 3,
+    "total_value": 492228.82,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Infra"
+    ]
+  },
+  {
+    "date": "2025-07-30",
+    "cash": 17336.85,
+    "n_holdings": 3,
+    "total_value": 493308.04,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Infra"
+    ]
+  },
+  {
+    "date": "2025-07-31",
+    "cash": 17336.85,
+    "n_holdings": 3,
+    "total_value": 489046.78,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Infra"
+    ]
+  },
+  {
+    "date": "2025-08-01",
+    "cash": 17336.85,
+    "n_holdings": 3,
+    "total_value": 481368.4,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Infra"
+    ]
+  },
+  {
+    "date": "2025-08-04",
+    "cash": 24002.2,
+    "n_holdings": 3,
+    "total_value": 483593.88,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Pharma"
+    ]
+  },
+  {
+    "date": "2025-08-05",
+    "cash": 24002.2,
+    "n_holdings": 3,
+    "total_value": 481802.74,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Pharma"
+    ]
+  },
+  {
+    "date": "2025-08-06",
+    "cash": 24002.2,
+    "n_holdings": 3,
+    "total_value": 476527.56,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Pharma"
+    ]
+  },
+  {
+    "date": "2025-08-07",
+    "cash": 24002.2,
+    "n_holdings": 3,
+    "total_value": 478209.26,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Pharma"
+    ]
+  },
+  {
+    "date": "2025-08-08",
+    "cash": 24002.2,
+    "n_holdings": 3,
+    "total_value": 473013.06,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Pharma"
+    ]
+  },
+  {
+    "date": "2025-08-11",
+    "cash": 24002.2,
+    "n_holdings": 3,
+    "total_value": 477137.87,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Pharma"
+    ]
+  },
+  {
+    "date": "2025-08-12",
+    "cash": 24002.2,
+    "n_holdings": 3,
+    "total_value": 478285.13,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Pharma"
+    ]
+  },
+  {
+    "date": "2025-08-13",
+    "cash": 24002.2,
+    "n_holdings": 3,
+    "total_value": 482553.37,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Pharma"
+    ]
+  },
+  {
+    "date": "2025-08-14",
+    "cash": 24002.2,
+    "n_holdings": 3,
+    "total_value": 481720.19,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Pharma"
+    ]
+  },
+  {
+    "date": "2025-08-18",
+    "cash": 24002.2,
+    "n_holdings": 3,
+    "total_value": 489950.18,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Pharma"
+    ]
+  },
+  {
+    "date": "2025-08-19",
+    "cash": 24002.2,
+    "n_holdings": 3,
+    "total_value": 493151.78,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Pharma"
+    ]
+  },
+  {
+    "date": "2025-08-20",
+    "cash": 24002.2,
+    "n_holdings": 3,
+    "total_value": 494663.76,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Pharma"
+    ]
+  },
+  {
+    "date": "2025-08-21",
+    "cash": 24002.2,
+    "n_holdings": 3,
+    "total_value": 494530.84,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Pharma"
+    ]
+  },
+  {
+    "date": "2025-08-22",
+    "cash": 24002.2,
+    "n_holdings": 3,
+    "total_value": 493292.36,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Pharma"
+    ]
+  },
+  {
+    "date": "2025-08-25",
+    "cash": 24002.2,
+    "n_holdings": 3,
+    "total_value": 494428.07,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Pharma"
+    ]
+  },
+  {
+    "date": "2025-08-26",
+    "cash": 24002.2,
+    "n_holdings": 3,
+    "total_value": 492547.39,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Pharma"
+    ]
+  },
+  {
+    "date": "2025-08-28",
+    "cash": 24002.2,
+    "n_holdings": 3,
+    "total_value": 488849.71,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Pharma"
+    ]
+  },
+  {
+    "date": "2025-08-29",
+    "cash": 24002.2,
+    "n_holdings": 3,
+    "total_value": 488804.21,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Pharma"
+    ]
+  },
+  {
+    "date": "2025-09-01",
+    "cash": 24002.2,
+    "n_holdings": 3,
+    "total_value": 493262.3,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Pharma"
+    ]
+  },
+  {
+    "date": "2025-09-02",
+    "cash": 24002.2,
+    "n_holdings": 3,
+    "total_value": 494075.41,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Pharma"
+    ]
+  },
+  {
+    "date": "2025-09-03",
+    "cash": 24002.2,
+    "n_holdings": 3,
+    "total_value": 497410.02,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Pharma"
+    ]
+  },
+  {
+    "date": "2025-09-04",
+    "cash": 24002.2,
+    "n_holdings": 3,
+    "total_value": 498894.54,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Pharma"
+    ]
+  },
+  {
+    "date": "2025-09-05",
+    "cash": 8752.79,
+    "n_holdings": 3,
+    "total_value": 499902.81,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-09-08",
+    "cash": 8752.79,
+    "n_holdings": 3,
+    "total_value": 505846.73,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-09-09",
+    "cash": 8752.79,
+    "n_holdings": 3,
+    "total_value": 506968.44,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-09-10",
+    "cash": 8752.79,
+    "n_holdings": 3,
+    "total_value": 506114.6,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-09-11",
+    "cash": 8752.79,
+    "n_holdings": 3,
+    "total_value": 506394.69,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-09-12",
+    "cash": 8752.79,
+    "n_holdings": 3,
+    "total_value": 507669.09,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-09-15",
+    "cash": 8752.79,
+    "n_holdings": 3,
+    "total_value": 507093.09,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-09-16",
+    "cash": 8752.79,
+    "n_holdings": 3,
+    "total_value": 510615.8,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-09-17",
+    "cash": 8752.79,
+    "n_holdings": 3,
+    "total_value": 510496.69,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-09-18",
+    "cash": 8752.79,
+    "n_holdings": 3,
+    "total_value": 511821.66,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-09-19",
+    "cash": 8752.79,
+    "n_holdings": 3,
+    "total_value": 511036.53,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-09-22",
+    "cash": 8752.79,
+    "n_holdings": 3,
+    "total_value": 510571.98,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-09-23",
+    "cash": 8752.79,
+    "n_holdings": 3,
+    "total_value": 511432.58,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-09-24",
+    "cash": 8752.79,
+    "n_holdings": 3,
+    "total_value": 508458.22,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-09-25",
+    "cash": 8752.79,
+    "n_holdings": 3,
+    "total_value": 506496.26,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-09-26",
+    "cash": 8752.79,
+    "n_holdings": 3,
+    "total_value": 500642.8,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-09-29",
+    "cash": 8752.79,
+    "n_holdings": 3,
+    "total_value": 501201.02,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-09-30",
+    "cash": 8752.79,
+    "n_holdings": 3,
+    "total_value": 503247.39,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-10-01",
+    "cash": 8752.79,
+    "n_holdings": 3,
+    "total_value": 506735.38,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-10-03",
+    "cash": 8752.79,
+    "n_holdings": 3,
+    "total_value": 510004.02,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-10-06",
+    "cash": 8752.79,
+    "n_holdings": 3,
+    "total_value": 508786.43,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-10-07",
+    "cash": 8752.79,
+    "n_holdings": 3,
+    "total_value": 507987.47,
+    "holdings": [
+      "FMCG",
+      "Auto",
+      "Metal"
+    ]
+  },
+  {
+    "date": "2025-10-08",
+    "cash": 16520.07,
+    "n_holdings": 3,
+    "total_value": 507478.73,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Energy"
+    ]
+  },
+  {
+    "date": "2025-10-09",
+    "cash": 16520.07,
+    "n_holdings": 3,
+    "total_value": 513786.91,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Energy"
+    ]
+  },
+  {
+    "date": "2025-10-10",
+    "cash": 16520.07,
+    "n_holdings": 3,
+    "total_value": 512720.43,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Energy"
+    ]
+  },
+  {
+    "date": "2025-10-13",
+    "cash": 16520.07,
+    "n_holdings": 3,
+    "total_value": 510223.99,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Energy"
+    ]
+  },
+  {
+    "date": "2025-10-14",
+    "cash": 16520.07,
+    "n_holdings": 3,
+    "total_value": 506977.41,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Energy"
+    ]
+  },
+  {
+    "date": "2025-10-15",
+    "cash": 16520.07,
+    "n_holdings": 3,
+    "total_value": 510704.68,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Energy"
+    ]
+  },
+  {
+    "date": "2025-10-16",
+    "cash": 16520.07,
+    "n_holdings": 3,
+    "total_value": 513143.38,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Energy"
+    ]
+  },
+  {
+    "date": "2025-10-17",
+    "cash": 16520.07,
+    "n_holdings": 3,
+    "total_value": 508660.9,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Energy"
+    ]
+  },
+  {
+    "date": "2025-10-20",
+    "cash": 16520.07,
+    "n_holdings": 3,
+    "total_value": 510828.09,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Energy"
+    ]
+  },
+  {
+    "date": "2025-10-21",
+    "cash": 16520.07,
+    "n_holdings": 3,
+    "total_value": 511924.71,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Energy"
+    ]
+  },
+  {
+    "date": "2025-10-23",
+    "cash": 16520.07,
+    "n_holdings": 3,
+    "total_value": 515506.79,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Energy"
+    ]
+  },
+  {
+    "date": "2025-10-24",
+    "cash": 16520.07,
+    "n_holdings": 3,
+    "total_value": 516953.34,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Energy"
+    ]
+  },
+  {
+    "date": "2025-10-27",
+    "cash": 16520.07,
+    "n_holdings": 3,
+    "total_value": 520354.44,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Energy"
+    ]
+  },
+  {
+    "date": "2025-10-28",
+    "cash": 16520.07,
+    "n_holdings": 3,
+    "total_value": 520833.37,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Energy"
+    ]
+  },
+  {
+    "date": "2025-10-29",
+    "cash": 16520.07,
+    "n_holdings": 3,
+    "total_value": 528072.72,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Energy"
+    ]
+  },
+  {
+    "date": "2025-10-30",
+    "cash": 16520.07,
+    "n_holdings": 3,
+    "total_value": 526599.11,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Energy"
+    ]
+  },
+  {
+    "date": "2025-10-31",
+    "cash": 16520.07,
+    "n_holdings": 3,
+    "total_value": 523172.49,
+    "holdings": [
+      "Metal",
+      "IT",
+      "Energy"
+    ]
+  }
+]

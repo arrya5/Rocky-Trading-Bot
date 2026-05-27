@@ -1,0 +1,27 @@
+{
+  "name": "Phase A — 6-Month Backtest POC",
+  "start_date": "2025-05-01",
+  "end_date": "2025-10-31",
+  "starting_capital": 500000,
+  "rules": {
+    "min_score": 40,
+    "adv_min_cr": 50,
+    "vol_max_pct": 3.0,
+    "stop_pct": -0.07,
+    "partial_exit_pct": 0.15,
+    "partial_exit_stop_pct": -0.07,
+    "trailing_pct_at_20": -0.05,
+    "circuit_gap_pct": 0.18,
+    "vix_max": 25,
+    "fii_min_cr": -3500,
+    "sector_max_open": 2,
+    "size_tier_high": 70000,
+    "size_tier_mid": 50000,
+    "size_tier_low": 30000
+  },
+  "costs": {
+    "stt_sell_pct": 0.001,
+    "brokerage_per_order": 20
+  },
+  "gates_skipped": ["3 (catalyst tier - LLM lookahead bias)", "8 (earnings guard - defer to Phase B)"]
+}

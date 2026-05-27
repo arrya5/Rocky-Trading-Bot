@@ -1,0 +1,79 @@
+{
+  "name": "Phase B — Walk-Forward Optimization",
+  "description": "3 training windows of 6 months each, one parameter tuned per window, then locked-rules holdout test.",
+  "base_rules": {
+    "min_score": 40,
+    "adv_min_cr": 50,
+    "vol_max_pct": 3.0,
+    "stop_pct": -0.07,
+    "partial_exit_pct": 0.15,
+    "partial_exit_stop_pct": -0.07,
+    "trailing_pct_at_20": -0.05,
+    "circuit_gap_pct": 0.18,
+    "vix_max": 25,
+    "fii_min_cr": -3500,
+    "sector_max_open": 2,
+    "size_tier_high": 70000,
+    "size_tier_mid":  50000,
+    "size_tier_low":  30000
+  },
+  "starting_capital": 500000,
+  "costs": {
+    "stt_sell_pct": 0.001,
+    "brokerage_per_order": 20
+  },
+  "training_windows": [
+    {
+      "id": "W1",
+      "start_date": "2023-05-01",
+      "end_date":   "2023-10-31",
+      "tune_param": "score_threshold",
+      "candidates": [
+        {"name": "score_40_baseline", "overrides": {"min_score": 40}},
+        {"name": "score_50",          "overrides": {"min_score": 50}},
+        {"name": "score_60",          "overrides": {"min_score": 60}}
+      ]
+    },
+    {
+      "id": "W2",
+      "start_date": "2023-11-01",
+      "end_date":   "2024-04-30",
+      "tune_param": "stop_tightness",
+      "candidates": [
+        {"name": "stop_-5pct",          "overrides": {"stop_pct": -0.05}},
+        {"name": "stop_-7pct_baseline", "overrides": {"stop_pct": -0.07}},
+        {"name": "stop_-10pct",         "overrides": {"stop_pct": -0.10}}
+      ]
+    },
+    {
+      "id": "W3",
+      "start_date": "2024-05-01",
+      "end_date":   "2024-10-31",
+      "tune_param": "position_sizing",
+      "candidates": [
+        {"name": "baseline_70_50_30",  "overrides": {"size_tier_high": 70000, "size_tier_mid": 50000, "size_tier_low": 30000}},
+        {"name": "conservative_100_70_40", "overrides": {"size_tier_high": 100000, "size_tier_mid": 70000, "size_tier_low": 40000}},
+        {"name": "granular_50_30_20",  "overrides": {"size_tier_high": 50000, "size_tier_mid": 30000, "size_tier_low": 20000}},
+        {"name": "aggressive_tiered_90_40_15", "overrides": {"size_tier_high": 90000, "size_tier_mid": 40000, "size_tier_low": 15000}},
+        {"name": "flat_50_50_50",      "overrides": {"size_tier_high": 50000, "size_tier_mid": 50000, "size_tier_low": 50000}}
+      ]
+    }
+  ],
+  "holdout": {
+    "start_date": "2024-11-01",
+    "end_date":   "2025-04-30",
+    "description": "LOCKED — no tuning. Final test of training-period winners."
+  },
+  "statistical_gates": {
+    "min_trades_in_window": 15,
+    "min_effect_pp_return": 2.0,
+    "bootstrap_iterations": 200,
+    "bootstrap_win_threshold": 0.65,
+    "max_drawdown_floor_pct": -20.0
+  },
+  "overfit_check": {
+    "holdout_min_pct_of_training_avg": 0.70,
+    "description": "If holdout return < 70% of training-period average, revert all tuning."
+  },
+  "gates_skipped": ["3 (catalyst tier - LLM lookahead bias, structural)", "8 (earnings guard - historical data unavailable)"]
+}

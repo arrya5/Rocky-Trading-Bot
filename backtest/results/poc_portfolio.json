@@ -1,0 +1,12 @@
+{
+  "starting_cash": 500000,
+  "final_cash": 560870.46,
+  "skip_log_summary": {
+    "gate9_sector_full": 171,
+    "gate6_insufficient_cash_or_qty": 836
+  },
+  "nifty_start": 24346.69921875,
+  "nifty_end": 25722.099609375,
+  "nifty_return_pct": 5.649227348098875,
+  "trading_days": 127
+}

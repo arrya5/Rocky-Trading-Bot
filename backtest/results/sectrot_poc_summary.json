@@ -1,0 +1,11 @@
+{
+  "trades": 14,
+  "win_rate": 50.0,
+  "total_return_pct": 4.634497999999998,
+  "nifty_return_pct": 5.649227348098875,
+  "alpha": -1.0147293480988768,
+  "starting": 500000,
+  "final": 523172.49,
+  "rebalance_freq_days": 21,
+  "top_n": 3
+}

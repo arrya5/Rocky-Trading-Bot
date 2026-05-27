@@ -1,0 +1,35 @@
+{
+  "name": "POC — Smaller Position Tiers Experiment",
+  "description": "Same Rs 5L capital, same window, but position-size tiers reduced from 30k/50k/70k to 20k/35k/55k. Tests whether more concurrent positions at smaller sizes captures more signal alpha. Hypothesis: cash was acting as artificial scarcity filter; smaller positions = more trades = better deployment.",
+  "start_date": "2025-05-01",
+  "end_date": "2025-10-31",
+  "starting_capital": 500000,
+  "rules": {
+    "min_score": 40,
+    "adv_min_cr": 50,
+    "vol_max_pct": 3.0,
+    "stop_pct": -0.07,
+    "partial_exit_pct": 0.15,
+    "partial_exit_stop_pct": -0.07,
+    "trailing_pct_at_20": -0.05,
+    "circuit_gap_pct": 0.18,
+    "vix_max": 25,
+    "fii_min_cr": -3500,
+    "sector_max_open": 2,
+    "size_tier_high": 55000,
+    "size_tier_mid":  35000,
+    "size_tier_low":  20000
+  },
+  "costs": {
+    "stt_sell_pct": 0.001,
+    "brokerage_per_order": 20
+  },
+  "gates_skipped": ["3 (catalyst tier - LLM lookahead bias)", "8 (earnings guard - defer to Phase B)"],
+  "experiment_notes": [
+    "Same Rs 5L capital as baseline POC",
+    "Tier sizes -28% / -30% / -21% smaller -> more concurrent positions possible",
+    "If win rate similar, cash filter was unnecessary scarcity",
+    "If win rate drops, original tiers were correctly filtering for quality",
+    "Brokerage Rs 20/order eats more % of smaller positions (Rs 20/20000 = 0.10% vs Rs 20/70000 = 0.029%)"
+  ]
+}

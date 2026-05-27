@@ -1,182 +1,200 @@
-"""EOD routine — 3:45 PM IST (also runs weekly review on Fridays).
-Compute day P&L, write EOD snapshot, send Telegram report.
+#!/usr/bin/env python3
+"""EOD routine — 3:45 PM IST.
+
+Production-equivalent of CCR Daily EOD Summary.
+Compute P&L, daily reflection on active days, send curated Telegram.
 """
-import sys, os, re, json
+import sys, os, json, re
 from pathlib import Path
 from datetime import datetime
-import yfinance as yf
 
 sys.path.insert(0, str(Path(__file__).parent))
-from common import gemini_research, telegram_send, broker, today_str, now_ist
+from common import (
+    gemini_research, gemini_reason, telegram_send, broker, today_str, now_ist,
+    memory_path, REPO_ROOT, run_script,
+)
 
 today = today_str()
-now   = now_ist()
-print(f"EOD starting: {today}")
+print(f"[eod] starting {today}")
 
-# ── Step 1: Get final state ───────────────────────────────────────────────────
+# ── Step 1: Final EOD state ──────────────────────────────────────────────────
 account   = broker('account')
 positions = broker('positions')
-if not isinstance(account, dict):
-    telegram_send(f"EOD {today} | ERROR: broker unavailable")
-    sys.exit(1)
+if not isinstance(positions, list):
+    positions = []
 
-cash        = float(account.get('cash', 500_000))
-pos_list    = positions if isinstance(positions, list) else []
+# Refresh quotes to get closing prices
+if positions:
+    symbols = [p['symbol'] for p in positions]
+    broker('quote', *symbols)
+    positions = broker('positions')
 
-# ── Step 2: Get closing prices ────────────────────────────────────────────────
-total_market_value = 0.0
-pos_details        = []
+cash = float(account.get('cash', 0))
+total_val = float(account.get('total_value', cash))
+market_val = total_val - cash
 
-for pos in pos_list:
-    symbol    = pos.get('symbol', '')
-    avg_price = float(pos.get('avg_price', 0))
-    qty       = int(pos.get('qty', 0))
+# ── Step 2: Find yesterday's portfolio total ─────────────────────────────────
+trade_log_path = memory_path('TRADE-LOG.md')
+trade_log = trade_log_path.read_text(encoding='utf-8') if trade_log_path.exists() else ''
+
+prev_total = 500000.0
+matches = re.findall(r'\*\*Portfolio value\*\*:\s*₹?([\d,]+\.?\d*)', trade_log)
+if matches:
     try:
-        tick  = yf.Ticker(f'{symbol}.NS')
-        hist  = tick.history(period='1d')
-        close = float(hist['Close'].iloc[-1]) if not hist.empty else avg_price
-    except Exception:
-        close = avg_price
-
-    market_val   = close * qty
-    unreal_pnl   = (close - avg_price) * qty
-    unreal_pct   = (close - avg_price) / avg_price * 100 if avg_price else 0
-    total_market_value += market_val
-    pos_details.append({
-        'symbol': symbol, 'qty': qty, 'avg': avg_price,
-        'close': close, 'unreal_pnl': unreal_pnl, 'unreal_pct': unreal_pct
-    })
-
-portfolio_total = cash + total_market_value
-
-# ── Step 3: Nifty 50 closing performance ─────────────────────────────────────
-nifty_pct = None
-try:
-    nifty_hist = yf.Ticker('^NSEI').history(period='2d')
-    if len(nifty_hist) >= 2:
-        nifty_prev  = float(nifty_hist['Close'].iloc[-2])
-        nifty_close = float(nifty_hist['Close'].iloc[-1])
-        nifty_pct   = (nifty_close - nifty_prev) / nifty_prev * 100
-except Exception as e:
-    print(f"Nifty data error: {e}")
-
-# ── Step 4: Compute day P&L vs yesterday's snapshot ──────────────────────────
-trade_log_path  = Path('memory/TRADE-LOG.md')
-trade_log       = trade_log_path.read_text(encoding='utf-8')
-
-prev_total = 500_000.0  # base capital fallback
-portfolio_matches = re.findall(r'\*\*Portfolio value\*\*: .([\d,]+\.?\d*)', trade_log)
-if portfolio_matches:
-    try:
-        prev_total = float(portfolio_matches[-1].replace(',', ''))
+        prev_total = float(matches[-1].replace(',', ''))
     except ValueError:
         pass
 
-day_pnl     = portfolio_total - prev_total
+day_pnl = total_val - prev_total
 day_pnl_pct = day_pnl / prev_total * 100 if prev_total else 0
-all_time_pnl     = portfolio_total - 500_000
-all_time_pct     = all_time_pnl / 500_000 * 100
-alpha            = day_pnl_pct - (nifty_pct or 0)
+all_time_pnl = total_val - 500000
+all_time_pct = all_time_pnl / 500000 * 100
 
-nifty_str = f"{nifty_pct:+.2f}%" if nifty_pct is not None else "N/A"
-alpha_str = f"{alpha:+.2f}%" if nifty_pct is not None else "N/A"
+# ── Step 3: Nifty close ──────────────────────────────────────────────────────
+nifty_q = gemini_research(f"Nifty 50 closing price today {today} and percentage change vs previous close")
+nifty_pct = 0.0
+m = re.search(r'([\-\+]?\d+\.\d+)\s*%', nifty_q)
+if m:
+    try: nifty_pct = float(m.group(1))
+    except ValueError: pass
 
-# ── Step 5: Write EOD snapshot ────────────────────────────────────────────────
-pos_lines = '\n'.join(
-    f"  - {p['symbol']}: {p['qty']} @ {p['avg']:.2f} | "
-    f"close {p['close']:.2f} | P&L {p['unreal_pnl']:+.0f} ({p['unreal_pct']:+.1f}%)"
-    for p in pos_details
-) or '  None'
+alpha = day_pnl_pct - nifty_pct
+
+# ── Step 4: Count today's activity ───────────────────────────────────────────
+today_trades = re.findall(rf'### TRADE-{today.replace("-","")}-\d+', trade_log)
+entries_today = len(today_trades)
+
+# Closed trades today (from outcomes.json)
+outcomes_path = memory_path('trade-outcomes.json')
+outcomes = json.loads(outcomes_path.read_text(encoding='utf-8')) if outcomes_path.exists() else {'trades': []}
+closed_today = [t for t in outcomes.get('trades', []) if t.get('exit_date') == today]
+exits_today = len(closed_today)
+
+# Determine active vs quiet
+is_active = (entries_today + exits_today) >= 1 or abs(day_pnl_pct) >= 1.0
+
+# Best/worst (only meaningful if positions exist)
+best_pos = worst_pos = None
+if positions:
+    enriched = []
+    for p in positions:
+        ltp = float(p.get('ltp', p['avg_price']))
+        pnl = (ltp - p['avg_price']) / p['avg_price'] * 100
+        enriched.append({**p, 'pnl_pct': pnl})
+    best_pos = max(enriched, key=lambda x: x['pnl_pct'])
+    worst_pos = min(enriched, key=lambda x: x['pnl_pct'])
+
+# ── Step 5: Daily reflection (active days only) ──────────────────────────────
+surprise = None
+if is_active:
+    print("[eod] active day, generating reflection")
+    # Gather context for Gemini
+    research_path = memory_path('RESEARCH-LOG.md')
+    research_log = research_path.read_text(encoding='utf-8') if research_path.exists() else ''
+    today_research_match = re.search(
+        rf'### RESEARCH-{today}(.*?)(?=### RESEARCH-|\Z)',
+        research_log, re.DOTALL
+    )
+    today_research = today_research_match.group(1)[:2000] if today_research_match else ''
+
+    # Get last N lines of TRADE-LOG to capture today's activity
+    today_trade_lines = '\n'.join(
+        line for line in trade_log.splitlines()[-200:]
+        if today in line or any(t in line for t in today_trades)
+    )[:3000]
+
+    closed_summary = "\n".join(
+        f"- {t['symbol']} closed at ₹{t['exit_price']} | {t['pnl_pct']:+.2f}% | {t['exit_reason']}"
+        for t in closed_today
+    )
+
+    reflection = gemini_reason(
+        system=(
+            'You are a trading analyst writing a brief end-of-day reflection. '
+            'Identify the ONE biggest surprise from today — the most unexpected moment, '
+            'positive or negative. Be specific: include symbol names, actual % moves, '
+            'and what was expected vs realized. Do NOT propose rule changes — that is for Friday review. '
+            'Just record the observation in 1-2 sentences.'
+        ),
+        user=(
+            f"Today: {today}\n"
+            f"Day P&L: {day_pnl_pct:+.2f}% | Nifty: {nifty_pct:+.2f}% | Alpha: {alpha:+.2f}%\n"
+            f"Entries today: {entries_today}, Exits today: {exits_today}\n\n"
+            f"Closed positions today:\n{closed_summary}\n\n"
+            f"Today's research log entry (key signals):\n{today_research[:1500]}\n"
+        ),
+        schema_hint='{"surprise": "1-2 sentence observation, specific and concrete"}'
+    )
+    if isinstance(reflection, dict) and 'surprise' in reflection:
+        surprise = reflection['surprise']
+    print(f"  surprise: {surprise}")
+
+# ── Step 6: Append EOD snapshot to TRADE-LOG ─────────────────────────────────
+print("[eod] appending EOD snapshot")
+positions_md = ""
+for p in positions:
+    ltp = float(p.get('ltp', p['avg_price']))
+    pnl = (ltp - p['avg_price']) / p['avg_price'] * 100
+    positions_md += f"  - {p['symbol']}: {p['qty']} sh @ avg ₹{p['avg_price']:.2f} | close ₹{ltp:.2f} | P&L {pnl:+.2f}%\n"
 
 snapshot = (
     f"\n### EOD Snapshot {today}\n"
-    f"- **Portfolio value**: {portfolio_total:,.2f}\n"
-    f"- **Cash**: {cash:,.2f}\n"
-    f"- **Open positions**: {len(pos_list)}\n"
-    f"- **Market value**: {total_market_value:,.2f}\n"
-    f"- **Unrealized P&L**: {total_market_value - sum(p['avg']*p['qty'] for p in pos_details):+,.2f}\n"
-    f"- **Day P&L**: {day_pnl:+,.2f} ({day_pnl_pct:+.2f}%)\n"
-    f"- **All-time P&L**: {all_time_pnl:+,.2f} ({all_time_pct:+.2f}% from base 5,00,000)\n"
-    f"- **Nifty 50 today**: {nifty_str}\n"
-    f"- **Alpha vs Nifty**: {alpha_str}\n"
-    f"- **Positions**:\n{pos_lines}\n"
+    f"- **Portfolio value**: ₹{total_val:,.2f}\n"
+    f"- **Cash**: ₹{cash:,.2f}\n"
+    f"- **Open positions**: {len(positions)}\n"
+    f"- **Market value**: ₹{market_val:,.2f}\n"
+    f"- **Day P&L**: ₹{day_pnl:,.2f} ({day_pnl_pct:+.2f}%)\n"
+    f"- **All-time P&L**: ₹{all_time_pnl:,.2f} ({all_time_pct:+.2f}% from ₹5,00,000 base)\n"
+    f"- **Nifty 50 today**: {nifty_pct:+.2f}%\n"
+    f"- **Alpha vs Nifty**: {alpha:+.2f}%\n"
 )
+if positions_md:
+    snapshot += f"- **Positions**:\n{positions_md}"
+if surprise:
+    snapshot += f"\n**🎯 Biggest surprise today**: {surprise}\n"
 
-trade_log_path.write_text(trade_log + snapshot, encoding='utf-8')
-print("EOD snapshot written.")
+p = memory_path('TRADE-LOG.md')
+existing = p.read_text(encoding='utf-8') if p.exists() else '# Trade Log\n\n'
+p.write_text(existing + snapshot, encoding='utf-8')
 
-# ── Step 6: Telegram EOD report ───────────────────────────────────────────────
-telegram_send(
-    f"EOD {today}\n"
-    f"Portfolio: {portfolio_total:,.0f} | Day: {day_pnl_pct:+.2f}%\n"
-    f"Nifty: {nifty_str} | Alpha: {alpha_str}\n"
-    f"Positions: {len(pos_list)}/5 | Cash: {cash:,.0f}"
-)
+# Friday note if today is Friday
+if now_ist().weekday() == 4:
+    rlog = memory_path('RESEARCH-LOG.md')
+    if rlog.exists():
+        txt = rlog.read_text(encoding='utf-8')
+        rlog.write_text(txt + f"\n**Friday note {today}**: Weekly review routine runs at 4:30 PM IST.\n", encoding='utf-8')
 
-# ── Step 7: Weekly review (Fridays only) ─────────────────────────────────────
-if now.weekday() == 4:  # Friday
-    print("Friday — running weekly review...")
-    _run_weekly_review(today, trade_log + snapshot, portfolio_total, nifty_pct)
+# ── Step 7: Curated Telegram ─────────────────────────────────────────────────
+print("[eod] sending Telegram")
+positions_brief = ", ".join(
+    f"{p['symbol']} {((float(p.get('ltp', p['avg_price'])) - p['avg_price']) / p['avg_price'] * 100):+.0f}%"
+    for p in positions[:5]
+) or "none"
 
-
-def _run_weekly_review(today: str, trade_log: str, portfolio_total: float, nifty_pct):
-    from datetime import timedelta
-    week_ago = (now_ist() - timedelta(days=4)).strftime('%Y-%m-%d')
-
-    # Parse week's EOD snapshots to get Monday total
-    snapshots = re.findall(
-        r'### EOD Snapshot (\d{4}-\d{2}-\d{2})\n.*?\*\*Portfolio value\*\*: .([\d,]+\.?\d*)',
-        trade_log, re.DOTALL
+if is_active:
+    msg = (
+        f"🌙 EOD {today}\n\n"
+        f"📊 P&L: ₹{day_pnl:,.0f} ({day_pnl_pct:+.2f}%) | Nifty: {nifty_pct:+.2f}% | Alpha: {alpha:+.2f}%\n"
+        f"Portfolio: ₹{total_val:,.0f} (all-time {all_time_pct:+.2f}%)\n\n"
+        f"Today: entered {entries_today}, exited {exits_today}\n"
     )
-    week_start_total = 500_000.0
-    if snapshots:
-        try:
-            week_start_total = float(snapshots[-min(5, len(snapshots))][1].replace(',', ''))
-        except (ValueError, IndexError):
-            pass
-
-    week_pnl     = portfolio_total - week_start_total
-    week_pnl_pct = week_pnl / week_start_total * 100 if week_start_total else 0
-
-    nifty_week = gemini_research(
-        f"Nifty 50 weekly performance this week ending {today} — net gain or loss percentage"
-    )
-
-    # Count this week's trades
-    week_buys = len(re.findall(r'Action\*\*: BUY', trade_log))
-
-    # Grade
-    if week_pnl_pct > 0 and (nifty_pct or 0) >= 0 and week_pnl_pct > (nifty_pct or 0):
-        grade = 'A'
-    elif week_pnl_pct > 0:
-        grade = 'B'
-    elif week_pnl_pct > (nifty_pct or 0):
-        grade = 'C'
-    elif week_pnl_pct > -10:
-        grade = 'D'
-    else:
-        grade = 'F'
-
-    review_entry = (
-        f"\n### WEEK OF {week_ago} to {today}\n"
-        f"- Week P&L: {week_pnl:+,.2f} ({week_pnl_pct:+.2f}%)\n"
-        f"- Nifty this week: {nifty_week[:150]}\n"
-        f"- Grade: {grade}\n"
-        f"- Trades placed: {week_buys}\n\n"
-        f"---\n"
-    )
-    weekly_path = Path('memory/WEEKLY-REVIEW.md')
-    weekly_path.write_text(
-        weekly_path.read_text(encoding='utf-8') + review_entry,
-        encoding='utf-8'
+    if best_pos:
+        msg += f"Best: {best_pos['symbol']} {best_pos['pnl_pct']:+.1f}%"
+    if worst_pos and worst_pos['symbol'] != (best_pos['symbol'] if best_pos else None):
+        msg += f" | Worst: {worst_pos['symbol']} {worst_pos['pnl_pct']:+.1f}%"
+    msg += f"\n\nOpen ({len(positions)}): {positions_brief}\nCash: ₹{cash:,.0f}\n"
+    if surprise:
+        msg += f"\n🎯 Biggest surprise: {surprise}\n"
+    msg += "\nTomorrow: pre-market 8:30 AM."
+else:
+    msg = (
+        f"🌙 EOD {today}\n\n"
+        f"Day P&L: ₹{day_pnl:,.0f} ({day_pnl_pct:+.2f}%) | Nifty: {nifty_pct:+.2f}% | Alpha: {alpha:+.2f}%\n"
+        f"Portfolio: ₹{total_val:,.0f}\n\n"
+        f"Open ({len(positions)}): {positions_brief}\n"
+        f"Cash: ₹{cash:,.0f}\n\n"
+        f"Tomorrow: pre-market 8:30 AM."
     )
 
-    telegram_send(
-        f"Weekly Review {today}\n"
-        f"Grade: {grade} | Week P&L: {week_pnl_pct:+.2f}%\n"
-        f"Nifty: {nifty_week[:100]}"
-    )
-    print(f"Weekly review done. Grade: {grade}")
-
-
-print(f"EOD done. Portfolio: {portfolio_total:,.0f} | Day P&L: {day_pnl_pct:+.2f}%")
+telegram_send(msg)
+print(f"[eod] done. day_pnl_pct={day_pnl_pct:+.2f}% active={is_active}")
