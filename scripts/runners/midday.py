@@ -16,11 +16,14 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from common import (
     gemini_research, gemini_reason, telegram_send, broker, today_str,
-    run_script, memory_path, write_heartbeat, REPO_ROOT,
+    run_script, memory_path, write_heartbeat, already_ran_today, REPO_ROOT,
 )
 
 today = today_str()
 print(f"[midday] starting {today}")
+if already_ran_today('midday'):
+    print("[midday] already ran successfully today - skipping duplicate trigger")
+    sys.exit(0)
 write_heartbeat('midday', 'started')
 
 # ── Step 1: Account + positions ──────────────────────────────────────────────

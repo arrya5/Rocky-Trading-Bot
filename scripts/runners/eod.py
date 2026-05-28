@@ -11,11 +11,14 @@ from datetime import datetime
 sys.path.insert(0, str(Path(__file__).parent))
 from common import (
     gemini_research, gemini_reason, telegram_send, broker, today_str, now_ist,
-    memory_path, REPO_ROOT, run_script, write_heartbeat,
+    memory_path, REPO_ROOT, run_script, write_heartbeat, already_ran_today,
 )
 
 today = today_str()
 print(f"[eod] starting {today}")
+if already_ran_today('eod'):
+    print("[eod] already ran successfully today - skipping duplicate trigger")
+    sys.exit(0)
 write_heartbeat('eod', 'started')
 
 # ── Step 1: Final EOD state ──────────────────────────────────────────────────

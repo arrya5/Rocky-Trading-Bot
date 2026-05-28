@@ -307,6 +307,25 @@ def write_heartbeat(routine: str, status: str = 'ok', detail: str = '') -> None:
     hb.write_text(json.dumps(data, indent=2), encoding='utf-8')
 
 
+def already_ran_today(routine: str) -> bool:
+    """True if this routine already completed successfully today (heartbeat 'ok').
+
+    Lets the same workflow be triggered by multiple sources (GitHub schedule +
+    an external cron like cron-job.org) without double-executing: a duplicate
+    trigger sees today's 'ok' heartbeat and exits cleanly. Crashed/incomplete
+    runs (status != 'ok') are NOT blocked, so a failed run can still be retried.
+    """
+    hb = memory_path('heartbeat.json')
+    if not hb.exists():
+        return False
+    try:
+        data = json.loads(hb.read_text(encoding='utf-8'))
+    except Exception:
+        return False
+    rec = data.get(routine, {})
+    return rec.get('date') == today_str() and rec.get('status') == 'ok'
+
+
 # ── Number parsing helpers ──────────────────────────────────────────────────
 
 def parse_vix(text: str) -> float | None:

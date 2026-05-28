@@ -22,12 +22,15 @@ from datetime import datetime, date
 sys.path.insert(0, str(Path(__file__).parent))
 from common import (
     gemini_research, telegram_send, broker, today_str, now_ist,
-    run_script, memory_path, write_heartbeat, REPO_ROOT,
+    run_script, memory_path, write_heartbeat, already_ran_today, REPO_ROOT,
 )
 
 
 today = today_str()
 print(f"[market-open] starting {today}")
+if already_ran_today('market_open'):
+    print("[market-open] already ran successfully today - skipping duplicate trigger")
+    sys.exit(0)
 write_heartbeat('market_open', 'started')
 
 # ── Step 1: Read research log ────────────────────────────────────────────────

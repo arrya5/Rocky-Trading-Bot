@@ -19,10 +19,13 @@ from common import (
 sys.path.insert(0, str(REPO_ROOT / 'scripts'))
 from score import score as fitness_score, _load_goal, _closed_trades
 
-from common import write_heartbeat
+from common import write_heartbeat, already_ran_today
 
 today = today_str()
 print(f"[weekly-review] starting {today}")
+if already_ran_today('weekly_review'):
+    print("[weekly-review] already ran successfully today - skipping duplicate trigger")
+    sys.exit(0)
 write_heartbeat('weekly_review', 'started')
 
 

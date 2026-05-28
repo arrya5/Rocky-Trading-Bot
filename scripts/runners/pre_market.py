@@ -22,11 +22,14 @@ sys.path.insert(0, str(Path(__file__).parent))
 from common import (
     gemini_research, gemini_reason, classify_catalyst, telegram_send,
     today_str, parse_vix, parse_fii, run_script, insert_research_log,
-    write_heartbeat, REPO_ROOT,
+    write_heartbeat, already_ran_today, REPO_ROOT,
 )
 
 today = today_str()
 print(f"[pre-market] starting {today}")
+if already_ran_today('pre_market'):
+    print("[pre-market] already ran successfully today - skipping duplicate trigger")
+    sys.exit(0)
 write_heartbeat('pre_market', 'started')
 
 # ── Step 1: Macro research ───────────────────────────────────────────────────
