@@ -4,6 +4,45 @@
 ---
 
 
+### RESEARCH-2026-05-28
+
+**Market Context**
+- SGX Nifty: [research unavailable — Gemini failed, no web fallback]
+- India VIX: unknown — calm
+- FII net flow: unknown
+- Global cues: [research unavailable — Gemini failed, no web fallback]
+- Regime: sideways (slope: 0.57%)
+- Regime forecast (Markov): sideways persistence 81%, P(bear next week) 20.9%, long-run mix bull/side/bear 35.8/41.5/22.6%
+- Nifty PCR: unknown — 
+
+**Sector Momentum**
+[research unavailable — Gemini failed, no web fallback]
+
+**Trade Candidates** (Score ≥ 40, sorted by score)
+1. **JSWENERGY** — Score: 100/100 — Catalyst: classification failed [SOFT] — Chart: neutral/neutral
+   Sector: Energy | Size: ₹50,000 | Entry: ~₹602.05 | Stop: ₹559.91 (-7%)
+2. **HINDALCO** — Score: 80/100 — Catalyst: classification failed [SOFT] — Chart: neutral/neutral
+   Sector: Metals | Size: ₹50,000 | Entry: ~₹1149.7 | Stop: ₹1069.22 (-7%)
+3. **BAJAJ-AUTO** — Score: 80/100 — Catalyst: classification failed [SOFT] — Chart: neutral/neutral
+   Sector: Auto | Size: ₹50,000 | Entry: ~₹10808.5 | Stop: ₹10051.91 (-7%)
+4. **ADANIGREEN** — Score: 80/100 — Catalyst: classification failed [SOFT] — Chart: neutral/neutral
+   Sector: Energy | Size: ₹50,000 | Entry: ~₹1489.9 | Stop: ₹1385.61 (-7%)
+5. **SUZLON** — Score: 80/100 — Catalyst: classification failed [SOFT] — Chart: neutral/neutral
+   Sector: Energy | Size: ₹50,000 | Entry: ~₹57.53 | Stop: ₹53.50 (-7%)
+
+
+**Rejected**
+- (none)
+
+
+**Key Events Today**
+[research unavailable — Gemini failed, no web fallback]
+
+**Recommendation**: PROCEED with 5 candidates
+
+---
+
+
 ### RESEARCH-2026-05-27
 
 **Market Context**
