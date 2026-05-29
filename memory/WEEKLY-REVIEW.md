@@ -124,3 +124,27 @@
 - None this week
 
 ---
+
+### WEEK OF 2026-05-25 to 2026-05-29
+
+**P&L Summary**
+- Week P&L: ₹1,179.10 (+0.23%)
+- Nifty 50 this week: +0.00%
+- Alpha vs Nifty: +0.23%
+- Grade: A
+
+**Fitness score**: +0.000 (return +0.00%/trade, maxDD 0.0%, Sharpe 0.00)
+
+**Closed trades (all time)**: 0
+**Performance analyzer data sufficient**: False
+
+**Hypothesis verification**
+- No hypotheses verified this week (0 still under observation)
+
+**Qualitative**
+(no analysis - insufficient data)
+
+**Strategy Changes This Week**
+- None this week
+
+---

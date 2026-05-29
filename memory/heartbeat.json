@@ -12,9 +12,9 @@
     "detail": "5 candidates, regime=sideways"
   },
   "weekly_review": {
-    "last_run_iso": "2026-05-29T18:52:19+05:30",
+    "last_run_iso": "2026-05-29T18:55:31+05:30",
     "date": "2026-05-29",
-    "status": "started",
-    "detail": ""
+    "status": "ok",
+    "detail": "grade=A fitness=+0.000"
   }
 }
