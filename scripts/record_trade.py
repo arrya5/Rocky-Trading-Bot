@@ -130,8 +130,18 @@ def cmd_exit(args):
         )
         sys.exit(0)  # exit 0 so the calling routine does not crash
 
-    pnl_abs   = (exit_price - trade["entry_price"]) * trade["qty"]
-    pnl_pct   = (exit_price - trade["entry_price"]) / trade["entry_price"] * 100
+    # Reconstruct original quantity before any partial exits
+    partial_qty = sum(pe.get("qty", 0) for pe in trade.get("partial_exits", []))
+    original_qty = trade["qty"] + partial_qty
+
+    # Calculate absolute P&L from the final closing portion
+    final_pnl_abs = (exit_price - trade["entry_price"]) * trade["qty"]
+    # Add absolute P&L recorded during all partial exits
+    partial_pnl_abs = sum(pe.get("pnl_abs", 0) for pe in trade.get("partial_exits", []))
+
+    # Total combined absolute and percentage P&L
+    pnl_abs = final_pnl_abs + partial_pnl_abs
+    pnl_pct = (pnl_abs / (original_qty * trade["entry_price"])) * 100 if original_qty > 0 else 0.0
     days_held = (date.today() - date.fromisoformat(trade["entry_date"])).days
 
     trade["exit_date"]   = date.today().isoformat()

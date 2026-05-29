@@ -1,8 +1,9 @@
 name: Pre-Market Research
 
 on:
-  schedule:
-    - cron: "0 3 * * 1-5"   # 03:00 UTC = 08:30 IST, Mon–Fri
+  # Triggered instantly via API webhook dispatch (cron-job.org) to avoid scheduled queue delays:
+  # schedule:
+  #   - cron: "0 3 * * 1-5"   # 03:00 UTC = 08:30 IST, Mon–Fri
   workflow_dispatch:        # manual trigger from GitHub UI
 
 # Ensure only one pre-market run at a time

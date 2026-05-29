@@ -10,5 +10,11 @@
     "date": "2026-05-28",
     "status": "ok",
     "detail": "5 candidates, regime=sideways"
+  },
+  "weekly_review": {
+    "last_run_iso": "2026-05-29T18:52:19+05:30",
+    "date": "2026-05-29",
+    "status": "started",
+    "detail": ""
   }
 }

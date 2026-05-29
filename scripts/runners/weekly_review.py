@@ -301,22 +301,47 @@ review_path.write_text(existing + entry, encoding='utf-8')
 
 # ── Step 8: Telegram ─────────────────────────────────────────────────────────
 print("[5/5] sending Telegram")
+
+from common import broker
+positions = broker('positions')
+if not isinstance(positions, list):
+    positions = []
+
+pos_lines = []
+for p in positions:
+    ltp = float(p.get('ltp', p['avg_price']))
+    pnl = (ltp - p['avg_price']) / p['avg_price'] * 100
+    pos_lines.append(f"• {p['symbol']}: {pnl:+.2f}%")
+pos_summary = "\n".join(pos_lines) if pos_lines else "None"
+
 msg = (
     f"📅 Weekly Review {today}\n"
-    f"Grade: {grade}\n"
-    f"Week P&L: ₹{week_pnl:,.0f} ({week_pnl_pct:+.2f}%)\n"
-    f"Nifty: {nifty_pct:+.2f}% | Alpha: {alpha_pct:+.2f}%\n"
-    f"Fitness: {current_fitness['fitness']:+.3f}\n"
-    f"Closed trades (all time): {n_closed}\n"
+    f"━━━━━━━━━━━━━━━━━━━━━━\n"
+    f"📊 Performance Stats\n"
+    f"• Grade: {grade}\n"
+    f"• Week P&L: ₹{week_pnl:,.0f} ({week_pnl_pct:+.2f}%)\n"
+    f"• Nifty: {nifty_pct:+.2f}% | Alpha: {alpha_pct:+.2f}%\n"
+    f"• Fitness: {current_fitness['fitness']:+.3f}\n"
+    f"• Closed trades (all time): {n_closed}\n\n"
+    f"💼 Current Open Positions\n"
+    f"{pos_summary}\n\n"
+    f"🧠 Model Qualitative Insights\n"
+    f"{qualitative}\n"
 )
 if verified_this_week or reverted_this_week:
-    msg += f"\nHypotheses: {len(verified_this_week)} kept, {len(reverted_this_week)} reverted\n"
+    msg += f"\n🔍 Hypotheses Verification\n"
+    if verified_this_week:
+        for h in verified_this_week:
+            msg += f"• ✅ KEPT: '{h.get('changed')}'\n"
+    if reverted_this_week:
+        for h in reverted_this_week:
+            msg += f"• ↩️ REVERTED: '{h.get('changed')}'\n"
 if applied_changes:
-    msg += f"New rule change (under verification): {applied_changes[0]['parameter']}\n"
+    msg += f"\n⚙️ Rule Change (under verification)\n• {applied_changes[0]['parameter']}\n"
 elif n_closed < 20:
-    msg += f"\nNo rule changes — {n_closed}/20 trades needed for analyzer to activate.\n"
+    msg += f"\n⚙️ Optimizer Status\n• No rule changes — {n_closed}/20 trades needed to activate.\n"
 else:
-    msg += f"\nNo rule changes this week.\n"
+    msg += f"\n⚙️ Optimizer Status\n• No rule changes this week.\n"
 
 telegram_send(msg)
 write_heartbeat('weekly_review', 'ok', f"grade={grade} fitness={current_fitness['fitness']:+.3f}")

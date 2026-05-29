@@ -1,8 +1,9 @@
 name: Health Check
 
 on:
-  schedule:
-    - cron: "45 10 * * 1-5"  # 10:45 UTC = 16:15 IST — after EOD (15:45) should have run
+  # Triggered instantly via API webhook dispatch (cron-job.org) to avoid scheduled queue delays:
+  # schedule:
+  #   - cron: "45 10 * * 1-5"  # 10:45 UTC = 16:15 IST — after EOD (15:45) should have run
   workflow_dispatch:
 
 concurrency:

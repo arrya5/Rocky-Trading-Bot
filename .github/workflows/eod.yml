@@ -1,8 +1,9 @@
 name: EOD Daily Summary
 
 on:
-  schedule:
-    - cron: "15 10 * * 1-5"  # 10:15 UTC = 15:45 IST, Mon–Fri
+  # Triggered instantly via API webhook dispatch (cron-job.org) to avoid scheduled queue delays:
+  # schedule:
+  #   - cron: "15 10 * * 1-5"  # 10:15 UTC = 15:45 IST, Mon–Fri
   workflow_dispatch:
 
 concurrency:

@@ -127,12 +127,20 @@
       "catalyst_type": "earnings",
       "entry_date": "2026-05-20",
       "entry_price": 10148.5,
-      "qty": 2,
+      "qty": 1,
       "gru_confidence": 0.4,
       "vix_at_entry": 18.68,
       "fii_flow_at_entry": -2457.0,
       "market_regime": "bull",
-      "partial_exits": [],
+      "partial_exits": [
+        {
+          "date": "2026-05-27",
+          "price": 10757.41,
+          "qty": 1,
+          "pnl_abs": 608.91,
+          "pnl_pct": 6.0
+        }
+      ],
       "exit_date": null,
       "exit_price": null,
       "pnl_abs": null,

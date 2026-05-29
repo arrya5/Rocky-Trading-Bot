@@ -1,8 +1,9 @@
 name: Midday Risk Scan
 
 on:
-  schedule:
-    - cron: "0 8 * * 1-5"   # 08:00 UTC = 13:30 IST, Mon–Fri
+  # Triggered instantly via API webhook dispatch (cron-job.org) to avoid scheduled queue delays:
+  # schedule:
+  #   - cron: "0 8 * * 1-5"   # 08:00 UTC = 13:30 IST, Mon–Fri
   workflow_dispatch:
 
 concurrency:

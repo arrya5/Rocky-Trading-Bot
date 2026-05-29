@@ -1,8 +1,9 @@
 name: Market Open Execution
 
 on:
-  schedule:
-    - cron: "50 3 * * 1-5"  # 03:50 UTC = 09:20 IST, Mon–Fri
+  # Triggered instantly via API webhook dispatch (cron-job.org) to avoid scheduled queue delays:
+  # schedule:
+  #   - cron: "50 3 * * 1-5"  # 03:50 UTC = 09:20 IST, Mon–Fri
   workflow_dispatch:
 
 concurrency:

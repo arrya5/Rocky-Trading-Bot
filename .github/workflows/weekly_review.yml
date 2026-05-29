@@ -1,8 +1,9 @@
 name: Weekly Strategy Review
 
 on:
-  schedule:
-    - cron: "0 11 * * 5"   # 11:00 UTC = 16:30 IST, Friday only
+  # Triggered instantly via API webhook dispatch (cron-job.org) to avoid scheduled queue delays:
+  # schedule:
+  #   - cron: "0 11 * * 5"   # 11:00 UTC = 16:30 IST, Friday only
   workflow_dispatch:
 
 concurrency:

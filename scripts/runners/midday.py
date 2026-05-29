@@ -66,8 +66,9 @@ def days_held(sym: str) -> int:
             try:
                 ed = _date.fromisoformat(t.get('entry_date'))
                 td = _date.today()
+                cal_days = (td - ed).days
                 # Approximate trading days = calendar days * 5/7 (close enough)
-                return max(0, (td - ed).days)
+                return max(0, int(cal_days * 5 / 7))
             except Exception:
                 return 0
     return 0
