@@ -16,5 +16,11 @@
     "date": "2026-05-29",
     "status": "ok",
     "detail": "grade=A fitness=+0.000"
+  },
+  "market_open": {
+    "last_run_iso": "2026-06-01T09:20:37+05:30",
+    "date": "2026-06-01",
+    "status": "started",
+    "detail": ""
   }
 }
