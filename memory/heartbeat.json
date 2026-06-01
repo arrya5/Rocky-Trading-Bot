@@ -22,5 +22,11 @@
     "date": "2026-06-01",
     "status": "started",
     "detail": ""
+  },
+  "midday": {
+    "last_run_iso": "2026-06-01T13:31:48+05:30",
+    "date": "2026-06-01",
+    "status": "ok",
+    "detail": "stops=0 partials=1 maxhold=0 holding=8"
   }
 }

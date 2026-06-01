@@ -47,12 +47,20 @@
       "catalyst_type": "earnings",
       "entry_date": "2026-05-20",
       "entry_price": 1462.4,
-      "qty": 20,
+      "qty": 10,
       "gru_confidence": 0.4,
       "vix_at_entry": 18.68,
       "fii_flow_at_entry": -2457.0,
       "market_regime": "bull",
-      "partial_exits": [],
+      "partial_exits": [
+        {
+          "date": "2026-06-01",
+          "price": 1561.0,
+          "qty": 10,
+          "pnl_abs": 986.0,
+          "pnl_pct": 6.74
+        }
+      ],
       "exit_date": null,
       "exit_price": null,
       "pnl_abs": null,
@@ -190,7 +198,7 @@
     }
   ],
   "metadata": {
-    "last_updated": "2026-05-21T03:55:53.038908",
+    "last_updated": "2026-06-01T08:01:46.082102",
     "total_closed": 0,
     "analyzer_min_trades": 20,
     "description": "Structured trade outcomes for performance analysis and rule auto-adjustment. Each trade records entry context (GRU confidence, VIX, FII flow, regime) and exit result (P&L, exit reason, days held). The performance_analyzer.py reads this file and recommends parameter changes to TRADING-STRATEGY.md."
