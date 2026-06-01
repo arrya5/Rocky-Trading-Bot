@@ -1,5 +1,5 @@
 {
-  "cash": 74844.64361328125,
+  "cash": 88925.25312499999,
   "positions": {
     "JSWSTEEL": {
       "qty": 39,
@@ -14,13 +14,6 @@
       "ltp": 1810.0,
       "entered_at": "2026-05-20",
       "sector": "Telecom"
-    },
-    "TECHM": {
-      "qty": 10,
-      "avg_price": 1462.4,
-      "ltp": 1539.0,
-      "entered_at": "2026-05-20",
-      "sector": "IT"
     },
     "MANAPPURAM": {
       "qty": 222,
@@ -157,24 +150,24 @@
       "placed_at": "2026-05-21T03:55:37.273573"
     },
     {
-      "order_id": "PAPER-20260527013000",
+      "order_id": "PAPER-20260528170800",
       "symbol": "BAJAJ-AUTO",
       "side": "SELL",
       "qty": 1,
-      "price": 10757.41,
+      "price": 10801.0,
       "type": "MARKET",
       "status": "COMPLETE",
-      "placed_at": "2026-05-27T13:30:00.000000"
+      "placed_at": "2026-05-28T17:08:00.000000"
     },
     {
-      "order_id": "PAPER-20260601080145",
+      "order_id": "PAPER-20260529170000",
       "symbol": "TECHM",
       "side": "SELL",
-      "qty": 10,
-      "price": 1561.3,
+      "qty": 20,
+      "price": 1483.9,
       "type": "MARKET",
       "status": "COMPLETE",
-      "placed_at": "2026-06-01T08:01:45.391215"
+      "placed_at": "2026-05-29T17:00:00.000000"
     }
   ]
 }

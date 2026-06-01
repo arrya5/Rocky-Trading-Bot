@@ -47,26 +47,18 @@
       "catalyst_type": "earnings",
       "entry_date": "2026-05-20",
       "entry_price": 1462.4,
-      "qty": 10,
+      "qty": 20,
       "gru_confidence": 0.4,
       "vix_at_entry": 18.68,
       "fii_flow_at_entry": -2457.0,
       "market_regime": "bull",
-      "partial_exits": [
-        {
-          "date": "2026-06-01",
-          "price": 1561.0,
-          "qty": 10,
-          "pnl_abs": 986.0,
-          "pnl_pct": 6.74
-        }
-      ],
-      "exit_date": null,
-      "exit_price": null,
-      "pnl_abs": null,
-      "pnl_pct": null,
-      "exit_reason": null,
-      "days_held": null
+      "partial_exits": [],
+      "exit_date": "2026-05-29",
+      "exit_price": 1483.9,
+      "pnl_abs": 430.0,
+      "pnl_pct": 1.47,
+      "exit_reason": "thesis_broken",
+      "days_held": 9
     },
     {
       "trade_id": "MANAPPURAM-2026-05-20",
@@ -142,11 +134,11 @@
       "market_regime": "bull",
       "partial_exits": [
         {
-          "date": "2026-05-27",
-          "price": 10757.41,
+          "date": "2026-05-28",
+          "price": 10801.0,
           "qty": 1,
-          "pnl_abs": 608.91,
-          "pnl_pct": 6.0
+          "pnl_abs": 652.5,
+          "pnl_pct": 6.43
         }
       ],
       "exit_date": null,
