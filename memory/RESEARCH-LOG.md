@@ -4,6 +4,19 @@
 ---
 
 
+### RESEARCH-2026-06-01
+
+**LARGE FII OUTFLOW — SKIP TRADING TODAY** (FII -21106 Cr)
+- VIX: 16.19
+- Global: Here's a look at global market cues for June 1, 2026:
+
+US futures edged higher, with Dow Jones Industrial Average futures up 0.1%, S&P 500 futures rising 0.3%, and Nasdaq-100 futures gaining about 0.5
+
+**Recommendation**: LARGE FII OUTFLOW — SKIP
+
+---
+
+
 ### RESEARCH-2026-05-28
 
 **Market Context**
