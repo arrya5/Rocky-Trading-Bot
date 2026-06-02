@@ -4,6 +4,17 @@
 ---
 
 
+### RESEARCH-2026-06-02
+
+**LARGE FII OUTFLOW — SKIP TRADING TODAY** (FII -3912 Cr)
+- VIX: 16.54
+- Global: On June 2, 2026, US futures showed a mixed trend with S&P 500 e-mini futures down 0.3% and Nasdaq 100 futures down 0.4%, while Dow Jones Industrial Average futures were up slightly on Sunday night. Cr
+
+**Recommendation**: LARGE FII OUTFLOW — SKIP
+
+---
+
+
 ### RESEARCH-2026-06-01
 
 **LARGE FII OUTFLOW — SKIP TRADING TODAY** (FII -21106 Cr)
