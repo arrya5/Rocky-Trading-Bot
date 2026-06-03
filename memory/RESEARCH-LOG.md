@@ -4,6 +4,17 @@
 ---
 
 
+### RESEARCH-2026-06-03
+
+**LARGE FII OUTFLOW — SKIP TRADING TODAY** (FII -8363 Cr)
+- VIX: 15.36
+- Global: As of June 3, 2026, US stock index futures were mixed, with S&P 500 futures flat, Nasdaq 100 futures down 0.1%, and Dow Jones futures steady, following a series of record highs on Wall Street driven b
+
+**Recommendation**: LARGE FII OUTFLOW — SKIP
+
+---
+
+
 ### RESEARCH-2026-06-02
 
 **LARGE FII OUTFLOW — SKIP TRADING TODAY** (FII -3912 Cr)
