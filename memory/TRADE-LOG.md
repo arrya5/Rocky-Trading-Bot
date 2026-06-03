@@ -543,3 +543,12 @@
   - BAJAJ-AUTO: 1 sh @ avg ₹10148.50 | close ₹10275.00 | P&L +1.25%
   - HINDALCO: 64 sh @ avg ₹1091.70 | close ₹1146.80 | P&L +5.05%
   - ADANIPORTS: 27 sh @ avg ₹1787.00 | close ₹1816.00 | P&L +1.62%
+
+**Midday 2026-06-03 13:30**: JSWSTEEL HOLD @ Rs1309.00 (+3.36%, 10d) — stop Rs1203.17 (-5%)
+**Midday 2026-06-03 13:30**: BHARTIARTL HOLD @ Rs1821.80 (-4.22%, 10d) — stop Rs1806.99 (-5%)
+**Midday 2026-06-03 13:30**: MANAPPURAM HOLD @ Rs309.45 (-1.73%, 10d) — stop Rs299.15 (-5%)
+**Midday 2026-06-03 13:30**: TATACONSUM HOLD @ Rs1143.00 (-4.49%, 10d) — stop Rs1136.87 (-5%)
+**Midday 2026-06-03 13:30**: RADICO HOLD @ Rs3486.60 (-3.55%, 10d) — stop Rs3434.25 (-5%)
+**Midday 2026-06-03 13:30**: BAJAJ-AUTO HOLD @ Rs10249.00 (+0.99%, 10d) — stop Rs9641.07 (-5%)
+**Midday 2026-06-03 13:30**: HINDALCO HOLD @ Rs1135.90 (+4.05%, 9d) — stop Rs1037.11 (-5%)
+**Midday 2026-06-03 13:30**: ADANIPORTS HOLD @ Rs1801.60 (+0.82%, 9d) — stop Rs1697.65 (-5%)

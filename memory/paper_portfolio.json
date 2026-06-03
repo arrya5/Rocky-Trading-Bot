@@ -4,56 +4,56 @@
     "JSWSTEEL": {
       "qty": 39,
       "avg_price": 1266.5,
-      "ltp": 1312.699951171875,
+      "ltp": 1309.0,
       "entered_at": "2026-05-20",
       "sector": "Metals"
     },
     "BHARTIARTL": {
       "qty": 36,
       "avg_price": 1902.1,
-      "ltp": 1816.699951171875,
+      "ltp": 1821.800048828125,
       "entered_at": "2026-05-20",
       "sector": "Telecom"
     },
     "MANAPPURAM": {
       "qty": 222,
       "avg_price": 314.9,
-      "ltp": 314.0,
+      "ltp": 309.45001220703125,
       "entered_at": "2026-05-20",
       "sector": "Finance"
     },
     "TATACONSUM": {
       "qty": 41,
       "avg_price": 1196.7,
-      "ltp": 1157.800048828125,
+      "ltp": 1143.0,
       "entered_at": "2026-05-20",
       "sector": "FMCG"
     },
     "RADICO": {
       "qty": 13,
       "avg_price": 3615.0,
-      "ltp": 3488.89990234375,
+      "ltp": 3486.60009765625,
       "entered_at": "2026-05-20",
       "sector": "FMCG"
     },
     "BAJAJ-AUTO": {
       "qty": 1,
       "avg_price": 10148.5,
-      "ltp": 10275.0,
+      "ltp": 10249.0,
       "entered_at": "2026-05-20",
       "sector": "Auto"
     },
     "HINDALCO": {
       "qty": 64,
       "avg_price": 1091.699951171875,
-      "ltp": 1146.800048828125,
+      "ltp": 1135.9000244140625,
       "entered_at": "2026-05-21",
       "sector": "Metals"
     },
     "ADANIPORTS": {
       "qty": 27,
       "avg_price": 1787.0,
-      "ltp": 1816.0,
+      "ltp": 1801.5999755859375,
       "entered_at": "2026-05-21",
       "sector": "Infrastructure"
     }
