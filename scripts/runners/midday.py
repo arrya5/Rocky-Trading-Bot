@@ -35,6 +35,7 @@ if not isinstance(positions, list):
 if not positions:
     telegram_send(f"☀️ Midday Check {today} — No open positions. Cash: ₹{account.get('cash', 0):,.0f}. Next check: EOD 3:45 PM.")
     print("[midday] no positions, exit")
+    write_heartbeat('midday', 'ok', 'no open positions')
     sys.exit(0)
 
 # Refresh quotes for all positions (broker.py quote updates LTP in paper portfolio)

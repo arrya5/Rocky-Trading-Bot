@@ -56,6 +56,7 @@ if high_vix:
     insert_research_log(today, f"\n### RESEARCH-{today}\n\n**HIGH VIX — NO NEW POSITIONS TODAY** (VIX {vix_level:.1f})\n- FII: {fii_str}\n- Global: {global_[:200]}\n\n**Recommendation**: HIGH VIX — SKIP\n\n---\n")
     telegram_send(msg)
     print("[pre-market] HIGH VIX gate triggered — exit")
+    write_heartbeat('pre_market', 'ok', f"high VIX skip (vix={vix_str})")
     sys.exit(0)
 
 if big_outflow:
@@ -63,6 +64,7 @@ if big_outflow:
     insert_research_log(today, f"\n### RESEARCH-{today}\n\n**LARGE FII OUTFLOW — SKIP TRADING TODAY** (FII {fii_level:+.0f} Cr)\n- VIX: {vix_str}\n- Global: {global_[:200]}\n\n**Recommendation**: LARGE FII OUTFLOW — SKIP\n\n---\n")
     telegram_send(msg)
     print("[pre-market] FII gate triggered — exit")
+    write_heartbeat('pre_market', 'ok', f"large FII outflow skip (fii={fii_str})")
     sys.exit(0)
 
 # ── Step 3: Regime + PCR ─────────────────────────────────────────────────────
@@ -102,6 +104,7 @@ if regime == 'bear':
     insert_research_log(today, f"\n### RESEARCH-{today}\n\n**BEAR REGIME — NO TRADES TODAY**\n- Nifty 20d slope: {slope:+.2f}%\n- VIX: {vix_str} | FII: {fii_str}\n\n**Recommendation**: BEAR REGIME — SKIP\n\n---\n")
     telegram_send(msg)
     print("[pre-market] BEAR REGIME gate triggered — exit")
+    write_heartbeat('pre_market', 'ok', f"bear regime skip (slope={slope:+.2f}%)")
     sys.exit(0)
 
 pcr_raw = run_script('scripts/market_data.py', 'pcr')
@@ -139,6 +142,7 @@ if not top_candidates:
     msg = f"🌅 Pre-Market {today}\n\nMood: {regime}" + (f" | P(bear/wk) {p_bear_week}%" if p_bear_week is not None else "") + f" | VIX: {vix_str} | FII: {fii_str}\nNo BUY signals found in universe today.\n\nVerdict: WAIT — no candidates.\nNext check: tomorrow."
     insert_research_log(today, f"\n### RESEARCH-{today}\n\n**Market Context**\n- VIX: {vix_str} | FII: {fii_str} | Regime: {regime} (slope {slope}%) | PCR: {pcr_str}\n- Regime forecast (Markov): {markov_line or 'unavailable'}\n\n**Trade Candidates**: NONE — no BUY signals\n\n**Recommendation**: WAIT — No qualifying signals\n\n---\n")
     telegram_send(msg)
+    write_heartbeat('pre_market', 'ok', 'no candidates')
     sys.exit(0)
 
 # ── Step 5: Earnings guard ───────────────────────────────────────────────────

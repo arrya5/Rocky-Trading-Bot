@@ -37,6 +37,7 @@ write_heartbeat('market_open', 'started')
 log_path = memory_path('RESEARCH-LOG.md')
 if not log_path.exists():
     telegram_send(f"📋 Market Open {today} | 0 trades | No RESEARCH-LOG.md found")
+    write_heartbeat('market_open', 'ok', 'no RESEARCH-LOG.md')
     sys.exit(0)
 
 log_text = log_path.read_text(encoding='utf-8')
@@ -46,6 +47,7 @@ today_entry_match = re.search(
 )
 if not today_entry_match:
     telegram_send(f"📋 Market Open {today} | 0 trades | No pre-market research found for today")
+    write_heartbeat('market_open', 'ok', 'no pre-market research entry')
     sys.exit(0)
 
 today_entry = today_entry_match.group(1)
@@ -53,9 +55,11 @@ today_entry = today_entry_match.group(1)
 # Check macro gates from research log
 if 'HIGH VIX' in today_entry:
     telegram_send(f"📋 Market Open {today} | 0 trades | HIGH VIX gate triggered in pre-market")
+    write_heartbeat('market_open', 'ok', 'HIGH VIX skip')
     sys.exit(0)
 if 'LARGE FII OUTFLOW' in today_entry:
     telegram_send(f"📋 Market Open {today} | 0 trades | FII outflow gate triggered in pre-market")
+    write_heartbeat('market_open', 'ok', 'LARGE FII OUTFLOW skip')
     sys.exit(0)
 
 # Parse VIX and FII from research log for record_trade
@@ -93,6 +97,7 @@ if cand_section:
 
 if not candidates:
     telegram_send(f"📋 Market Open {today} | 0 trades | No candidates parsed from research log")
+    write_heartbeat('market_open', 'ok', 'no candidates')
     sys.exit(0)
 
 print(f"  parsed {len(candidates)} candidates")
