@@ -61,9 +61,9 @@ SECTOR_MAP = {
     "HINDUNILVR":  "FMCG",     "ITC":         "FMCG",     "NESTLEIND":   "FMCG",
     "BRITANNIA":   "FMCG",     "DABUR":       "FMCG",     "MARICO":      "FMCG",
     "COLPAL":      "FMCG",     "GODREJCP":    "FMCG",     "TATACONSUM":  "FMCG",
-    "MCDOWELL-N":  "FMCG",     "RADICO":      "FMCG",
+    "UNITDSPR":    "FMCG",     "RADICO":      "FMCG",
     # Auto
-    "MARUTI":      "Auto",      "TATAMOTORS":  "Auto",      "M&M":         "Auto",
+    "MARUTI":      "Auto",      "TVSMOTOR":    "Auto",      "M&M":         "Auto",
     "BAJAJ-AUTO":  "Auto",      "HEROMOTOCO":  "Auto",      "EICHERMOT":   "Auto",
     "APOLLOTYRE":  "Auto",      "ESCORTS":     "Auto",      "MRF":         "Auto",
     "BALKRISIND":  "Auto",
@@ -75,7 +75,7 @@ SECTOR_MAP = {
     # Finance & NBFC
     "BAJFINANCE":  "Finance",   "BAJAJFINSV":  "Finance",   "MUTHOOTFIN":  "Finance",
     "CHOLAFIN":    "Finance",   "MANAPPURAM":  "Finance",   "LICHSGFIN":   "Finance",
-    "ABCAPITAL":   "Finance",   "MFSL":        "Finance",   "CANFIN":      "Finance",
+    "ABCAPITAL":   "Finance",   "MFSL":        "Finance",   "CANFINHOME":  "Finance",
     "POONAWALLA":  "Finance",   "SBILIFE":     "Finance",   "HDFCLIFE":    "Finance",
     "RECLTD":      "Finance",   "PFC":         "Finance",
     # Metals
@@ -106,7 +106,7 @@ SECTOR_MAP = {
 
 # Map sectors to NSE sector indices for relative-strength factor
 SECTOR_TO_INDEX = {
-    "Banking":        "^CNXBANK",
+    "Banking":        "^NSEBANK",
     "IT":             "^CNXIT",
     "Auto":           "^CNXAUTO",
     "Pharma":         "^CNXPHARMA",
@@ -114,8 +114,8 @@ SECTOR_TO_INDEX = {
     "Metals":         "^CNXMETAL",
     "Energy":         "^CNXENERGY",
     "Infrastructure": "^CNXINFRA",
-    "Finance":        "^CNXFIN",
-    "Fin Services":   "^CNXFIN",
+    "Finance":        "NIFTY_FIN_SERVICE.NS",
+    "Fin Services":   "NIFTY_FIN_SERVICE.NS",
 }
 NIFTY_TICKER = "^NSEI"
 
@@ -126,7 +126,7 @@ UNIVERSE = [
     "SBIN", "BHARTIARTL", "ITC", "KOTAKBANK", "LT", "AXISBANK",
     "ASIANPAINT", "MARUTI", "SUNPHARMA", "TITAN", "BAJFINANCE", "WIPRO",
     "HCLTECH", "ULTRACEMCO", "BAJAJFINSV", "NESTLEIND", "TECHM",
-    "POWERGRID", "NTPC", "ONGC", "JSWSTEEL", "TATAMOTORS", "TATASTEEL",
+    "POWERGRID", "NTPC", "ONGC", "JSWSTEEL", "TVSMOTOR", "TATASTEEL",
     "M&M", "ADANIENT", "ADANIPORTS", "COALINDIA", "DRREDDY", "DIVISLAB",
     "CIPLA", "GRASIM", "HEROMOTOCO", "HINDALCO", "INDUSINDBK",
     "BRITANNIA", "APOLLOHOSP", "BPCL", "EICHERMOT", "TATACONSUM",
@@ -140,8 +140,8 @@ UNIVERSE = [
     "APOLLOTYRE", "ESCORTS", "MRF", "BALKRISIND",
     "AMBUJACEM", "SHREECEM", "RAMCOCEM",
     "TORNTPHARM", "AUROPHARMA", "LUPIN", "ALKEM", "BIOCON",
-    "JUBLFOOD", "TRENT", "MCDOWELL-N", "RADICO",
-    "ABCAPITAL", "MFSL", "CANFIN",
+    "JUBLFOOD", "TRENT", "UNITDSPR", "RADICO",
+    "ABCAPITAL", "MFSL", "CANFINHOME",
     "ZOMATO", "NYKAA", "IRFC", "RVNL",
     "DIXON", "KAYNES", "APLAPOLLO",
     "JSWENERGY", "ADANIGREEN", "TORNTPOWER", "SUZLON",

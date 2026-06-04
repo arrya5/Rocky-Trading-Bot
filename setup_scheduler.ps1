@@ -62,7 +62,6 @@ foreach ($T in $Tasks) {
         -Action   $Action `
         -Trigger  $Trigger `
         -Settings $Settings `
-        -RunLevel Highest `
         -Force | Out-Null
 
     Write-Host "CREATED  $($T.Name)  →  weekdays at $($T.Time) IST  (python run.py $($T.Routine))"
