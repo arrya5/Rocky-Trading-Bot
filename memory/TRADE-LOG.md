@@ -580,3 +580,23 @@
 **Midday 2026-06-04 13:30**: BAJAJ-AUTO HOLD @ Rs10282.00 (+1.32%, 10d) — stop Rs9641.07 (-5%)
 **Midday 2026-06-04 13:30**: HINDALCO HOLD @ Rs1128.30 (+3.35%, 10d) — stop Rs1037.11 (-5%)
 **Midday 2026-06-04 13:30**: ADANIPORTS HOLD @ Rs1793.60 (+0.37%, 10d) — stop Rs1697.65 (-5%)
+
+### EOD Snapshot 2026-06-04
+- **Portfolio value**: ₹497,025.01
+- **Cash**: ₹153,700.01
+- **Open positions**: 7
+- **Market value**: ₹343,325.00
+- **Day P&L**: ₹-1,012.55 (-0.20%)
+- **All-time P&L**: ₹-2,974.99 (-0.59% from ₹5,00,000 base)
+- **Nifty 50 today**: +0.00%
+- **Alpha vs Nifty**: -0.20%
+- **Positions**:
+  - JSWSTEEL: 39 sh @ avg ₹1266.50 | close ₹1302.10 | P&L +2.81%
+  - MANAPPURAM: 222 sh @ avg ₹314.90 | close ₹311.35 | P&L -1.13%
+  - TATACONSUM: 41 sh @ avg ₹1196.70 | close ₹1150.10 | P&L -3.89%
+  - RADICO: 13 sh @ avg ₹3615.00 | close ₹3518.20 | P&L -2.68%
+  - BAJAJ-AUTO: 1 sh @ avg ₹10148.50 | close ₹10364.00 | P&L +2.12%
+  - HINDALCO: 64 sh @ avg ₹1091.70 | close ₹1125.20 | P&L +3.07%
+  - ADANIPORTS: 27 sh @ avg ₹1787.00 | close ₹1792.90 | P&L +0.33%
+
+**🎯 Biggest surprise today**: The biggest surprise was BHARTIARTL's unexpected -5.24% drop, triggering a hard stop, especially given the Nifty remained flat at +0.00% today.
