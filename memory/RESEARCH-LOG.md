@@ -4,6 +4,19 @@
 ---
 
 
+### RESEARCH-2026-06-04
+
+**Market Context**
+- VIX: 16.28 | FII: unknown | Regime: sideways (slope -1.17%) | PCR: unknown
+- Regime forecast (Markov): bear persistence 85%, P(bear next week) 51.4%, long-run mix bull/side/bear 36.0/40.9/23.2%
+
+**Trade Candidates**: NONE — no BUY signals
+
+**Recommendation**: WAIT — No qualifying signals
+
+---
+
+
 ### RESEARCH-2026-06-03
 
 **LARGE FII OUTFLOW — SKIP TRADING TODAY** (FII -8363 Cr)
