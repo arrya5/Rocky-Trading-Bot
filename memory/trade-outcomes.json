@@ -93,12 +93,12 @@
       "fii_flow_at_entry": -2457.0,
       "market_regime": "bull",
       "partial_exits": [],
-      "exit_date": null,
-      "exit_price": null,
-      "pnl_abs": null,
-      "pnl_pct": null,
-      "exit_reason": null,
-      "days_held": null
+      "exit_date": "2026-06-05",
+      "exit_price": 1134.2,
+      "pnl_abs": -2562.5,
+      "pnl_pct": -5.22,
+      "exit_reason": "hard_stop",
+      "days_held": 16
     },
     {
       "trade_id": "RADICO-2026-05-20",
@@ -190,8 +190,8 @@
     }
   ],
   "metadata": {
-    "last_updated": "2026-06-04T08:01:04.953936",
-    "total_closed": 2,
+    "last_updated": "2026-06-05T08:02:18.743216",
+    "total_closed": 3,
     "analyzer_min_trades": 20,
     "description": "Structured trade outcomes for performance analysis and rule auto-adjustment. Each trade records entry context (GRU confidence, VIX, FII flow, regime) and exit result (P&L, exit reason, days held). The performance_analyzer.py reads this file and recommends parameter changes to TRADING-STRATEGY.md."
   }
