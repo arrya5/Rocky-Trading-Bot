@@ -6,10 +6,10 @@
     "detail": "day -0.20%, portfolio Rs 497,025"
   },
   "pre_market": {
-    "last_run_iso": "2026-06-04T08:30:43+05:30",
-    "date": "2026-06-04",
-    "status": "started",
-    "detail": ""
+    "last_run_iso": "2026-06-05T08:31:47+05:30",
+    "date": "2026-06-05",
+    "status": "ok",
+    "detail": "no candidates"
   },
   "weekly_review": {
     "last_run_iso": "2026-05-29T18:55:31+05:30",
