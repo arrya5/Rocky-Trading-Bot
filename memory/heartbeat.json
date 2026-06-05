@@ -18,10 +18,10 @@
     "detail": "grade=A fitness=+0.000"
   },
   "market_open": {
-    "last_run_iso": "2026-06-04T09:20:38+05:30",
-    "date": "2026-06-04",
-    "status": "started",
-    "detail": ""
+    "last_run_iso": "2026-06-05T09:20:39+05:30",
+    "date": "2026-06-05",
+    "status": "ok",
+    "detail": "no candidates"
   },
   "midday": {
     "last_run_iso": "2026-06-04T13:31:17+05:30",
