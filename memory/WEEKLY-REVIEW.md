@@ -148,3 +148,28 @@
 - None this week
 
 ---
+
+### WEEK OF 2026-06-01 to 2026-06-05
+
+**P&L Summary**
+- Week P&L: ₹-10,859.19 (-2.16%)
+- Nifty 50 this week: +0.77%
+- Alpha vs Nifty: -2.93%
+- Grade: D
+
+**Fitness score**: -0.875 (return -3.00%/trade, maxDD 10.2%, Sharpe -5.48)
+
+**Closed trades (all time)**: 3
+**Performance analyzer data sufficient**: False
+
+**Hypothesis verification**
+- No hypotheses verified this week (0 still under observation)
+
+**Qualitative**
+[deterministic — LLM unavailable]
+Overall win rate: 33.3% across 3 closed trades. Best sector: IT (100.0% win). Worst sector: Telecom (0.0% win). Strongest regime: bull.
+
+**Strategy Changes This Week**
+- No rule changes (only 3/20 closed trades — observing, not changing rules yet)
+
+---

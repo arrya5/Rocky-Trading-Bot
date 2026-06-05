@@ -12,10 +12,10 @@
     "detail": "no candidates"
   },
   "weekly_review": {
-    "last_run_iso": "2026-05-29T18:55:31+05:30",
-    "date": "2026-05-29",
+    "last_run_iso": "2026-06-05T16:31:04+05:30",
+    "date": "2026-06-05",
     "status": "ok",
-    "detail": "grade=A fitness=+0.000"
+    "detail": "grade=D fitness=-0.875"
   },
   "market_open": {
     "last_run_iso": "2026-06-05T09:20:39+05:30",
