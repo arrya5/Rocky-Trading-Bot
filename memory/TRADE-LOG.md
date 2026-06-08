@@ -627,3 +627,10 @@
   - ADANIPORTS: 27 sh @ avg ₹1787.00 | close ₹1825.00 | P&L +2.13%
 
 **🎯 Biggest surprise today**: The most unexpected event was TATACONSUM hitting its hard stop with a -5.22% decline, especially given the Nifty's flat performance (+0.05%) and the general 'WAIT' recommendation for new trades.
+
+**Midday 2026-06-08 13:30**: JSWSTEEL HOLD @ Rs1269.70 (+0.25%, 13d) — stop Rs1203.17 (-5%)
+**Midday 2026-06-08 13:30**: MANAPPURAM HOLD @ Rs301.15 (-4.37%, 13d) — stop Rs299.15 (-5%)
+**Midday 2026-06-08 13:30**: RADICO HOLD @ Rs3486.90 (-3.54%, 13d) — stop Rs3434.25 (-5%)
+**Midday 2026-06-08 13:30**: BAJAJ-AUTO HOLD @ Rs10265.00 (+1.15%, 13d) — stop Rs9641.07 (-5%)
+**Midday 2026-06-08 13:30**: HINDALCO HOLD @ Rs1072.00 (-1.80%, 12d) — stop Rs1037.11 (-5%)
+**Midday 2026-06-08 13:30**: ADANIPORTS HOLD @ Rs1827.00 (+2.24%, 12d) — stop Rs1697.65 (-5%)
