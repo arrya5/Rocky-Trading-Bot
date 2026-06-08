@@ -634,3 +634,20 @@
 **Midday 2026-06-08 13:30**: BAJAJ-AUTO HOLD @ Rs10265.00 (+1.15%, 13d) — stop Rs9641.07 (-5%)
 **Midday 2026-06-08 13:30**: HINDALCO HOLD @ Rs1072.00 (-1.80%, 12d) — stop Rs1037.11 (-5%)
 **Midday 2026-06-08 13:30**: ADANIPORTS HOLD @ Rs1827.00 (+2.24%, 12d) — stop Rs1697.65 (-5%)
+
+### EOD Snapshot 2026-06-08
+- **Portfolio value**: ₹490,056.91
+- **Cash**: ₹200,151.61
+- **Open positions**: 6
+- **Market value**: ₹289,905.30
+- **Day P&L**: ₹-2,315.80 (-0.47%)
+- **All-time P&L**: ₹-9,943.09 (-1.99% from ₹5,00,000 base)
+- **Nifty 50 today**: +0.00%
+- **Alpha vs Nifty**: -0.47%
+- **Positions**:
+  - JSWSTEEL: 39 sh @ avg ₹1266.50 | close ₹1257.70 | P&L -0.69%
+  - MANAPPURAM: 222 sh @ avg ₹314.90 | close ₹297.65 | P&L -5.48%
+  - RADICO: 13 sh @ avg ₹3615.00 | close ₹3460.50 | P&L -4.27%
+  - BAJAJ-AUTO: 1 sh @ avg ₹10148.50 | close ₹10180.00 | P&L +0.31%
+  - HINDALCO: 64 sh @ avg ₹1091.70 | close ₹1052.50 | P&L -3.59%
+  - ADANIPORTS: 27 sh @ avg ₹1787.00 | close ₹1797.00 | P&L +0.56%
