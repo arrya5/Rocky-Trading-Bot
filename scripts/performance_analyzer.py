@@ -141,44 +141,44 @@ def analyze():
     if n >= MIN_TRADES:
 
         # GRU confidence floor
-        low_conf  = [t for t in trades if 0.60 <= (t.get("gru_confidence") or 0) < 0.70]
-        high_conf = [t for t in trades if (t.get("gru_confidence") or 0) >= 0.70]
+        low_conf  = [t for t in trades if 0.80 <= (t.get("gru_confidence") or 0) < 0.90]
+        high_conf = [t for t in trades if (t.get("gru_confidence") or 0) >= 0.90]
         if len(low_conf) >= 5:
             lwr = win_rate(low_conf)["win_rate_pct"]
             hwr = win_rate(high_conf)["win_rate_pct"]
             if lwr is not None and lwr < 40:
                 recs.append({
-                    "parameter":          "gru_confidence_floor",
-                    "current":            "60%",
-                    "recommended":        "70%",
-                    "evidence":           f"Win rate at 60-69% confidence: {lwr}% ({len(low_conf)} trades). Win rate at 70%+: {hwr}% ({len(high_conf)} trades).",
-                    "change_instruction": "In memory/TRADING-STRATEGY.md and CLAUDE.md, change 'confidence >= 60%' to 'confidence >= 70%' in Gate 2.",
+                    "parameter":          "swing_score_floor",
+                    "current":            "80%",
+                    "recommended":        "100%",
+                    "evidence":           f"Win rate at 80% Swing score: {lwr}% ({len(low_conf)} trades). Win rate at 100% Swing score: {hwr}% ({len(high_conf)} trades).",
+                    "change_instruction": "In memory/TRADING-STRATEGY.md and CLAUDE.md, change 'Swing score >= 80' to 'Swing score >= 100' in Gate 2.",
                 })
 
         # VIX gate
-        high_vix = [t for t in trades if 18 <= (t.get("vix_at_entry") or 0) < 20]
+        high_vix = [t for t in trades if 20 <= (t.get("vix_at_entry") or 0) < 25]
         if len(high_vix) >= 3:
             hvwr = win_rate(high_vix)["win_rate_pct"]
             if hvwr is not None and hvwr < 35:
                 recs.append({
                     "parameter":          "vix_gate",
-                    "current":            "VIX < 20",
-                    "recommended":        "VIX < 18",
-                    "evidence":           f"Win rate when VIX 18-20 at entry: {hvwr}% ({len(high_vix)} trades).",
-                    "change_instruction": "In memory/TRADING-STRATEGY.md and CLAUDE.md, change 'India VIX < 20' to 'India VIX < 18' in Gate 5.",
+                    "current":            "VIX < 25",
+                    "recommended":        "VIX < 20",
+                    "evidence":           f"Win rate when VIX 20-25 at entry: {hvwr}% ({len(high_vix)} trades).",
+                    "change_instruction": "In memory/TRADING-STRATEGY.md and CLAUDE.md, change 'India VIX < 25' to 'India VIX < 20' in Gate 5.",
                 })
 
         # FII flow gate
-        weak_fii = [t for t in trades if -2000 <= (t.get("fii_flow_at_entry") or 0) < -1000]
+        weak_fii = [t for t in trades if -3500 <= (t.get("fii_flow_at_entry") or 0) < -1500]
         if len(weak_fii) >= 3:
             wfwr = win_rate(weak_fii)["win_rate_pct"]
             if wfwr is not None and wfwr < 35:
                 recs.append({
                     "parameter":          "fii_flow_gate",
-                    "current":            "-2000 Cr",
-                    "recommended":        "-1000 Cr",
-                    "evidence":           f"Win rate when FII flow -1000 to -2000 Cr: {wfwr}% ({len(weak_fii)} trades).",
-                    "change_instruction": "In memory/TRADING-STRATEGY.md and CLAUDE.md, change '-2000 Cr' to '-1000 Cr' in Gate 9.",
+                    "current":            "-3500 Cr",
+                    "recommended":        "-1500 Cr",
+                    "evidence":           f"Win rate when FII flow -1500 to -3500 Cr: {wfwr}% ({len(weak_fii)} trades).",
+                    "change_instruction": "In memory/TRADING-STRATEGY.md and CLAUDE.md, change 'FII net flow > -₹3500 Cr' to 'FII net flow > -₹1500 Cr' in Gate 7.",
                 })
 
         # Catalyst type blocks

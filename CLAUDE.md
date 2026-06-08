@@ -1,4 +1,4 @@
-﻿# CLAUDE.md — Indian AI Trading Bot Rulebook
+# CLAUDE.md — Indian AI Trading Bot Rulebook
 *Read this file first on every routine execution.*
 
 ## Identity
@@ -34,39 +34,37 @@ git add memory/ && git commit -m "msg"                      # Persist all memory
 ## The 9-Point Buy-Side Gate
 Before placing ANY buy order, verify ALL 9 conditions. Skip trade if any fails.
 1. Stock is in Nifty 50 or Nifty Midcap 150
-2. Momentum score ≥ 40 from signal_generator.py (2+ of 5 factors aligned) AND stock passed ADV + volatility pre-filters
+2. Swing score ≥ 80 from signal_generator.py (4+ of 5 factors aligned) AND stock passed ADV + volatility pre-filters
 3. Catalyst is HARD or MEDIUM tier — SOFT catalyst ("stock trending", "sector doing well") = SKIP
    - HARD: earnings beat, analyst upgrade, product launch, regulatory approval, M&A, QIP/buyback
    - MEDIUM: sector policy, index inclusion, management guidance revision, institutional block deal
    - SOFT: general sentiment, no specific event → FAIL gate
-4. Stock not at upper circuit (and not hit lower circuit in last 3 days)
+4. Stock not at upper circuit; no large gap (> 18%)
 5. India VIX < 25
-6. Position cost ≤ available cash — use tiered sizing from signal_generator.py `suggested_position_size`:
-   - Score 80-100 → ₹70,000 | Score 60-79 → ₹50,000 | Score 40-59 → ₹30,000
-7. FII net flow not strongly negative (> -₹3500 Cr outflow)
+6. Position cost ≤ available cash — flat ₹50,000 per trade
+7. FII net flow > -₹3,500 Cr outflow
 8. No earnings announcement or board meeting for results within 7 calendar days
 9. Sector concentration ≤ 2 open positions in the same sector after entry
+10. **Regime gate**: skip ALL entries when market regime == "bear" (Nifty 20d SMA slope < -1.5%)
 
 **Paper trading — no position cap, no weekly trade cap. Take every signal that passes all 9 gates.**
 
 ## Hard Stop Rules (no discretion allowed)
-- **-7% loss**: Close immediately via `python scripts/broker.py close SYMBOL`
+- **-5% loss**: Close immediately via `python scripts/broker.py close SYMBOL` (hard stop)
 - **Lower circuit**: Flag, attempt close at next day open
 - **Fraud news**: Close immediately
 - **Thesis broken**: Close regardless of P&L
+- **Max hold 15 trading days**: Force close regardless of P&L (swing max hold)
 
-## Partial Exit Rule (mandatory at +15%)
-- At +15% gain: SELL 50% of position at market — lock in profit
-- Then tighten remaining 50% trailing stop to 7% below current price
+## Partial Exit Rule (mandatory at +6%)
+- At +6% gain: SELL 50% of position at market — lock in profit
+- Then tighten remaining 50% trailing stop to 3% below current price
 - ONE partial exit only per trade (check trade-outcomes.json: if partial_exits is non-empty, skip)
-- At +20% on remaining: tighten stop to 5% below LTP
-- **NEVER force-close a profitable remaining position** — let trailing stop trigger naturally
-- Multi-baggers (+50%, +80%, +100%) are possible only if you let the trailing stop run
 
 ## Trailing Stop Rules
-- Default trailing stop: 10% below entry
-- At +15%: tighten to 7% below current price (after partial exit)
-- At +20%: tighten to 5% below current price
+- Default trailing stop: -5% below cost (the hard stop)
+- After partial exit at +6%: tighten to 3% below current price
+- At +12% gain: tighten remaining stop to 3% below current price
 - Never move stop down, never tighten within 3% of LTP
 
 ## Order Format
@@ -112,7 +110,7 @@ Portfolio state lives in `memory/paper_portfolio.json`.
 Switch to live: set `PAPER_TRADING=false` and use live Upstox credentials.
 
 ## What You Must NEVER Do
-- Place an order if any of the 11 buy-side gate conditions fail
+- Place an order if any of the 10 buy-side gate conditions fail
 - Place orders outside 9:20 AM – 3:20 PM IST window
 - Trade stocks outside Nifty 50 + Nifty Midcap 150
 - Trade options, futures, or intraday products
@@ -120,4 +118,4 @@ Switch to live: set `PAPER_TRADING=false` and use live Upstox credentials.
 - Skip the Telegram alert after any order
 - Skip the git commit after any routine
 - Exceed ₹1,00,000 in a single position
-- Open a 6th position
+- Hold more than ~10 concurrent positions (or 2 per sector)

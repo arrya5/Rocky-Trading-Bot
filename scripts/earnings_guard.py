@@ -53,23 +53,54 @@ def _fetch_nse_events() -> list:
 
 def _gemini_fallback(symbol: str) -> dict:
     """Use Gemini research as fallback when NSE API is unavailable."""
-    import subprocess
+    import json, urllib.request, urllib.error
+    api_key = os.environ.get("GEMINI_API_KEY", "")
+    if not api_key:
+        return {"earnings_within_7d": False, "event_date": None, "event_type": None, "source": "gemini_fallback_no_key"}
     today_str = date.today().isoformat()
     query = (
         f"{symbol} NSE earnings results board meeting date next 7 days from {today_str}. "
         f"Answer with ONLY: YES <date YYYY-MM-DD> <event_type> or NO"
     )
+    payload = {
+        'contents': [
+            {'role': 'user', 'parts': [{'text': query}]}
+        ],
+        'tools': [{'google_search': {}}],
+        'systemInstruction': {
+            'parts': [{
+                'text': (
+                    'You are a financial research assistant focused on Indian stock markets (NSE/BSE). '
+                    'Be concise and factual. Check if there are scheduled earnings results or board meetings '
+                    'for results within 7 days. Answer strictly in the requested format.'
+                )
+            }]
+        },
+        'generationConfig': {'temperature': 0.1, 'maxOutputTokens': 128}
+    }
+    url = f'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}'
+    req = urllib.request.Request(
+        url,
+        data=json.dumps(payload).encode('utf-8'),
+        headers={'Content-Type': 'application/json'}
+    )
     try:
-        result = subprocess.run(
-            ["bash", str(RESEARCH_SCRIPT), query],
-            capture_output=True, text=True, timeout=30
-        )
-        output = result.stdout.strip().upper()
-        if output.startswith("YES"):
-            parts = output.split()
-            event_date = parts[1] if len(parts) > 1 else None
-            event_type = " ".join(parts[2:]) if len(parts) > 2 else "Results"
-            return {"earnings_within_7d": True, "event_date": event_date, "event_type": event_type, "source": "gemini_fallback"}
+        with urllib.request.urlopen(req, timeout=25) as resp:
+            data = json.load(resp)
+            candidates = data.get('candidates', [])
+            if candidates:
+                content = candidates[0].get('content', {})
+                text = ''.join(p.get('text', '') for p in content.get('parts', [])).strip().upper()
+                if text.upper().startswith("YES"):
+                    parts = text.split()
+                    event_date = parts[1] if len(parts) > 1 else None
+                    event_type = " ".join(parts[2:]) if len(parts) > 2 else "Results"
+                    return {
+                        "earnings_within_7d": True,
+                        "event_date": event_date,
+                        "event_type": event_type,
+                        "source": "gemini_fallback"
+                    }
     except Exception:
         pass
     return {"earnings_within_7d": False, "event_date": None, "event_type": None, "source": "gemini_fallback"}

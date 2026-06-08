@@ -135,11 +135,7 @@ def score(trades: list[dict], goal: dict) -> dict:
     dd_comp = _clamp(1.0 - 2.0 * (max_dd / maxdd_pct))
 
     # ── Sharpe component: at min → 0, 2×min → +1, 0 → -1 ─────────────────────
-    if sharpe >= 0:
-        sharpe_comp = _clamp((sharpe - min_sharpe) / min_sharpe + 0.0)
-        sharpe_comp = _clamp(sharpe / (min_sharpe * 2))
-    else:
-        sharpe_comp = _clamp(sharpe / min_sharpe)
+    sharpe_comp = _clamp((sharpe - min_sharpe) / min_sharpe)
 
     # Weighted composite: return 50%, drawdown 30%, sharpe 20%
     fitness = _clamp(0.50 * ret_comp + 0.30 * dd_comp + 0.20 * sharpe_comp)
