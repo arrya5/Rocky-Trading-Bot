@@ -4,6 +4,17 @@
 ---
 
 
+### RESEARCH-2026-06-08
+
+**LARGE FII OUTFLOW — SKIP TRADING TODAY** (FII -8776 Cr)
+- VIX: 15.79
+- Global: Global market cues on June 8, 2026, show a mixed to negative sentiment. US futures were down, with Dow futures falling 0.2%, S&P 500 futures
+
+**Recommendation**: LARGE FII OUTFLOW — SKIP
+
+---
+
+
 ### RESEARCH-2026-06-05
 
 **Market Context**
