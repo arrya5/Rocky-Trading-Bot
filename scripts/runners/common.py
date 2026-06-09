@@ -198,8 +198,56 @@ def gemini_reason(system: str, user: str, schema_hint: str = '',
     return {'error': 'all_llms_failed'} if json_mode else ''
 
 
+_CATALYST_HARD_KEYWORDS = (
+    'earnings beat', 'beats estimat', 'results beat', 'profit beat',
+    'multifold profit', 'profit multifold', 'profit jump', 'profit surge',
+    'record profit', 'record revenue', 'record results',
+    'highest-ever', 'highest ever', 'all-time high revenue', 'lifetime high',
+    'upgrade to buy', 'upgraded to buy', 'upgrade to strong buy',
+    'upgraded to strong buy', 'analyst upgrade', 'raised target price',
+    'price target raised',
+    'buyback', 'qip', 'm&a', 'acquisition', 'merger approved',
+    'regulatory approval', 'fda approval', 'rbi approval', 'sebi approval',
+    'court ruling', 'court order',
+    'contract win', 'order win', 'large order', 'mega order',
+    'product launch', 'launches new',
+    'special dividend', 'bonus issue',
+    'guidance raised', 'guidance hike', 'guidance upgrade',
+)
+
+_CATALYST_MEDIUM_KEYWORDS = (
+    'pli scheme', 'budget allocation', 'sector policy',
+    'index inclusion', 'msci inclusion', 'nifty inclusion',
+    'block deal', 'institutional block', 'promoter buying', 'promoter stake',
+)
+
+
+def _classify_catalyst_keywords(catalyst_text: str):
+    """Deterministic keyword fallback for when Gemini classification fails.
+
+    Mirrors the Gemini system prompt's tier definitions. Only fires when an
+    explicit catalyst keyword is present in the research text — generic momentum
+    language still falls through to SOFT. Returns None on no match.
+    """
+    if not catalyst_text:
+        return None
+    t = catalyst_text.lower()
+    for kw in _CATALYST_HARD_KEYWORDS:
+        if kw in t:
+            return {'tier': 'HARD', 'type': 'other', 'summary': f'keyword fallback: {kw}'}
+    for kw in _CATALYST_MEDIUM_KEYWORDS:
+        if kw in t:
+            return {'tier': 'MEDIUM', 'type': 'other', 'summary': f'keyword fallback: {kw}'}
+    return None
+
+
 def classify_catalyst(symbol: str, catalyst_text: str) -> dict:
-    """Classify a catalyst as HARD / MEDIUM / SOFT. Uses Gemini→Hermes routing."""
+    """Classify a catalyst as HARD / MEDIUM / SOFT. Uses Gemini→Hermes routing.
+
+    On LLM failure (quota exhausted, API down), falls back to a deterministic
+    keyword scan instead of returning SOFT for every candidate — which had the
+    effect of auto-rejecting every signal on Gemini-quota-exhausted days.
+    """
     schema = '{"tier": "HARD|MEDIUM|SOFT", "type": "earnings|upgrade|breakout|sector_tailwind|technical|other", "summary": "one-line"}'
     system = (
         'You classify trade catalysts for an Indian equity momentum bot. Three tiers:\n'
@@ -214,7 +262,10 @@ def classify_catalyst(symbol: str, catalyst_text: str) -> dict:
     result = gemini_reason(system, user, schema)
     if isinstance(result, dict) and 'tier' in result:
         return result
-    return {'tier': 'SOFT', 'type': 'other', 'summary': 'classification failed'}
+    kw_result = _classify_catalyst_keywords(catalyst_text)
+    if kw_result is not None:
+        return kw_result
+    return {'tier': 'SOFT', 'type': 'other', 'summary': 'classification failed - no keyword match'}
 
 
 # ── Telegram ─────────────────────────────────────────────────────────────────
