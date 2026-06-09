@@ -6,10 +6,10 @@
     "detail": "day -0.47%, portfolio Rs 490,057"
   },
   "pre_market": {
-    "last_run_iso": "2026-06-08T08:31:13+05:30",
-    "date": "2026-06-08",
+    "last_run_iso": "2026-06-09T08:31:26+05:30",
+    "date": "2026-06-09",
     "status": "ok",
-    "detail": "large FII outflow skip (fii=-8776 Cr)"
+    "detail": "bear regime skip (slope=-2.33%)"
   },
   "weekly_review": {
     "last_run_iso": "2026-06-05T16:31:04+05:30",
