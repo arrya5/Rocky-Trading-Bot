@@ -18,10 +18,10 @@
     "detail": "grade=D fitness=-0.875"
   },
   "market_open": {
-    "last_run_iso": "2026-06-08T09:20:38+05:30",
-    "date": "2026-06-08",
+    "last_run_iso": "2026-06-09T09:20:38+05:30",
+    "date": "2026-06-09",
     "status": "ok",
-    "detail": "LARGE FII OUTFLOW skip"
+    "detail": "no candidates"
   },
   "midday": {
     "last_run_iso": "2026-06-08T13:31:33+05:30",
