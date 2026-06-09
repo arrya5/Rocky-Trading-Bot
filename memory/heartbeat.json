@@ -24,8 +24,8 @@
     "detail": "no candidates"
   },
   "midday": {
-    "last_run_iso": "2026-06-08T13:31:33+05:30",
-    "date": "2026-06-08",
+    "last_run_iso": "2026-06-09T13:31:34+05:30",
+    "date": "2026-06-09",
     "status": "ok",
     "detail": "stops=0 partials=0 maxhold=0 holding=6"
   }
