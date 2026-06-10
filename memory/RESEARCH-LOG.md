@@ -4,6 +4,17 @@
 ---
 
 
+### RESEARCH-2026-06-10
+
+**LARGE FII OUTFLOW — SKIP TRADING TODAY** (FII -4566 Cr)
+- VIX: 15.52
+- Global: [research unavailable — Gemini failed, no web fallback]
+
+**Recommendation**: LARGE FII OUTFLOW — SKIP
+
+---
+
+
 ### RESEARCH-2026-06-09
 
 **BEAR REGIME — NO TRADES TODAY**
