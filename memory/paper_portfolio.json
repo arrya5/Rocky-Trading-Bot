@@ -4,14 +4,14 @@
     "HINDALCO": {
       "qty": 64,
       "avg_price": 1091.699951171875,
-      "ltp": 1048.5999755859375,
+      "ltp": 1040.800048828125,
       "entered_at": "2026-05-21",
       "sector": "Metals"
     },
     "ADANIPORTS": {
       "qty": 27,
       "avg_price": 1787.0,
-      "ltp": 1839.0999755859375,
+      "ltp": 1820.0,
       "entered_at": "2026-05-21",
       "sector": "Infrastructure"
     }

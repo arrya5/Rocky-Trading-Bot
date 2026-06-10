@@ -682,3 +682,18 @@
 **Midday 2026-06-10 13:30**: BAJAJ-AUTO MAX-HOLD @ Rs10182.00 (+0.33%) — held 15d, CLOSED
 **Midday 2026-06-10 13:30**: HINDALCO HOLD @ Rs1048.60 (-3.95%, 14d) — stop Rs1037.11 (-5%)
 **Midday 2026-06-10 13:30**: ADANIPORTS HOLD @ Rs1839.10 (+2.92%, 14d) — stop Rs1697.65 (-5%)
+
+### EOD Snapshot 2026-06-10
+- **Portfolio value**: ₹487,430.63
+- **Cash**: ₹370,664.53
+- **Open positions**: 2
+- **Market value**: ₹116,766.10
+- **Day P&L**: ₹-2,546.69 (-0.52%)
+- **All-time P&L**: ₹-12,569.37 (-2.51% from ₹5,00,000 base)
+- **Nifty 50 today**: +0.00%
+- **Alpha vs Nifty**: -0.52%
+- **Positions**:
+  - HINDALCO: 64 sh @ avg ₹1091.70 | close ₹1040.80 | P&L -4.66%
+  - ADANIPORTS: 27 sh @ avg ₹1787.00 | close ₹1820.00 | P&L +1.85%
+
+**🎯 Biggest surprise today**: [auto] MANAPPURAM -7.0% (max_hold) was today's largest move.
