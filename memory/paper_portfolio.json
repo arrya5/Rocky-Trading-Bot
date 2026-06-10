@@ -1,45 +1,17 @@
 {
-  "cash": 200151.61124511718,
+  "cash": 370664.5332348633,
   "positions": {
-    "JSWSTEEL": {
-      "qty": 39,
-      "avg_price": 1266.5,
-      "ltp": 1259.5,
-      "entered_at": "2026-05-20",
-      "sector": "Metals"
-    },
-    "MANAPPURAM": {
-      "qty": 222,
-      "avg_price": 314.9,
-      "ltp": 308.25,
-      "entered_at": "2026-05-20",
-      "sector": "Finance"
-    },
-    "RADICO": {
-      "qty": 13,
-      "avg_price": 3615.0,
-      "ltp": 3501.199951171875,
-      "entered_at": "2026-05-20",
-      "sector": "FMCG"
-    },
-    "BAJAJ-AUTO": {
-      "qty": 1,
-      "avg_price": 10148.5,
-      "ltp": 10200.0,
-      "entered_at": "2026-05-20",
-      "sector": "Auto"
-    },
     "HINDALCO": {
       "qty": 64,
       "avg_price": 1091.699951171875,
-      "ltp": 1074.9000244140625,
+      "ltp": 1048.5999755859375,
       "entered_at": "2026-05-21",
       "sector": "Metals"
     },
     "ADANIPORTS": {
       "qty": 27,
       "avg_price": 1787.0,
-      "ltp": 1824.800048828125,
+      "ltp": 1839.0999755859375,
       "entered_at": "2026-05-21",
       "sector": "Infrastructure"
     }
@@ -174,6 +146,46 @@
       "type": "MARKET",
       "status": "COMPLETE",
       "placed_at": "2026-06-05T08:02:18.039314"
+    },
+    {
+      "order_id": "PAPER-20260610080109",
+      "symbol": "JSWSTEEL",
+      "side": "SELL",
+      "qty": 39,
+      "price": 1286.8,
+      "type": "MARKET",
+      "status": "COMPLETE",
+      "placed_at": "2026-06-10T08:01:09.021289"
+    },
+    {
+      "order_id": "PAPER-20260610080111",
+      "symbol": "MANAPPURAM",
+      "side": "SELL",
+      "qty": 222,
+      "price": 292.85,
+      "type": "MARKET",
+      "status": "COMPLETE",
+      "placed_at": "2026-06-10T08:01:10.764544"
+    },
+    {
+      "order_id": "PAPER-20260610080113",
+      "symbol": "RADICO",
+      "side": "SELL",
+      "qty": 13,
+      "price": 3484.9,
+      "type": "MARKET",
+      "status": "COMPLETE",
+      "placed_at": "2026-06-10T08:01:12.485900"
+    },
+    {
+      "order_id": "PAPER-20260610080114",
+      "symbol": "BAJAJ-AUTO",
+      "side": "SELL",
+      "qty": 1,
+      "price": 10182.0,
+      "type": "MARKET",
+      "status": "COMPLETE",
+      "placed_at": "2026-06-10T08:01:14.051732"
     }
   ]
 }

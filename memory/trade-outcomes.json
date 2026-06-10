@@ -13,12 +13,12 @@
       "fii_flow_at_entry": -2457.0,
       "market_regime": "bull",
       "partial_exits": [],
-      "exit_date": null,
-      "exit_price": null,
-      "pnl_abs": null,
-      "pnl_pct": null,
-      "exit_reason": null,
-      "days_held": null
+      "exit_date": "2026-06-10",
+      "exit_price": 1286.8,
+      "pnl_abs": 791.7,
+      "pnl_pct": 1.6,
+      "exit_reason": "max_hold",
+      "days_held": 21
     },
     {
       "trade_id": "BHARTIARTL-2026-05-20",
@@ -73,12 +73,12 @@
       "fii_flow_at_entry": -2457.0,
       "market_regime": "bull",
       "partial_exits": [],
-      "exit_date": null,
-      "exit_price": null,
-      "pnl_abs": null,
-      "pnl_pct": null,
-      "exit_reason": null,
-      "days_held": null
+      "exit_date": "2026-06-10",
+      "exit_price": 292.85,
+      "pnl_abs": -4895.1,
+      "pnl_pct": -7.0,
+      "exit_reason": "max_hold",
+      "days_held": 21
     },
     {
       "trade_id": "TATACONSUM-2026-05-20",
@@ -113,12 +113,12 @@
       "fii_flow_at_entry": -2457.0,
       "market_regime": "bull",
       "partial_exits": [],
-      "exit_date": null,
-      "exit_price": null,
-      "pnl_abs": null,
-      "pnl_pct": null,
-      "exit_reason": null,
-      "days_held": null
+      "exit_date": "2026-06-10",
+      "exit_price": 3484.9,
+      "pnl_abs": -1691.3,
+      "pnl_pct": -3.6,
+      "exit_reason": "max_hold",
+      "days_held": 21
     },
     {
       "trade_id": "BAJAJ-AUTO-2026-05-20",
@@ -141,12 +141,12 @@
           "pnl_pct": 6.43
         }
       ],
-      "exit_date": null,
-      "exit_price": null,
-      "pnl_abs": null,
-      "pnl_pct": null,
-      "exit_reason": null,
-      "days_held": null
+      "exit_date": "2026-06-10",
+      "exit_price": 10182.0,
+      "pnl_abs": 686.0,
+      "pnl_pct": 3.38,
+      "exit_reason": "max_hold",
+      "days_held": 21
     },
     {
       "trade_id": "HINDALCO-2026-05-21",
@@ -190,8 +190,8 @@
     }
   ],
   "metadata": {
-    "last_updated": "2026-06-05T08:02:18.743216",
-    "total_closed": 3,
+    "last_updated": "2026-06-10T08:01:14.839992",
+    "total_closed": 7,
     "analyzer_min_trades": 20,
     "description": "Structured trade outcomes for performance analysis and rule auto-adjustment. Each trade records entry context (GRU confidence, VIX, FII flow, regime) and exit result (P&L, exit reason, days held). The performance_analyzer.py reads this file and recommends parameter changes to TRADING-STRATEGY.md."
   }
