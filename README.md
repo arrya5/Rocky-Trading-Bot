@@ -152,7 +152,7 @@ Trained parameters on three historical windows (2023–2024), then tested on hol
 | ✅ Proven | Walk-forward validation ran and honestly caught overfitting |
 | ✅ Proven | Upstox API v2 integration, paper order execution, P&L tracking |
 | ✅ Proven | Telegram alerting, Git audit trail, regime detection |
-| 🟡 Early | Swing v3 live (May 2026): 7 days, 9 open positions — needs 20 closed trades |
+| ❌ Disproven (so far) | Swing v3 forward: 30+ days, 7 closed, win rate 43%, EV −2.09%/trade, self-grade D. Walk-forward called it; live results confirmed |
 | 🟡 Early | Regime gate (bear-market block): added May 2026, not yet validated in a real bear |
 | ❌ Not implemented | Deep learning / neural networks (TensorFlow in requirements but unused) |
 | ❌ Blocked | FII gate historical data (NSE bhavcopy scrape blocked; gate auto-passes in backtest) |
@@ -208,13 +208,51 @@ Rocky-Trading-Bot/
 
 ---
 
-## Current Status
+## Current Status *(updated 2026-06-11)*
 
 **Strategy:** Swing v3 (live since May 20, 2026)
-**Portfolio:** ₹5,02,651 (started ₹5,00,000)
-**Open positions:** 9 (capital fully deployed)
-**Alpha vs Nifty (7-day):** +0.09% — too early to evaluate
-**Next evaluation:** after 20 closed trades
+**Portfolio:** ₹4,87,431 (started ₹5,00,000 → **−2.51% all-time**)
+**Cash:** ₹3,70,664 (76% in cash)
+**Open positions:** 2 (HINDALCO, ADANIPORTS)
+**Closed trades:** 7 — see Live Track Record below
+**Weekly-review self-grade:** **D** (fitness −0.875 / 1.0)
+**Next evaluation:** after 20 closed trades; the revert criterion (win < 45% AND alpha < −3%) is currently knocking at win 43% / alpha −2.51%.
+
+---
+
+## Live Track Record *(paper, ₹5,00,000 base)*
+
+The bot has been live in paper mode for 30+ trading days since the Swing v3 conversion. Reporting the honest result, not the optimistic one.
+
+| Symbol | Entry | Exit | Days held | P&L | Exit reason |
+|---|---|---|---|---|---|
+| TECHM | 2026-05-20 | 2026-05-29 | 9 | **+1.47%** | thesis_broken |
+| BHARTIARTL | 2026-05-20 | 2026-06-04 | 15 | −5.24% | hard_stop |
+| TATACONSUM | 2026-05-20 | 2026-06-05 | 16 | −5.22% | hard_stop |
+| JSWSTEEL | 2026-05-20 | 2026-06-10 | 21 | **+1.60%** | max_hold |
+| MANAPPURAM | 2026-05-20 | 2026-06-10 | 21 | −7.00% | max_hold |
+| RADICO | 2026-05-20 | 2026-06-10 | 21 | −3.60% | max_hold |
+| BAJAJ-AUTO | 2026-05-20 | 2026-06-10 | 21 | **+3.38%** | max_hold |
+
+**Win rate: 43% (3W / 4L)** · Avg winner **+2.15%** · Avg loser **−5.27%** · **Expected value per trade: −2.09%**
+
+What the numbers say: the strategy is losing about 2% per trade on average, with losers nearly 2.5× the size of winners. The bot's own self-grading correctly flags this — fitness score −0.875 against the goal in `memory/goal.yaml`. The 30-day kill-switch is approaching trigger. **This is what an honest self-evaluating system looks like — it tells you when it isn't working.**
+
+---
+
+## Lessons Learned
+
+The strategy is the experiment; the engineering is the asset. After 30+ live days, what the project actually proved:
+
+1. **The original +5%/month goal was unattainable from day one.** Under a delivery-only, long-only, no-F&O mandate, +60%/year is hedge-fund-elite territory. A goal you mathematically can't hit makes every honest result look like failure when the result is just hitting reality. *Fix in next iteration: set a realistic +1.5–2%/month target so the self-evaluation grades a real bar, not an aspirational one.*
+
+2. **Backtest results don't transfer unless walk-forward says so.** POC v2 showed +12.31% / 73% win rate (May–Oct 2025). Walk-forward correctly flagged overfit. Forward results confirmed walk-forward, not POC. **Trust the walk-forward, not the in-sample.**
+
+3. **Mechanical signals on NSE midcaps may have no durable edge.** Three strategy classes — position trading, swing v3, sector rotation — all collapsed forward. The lesson isn't *"this strategy was wrong"*; it's *"this category was wrong."* The next system will test the **AI-reasoning-driven** path where the edge is the reasoning itself, not the rule.
+
+4. **AI dependencies are brittle without deterministic backstops.** The catalyst classifier silently auto-rejected every trade for days when Gemini hit its quota — because the failure path returned `SOFT` for everything. Fixed with a keyword-based fallback. *Generalisable lesson: never let an LLM failure silently kill behavior; always have a deterministic floor.*
+
+5. **The infrastructure was the right bet; the strategy was the experiment.** Because the measuring instrument was built before betting on a strategy, the strategy can be swapped out without rebuilding anything. That's the design pattern, not the trading result, that carries forward.
 
 ---
 
