@@ -700,3 +700,15 @@
 
 **Midday 2026-06-11 13:30**: HINDALCO MAX-HOLD @ Rs1031.30 (-5.53%) — held 15d, CLOSED
 **Midday 2026-06-11 13:30**: ADANIPORTS MAX-HOLD @ Rs1802.50 (+0.87%) — held 15d, CLOSED
+
+### EOD Snapshot 2026-06-11
+- **Portfolio value**: ₹485,217.88
+- **Cash**: ₹485,217.88
+- **Open positions**: 0
+- **Market value**: ₹0.00
+- **Day P&L**: ₹-2,212.75 (-0.45%)
+- **All-time P&L**: ₹-14,782.12 (-2.96% from ₹5,00,000 base)
+- **Nifty 50 today**: +0.23%
+- **Alpha vs Nifty**: -0.68%
+
+**🎯 Biggest surprise today**: [auto] HINDALCO -5.5% (max_hold) was today's largest move.
