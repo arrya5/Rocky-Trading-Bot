@@ -1,21 +1,6 @@
 {
-  "cash": 370664.5332348633,
-  "positions": {
-    "HINDALCO": {
-      "qty": 64,
-      "avg_price": 1091.699951171875,
-      "ltp": 1040.800048828125,
-      "entered_at": "2026-05-21",
-      "sector": "Metals"
-    },
-    "ADANIPORTS": {
-      "qty": 27,
-      "avg_price": 1787.0,
-      "ltp": 1820.0,
-      "entered_at": "2026-05-21",
-      "sector": "Infrastructure"
-    }
-  },
+  "cash": 485217.87701904296,
+  "positions": {},
   "orders": [
     {
       "order_id": "PAPER-20260520035406",
@@ -186,6 +171,26 @@
       "type": "MARKET",
       "status": "COMPLETE",
       "placed_at": "2026-06-10T08:01:14.051732"
+    },
+    {
+      "order_id": "PAPER-20260611080058",
+      "symbol": "HINDALCO",
+      "side": "SELL",
+      "qty": 64,
+      "price": 1031.3,
+      "type": "MARKET",
+      "status": "COMPLETE",
+      "placed_at": "2026-06-11T08:00:57.688175"
+    },
+    {
+      "order_id": "PAPER-20260611080059",
+      "symbol": "ADANIPORTS",
+      "side": "SELL",
+      "qty": 27,
+      "price": 1802.4,
+      "type": "MARKET",
+      "status": "COMPLETE",
+      "placed_at": "2026-06-11T08:00:59.139778"
     }
   ]
 }

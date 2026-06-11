@@ -697,3 +697,6 @@
   - ADANIPORTS: 27 sh @ avg ₹1787.00 | close ₹1820.00 | P&L +1.85%
 
 **🎯 Biggest surprise today**: [auto] MANAPPURAM -7.0% (max_hold) was today's largest move.
+
+**Midday 2026-06-11 13:30**: HINDALCO MAX-HOLD @ Rs1031.30 (-5.53%) — held 15d, CLOSED
+**Midday 2026-06-11 13:30**: ADANIPORTS MAX-HOLD @ Rs1802.50 (+0.87%) — held 15d, CLOSED

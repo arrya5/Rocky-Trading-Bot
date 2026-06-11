@@ -161,12 +161,12 @@
       "fii_flow_at_entry": -1597.0,
       "market_regime": "bull",
       "partial_exits": [],
-      "exit_date": null,
-      "exit_price": null,
-      "pnl_abs": null,
-      "pnl_pct": null,
-      "exit_reason": null,
-      "days_held": null
+      "exit_date": "2026-06-11",
+      "exit_price": 1031.3,
+      "pnl_abs": -3865.6,
+      "pnl_pct": -5.53,
+      "exit_reason": "max_hold",
+      "days_held": 21
     },
     {
       "trade_id": "ADANIPORTS-2026-05-21",
@@ -181,17 +181,17 @@
       "fii_flow_at_entry": -1597.0,
       "market_regime": "bull",
       "partial_exits": [],
-      "exit_date": null,
-      "exit_price": null,
-      "pnl_abs": null,
-      "pnl_pct": null,
-      "exit_reason": null,
-      "days_held": null
+      "exit_date": "2026-06-11",
+      "exit_price": 1802.5,
+      "pnl_abs": 418.5,
+      "pnl_pct": 0.87,
+      "exit_reason": "max_hold",
+      "days_held": 21
     }
   ],
   "metadata": {
-    "last_updated": "2026-06-10T08:01:14.839992",
-    "total_closed": 7,
+    "last_updated": "2026-06-11T08:00:59.917321",
+    "total_closed": 9,
     "analyzer_min_trades": 20,
     "description": "Structured trade outcomes for performance analysis and rule auto-adjustment. Each trade records entry context (GRU confidence, VIX, FII flow, regime) and exit result (P&L, exit reason, days held). The performance_analyzer.py reads this file and recommends parameter changes to TRADING-STRATEGY.md."
   }
