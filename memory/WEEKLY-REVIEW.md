@@ -173,3 +173,28 @@ Overall win rate: 33.3% across 3 closed trades. Best sector: IT (100.0% win). Wo
 - No rule changes (only 3/20 closed trades — observing, not changing rules yet)
 
 ---
+
+### WEEK OF 2026-06-08 to 2026-06-12
+
+**P&L Summary**
+- Week P&L: ₹-7,154.83 (-1.45%)
+- Nifty 50 this week: +1.09%
+- Alpha vs Nifty: -2.54%
+- Grade: D
+
+**Fitness score**: -0.768 (return -2.14%/trade, maxDD 20.1%, Sharpe -3.86)
+
+**Closed trades (all time)**: 9
+**Performance analyzer data sufficient**: False
+
+**Hypothesis verification**
+- No hypotheses verified this week (0 still under observation)
+
+**Qualitative**
+[deterministic — LLM unavailable]
+Overall win rate: 44.4% across 9 closed trades. Best sector: IT (100.0% win). Worst sector: Metals (50.0% win). Strongest regime: bull.
+
+**Strategy Changes This Week**
+- No rule changes (only 9/20 closed trades — observing, not changing rules yet)
+
+---
