@@ -712,3 +712,13 @@
 - **Alpha vs Nifty**: -0.68%
 
 **🎯 Biggest surprise today**: [auto] HINDALCO -5.5% (max_hold) was today's largest move.
+
+### EOD Snapshot 2026-06-12
+- **Portfolio value**: ₹485,217.88
+- **Cash**: ₹485,217.88
+- **Open positions**: 0
+- **Market value**: ₹0.00
+- **Day P&L**: ₹0.00 (+0.00%)
+- **All-time P&L**: ₹-14,782.12 (-2.96% from ₹5,00,000 base)
+- **Nifty 50 today**: +1.99%
+- **Alpha vs Nifty**: -1.99%
