@@ -4,6 +4,17 @@
 ---
 
 
+### RESEARCH-2026-06-15
+
+**BEAR REGIME — NO TRADES TODAY**
+- Nifty 20d slope: -2.23%
+- VIX: 14.72 | FII: -1082 Cr
+
+**Recommendation**: BEAR REGIME — SKIP
+
+---
+
+
 ### RESEARCH-2026-06-12
 
 **BEAR REGIME — NO TRADES TODAY**
