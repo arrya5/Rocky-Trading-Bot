@@ -742,3 +742,13 @@
 - **All-time P&L**: ₹-14,782.12 (-2.96% from ₹5,00,000 base)
 - **Nifty 50 today**: +0.57%
 - **Alpha vs Nifty**: -0.57%
+
+### EOD Snapshot 2026-06-17
+- **Portfolio value**: ₹485,217.88
+- **Cash**: ₹485,217.88
+- **Open positions**: 0
+- **Market value**: ₹0.00
+- **Day P&L**: ₹0.00 (+0.00%)
+- **All-time P&L**: ₹-14,782.12 (-2.96% from ₹5,00,000 base)
+- **Nifty 50 today**: +0.40%
+- **Alpha vs Nifty**: -0.40%
