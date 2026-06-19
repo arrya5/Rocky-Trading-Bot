@@ -768,3 +768,13 @@
 - UNITDSPR: SKIP — Gate 3: soft catalyst only
 - RADICO: SKIP — Gate 3: soft catalyst only
 - NYKAA: SKIP — Gate 3: soft catalyst only
+
+### EOD Snapshot 2026-06-19
+- **Portfolio value**: ₹485,217.88
+- **Cash**: ₹485,217.88
+- **Open positions**: 0
+- **Market value**: ₹0.00
+- **Day P&L**: ₹0.00 (+0.00%)
+- **All-time P&L**: ₹-14,782.12 (-2.96% from ₹5,00,000 base)
+- **Nifty 50 today**: +0.79%
+- **Alpha vs Nifty**: -0.79%
