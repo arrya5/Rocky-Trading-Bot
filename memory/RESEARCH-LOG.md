@@ -4,6 +4,50 @@
 ---
 
 
+### RESEARCH-2026-06-19
+
+**Market Context**
+- SGX Nifty: The GIFT Nifty (formerly SGX Nifty) is indicating a positive start for the Indian markets today, June 19, 2026. It is trading higher by 15 points or 0.06% at 24,183. Given that the Nifty 50 closed at 
+- India VIX: 12.67 — calm
+- FII net flow: -1025 Cr
+- Global cues: On June 19, 2026, US stock markets (NYSE and
+- Regime: sideways (slope: -1.31%)
+- Regime forecast (Markov): bull persistence 88%, P(bear next week) 6.9%, long-run mix bull/side/bear 36.6/40.4/23.0%
+- Nifty PCR: unknown — 
+
+**Sector Momentum**
+On June 19, 2026, the Nifty 50 closed at 24,168.00, up 0.34%.
+
+Leading sectors included Banking, Realty, Cement, and Pharma, with Nifty Bank gaining 0.66%. The IT sector was the notable laggard.
+
+**Trade Candidates** (Score ≥ 40, sorted by score)
+1. **SBIN** — Score: 80/100 — Catalyst: Incomplete catalyst description provided; unable to classify specific event. [SOFT] — Chart: neutral/neutral
+   Sector: Banking | Size: ₹50,000 | Entry: ~₹1042.7 | Stop: ₹969.71 (-7%)
+2. **BANKBARODA** — Score: 80/100 — Catalyst: classification failed - no keyword match [SOFT] — Chart: neutral/neutral
+   Sector: Banking | Size: ₹50,000 | Entry: ~₹283.0 | Stop: ₹263.19 (-7%)
+3. **UNITDSPR** — Score: 80/100 — Catalyst: classification failed - no keyword match [SOFT] — Chart: neutral/neutral
+   Sector: FMCG | Size: ₹50,000 | Entry: ~₹1350.3 | Stop: ₹1255.78 (-7%)
+4. **RADICO** — Score: 80/100 — Catalyst: classification failed - no keyword match [SOFT] — Chart: neutral/neutral
+   Sector: FMCG | Size: ₹50,000 | Entry: ~₹3690.0 | Stop: ₹3431.70 (-7%)
+5. **NYKAA** — Score: 80/100 — Catalyst: classification failed - no keyword match [SOFT] — Chart: neutral/neutral
+   Sector: Consumer | Size: ₹50,000 | Entry: ~₹298.1 | Stop: ₹277.23 (-7%)
+
+
+**Rejected**
+- (none)
+
+
+**Key Events Today**
+Here are the key events for the Indian stock market today, June 19, 2026:
+
+**Earnings & Corporate Events:**
+Reliance Industries will hold its Annual General Meeting (AGM) today. Several stocks, including Infosys, Wipro, HDFC Bank, Bharat Forge, Tata Motors, Jubilant Pharmova, Amber Enterprises, and 
+
+**Recommendation**: PROCEED with 5 candidates
+
+---
+
+
 ### RESEARCH-2026-06-18
 
 **BEAR REGIME — NO TRADES TODAY**
