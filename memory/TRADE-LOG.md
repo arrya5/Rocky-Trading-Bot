@@ -762,3 +762,9 @@
 - **All-time P&L**: ₹-14,782.12 (-2.96% from ₹5,00,000 base)
 - **Nifty 50 today**: +0.34%
 - **Alpha vs Nifty**: -0.34%
+
+- SBIN: SKIP — Gate 3: soft catalyst only
+- BANKBARODA: SKIP — Gate 3: soft catalyst only
+- UNITDSPR: SKIP — Gate 3: soft catalyst only
+- RADICO: SKIP — Gate 3: soft catalyst only
+- NYKAA: SKIP — Gate 3: soft catalyst only
