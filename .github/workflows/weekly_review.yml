@@ -15,6 +15,7 @@ permissions:
 
 jobs:
   weekly-review:
+    if: ${{ false }}   # DISABLED 2026-06-11 — Gemini routines retired, migrating back to Claude routines. Re-enable by removing this line.
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
