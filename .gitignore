@@ -40,3 +40,6 @@ desktop.ini
 # Logs (kept in memory/ as markdown, not raw logs)
 *.log
 logs/
+
+# Obsidian vault (Rocky/) — per-machine UI state only; rest of .obsidian/ is versioned
+Rocky/.obsidian/workspace.json

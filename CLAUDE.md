@@ -94,10 +94,17 @@ bash scripts/research.sh "Nifty 50 top movers catalysts and sector momentum toda
 bash scripts/research.sh "Indian stock market key events earnings RBI data today"
 ```
 
+## Second Brain (Obsidian wiki)
+The vault at `Rocky/` is an LLM-maintained wiki over this project's records (Karpathy LLM-wiki pattern), governed by `Rocky/Schema.md` — read that file before touching the vault.
+- **Raw sources are immutable to wiki ops**: `memory/`, `README.md`, `backtest/results/`, `routines/` are read, never edited, by wiki operations.
+- **Ingest**: at the end of EVERY routine, run the Ingest checklist in `Rocky/Schema.md` (new trades/research/reviews → update wiki pages, `Home.md` catalog, append `Rocky/Log.md`).
+- **Lint**: the Friday weekly-review routine also runs the Lint checklist (orphans, broken links, contradictions) and logs findings.
+- Commit `Rocky/` alongside `memory/` (see Git Commit Protocol).
+
 ## Git Commit Protocol
-After EVERY routine, commit all memory files:
+After EVERY routine, commit all memory files and wiki updates:
 ```bash
-git add memory/
+git add memory/ Rocky/
 git commit -m "routine: <name> | <date> | <summary of actions>"
 ```
 
